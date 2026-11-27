@@ -112,7 +112,7 @@ im.$media-expressions: $media-expressions;
 		overflow: hidden;
 	}
 
-	// Chat and project rows: 40px, hover control-fill, the current one control-fill-mid.
+	// Sidebar rows use control-fill on hover and control-fill-mid for selection.
 	// No border, so labels share the 12px inset of section titles and nav rows.
 	.navigation-link {
 		block-size: #{rem(40)};
@@ -171,7 +171,8 @@ im.$media-expressions: $media-expressions;
 		}
 	}
 
-	.chat-history-list {
+	.chat-history-list,
+	.projects-list {
 		min-inline-size: 0;
 		max-inline-size: 100%;
 
@@ -192,6 +193,10 @@ im.$media-expressions: $media-expressions;
 
 			&.is-active .button-for-icon[aria-expanded] {
 				--button-hover-background-color: var(--lumo-control-fill-strongest);
+			}
+
+			&:has(.button-for-icon[aria-expanded='true']) .sidebar-status-dot-slot {
+				opacity: 0;
 			}
 
 			> a {
@@ -400,7 +405,7 @@ im.$media-expressions: $media-expressions;
 	}
 }
 
-.sidebar-chat-link--with-actions {
+.sidebar-list-link--with-actions {
 	padding-inline-end: calc(var(--space-8) + var(--sidebar-chat-action-padding, var(--space-2)));
 }
 

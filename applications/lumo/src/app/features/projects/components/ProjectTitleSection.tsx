@@ -7,13 +7,19 @@ import { usePopperAnchor } from '@proton/atoms/Popper/usePopperAnchor';
 import Dropdown from '@proton/components/components/dropdown/Dropdown';
 import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
 import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
+import { useModalStateObject } from '@proton/components/components/modalTwo/useModalState';
 
 import { LumoIcon } from '../../../components/LumoIcon/LumoIcon';
+import { ConversationExportModal } from '../../../components/Modals/ConversationExportModal/ConversationExportModal';
 import { ProjectIcon } from '../../../components/ProjectIcon/ProjectIcon';
 import { useUncontrolledField } from '../../../hooks/useUncontrolledField';
+import { isBulkConversationExportSupported } from '../../../redux/bulkConversationExport';
+import type { SpaceId } from '../../../types';
 import { useProjectActions } from '../hooks/useProjectActions';
 
 interface ProjectTitleSectionProps {
+    /** The project's space ID, used to scope chat exports. */
+    projectId: SpaceId;
     projectName: string;
     categoryIcon: string;
     onSaveTitle: (newTitle: string) => void;
@@ -21,6 +27,7 @@ interface ProjectTitleSectionProps {
 }
 
 export const ProjectTitleSection = ({
+    projectId,
     projectName,
     categoryIcon,
     onSaveTitle,
@@ -31,6 +38,7 @@ export const ProjectTitleSection = ({
     const titleInputRef = titleField.bind.ref;
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
     const { navigateToAllProjects } = useProjectActions();
+    const exportModal = useModalStateObject();
 
     useEffect(() => {
         if (isEditingTitle && titleInputRef.current) {
@@ -103,9 +111,24 @@ export const ProjectTitleSection = ({
                         className="text-left flex flex-nowrap items-center"
                         onClick={navigateToAllProjects}
                     >
-                        <LumoIcon name="FolderOpen" size={16} className="mr-2" />
+                        <LumoIcon name="FolderOpen" size={16} />
                         {c('collider_2025:Action').t`Go to all projects`}
                     </DropdownMenuButton>
+                    {isBulkConversationExportSupported() && (
+                        <DropdownMenuButton
+                            className="flex flex-nowrap items-center text-left"
+                            onClick={() => {
+                                close();
+                                exportModal.openModal(true);
+                            }}
+                        >
+                            <LumoIcon name="SquareArrowRightExit" size={16} />
+                            {
+                                // translator: Option in a project menu that downloads all chats in that project.
+                                c('collider_2025:Option').t`Export`
+                            }
+                        </DropdownMenuButton>
+                    )}
                     <DropdownMenuButton
                         className="flex flex-nowrap items-center text-left lumo-color-signal-danger"
                         onClick={() => {
@@ -113,11 +136,14 @@ export const ProjectTitleSection = ({
                             onDeleteProject();
                         }}
                     >
-                        <LumoIcon name="Trash" size={16} className="mr-2" />
+                        <LumoIcon name="Trash" size={16} />
                         {c('collider_2025:Action').t`Delete project`}
                     </DropdownMenuButton>
                 </DropdownMenu>
             </Dropdown>
+            {exportModal.render && (
+                <ConversationExportModal {...exportModal.modalProps} project={{ id: projectId, title: projectName }} />
+            )}
         </div>
     );
 };

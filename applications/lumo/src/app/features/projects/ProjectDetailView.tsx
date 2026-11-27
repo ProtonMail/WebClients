@@ -304,6 +304,7 @@ const ProjectDetailViewInner = () => {
             header={{
                 component: (
                     <ProjectTitleSection
+                        projectId={projectId}
                         projectName={projectName}
                         categoryIcon={category.icon}
                         onSaveTitle={handleSaveTitle}

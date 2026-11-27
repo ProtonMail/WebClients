@@ -3,7 +3,7 @@ import isEqual from 'lodash/isEqual';
 import { v4 as uuidv4 } from 'uuid';
 
 import type { Priority } from '../../../remote/scheduler';
-import type { GetSpaceRemote, IdMapEntry, ListSpacesRemote, RemoteSpace } from '../../../remote/types';
+import type { GetSpaceRemote, IdMapEntry, RemoteSpace } from '../../../remote/types';
 import type { SerializedSpace, Space, SpaceId } from '../../../types';
 import { SpaceType } from '../../../types';
 import type { LumoState } from '../../store';
@@ -57,7 +57,6 @@ export const pullSpaceRequest = createAction<PullSpaceRequest>('lumo/space/pull/
 export const pullSpaceSuccess = createAction<GetSpaceRemote>('lumo/space/pull/success');
 export const pullSpaceFailure = createAction<SpaceId>('lumo/space/pull/failure');
 export const pullSpacesRequest = createAction('lumo/space/list/request');
-export const pullSpacesPageResponse = createAction<ListSpacesRemote>('lumo/space/list/pageResponse');
 export const pullSpacesSuccess = createAction('lumo/space/list/success');
 export const pullSpacesFailure = createAction('lumo/space/list/failure');
 export const deleteAllSpacesRequest = createAction<void>('lumo/space/deleteAll/request');
@@ -115,10 +114,6 @@ const spacesReducer = createReducer<SpaceMap>(EMPTY_SPACE_MAP, (builder) => {
         })
         .addCase(pullSpaceFailure, (state, action) => {
             console.log('Action triggered: pullSpaceFailure', action.payload);
-            return state;
-        })
-        .addCase(pullSpacesPageResponse, (state) => {
-            console.log('Action triggered: pullSpacesPageResponse');
             return state;
         })
         .addCase(pullSpacesRequest, (state) => {

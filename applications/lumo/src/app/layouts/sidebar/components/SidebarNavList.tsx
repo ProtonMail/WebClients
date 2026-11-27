@@ -46,8 +46,8 @@ export const SidebarNavList = ({ items, onItemClick }: SidebarNavListProps) => {
                         <LumoLink
                             to={to}
                             className={clsx(
-                                'absolute inset-0 flex flex-nowrap items-center gap-2 pl-3',
-                                trailingContent ? 'pr-8' : 'pr-3'
+                                'absolute inset-0 flex flex-nowrap items-center pl-3',
+                                trailingContent ? 'sidebar-list-link--with-actions gap-1.5' : 'gap-2 pr-3'
                             )}
                             onClick={onItemClick}
                         >
@@ -67,9 +67,7 @@ export const SidebarNavList = ({ items, onItemClick }: SidebarNavListProps) => {
                                 />
                             )}
                         </LumoLink>
-                        {trailingContent && (
-                            <div className="relative z-1 ml-auto pl-1 flex-shrink-0">{trailingContent}</div>
-                        )}
+                        {trailingContent && <div className="relative z-1 shrink-0 ml-auto pl-1">{trailingContent}</div>}
                     </li>
                 )
             )}
