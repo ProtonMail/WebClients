@@ -890,6 +890,9 @@
       ],
       "Your password manager is not here? Request it.": [
         "No hi apareix el vostre gestor de contrasenyes? Demaneu-lo."
+      ],
+      "Enable offline mode": [
+        "Activa el mode fora de línia"
       ]
     },
     "Activity": {
@@ -3188,6 +3191,27 @@
       ],
       "Your session could not be authorized.": [
         "No s'ha pogut autoritzar la sessió."
+      ],
+      "${ grantsByShareId.size } selected": [
+        "S'ha seleccionat ${ grantsByShareId.size }"
+      ],
+      "Access your ${ PASS_SHORT_APP_NAME } data if you lose internet connectivity or if ${ BRAND_NAME } servers are unreachable.": [
+        "Accediu a les vostres dades de ${ PASS_SHORT_APP_NAME } si perdeu la connexió a Internet o si els servidors de ${ BRAND_NAME } no són accessibles."
+      ],
+      "Choose vaults for \"${ token.Name }\" and set Viewer or Editor for each. Manager access (if any) is shown read-only.": [
+        "Trieu les caixes fortes per a \"${ token.Name }\" i configureu Lector o Editor per a cadascun. L'accés de gestor (si n'hi ha) es mostra en mode de només lectura."
+      ],
+      "No vault access": [
+        "No hi ha accés a la caixa forta"
+      ],
+      "Optional. Choose vaults and set a role for each: Viewer is read-only; Editor can create, edit, and delete items but cannot share vaults or manage members. You can change this later.": [
+        "Opcional. Trieu les caixes fortes i configureu un rol per a cadascuna: el rol de Lector és de només lectura; l'Editor pot crear, editar i eliminar elements però no pot compartir caixes fortes ni gestionar membres. Podreu canviar-ho més endavant."
+      ],
+      "Unlimited aliases, 2FA, dark web monitor": [
+        "Àlies il·limitats, 2FA, monitoratge del web fosc"
+      ],
+      "You can turn on offline mode any time in ${ BRAND_NAME } Pass settings": [
+        "Podeu activar el mode sense connexió en qualsevol moment a les preferències de ${ BRAND_NAME } Pass"
       ]
     },
     "Keyboard key": {
@@ -4520,6 +4544,9 @@
       ],
       "ZIP or Postal code": [
         "Codi postal"
+      ],
+      "In the past week": [
+        "La setmana passada"
       ]
     },
     "Link": {
@@ -5670,6 +5697,9 @@
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "Esteu a punt d'eliminar permanentment ${ aliasCount } àlies.",
         "Esteu a punt d'eliminar permanentment ${ aliasCount } àlies."
+      ],
+      "Unlock Pass Plus": [
+        "Desbloqueja Pass Plus"
       ]
     },
     "Title_cloned_item": {
@@ -6072,6 +6102,9 @@
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "La vostra subscripció no us permet crear diverses caixes fortes. Tots els elements s'importaran a la vostra primera caixa forta. Per a importar a diverses caixes fortes milloreu la vostra subscripció."
+      ],
+      "Access token created, but some vault permissions could not be applied. Use Manage vault access to try again.": [
+        "S'ha creat el testimoni d'accés, però no s'han pogut aplicar alguns permisos de la caixa forta. Feu servir Gestionar l'accés a la caixa forta per tornar-ho a intentar."
       ]
     }
   }

@@ -840,6 +840,9 @@
       ],
       "Your password manager is not here? Request it.": [
         "あなたのパスワードマネージャーがここにはありませんか？リクエストしてください。"
+      ],
+      "Enable offline mode": [
+        "オフラインモードを有効にする"
       ]
     },
     "Activity": {
@@ -2924,6 +2927,12 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "あなたの組織では、 ${ PASS_APP_NAME }へのアクセスの安全性を要求しています"
+      ],
+      "Access your ${ PASS_SHORT_APP_NAME } data if you lose internet connectivity or if ${ BRAND_NAME } servers are unreachable.": [
+        "インターネットに接続できない場合や、${ BRAND_NAME } のサーバーに接続できない場合でも、${ PASS_SHORT_APP_NAME } のデータにアクセスできます。"
+      ],
+      "You can turn on offline mode any time in ${ BRAND_NAME } Pass settings": [
+        "${ BRAND_NAME } Passの設定で、いつでもオフラインモードを有効にできます"
       ]
     },
     "Keyboard key": {
@@ -4230,6 +4239,9 @@
       ],
       "ZIP or Postal code": [
         "郵便番号"
+      ],
+      "In the past week": [
+        "最近1週間以内"
       ]
     },
     "Link": {

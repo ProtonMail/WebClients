@@ -894,6 +894,9 @@
       ],
       "Your password manager is not here? Request it.": [
         "Chýba tu váš správca hesiel? Požiadajte oň."
+      ],
+      "Enable offline mode": [
+        "Povoliť režim offline"
       ]
     },
     "Activity": {
@@ -3257,6 +3260,15 @@
       ],
       "Your session could not be authorized.": [
         "Vašu reláciu sa nepodarilo autorizovať."
+      ],
+      "Access your ${ PASS_SHORT_APP_NAME } data if you lose internet connectivity or if ${ BRAND_NAME } servers are unreachable.": [
+        "Majte prístup k údajom v ${ PASS_SHORT_APP_NAME } aj vtedy, keď stratíte pripojenie k internetu alebo keď sú servery ${ BRAND_NAME } nedostupné."
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Presunutím položky do iného trezora sa vymažú jej bezpečné odkazy."
+      ],
+      "You can turn on offline mode any time in ${ BRAND_NAME } Pass settings": [
+        "Režim offline môžete kedykoľvek zapnúť v nastaveniach ${ BRAND_NAME } Pass"
       ]
     },
     "Keyboard key": {
@@ -4617,6 +4629,9 @@
       ],
       "ZIP or Postal code": [
         "PSČ"
+      ],
+      "In the past week": [
+        "Za posledných 7 dní"
       ]
     },
     "Link": {
