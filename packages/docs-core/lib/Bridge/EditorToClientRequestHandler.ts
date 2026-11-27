@@ -24,6 +24,20 @@ import type { TelemetryDocsEditorEvents } from '@proton/shared/lib/api/telemetry
 
 declare const window: CustomWindow
 
+/**
+ * Schemes a link from the editor may open: the web, and those of the links Lexical keeps in a
+ * document. Never `javascript:`, `data:`, `blob:`, `file:` or another app's URL scheme.
+ */
+const OPENABLE_LINK_PROTOCOLS = new Set(['http:', 'https:', 'mailto:', 'tel:', 'sms:'])
+
+function canOpenLink(url: string): boolean {
+  try {
+    return OPENABLE_LINK_PROTOCOLS.has(new URL(url).protocol)
+  } catch {
+    return false
+  }
+}
+
 /** Handle messages sent by the editor to the client */
 export class EditorToClientRequestHandler implements EditorRequiresClientMethods {
   constructor(
@@ -121,6 +135,10 @@ export class EditorToClientRequestHandler implements EditorRequiresClientMethods
   }
 
   async openLink(url: string): Promise<void> {
+    // The editor runs in a sandboxed iframe: don't trust the URLs it asks to open.
+    if (!canOpenLink(url)) {
+      return
+    }
     const link = document.createElement('a')
     link.href = url
     link.target = '_blank'
