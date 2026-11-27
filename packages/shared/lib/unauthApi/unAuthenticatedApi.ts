@@ -229,8 +229,10 @@ export const createUnauthenticatedApi = (api: Api, { onUID }: UnauthenticatedApi
                 .then(() => {
                     context.setup = setupComplete;
                 })
-                .catch(() => {
+                .catch((e) => {
                     context.setup = null;
+                    // The request fails too, instead of going out without a session
+                    throw e;
                 });
         }
         return context.setup;

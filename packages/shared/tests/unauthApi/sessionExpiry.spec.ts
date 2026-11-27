@@ -49,6 +49,19 @@ const setupUnauthenticatedApi = (
 };
 
 describe('unauthenticated api session expiry', () => {
+    it('should fail the request without sending it when the session cannot be created', async () => {
+        removeItem('ua_uid');
+        const unavailable = apiError(HTTP_ERROR_CODES.SERVICE_UNAVAILABLE);
+        const api = vi.fn((config: any) =>
+            config.url === createSession().url ? Promise.reject(unavailable) : Promise.resolve('ok')
+        );
+        const unauthenticatedApi = createUnauthenticatedApi(api as any);
+        unauthenticatedApi.setChallenge(undefined);
+
+        await expect(unauthenticatedApi.apiCallback({ url: 'start' })).rejects.toBe(unavailable);
+        expect(api.mock.calls.map(([config]) => config.url)).toEqual([createSession().url]);
+    });
+
     it('should send the requests of a session that never answered again on a new session', async () => {
         const { unauthenticatedApi, refreshes } = setupUnauthenticatedApi((_, UID) =>
             UID === expiredUID ? Promise.reject(unauthorized) : Promise.resolve('ok')
