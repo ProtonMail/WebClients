@@ -1,18 +1,12 @@
 import { PublicSessionProvider } from '../store/_api/usePublicSession';
-import { DriveEventManagerProvider } from '../store/_events/useDriveEventManager';
-import { InvitationsStateProvider } from '../store/_invitations/useInvitationsState';
 import { LinksProvider, PublicLinksProvider } from '../store/_links/index';
 import { SharesProvider } from '../store/_shares/index';
 
 export const DriveStoreProvider = ({ children }: { children: React.ReactNode }) => {
     return (
-        <DriveEventManagerProvider>
-            <SharesProvider>
-                <LinksProvider>
-                    <InvitationsStateProvider>{children}</InvitationsStateProvider>
-                </LinksProvider>
-            </SharesProvider>
-        </DriveEventManagerProvider>
+        <SharesProvider>
+            <LinksProvider>{children}</LinksProvider>
+        </SharesProvider>
     );
 };
 
@@ -25,9 +19,7 @@ export const PublicDriveStoreProviderWithAuthenticatedUser = ({ children }: { ch
         <SharesProvider>
             <LinksProvider>
                 <PublicSessionProvider>
-                    <PublicLinksProvider>
-                        <InvitationsStateProvider>{children}</InvitationsStateProvider>
-                    </PublicLinksProvider>
+                    <PublicLinksProvider>{children}</PublicLinksProvider>
                 </PublicSessionProvider>
             </LinksProvider>
         </SharesProvider>

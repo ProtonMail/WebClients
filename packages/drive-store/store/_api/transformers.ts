@@ -2,10 +2,6 @@ import { getUnixTime } from 'date-fns';
 
 import { isProtonDocsDocument } from '@proton/shared/lib/helpers/mimetype';
 import { type DriveFileRevisionPayload, PhotoTag } from '@proton/shared/lib/interfaces/drive/file';
-import type {
-    ShareInvitationDetailsPayload,
-    ShareInvitationPayload,
-} from '@proton/shared/lib/interfaces/drive/invitation';
 import type { LinkMeta, LinkSharedUrlInfo } from '@proton/shared/lib/interfaces/drive/link';
 import { LinkType } from '@proton/shared/lib/interfaces/drive/link';
 import type { ShareMembershipPayload } from '@proton/shared/lib/interfaces/drive/member';
@@ -14,14 +10,7 @@ import type { ShareURL as ShareURLPayload, SharedURLInfoPayload } from '@proton/
 
 import type { EncryptedLink } from '../_links/interface';
 import type { DriveFileRevision } from '../_revisions/interface';
-import type {
-    Share,
-    ShareInvitation,
-    ShareInvitationDetails,
-    ShareMembership,
-    ShareWithKey,
-    SharedUrlInfo,
-} from '../_shares/interface';
+import type { Share, ShareMembership, ShareWithKey, SharedUrlInfo } from '../_shares/interface';
 import { ShareType } from '../_shares/interface';
 import { ThumbnailType } from '../_uploads/media/interface';
 
@@ -220,43 +209,6 @@ export const revisionPayloadToRevision = (revision: DriveFileRevisionPayload): D
             size: Thumbnail.Size,
         })),
         xAttr: revision.XAttr,
-    };
-};
-
-const shareInvitationPayloadToShareInvitation = (shareInvitation: ShareInvitationPayload): ShareInvitation => {
-    return {
-        invitationId: shareInvitation.InvitationID,
-        inviterEmail: shareInvitation.InviterEmail,
-        inviteeEmail: shareInvitation.InviteeEmail,
-        permissions: shareInvitation.Permissions,
-        keyPacket: shareInvitation.KeyPacket,
-        keyPacketSignature: shareInvitation.KeyPacketSignature,
-        createTime: shareInvitation.CreateTime,
-        state: shareInvitation.State,
-    };
-};
-
-export const shareInvitationDetailsPayloadToShareInvitationDetails = (
-    shareInvitationDetails: ShareInvitationDetailsPayload
-): ShareInvitationDetails => {
-    return {
-        invitation: shareInvitationPayloadToShareInvitation(shareInvitationDetails.Invitation),
-        share: {
-            shareId: shareInvitationDetails.Share.ShareID,
-            volumeId: shareInvitationDetails.Share.VolumeID,
-            passphrase: shareInvitationDetails.Share.Passphrase,
-            shareKey: shareInvitationDetails.Share.ShareKey,
-            creatorEmail: shareInvitationDetails.Share.CreatorEmail,
-        },
-        link: {
-            linkId: shareInvitationDetails.Link.LinkID,
-            name: shareInvitationDetails.Link.Name,
-            mimeType:
-                shareInvitationDetails.Link.MIMEType ||
-                (shareInvitationDetails.Link.Type === LinkType.ALBUM ? 'Album' : ''),
-            isFile: shareInvitationDetails.Link.Type === LinkType.FILE,
-            type: shareInvitationDetails.Link.Type,
-        },
     };
 };
 

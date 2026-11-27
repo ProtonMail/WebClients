@@ -2,7 +2,6 @@
     "name": "@proton/drive-store",
     "description": "Duplication of the Drive Store",
     "exports": {
-        "./lib/_invites/useDocInvites": "./lib/_invites/useDocInvites.tsx",
         "./lib/_views/useDocsBookmarks": "./lib/_views/useDocsBookmarks.ts",
         "./lib/DriveCompatWrapper": "./lib/DriveCompatWrapper.ts",
         "./lib/DriveStoreProvider": "./lib/DriveStoreProvider.tsx",
@@ -42,7 +41,6 @@
         "@sentry/types": "catalog:",
         "client-zip": "catalog:",
         "comlink": "catalog:",
-        "core-js": "catalog:",
         "date-fns": "catalog:",
         "react": "catalog:",
         "react-dom": "catalog:",

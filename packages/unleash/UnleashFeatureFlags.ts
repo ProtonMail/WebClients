@@ -223,7 +223,6 @@ enum DocsFeatureFlag {
     SheetsUpdateCompressionEnabled = 'SheetsUpdateCompressionEnabled',
     // SDK Migration
     DocsDriveCompatSDK = 'DocsDriveCompatSDK',
-    DocsInvitationsDriveSDK = 'DocsInvitationsDriveSDK',
     DocsRealtimeSdkEnabled = 'DocsRealtimeSdkEnabled',
 }
 

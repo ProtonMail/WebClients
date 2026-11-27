@@ -47,7 +47,7 @@ export type FetchResponse = {
 // paging algorithm (to properly compute page when page size differs).
 // Therefore, lets keep it simple for now unless it is really needed.
 export const PAGE_SIZE = 50;
-export const DEFAULT_SORTING: SortParams = {
+const DEFAULT_SORTING: SortParams = {
     sortField: 'createTime',
     sortOrder: SORT_DIRECTION.ASC,
 };
