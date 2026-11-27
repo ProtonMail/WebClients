@@ -9,7 +9,9 @@
         "format:check": "oxfmt --check \"**/*.{js,ts,tsx}\"",
         "format:write": "oxfmt --write \"**/*.{js,ts,tsx}\"",
         "lint": "oxlint --quiet",
-        "start": "vite"
+        "start": "vite",
+        "test:browser": "vitest run --project browser",
+        "test:browser:ui": "vitest --project browser --browser.headless=false --standalone"
     },
     "dependencies": {
         "@proton/styles": "workspace:^",
@@ -24,11 +26,14 @@
         "@types/react-dom": "catalog:",
         "@typescript/native": "catalog:",
         "@vitejs/plugin-react": "catalog:",
+        "@vitest/browser-playwright": "catalog:",
         "oxlint": "catalog:",
         "oxlint-tsgolint": "catalog:",
+        "playwright": "catalog:",
         "sass": "catalog:",
         "tailwindcss": "catalog:",
         "typescript": "catalog:",
-        "vite": "catalog:"
+        "vite": "catalog:",
+        "vitest": "catalog:"
     }
 }

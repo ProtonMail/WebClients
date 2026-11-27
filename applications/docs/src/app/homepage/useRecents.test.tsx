@@ -143,6 +143,8 @@ describe('useRecents', () => {
 
       expect(useRecentsStore.getState().recentDocumentsInitialized).toBe(false)
       expect(createNotification).toHaveBeenCalledWith({ type: 'error', text: 'Failed to load recent documents' })
+      // Or the reload button stays disabled, and the user can't retry.
+      expect(result.current.isRecentsUpdating).toBe(false)
     })
 
     // Sentry's beforeSend (packages/shared/lib/helpers/sentry.ts) drops every ApiError, so a failed request
@@ -173,6 +175,40 @@ describe('useRecents', () => {
 
       expect(useRecentsStore.getState().recentDocumentsInitialized).toBe(false)
       expect(createNotification).not.toHaveBeenCalled()
+      expect(result.current.isRecentsUpdating).toBe(false)
+    })
+
+    test('stays updating while a newer load runs, when an older one is aborted', async () => {
+      const { result, api } = renderRecents({
+        documents: [createApiDocument('doc')],
+        nodes: createNodes([createNode({ uid: 'volume1~doc' })]),
+      })
+      let rejectFirst = (_: unknown) => {}
+      let resolveSecond = () => {}
+      api.mockImplementationOnce(() => new Promise((_, reject) => (rejectFirst = reject)))
+      api.mockImplementationOnce(
+        () => new Promise((resolve) => (resolveSecond = () => resolve({ RecentDocuments: [] }))),
+      )
+
+      let first!: Promise<void>
+      let second!: Promise<void>
+      act(() => {
+        first = result.current.fetchRecentDocuments(new AbortController().signal)
+        second = result.current.fetchRecentDocuments(new AbortController().signal)
+      })
+      await act(async () => {
+        rejectFirst(new DOMException('Aborted', 'AbortError'))
+        await first
+      })
+
+      expect(result.current.isRecentsUpdating).toBe(true)
+
+      await act(async () => {
+        resolveSecond()
+        await second
+      })
+
+      expect(result.current.isRecentsUpdating).toBe(false)
     })
   })
 
@@ -295,6 +331,46 @@ describe('useRecents', () => {
       )
 
       expect(Object.keys(result.current.recentDocuments)).toEqual(['volume1~outside', 'volume1~orphan'])
+    })
+
+    test('reloads the recents when a folder whose documents left them is restored', async () => {
+      const { result, reloadRecents } = await renderLoadedRecents([
+        createNode({ uid: 'volume1~root', type: NodeType.Folder }),
+        createNode({ uid: 'volume1~folder', parentUid: 'volume1~root', type: NodeType.Folder }),
+        createNode({ uid: 'volume1~inside', parentUid: 'volume1~folder' }),
+      ])
+      await act(() =>
+        result.current.recentsListener(
+          createEvent({ type: DriveEventType.NodeUpdated, nodeUid: 'volume1~folder', isTrashed: true }),
+        ),
+      )
+      expect(reloadRecents).not.toHaveBeenCalled()
+
+      await act(() =>
+        result.current.recentsListener(
+          createEvent({ type: DriveEventType.NodeUpdated, nodeUid: 'volume1~folder', isTrashed: false }),
+        ),
+      )
+
+      expect(reloadRecents).toHaveBeenCalledOnce()
+    })
+
+    test('does not reload the recents for a folder none of them is in', async () => {
+      const { result, reloadRecents } = await renderLoadedRecents([
+        createNode({ uid: 'volume1~root', type: NodeType.Folder }),
+        createNode({ uid: 'volume1~folder', parentUid: 'volume1~root', type: NodeType.Folder }),
+        createNode({ uid: 'volume1~doc', parentUid: 'volume1~root' }),
+      ])
+
+      for (const isTrashed of [true, false, false]) {
+        await act(() =>
+          result.current.recentsListener(
+            createEvent({ type: DriveEventType.NodeUpdated, nodeUid: 'volume1~folder', isTrashed }),
+          ),
+        )
+      }
+
+      expect(reloadRecents).not.toHaveBeenCalled()
     })
 
     test('reloads updated document keeping its last viewed time', async () => {
@@ -485,6 +561,7 @@ function renderRecents({ documents, nodes }: { documents: ApiDocument[]; nodes: 
   const drive = createFakeDrive(nodes)
 
   const createNotification = vi.fn()
+  const reloadRecents = vi.fn()
   const logger = { debug: vi.fn(), error: vi.fn() }
   const eventSubscriber: EventSubscriber = {
     initialize: vi.fn(),
@@ -500,10 +577,11 @@ function renderRecents({ documents, nodes }: { documents: ApiDocument[]; nodes: 
       logger,
       createNotification,
       errorTracking,
+      reloadRecents,
     }),
   )
 
-  return { result, drive, api, createNotification, eventSubscriber }
+  return { result, drive, api, createNotification, eventSubscriber, reloadRecents }
 }
 
 /**

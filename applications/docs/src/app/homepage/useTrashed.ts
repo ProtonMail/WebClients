@@ -73,8 +73,16 @@ export function useTrashed(
     [drive, getMessages],
   )
 
+  /** Removes documents from the trash without waiting for Drive's events, once they are deleted. */
+  const removeTrashedDocuments = useCallback((nodeUids: string[]) => {
+    setTrashedDocumentItems((items) =>
+      items.filter((item) => !nodeUids.includes(generateNodeUid(item.volumeId, item.linkId))),
+    )
+  }, [])
+
   return {
     fetchTrashed,
+    removeTrashedDocuments,
     isTrashLoading,
     trashedDocumentItems,
     trashedListener,

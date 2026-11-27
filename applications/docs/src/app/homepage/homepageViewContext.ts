@@ -55,6 +55,8 @@ export type HomepageViewValue = {
   setSearch: (value: string | undefined, exclusive?: boolean) => void
   updateRecentDocuments: () => Promise<void>
   updateRenamedDocumentInCache: (uniqueId: string, name: string) => Promise<void>
+  /** Removes documents from the recents and the trash without waiting for Drive's events: once trashed or deleted. */
+  removeDocuments: (nodeUids: string[]) => void
   isRecentsUpdating: boolean
   type: ProtonDocumentType | undefined
   /** Known once the My files folder has loaded. */

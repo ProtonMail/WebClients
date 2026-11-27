@@ -1275,6 +1275,7 @@ describe('HomepageContent', () => {
           setSearch: vi.fn(),
           updateRecentDocuments: vi.fn as any,
           updateRenamedDocumentInCache: mockUpdateRenamedDocumentInCache,
+          removeDocuments: vi.fn(),
           isRecentsUpdating: false,
           state,
           type: undefined,

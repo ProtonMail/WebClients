@@ -8,7 +8,7 @@ import {
   ProtonDriveError,
   generateNodeUid,
 } from '@protontech/drive-sdk'
-import { useCallback, useState } from 'react'
+import { useCallback, useRef, useState } from 'react'
 import { useHomepageMessages } from './messages/HomepageMessagesProvider'
 import type { HomepageMessages } from './messages/defaultHomepageMessages'
 import { useEvent } from './utils/useEvent'
@@ -33,6 +33,8 @@ type UseRecentsProps = {
   logger: Logger
   createNotification: CreateNotification
   errorTracking: ErrorTracking
+  /** Loads the recents again, for a restored folder whose documents left them when it was trashed. */
+  reloadRecents: () => void
 }
 
 export function useRecents({
@@ -42,11 +44,15 @@ export function useRecents({
   logger,
   createNotification,
   errorTracking,
+  reloadRecents,
 }: UseRecentsProps) {
   const recentDocuments = useRecentsStore((state) => state.recentDocuments)
   const recentDocumentsInitialized = useRecentsStore((state) => state.recentDocumentsInitialized)
 
   const [isRecentsUpdating, setIsRecentsUpdating] = useState(false)
+  // Only the latest load ends the updating state: an aborted one ends after the load that replaced it has started.
+  const latestLoad = useRef<AbortSignal>(undefined)
+  const trashedFolderUids = useRef(new Set<string>())
 
   const messages = useHomepageMessages()
   // Read when called: as a callback dependency, a locale change would reload the recents and resubscribe to events.
@@ -137,6 +143,7 @@ export function useRecents({
   const fetchRecentDocuments = useCallback(
     (abort: AbortSignal) => {
       setIsRecentsUpdating(true)
+      latestLoad.current = abort
       return fetchRecents(abort)
         .then(({ documents, nodesByUid }) => {
           const { setRecentDocuments, setInitialized } = useRecentsStore.getState()
@@ -173,7 +180,6 @@ export function useRecents({
           // Known race: documents removed by events while fetching are restored here - fixed by next fetch
           setRecentDocuments(documentItems)
           setInitialized()
-          setIsRecentsUpdating(false)
         })
         .catch((error) => {
           if (error instanceof Error && error.name === 'AbortError') {
@@ -185,6 +191,11 @@ export function useRecents({
             type: 'error',
             text: getMessages().loading.recentsFailed,
           })
+        })
+        .finally(() => {
+          if (latestLoad.current === abort) {
+            setIsRecentsUpdating(false)
+          }
         })
     },
     [fetchRecents, logger, eventSubscriber, createNotification, errorTracking, getMessages],
@@ -216,6 +227,9 @@ export function useRecents({
 
         if (event.isTrashed) {
           if (node.type === NodeType.Folder) {
+            if (getDocumentsInFolder(node.uid).length > 0) {
+              trashedFolderUids.current.add(node.uid)
+            }
             removeChildrenOf(node.uid)
           } else {
             removeDocument(node.uid)
@@ -230,29 +244,19 @@ export function useRecents({
             }
             updateDocument(await loadDocument(drive, event.nodeUid, getMessages().names, document))
           } else if (node.type === NodeType.Folder) {
-            const childrenOfUpdatedFolder: RecentDocumentsItemValue[] = []
-
-            const { recentDocuments } = useRecentsStore.getState()
-            // Which of already loaded documents are children of the updated folder?
-            for (const documentNodeUid in recentDocuments) {
-              const recentDocument = recentDocuments[documentNodeUid]
-              if (recentDocument.ancestorsNodeUids?.includes(node.uid)) {
-                childrenOfUpdatedFolder.push(recentDocument)
-              }
-            }
+            const childrenOfUpdatedFolder = getDocumentsInFolder(node.uid)
 
             // In case we have children of the updated folder we'll only reload existing nodes
             if (childrenOfUpdatedFolder.length > 0) {
               await reloadDocuments(drive, errorTracking, childrenOfUpdatedFolder, getMessages().names)
-            } else {
-              // This is probably a folder restored from trash - reload everything
-              // Currently not supported
+            } else if (trashedFolderUids.current.delete(node.uid)) {
+              reloadRecents()
             }
           }
         }
       }
     },
-    [drive, errorTracking, getMessages],
+    [drive, errorTracking, getMessages, reloadRecents],
   )
 
   const removeDocument = useCallback((nodeUid: string) => {
@@ -316,6 +320,12 @@ function getDocumentDetails(
     lastOpenTime: document.LastOpenTime,
     deprecatedShareId: document.ContextShareID,
   }
+}
+
+/** The recents in the folder, at any depth. */
+function getDocumentsInFolder(folderUid: string) {
+  const { recentDocuments } = useRecentsStore.getState()
+  return Object.values(recentDocuments).filter((document) => document.ancestorsNodeUids?.includes(folderUid))
 }
 
 async function reloadDocuments(

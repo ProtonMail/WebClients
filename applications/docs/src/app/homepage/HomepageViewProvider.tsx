@@ -67,6 +67,12 @@ export function HomepageViewProvider({
   const getMessages = useEvent(() => messages)
 
   const guardedApi = useUnloadGuardedApi(api)
+  // `loadData` needs what `useRecents` returns: read it when called.
+  const reloadRecents = useEvent(() => {
+    if (!isTrashRoute) {
+      void loadData()
+    }
+  })
   const {
     recentDocuments,
     recentDocumentsInitialized,
@@ -83,8 +89,9 @@ export function HomepageViewProvider({
     logger,
     createNotification,
     errorTracking,
+    reloadRecents,
   })
-  const { fetchTrashed, trashedDocumentItems, isTrashLoading, trashedListener } = useTrashed(
+  const { fetchTrashed, removeTrashedDocuments, trashedDocumentItems, isTrashLoading, trashedListener } = useTrashed(
     drive,
     createNotification,
     errorTracking,
@@ -185,6 +192,14 @@ export function HomepageViewProvider({
     messages.names,
   ])
 
+  const removeDocuments = useCallback(
+    (nodeUids: string[]) => {
+      nodeUids.forEach(removeDocument)
+      removeTrashedDocuments(nodeUids)
+    },
+    [removeDocument, removeTrashedDocuments],
+  )
+
   const dateFormatter = useMemo(
     () => new DateFormatter({ localeCode: dateLocaleCode, hourCycle }),
     [dateLocaleCode, hourCycle],
@@ -197,6 +212,7 @@ export function HomepageViewProvider({
       setSearch,
       updateRecentDocuments: loadData,
       updateRenamedDocumentInCache,
+      removeDocuments,
       isRecentsUpdating,
       type,
       myFilesRootUid: myFilesNode?.uid,
@@ -224,6 +240,7 @@ export function HomepageViewProvider({
       setSearch,
       loadData,
       updateRenamedDocumentInCache,
+      removeDocuments,
       isRecentsUpdating,
       type,
       myFilesNode,
