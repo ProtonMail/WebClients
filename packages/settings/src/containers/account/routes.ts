@@ -8,6 +8,7 @@ import type {
     SettingsNotification,
     SubrouteGroup,
 } from '@proton/components/containers/layout/interface';
+import { getShowPassOrgSetupChecklist } from '@proton/components/containers/pass/dashboard/interface';
 import { getBillingPageAvailability } from '@proton/console/billing/getBillingPageAvailability';
 import { IcArrowDownToSquare } from '@proton/icons/icons/IcArrowDownToSquare';
 import { IcArrowUpBigLine } from '@proton/icons/icons/IcArrowUpBigLine';
@@ -130,9 +131,23 @@ function getV1DashboardSections(
     assistantKillSwitch: boolean,
     isPaid: boolean,
     cancelSubscriptionAvailable: boolean,
-    cancellableOnlyViaSupport: boolean
+    cancellableOnlyViaSupport: boolean,
+    showPassB2BOnboarding: boolean
 ) {
+    // "Your plan" only needs its own heading when the "pass-b2b-onboarding" or "your-storage"
+    // section directly above it in this list is actually rendered — otherwise "Your plan" is the
+    // first section on the page and doesn't need to visually separate itself from anything.
+    const isSectionAboveYourPlanRendered = showPassB2BOnboarding || (hasSplitStorage && showStorageSection);
+
     return [
+        {
+            id: 'pass-b2b-onboarding',
+            available: showPassB2BOnboarding,
+            keywords: [
+                c('account_search_index').t`Onboarding checklist`,
+                c('account_search_index').t`Pass Professional trial`,
+            ],
+        },
         // do not show Your Plan section for Pass users
         {
             text: hasSplitStorage ? c('Title').t`Your storage` : undefined,
@@ -145,7 +160,7 @@ function getV1DashboardSections(
             ],
         },
         {
-            text: hasSplitStorage && showStorageSection ? c('Title').t`Your plan` : undefined,
+            text: isSectionAboveYourPlanRendered ? c('Title').t`Your plan` : undefined,
             id: 'your-plan',
             available: canPay,
             keywords: [
@@ -405,6 +420,7 @@ export const getAccountAppRoutes = ({
     addresses,
     subscription,
     allSubscriptions,
+    entitlements,
     organization,
     recoveryNotification,
     showVPNDashboard,
@@ -421,7 +437,6 @@ export const getAccountAppRoutes = ({
     permissions,
     flags,
     accountRecoveryRouterFlags,
-    entitlements,
 }: AccountRouterParams) => {
     const { isFree, canPay, isPaid, isMember, isAdmin, Type, hasPaidMail } = user;
     const credits = referralInfo.maxRewardAmount;
@@ -431,6 +446,7 @@ export const getAccountAppRoutes = ({
     const isFamilyOrDuoPlanMember = isFamilyOrg && isMember && isPaid;
 
     const isPassConsumerOrPassFamilyOrg = getIsConsumerPassPlan(organization?.PlanName);
+    const showPassB2BOnboarding = getShowPassOrgSetupChecklist({ app, isAdmin, entitlements });
 
     const showStorageSection = !(
         isPassConsumerOrPassFamilyOrg ||
@@ -573,7 +589,8 @@ export const getAccountAppRoutes = ({
                           assistantKillSwitch,
                           isPaid,
                           cancelSubscriptionAvailable,
-                          cancellableOnlyViaSupport
+                          cancellableOnlyViaSupport,
+                          showPassB2BOnboarding
                       ),
             },
             subscription: {

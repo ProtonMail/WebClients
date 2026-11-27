@@ -92,6 +92,7 @@ const b2bPlans: Set<PLANS | ADDON_NAMES> = new Set([
     PLANS.VPN_BUSINESS,
     PLANS.PASS_PRO,
     PLANS.PASS_BUSINESS,
+    PLANS.PASS_BASIC,
     PLANS.LUMO_BUSINESS,
     PLANS.VPN_PASS_BUNDLE_BUSINESS,
     PLANS.MEET_BUSINESS,
@@ -145,6 +146,7 @@ const passPlans: Set<PLANS | ADDON_NAMES> = new Set([
     PLANS.VPN_PASS_BUNDLE,
     PLANS.PASS_PRO,
     PLANS.PASS_BUSINESS,
+    PLANS.PASS_BASIC,
 ]);
 
 /**
@@ -157,7 +159,7 @@ export const getIsPassPlan = (planName: PLANS | ADDON_NAMES | undefined) => {
     return passPlans.has(planName);
 };
 
-const passB2bPlans: Set<PLANS | ADDON_NAMES> = new Set([PLANS.PASS_PRO, PLANS.PASS_BUSINESS]);
+const passB2bPlans: Set<PLANS | ADDON_NAMES> = new Set([PLANS.PASS_BASIC, PLANS.PASS_PRO, PLANS.PASS_BUSINESS]);
 export const getIsPassB2BPlan = (planName?: PLANS | ADDON_NAMES) => {
     if (!planName) {
         return false;

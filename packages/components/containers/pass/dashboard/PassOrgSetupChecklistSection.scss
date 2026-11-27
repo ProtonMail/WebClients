@@ -1,0 +1,18 @@
+@use '~@proton/styles/scss/lib/config' as *;
+@use '~@proton/styles/scss/lib/include-media' as im;
+
+im.$breakpoints: $breakpoints-product;
+im.$media-expressions: $media-expressions;
+
+.pass-org-setup-checklist-row-icon--current {
+	color: var(--interaction-norm);
+}
+
+.pass-org-setup-checklist-panel {
+	border-block-start: 1px solid var(--border-weak);
+
+	@include im.media('>medium') {
+		border-block-start: none;
+		border-inline-start: 1px solid var(--border-weak);
+	}
+}

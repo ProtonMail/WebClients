@@ -5,6 +5,10 @@ import { isCancellableOnlyViaSupport } from '@proton/payments/core/subscription/
 import type { Subscription } from '@proton/payments/core/subscription/interface';
 import { buildEntitlementCatalog } from '@proton/payments/testing/buildEntitlementCatalog';
 import { buildSubscription } from '@proton/payments/testing/buildSubscription';
+import {
+    type CataloguedPlan,
+    buildOrgAndUserEntitlementChecks,
+} from '@proton/payments/testing/prodCatalogGrantsForTesting';
 import { regularAdmin } from '@proton/payments/testing/regularAdmin';
 import { APPS } from '@proton/shared/lib/constants';
 import type { OrganizationExtended } from '@proton/shared/lib/interfaces/Organization';
@@ -405,6 +409,42 @@ describe('getAccountAppRoutes', () => {
                     flags: { isDriveEasySwitchNewUIEnabled: true },
                 })
             ).toBe(true);
+        });
+    });
+
+    describe('pass-b2b-onboarding dashboard section', () => {
+        function getPassB2BOnboardingAvailability(subscriptionPlans: CataloguedPlan[], overrides: Overrides = {}) {
+            return getAccountAppRoutes(
+                buildDefaultParams({
+                    app: APPS.PROTONPASS,
+                    showDashboard: false,
+                    entitlements: buildOrgAndUserEntitlementChecks({ subscriptionPlans }),
+                    ...overrides,
+                })
+            ).routes.dashboard.subsections.find((subsection) => subsection.id === 'pass-b2b-onboarding')?.available;
+        }
+
+        it.each([
+            { name: 'Pass Professional', plans: [PLANS.PASS_BUSINESS], expected: true },
+            { name: 'Pass Essentials', plans: [PLANS.PASS_PRO], expected: true },
+            { name: 'VPN and Pass Professional', plans: [PLANS.VPN_PASS_BUNDLE_BUSINESS], expected: true },
+            { name: 'a B2B bundle with Mail', plans: [PLANS.BUNDLE_PRO_2024], expected: false },
+            { name: 'Pass Plus', plans: [PLANS.PASS], expected: false },
+        ] satisfies { name: string; plans: CataloguedPlan[]; expected: boolean }[])(
+            'is $expected for $name admins',
+            ({ plans, expected }) => {
+                expect(getPassB2BOnboardingAvailability(plans)).toBe(expected);
+            }
+        );
+
+        it('is hidden for members', () => {
+            expect(
+                getPassB2BOnboardingAvailability([PLANS.PASS_BUSINESS], { user: buildUser({ isAdmin: false }) })
+            ).toBe(false);
+        });
+
+        it('is hidden outside the Pass app', () => {
+            expect(getPassB2BOnboardingAvailability([PLANS.PASS_BUSINESS], { app: APPS.PROTONMAIL })).toBe(false);
         });
     });
 });

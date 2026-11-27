@@ -19,6 +19,7 @@ import LanguageAndTimeSection from '@proton/components/containers/general/Langua
 import PrivateMainSettingsArea from '@proton/components/containers/layout/PrivateMainSettingsArea';
 import { getIsSectionAvailable, getSectionPath } from '@proton/components/containers/layout/helper';
 import { SettingsCardMaxWidth, SettingsLayoutVariant } from '@proton/components/containers/layout/interface';
+import PassB2BDashboardOnboarding from '@proton/components/containers/pass/dashboard/PassB2BDashboardOnboarding';
 import GiftCodeSection from '@proton/components/containers/payments/GiftCodeSection';
 import SubscriptionsSection from '@proton/components/containers/payments/SubscriptionsSection';
 import DashboardTelemetry from '@proton/components/containers/payments/subscription/DashboardTelemetry';
@@ -190,6 +191,7 @@ const AccountSettingsRouter = ({
                         <DashboardTelemetry app={app} />
                         <AutomaticSubscriptionModal />
                         <PrivateMainSettingsArea config={dashboard}>
+                            <PassB2BDashboardOnboarding app={app} />
                             <YourStorageSection app={app} />
                             <YourPlanSection app={app} />
                             <AssistantToggle />

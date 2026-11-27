@@ -57,6 +57,10 @@ export enum FeatureCode {
     NumAttachmentsWithoutEmbedded = 'NumAttachmentsWithoutEmbedded',
     NumberOfPreloadedConversations = 'NumberOfPreloadedConversations',
     PassNudgeDontShowAgain = 'PassNudgeDontShowAgain',
+
+    // Pass B2B dashboard onboarding: org setup checklist
+    PassB2BOrgSetupChecklist = 'PassB2BOrgSetupChecklist',
+
     ShowReferralTrialEndedBanner = 'ShowReferralTrialEndedBanner',
     ShowReferralTrialWillEndBanner = 'ShowReferralTrialWillEndBanner',
 
