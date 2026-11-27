@@ -170,6 +170,10 @@ export const createUnauthenticatedApi = (api: Api, { onUID }: UnauthenticatedApi
     // reload, has nothing on it, so its requests are sent again on the new session. Kept per UID because it's read
     // after `init()` has switched to the new session.
     const answeredUIDs = new Set<string>();
+    // The sessions that replaced one that never answered. If the API answers one of them only with 401s too, a new
+    // session won't do better, e.g. when the browser blocks the session cookies in a third-party iframe, so it isn't
+    // replaced.
+    const replacementUIDs = new Set<string>();
     const expiryListeners = new Set<() => void>();
 
     const refreshHandler = createRefreshHandlers(async (UID: string) => {
@@ -197,6 +201,8 @@ export const createUnauthenticatedApi = (api: Api, { onUID }: UnauthenticatedApi
         // Nothing relies on a session that never answered, like one restored after a reload
         if (answeredUIDs.has(UID)) {
             expiryListeners.forEach((listener) => listener());
+        } else if (context.UID) {
+            replacementUIDs.add(context.UID);
         }
         return result;
     });
@@ -333,6 +339,10 @@ export const createUnauthenticatedApi = (api: Api, { onUID }: UnauthenticatedApi
                 context.auth.finalised = false;
             }
             const { code: errorCode } = getApiError(e);
+            // The API took the session, so a 401 on it later is a real expiry and it's replaced
+            if (errorCode && !getIs401Error(e)) {
+                replacementUIDs.delete(UID);
+            }
             const ignoreHumanVerification =
                 Array.isArray(config.ignoreHandler) &&
                 config.ignoreHandler.includes(API_CUSTOM_ERROR_CODES.HUMAN_VERIFICATION_REQUIRED);
@@ -348,6 +358,9 @@ export const createUnauthenticatedApi = (api: Api, { onUID }: UnauthenticatedApi
                 // Don't attempt to refresh on 2fa 401 failures since the session has become invalidated.
                 // NOTE: Only one the PASSWORD_WRONG_ERROR code, since 401 is also triggered on session expiration.
                 if (config.url === auth2FAConfig.url && code === PASSWORD_WRONG_ERROR) {
+                    throw e;
+                }
+                if (replacementUIDs.has(UID) && !answeredUIDs.has(UID)) {
                     throw e;
                 }
                 // 401s that come in while the session is refreshed or replaced share that one run. A late 401, from a
