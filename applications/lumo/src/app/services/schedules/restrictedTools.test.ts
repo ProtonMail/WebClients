@@ -1,5 +1,5 @@
 import type { ClientToolExecutor } from '@proton/lumo-api-client/core/client-tools';
-import type { DesktopConnector } from '@proton/lumo-api-client/core/desktop-tools';
+import { DESKTOP_TOOL_SEARCH_TOOLS, type DesktopConnector } from '@proton/lumo-api-client/core/desktop-tools';
 
 import { restrictScheduleTools } from './restrictedTools';
 
@@ -25,12 +25,13 @@ function setup(readOnlyConnectorIds: string[] = []) {
     >(async () => [{ content: 'ok' }]);
     const base: ClientToolExecutor = {
         getClientTools: async () =>
-            manifests.flatMap((item) =>
-                (item.tools ?? []).map((tool) => ({
-                    type: 'function' as const,
-                    function: { name: `${item.id}__${tool.name}`, parameters: { type: 'object', properties: {} } },
-                }))
-            ),
+            [
+                ...manifests.flatMap((item) => (item.tools ?? []).map((tool) => `${item.id}__${tool.name}`)),
+                ...DESKTOP_TOOL_SEARCH_TOOLS,
+            ].map((name) => ({
+                type: 'function' as const,
+                function: { name, parameters: { type: 'object', properties: {} } },
+            })),
         canExecute: () => true,
         normalizeCalls: (calls) =>
             calls.map((call) => ({ ...call, name: call.name === 'alias' ? 'calendar__other__write' : call.name })),
@@ -126,4 +127,16 @@ test('desktop settings read-only restrictions are respected even by unrestricted
     expect(await h.tools.getClientTools!()).toEqual([]);
     expect((await h.tools.execute([{ id: 'read', name: 'calendar__read', arguments: '{}' }]))[0].is_error).toBe(true);
     expect(h.execute).not.toHaveBeenCalled();
+});
+
+test('tool search reaches a schedule only from a desktop that limits it to the run', async () => {
+    const h = setup();
+    const advertised = async () => (await h.tools.getClientTools!()).map((tool) => tool.function.name);
+    expect(await advertised()).toEqual(['calendar__read']);
+    window.LumoConnectors = { scheduleExecutionCapabilities: { scopedTools: true } } as Window['LumoConnectors'];
+    try {
+        expect(await advertised()).toEqual(['calendar__read', ...DESKTOP_TOOL_SEARCH_TOOLS]);
+    } finally {
+        delete window.LumoConnectors;
+    }
 });
