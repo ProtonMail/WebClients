@@ -35,6 +35,7 @@ const ALLOWED_SORT_VALUES = [
   'location',
 ] as const satisfies readonly RecentsSort[]
 const DEFAULT_RECENTS_SORT = 'viewed' satisfies RecentsSort
+const ALLOWED_TYPE_VALUES = ['document', 'spreadsheet'] as const satisfies readonly ProtonDocumentType[]
 const ORDERED_SECTION_IDS = [
   'search-results',
   'name',
@@ -150,7 +151,7 @@ export function useSearch() {
 }
 
 export function useType() {
-  return useQueryState<ProtonDocumentType | undefined>('type', undefined)
+  return useQueryState<ProtonDocumentType | undefined>('type', undefined, ALLOWED_TYPE_VALUES)
 }
 
 export function filterDocuments(items?: RecentDocumentsItem[], search?: string, type?: ProtonDocumentType) {

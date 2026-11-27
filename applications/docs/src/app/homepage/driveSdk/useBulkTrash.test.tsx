@@ -16,6 +16,8 @@ const mockCreateNotification = vi.fn()
 
 const mockUpdateRecentDocuments = vi.fn()
 
+const mockRemoveDocuments = vi.fn()
+
 const mockReportTelemetry = vi.fn()
 
 const d1 = createRecentDocument({ name: 'Document1', linkId: 'link1' })
@@ -29,6 +31,7 @@ function Wrapper({ children }: { children: ReactNode }) {
       value={
         {
           updateRecentDocuments: mockUpdateRecentDocuments,
+          removeDocuments: mockRemoveDocuments,
           reportTelemetry: mockReportTelemetry,
           createNotification: mockCreateNotification,
           errorTracking,
@@ -75,7 +78,7 @@ describe('useBulkTrash', () => {
     expect(vi.mocked(trashManyAndNotify).mock.calls[0][5]).toBe(false)
   })
 
-  it('reloads once and reports telemetry per trashed item', async () => {
+  it('removes the trashed documents without a reload, and reports telemetry per trashed item', async () => {
     vi.mocked(trashManyAndNotify).mockResolvedValue({ succeeded: [uid(d1), uid(d2)], failed: [] })
     const { result } = renderBulkTrash()
 
@@ -84,13 +87,14 @@ describe('useBulkTrash', () => {
       failed = await result.current.trash([d1, d2])
     })
 
-    expect(mockUpdateRecentDocuments).toHaveBeenCalledTimes(1)
+    expect(mockRemoveDocuments).toHaveBeenCalledExactlyOnceWith([uid(d1), uid(d2)])
+    expect(mockUpdateRecentDocuments).not.toHaveBeenCalled()
     expect(mockReportTelemetry).toHaveBeenCalledTimes(2)
     expect(mockReportTelemetry).toHaveBeenCalledWith(TelemetryEvent.document_trashed)
     expect(failed).toEqual([])
   })
 
-  it('returns the failed documents and does not reload when nothing succeeded', async () => {
+  it('returns the failed documents and removes none when nothing succeeded', async () => {
     vi.mocked(trashManyAndNotify).mockResolvedValue({
       succeeded: [],
       failed: [{ uid: uid(d2), error: new Error('nope') }],
@@ -103,6 +107,7 @@ describe('useBulkTrash', () => {
     })
 
     expect(failed).toEqual([d2])
+    expect(mockRemoveDocuments).not.toHaveBeenCalled()
     expect(mockUpdateRecentDocuments).not.toHaveBeenCalled()
     expect(mockReportTelemetry).not.toHaveBeenCalled()
   })

@@ -9,7 +9,7 @@ export function createDocumentActionsMessages(): Pick<HomepageMessages, 'documen
       renamed: (newName: string) => c('Notification').t`"${newName}" renamed successfully`,
       trashFailed: c('Error').t`Failed to trash document`,
       deleteFailed: c('Notification').t`Failed to delete document`,
-      deleted: c('Notification').t`"Document deleted permanently`,
+      deleted: c('Notification').t`Document deleted permanently`,
     },
   }
 }

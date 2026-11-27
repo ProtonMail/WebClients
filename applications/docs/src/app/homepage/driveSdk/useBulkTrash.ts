@@ -10,7 +10,8 @@ import { TelemetryEvent } from '../utils/telemetry'
 type BulkTrashDependencies = { drive: ProtonDriveClient }
 
 export function useBulkTrash({ drive }: BulkTrashDependencies) {
-  const { updateRecentDocuments, reportTelemetry, createNotification, errorTracking } = useHomepageView()
+  const { updateRecentDocuments, removeDocuments, reportTelemetry, createNotification, errorTracking } =
+    useHomepageView()
   const messages = useHomepageMessages().trash
   const [isTrashing, setIsTrashing] = useState(false)
 
@@ -37,7 +38,8 @@ export function useBulkTrash({ drive }: BulkTrashDependencies) {
     const { succeeded, failed } = batch
 
     if (succeeded.length > 0) {
-      void updateRecentDocuments()
+      // Not a reload: it would show the loader in place of the table, which drops the selection of the failed ones.
+      removeDocuments(succeeded)
       succeeded.forEach(() => reportTelemetry(TelemetryEvent.document_trashed))
     }
 

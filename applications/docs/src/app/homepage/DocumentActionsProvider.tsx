@@ -39,7 +39,7 @@ export function DocumentActionsProvider({
   const [currentlyTrashingId, setCurrentlyTrashingId] = useState<string | undefined>(undefined)
   const [currentlyRestoringId, setCurrentlyRestoringId] = useState<string | undefined>(undefined)
 
-  const { reportTelemetry, createNotification, getAppHref, errorTracking } = useHomepageView()
+  const { reportTelemetry, createNotification, getAppHref, errorTracking, removeDocuments } = useHomepageView()
   const { documentActions: messages, trash: trashMessages } = useHomepageMessages()
   const [documentToDelete, setDocumentToDelete] = useState<RecentDocumentsItem>()
   const { trash: bulkTrash, isTrashing: isBulkTrashing } = useBulkTrash({ drive })
@@ -180,8 +180,8 @@ export function DocumentActionsProvider({
   })
 
   const deleteDocumentPermanently = useEvent(async (document: RecentDocumentsItem) => {
+    const nodeUid = generateNodeUid(document.volumeId, document.linkId)
     try {
-      const nodeUid = generateNodeUid(document.volumeId, document.linkId)
       await deleteDocument(drive, nodeUid)
     } catch (error) {
       reportTrashError(errorTracking, error)
@@ -191,6 +191,7 @@ export function DocumentActionsProvider({
       })
       return
     }
+    removeDocuments([nodeUid])
     createNotification({
       type: 'success',
       text: messages.deleted,

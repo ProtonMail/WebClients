@@ -30,6 +30,7 @@ function renderDocumentActions() {
   const createNotification = vi.fn()
   const reportTelemetry = vi.fn()
   const updateMovedDocuments = vi.fn()
+  const removeDocuments = vi.fn()
   // As the host's, an app's address on its own subdomain.
   const getAppHref = (path: string, app: string) => `https://${app.replace('proton-', '')}.proton.me${path}`
 
@@ -39,6 +40,7 @@ function renderDocumentActions() {
         value={
           {
             updateMovedDocuments,
+            removeDocuments,
             reportTelemetry,
             createNotification,
             getAppHref,
@@ -53,7 +55,7 @@ function renderDocumentActions() {
     ),
   })
 
-  return { result, createNotification, reportTelemetry, updateMovedDocuments }
+  return { result, createNotification, reportTelemetry, updateMovedDocuments, removeDocuments }
 }
 
 function deferred() {
@@ -215,9 +217,9 @@ describe('DocumentActionsProvider', () => {
     expect(listener).not.toHaveBeenCalled()
   })
 
-  test('deletePermanently deletes once confirmed, shows a success toast and sends telemetry', async () => {
+  test('deletePermanently deletes once confirmed, removes it from the list, shows a success toast and sends telemetry', async () => {
     vi.mocked(deleteDocument).mockResolvedValue(undefined)
-    const { result, createNotification, reportTelemetry } = renderDocumentActions()
+    const { result, createNotification, reportTelemetry, removeDocuments } = renderDocumentActions()
 
     await act(() => result.current.deletePermanently(recentDocument))
 
@@ -230,6 +232,7 @@ describe('DocumentActionsProvider', () => {
 
     await waitFor(() => expect(reportTelemetry).toHaveBeenCalledWith(TelemetryEvent.document_permanently_deleted))
     expect(deleteDocument).toHaveBeenCalledWith(drive, nodeUid)
+    expect(removeDocuments).toHaveBeenCalledExactlyOnceWith([nodeUid])
     expect(createNotification).toHaveBeenCalledWith({
       type: 'success',
       text: expect.stringContaining('Document deleted permanently'),
@@ -282,10 +285,10 @@ describe('DocumentActionsProvider', () => {
     await waitFor(() => expect(screen.queryByRole('dialog')).not.toBeInTheDocument())
   })
 
-  test('deletePermanently failure shows an error toast and sends no telemetry', async () => {
+  test('deletePermanently failure shows an error toast, keeps the document and sends no telemetry', async () => {
     const error = new Error('e1')
     vi.mocked(deleteDocument).mockRejectedValue(error)
-    const { result, createNotification, reportTelemetry } = renderDocumentActions()
+    const { result, createNotification, reportTelemetry, removeDocuments } = renderDocumentActions()
 
     await act(() => result.current.deletePermanently(recentDocument))
     await userEvent.click(await screen.findByRole('button', { name: 'Delete permanently' }))
@@ -294,6 +297,7 @@ describe('DocumentActionsProvider', () => {
       expect(createNotification).toHaveBeenCalledWith({ type: 'error', text: 'Failed to delete document' }),
     )
     expect(reportTrashError).toHaveBeenCalledWith(errorTracking, error)
+    expect(removeDocuments).not.toHaveBeenCalled()
     expect(reportTelemetry).not.toHaveBeenCalled()
   })
 
