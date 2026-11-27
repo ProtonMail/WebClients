@@ -5,7 +5,7 @@ import { c } from 'ttag';
 
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
-import { formatIntlDate } from '@proton/shared/lib/date/formatIntlDate';
+import { dateLocale } from '@proton/shared/lib/i18n';
 
 import { useFileHandling } from '../../components/Composer/hooks/useFileHandling';
 import { LumoIcon } from '../../components/LumoIcon/LumoIcon';
@@ -86,7 +86,7 @@ export const GalleryImageCard = ({ attachmentId, createdAt, onExport, imageSrcOv
         [imageDataUrl, attachment, handleFilesSelected, navigate]
     );
 
-    const formattedDate = formatIntlDate(createdAt, {
+    const formattedDate = createdAt.toLocaleDateString(dateLocale.code, {
         month: 'short',
         day: 'numeric',
         year: createdAt.getFullYear() !== new Date().getFullYear() ? 'numeric' : undefined,

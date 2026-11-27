@@ -1,4 +1,4 @@
-import { differenceInCalendarDays, format, isToday, isYesterday } from 'date-fns';
+import { isToday, isYesterday } from 'date-fns';
 import { c } from 'ttag';
 
 import { dateLocale } from '@proton/shared/lib/i18n';
@@ -26,9 +26,5 @@ export const formatChatRelativeDate = (dateString: string): string => {
         return c('collider_2025: Date').t`Yesterday`;
     }
 
-    if (differenceInCalendarDays(now, date) < 7) {
-        return format(date, 'MMM d', { locale: dateLocale });
-    }
-
-    return format(date, 'MMM d', { locale: dateLocale });
+    return date.toLocaleDateString(dateLocale.code, { month: 'short', day: 'numeric' });
 };

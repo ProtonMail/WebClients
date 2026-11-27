@@ -8,7 +8,7 @@ import type { TokenUsageState } from '../../hooks/usePersonalAccessTokenUsage';
 import { ApiTokenUsageChart } from './ApiTokenUsageChart';
 import { ApiTokenUsageLegend } from './ApiTokenUsageLegend';
 import { ApiUsageMetricCard } from './ApiUsageMetricCard';
-import { GHOST_DATA, formatTokenCount } from './apiKeysHelpers';
+import { GHOST_DATA, formatTokenCount, shortDayLabel } from './apiKeysHelpers';
 
 export const UsageSparklineCompact = ({ usage }: { usage: TokenUsageState }) => {
     const sparkId = useId().replace(/:/g, '');
@@ -90,10 +90,7 @@ export const UsageSparklineCompact = ({ usage }: { usage: TokenUsageState }) => 
                                 if (!active || !payload?.length) return null;
                                 const d = payload[0].payload as { Date: string; TokenCount: number; ApiCalls: number };
                                 if (d.TokenCount === 0 && d.ApiCalls === 0) return null;
-                                const label = new Date(d.Date).toLocaleDateString(undefined, {
-                                    month: 'short',
-                                    day: 'numeric',
-                                });
+                                const label = shortDayLabel(d.Date);
                                 return (
                                     <div className="api-keys-chart-tooltip api-keys-chart-tooltip--spark flex flex-column gap-0.5 px-3 py-2 border lumo-bg-panel-elevated">
                                         <span className="api-keys-chart-tooltip-date lumo-label-small lumo-color-glyph-mid">

@@ -10,6 +10,7 @@ import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import { IcBrandProtonDriveFilled } from '@proton/icons/icons/IcBrandProtonDriveFilled';
 import { IcMagnifier } from '@proton/icons/icons/IcMagnifier';
 import { formatIntlDate } from '@proton/shared/lib/date/formatIntlDate';
+import { dateLocale } from '@proton/shared/lib/i18n';
 
 import { getProjectCategory } from '../../../features/projects/constants';
 import { getScheduleRunTimestampLabel } from '../../../features/schedules/components/utils/run-timestamp-label';
@@ -54,7 +55,7 @@ const SearchResultItem = ({ result, query, scope, onSelect }: SearchResultItemPr
         // If there's a search query, show relative time
         if (query.trim()) {
             const date = new Date(timestamp);
-            return formatIntlDate(date, { month: 'short', day: 'numeric' });
+            return formatIntlDate(date, { month: 'short', day: 'numeric' }, dateLocale.code);
         }
 
         // Otherwise show relative time for recent, absolute for older
@@ -84,7 +85,7 @@ const SearchResultItem = ({ result, query, scope, onSelect }: SearchResultItemPr
             return c('Time').ngettext(msgid`${days} day ago`, `${days} days ago`, days);
         } else {
             const date = new Date(timestamp);
-            return formatIntlDate(date, { month: 'short', day: 'numeric' });
+            return formatIntlDate(date, { month: 'short', day: 'numeric' }, dateLocale.code);
         }
     };
 

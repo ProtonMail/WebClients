@@ -2,11 +2,14 @@ import { isToday, isYesterday } from 'date-fns';
 import { c } from 'ttag';
 
 import { formatIntlDate } from '@proton/shared/lib/date/formatIntlDate';
+import { dateLocale } from '@proton/shared/lib/i18n';
+import { getIsLocaleAMPM } from '@proton/shared/lib/i18n/dateFnLocale';
 
 /** Formats a run's creation time for its breadcrumb, history row, and search result. */
 export const getScheduleRunTimestampLabel = (createdAt: string | number): string => {
     const date = new Date(createdAt);
-    const time = formatIntlDate(date, { timeStyle: 'short' });
+    const hourCycle = getIsLocaleAMPM(dateLocale) ? 'h12' : 'h23';
+    const time = formatIntlDate(date, { timeStyle: 'short', hourCycle }, dateLocale.code);
     if (isToday(date)) {
         // translator: Scheduled task run timestamp. ${time} is the localized creation time, e.g. "10:02 AM".
         return c('collider_2025:Label').t`Today, ${time}`;
@@ -15,11 +18,16 @@ export const getScheduleRunTimestampLabel = (createdAt: string | number): string
         // translator: Scheduled task run timestamp. ${time} is the localized creation time, e.g. "10:02 AM".
         return c('collider_2025:Label').t`Yesterday, ${time}`;
     }
-    return formatIntlDate(date, {
-        weekday: 'short',
-        month: 'short',
-        day: 'numeric',
-        hour: 'numeric',
-        minute: '2-digit',
-    });
+    return formatIntlDate(
+        date,
+        {
+            weekday: 'short',
+            month: 'short',
+            day: 'numeric',
+            hour: 'numeric',
+            minute: '2-digit',
+            hourCycle,
+        },
+        dateLocale.code
+    );
 };

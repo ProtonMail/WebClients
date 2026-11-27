@@ -8,6 +8,8 @@
  * actually renders.
  */
 
+import { dateLocale } from '@proton/shared/lib/i18n';
+
 import {
     isCryptocurrencyToolCallData,
     isStockToolCallData,
@@ -83,12 +85,12 @@ export const formatPrice = (value: number): string => {
 
 export const formatShortDate = (dateStr: string): string => {
     const d = new Date(dateStr);
-    return d.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+    return d.toLocaleDateString(dateLocale.code, { month: 'short', day: 'numeric' });
 };
 
 export const formatLastUpdated = (dateStr: string): string => {
     const d = new Date(dateStr);
-    return d.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
+    return d.toLocaleDateString(dateLocale.code, { month: 'long', day: 'numeric', year: 'numeric' });
 };
 
 const parseFinanceResult = (result: string): FinanceData | null => {

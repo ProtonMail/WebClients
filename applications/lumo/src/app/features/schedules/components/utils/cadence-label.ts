@@ -4,6 +4,7 @@ import { c } from 'ttag';
 import type { WeekStartsOn } from '@proton/shared/lib/date-fns-utc/interface';
 import { formatIntlDate } from '@proton/shared/lib/date/formatIntlDate';
 import { dateLocale } from '@proton/shared/lib/i18n';
+import { getIsLocaleAMPM } from '@proton/shared/lib/i18n/dateFnLocale';
 
 import type { RecurrenceRule, WeekdayToken } from '../../../../components/RecurrenceRuleFieldset/types';
 import { sortWeekdayTokensByDisplayOrder } from '../../../../components/RecurrenceRuleFieldset/utils';
@@ -43,12 +44,16 @@ export const getScheduleShortCadenceLabel = (rule: RecurrenceRule): string => {
             return c('collider_2025:Label').t`Monthly`;
         case 'ONCE': {
             const [year, month, day] = rule.date.split('-').map(Number);
-            return formatIntlDate(new Date(Date.UTC(year, month - 1, day)), {
-                year: '2-digit',
-                month: '2-digit',
-                day: '2-digit',
-                timeZone: 'UTC',
-            });
+            return formatIntlDate(
+                new Date(Date.UTC(year, month - 1, day)),
+                {
+                    year: '2-digit',
+                    month: '2-digit',
+                    day: '2-digit',
+                    timeZone: 'UTC',
+                },
+                dateLocale.code
+            );
         }
     }
 };
@@ -67,11 +72,13 @@ export const getScheduleShortCadenceLabel = (rule: RecurrenceRule): string => {
  * @returns A human-readable cadence label for the schedule (e.g. "Weekdays at 7:45 AM").
  */
 export const getScheduleCadenceLabel = (rule: RecurrenceRule, weekStartsOn: WeekStartsOn): string => {
+    const hourCycle = getIsLocaleAMPM(dateLocale) ? 'h12' : 'h23';
     // UTC is only a formatting container for wall-clock fields, not the schedule's execution timezone.
-    const timeLabel = formatIntlDate(new Date(Date.UTC(2000, 0, 1, rule.hour, rule.minute)), {
-        timeStyle: 'short',
-        timeZone: 'UTC',
-    });
+    const timeLabel = formatIntlDate(
+        new Date(Date.UTC(2000, 0, 1, rule.hour, rule.minute)),
+        { timeStyle: 'short', timeZone: 'UTC', hourCycle },
+        dateLocale.code
+    );
 
     switch (rule.frequency) {
         case 'DAILY':
@@ -107,11 +114,11 @@ export const getScheduleCadenceLabel = (rule: RecurrenceRule, weekStartsOn: Week
         case 'ONCE': {
             const [year, month, day] = rule.date.split('-').map(Number);
             const onceAt = new Date(Date.UTC(year, month - 1, day, rule.hour, rule.minute));
-            const dateTimeLabel = formatIntlDate(onceAt, {
-                dateStyle: 'short',
-                timeStyle: 'short',
-                timeZone: 'UTC',
-            });
+            const dateTimeLabel = formatIntlDate(
+                onceAt,
+                { dateStyle: 'short', timeStyle: 'short', timeZone: 'UTC', hourCycle },
+                dateLocale.code
+            );
             // translator: Schedule cadence for a one-time task. ${dateTimeLabel} is a locale-formatted date and time.
             return c('collider_2025:Label').t`Once on ${dateTimeLabel}`;
         }

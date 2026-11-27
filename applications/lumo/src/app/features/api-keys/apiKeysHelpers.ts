@@ -2,6 +2,8 @@ import { CryptoProxy } from '@protontech/crypto';
 import type { PublicKeyReference } from '@protontech/crypto';
 import { c } from 'ttag';
 
+import { dateLocale } from '@proton/shared/lib/i18n';
+
 import { formatCredits } from '../api-docs/apiTokenPricing';
 
 export const EXPIRATION_OPTIONS = [
@@ -16,7 +18,7 @@ const EXPIRING_SOON_THRESHOLD = 7 * 86400;
 export const getExpirationTimestamp = (days: number) => Math.floor(Date.now() / 1000) + days * 86400;
 
 export const formatDate = (unixTs: number) =>
-    new Date(unixTs * 1000).toLocaleDateString(undefined, { year: 'numeric', month: 'short', day: 'numeric' });
+    new Date(unixTs * 1000).toLocaleDateString(dateLocale.code, { year: 'numeric', month: 'short', day: 'numeric' });
 
 export const getDaysRemaining = (unixTs: number) => {
     const diff = unixTs - Math.floor(Date.now() / 1000);
@@ -102,7 +104,7 @@ export const parseApiAmount = (value: string): number | null => {
 };
 
 export const shortDayLabel = (isoDate: string) =>
-    new Date(isoDate).toLocaleDateString(undefined, { month: 'short', day: 'numeric' });
+    new Date(isoDate).toLocaleDateString(dateLocale.code, { month: 'short', day: 'numeric' });
 
 /** Placeholder sparkline shown when a key has no usage yet */
 export const GHOST_DATA = [

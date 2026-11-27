@@ -1,6 +1,5 @@
 import { memo, useMemo } from 'react';
 
-import { format } from 'date-fns';
 import { c } from 'ttag';
 
 import { dateLocale } from '@proton/shared/lib/i18n';
@@ -66,7 +65,7 @@ export const LibraryCreationCard = memo(function LibraryCreationCard({ entry }: 
     });
     const isExporting = fileActions.exportingKind !== null;
 
-    const date = format(entry.item.createdAt, 'd MMM', { locale: dateLocale });
+    const date = entry.item.createdAt.toLocaleDateString(dateLocale.code, { month: 'short', day: 'numeric' });
     const chatLabel = [entry.conversationTitle, date].filter(Boolean).join(' · ');
     const canOpen = Boolean(meta?.conversationId && meta.artifactId);
 
