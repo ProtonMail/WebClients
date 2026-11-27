@@ -1,5 +1,7 @@
 import { COMMUNICATIONS_DEVICE_ID, DEFAULT_DEVICE_ID } from '../constants';
 
+const ZOOM_VIRTUAL_AUDIO_DEVICE_LABEL = /zoom[\s-]?audio[\s-]?device/i;
+
 export interface SerializableDeviceInfo {
     deviceId: string;
     groupId: string;
@@ -20,7 +22,7 @@ export const getSelectableDevices = (devices: MediaDeviceInfo[], kind: MediaDevi
             d.kind === kind &&
             d.deviceId !== '' &&
             d.deviceId !== COMMUNICATIONS_DEVICE_ID &&
-            !d.label?.toLocaleLowerCase()?.includes('zoom') &&
+            !ZOOM_VIRTUAL_AUDIO_DEVICE_LABEL.test(d.label) &&
             !d.label?.toLocaleLowerCase()?.startsWith('monitor of')
     );
 
