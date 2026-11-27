@@ -9,12 +9,12 @@ import { uploadManager } from '@proton/drive/modules/upload';
 import { IcArrowUpLine } from '@proton/icons/icons/IcArrowUpLine';
 import { DRIVE_APP_NAME } from '@proton/shared/lib/constants';
 import { PHOTOS_ACCEPTED_INPUT } from '@proton/shared/lib/drive/constants';
-import { DRIVE_ANDROID_APP, DRIVE_IOS_APP } from '@proton/shared/lib/drive/urls';
 import appStoreSvg from '@proton/styles/assets/img/illustrations/app-store.svg';
 import emptyPhotosSvg from '@proton/styles/assets/img/illustrations/empty-photos.svg';
 import playStoreSvg from '@proton/styles/assets/img/illustrations/play-store.svg';
 
 import { DriveEmptyView } from '../../legacy/components/layout/DriveEmptyView';
+import { DRIVE_ANDROID_APP, DRIVE_IOS_APP } from '../../utils/driveUrls';
 
 export const EmptyPhotos: FC = () => {
     const fileInput = useRef<HTMLInputElement>(null);

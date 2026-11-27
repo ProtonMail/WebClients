@@ -27,7 +27,6 @@ import { mailEventLoopV6 } from '@proton/mail/store/mailEventLoop';
 import createApi from '@proton/shared/lib/api/createApi';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { SessionSource } from '@proton/shared/lib/authentication/SessionInterface';
-import { getOAuthSettingsUrl } from '@proton/shared/lib/authentication/fork/oauth2SettingsUrl';
 import { generateLoggerKey } from '@proton/shared/lib/authentication/loggerKey';
 import {
     getPersistedSession,
@@ -44,6 +43,7 @@ import { initTracker } from '@proton/telemetry-tracker/lib/tracker';
 import noop from '@proton/utils/noop';
 
 import locales from '../locales';
+import { getOAuthSettingsUrl } from '../public-app/fork/oauth2SettingsUrl';
 import { maybeSetAppSubdomainFromRedirectUrl } from './setAppSubdomainFromRedirectUrl';
 import type { AccountState } from './store/store';
 import { extendStore, setupStore } from './store/store';
@@ -68,7 +68,7 @@ export const bootstrapApp = async ({ config }: { config: ProtonConfig }) => {
     if (isElectronMail) {
         listenFreeTrialSessionExpiration(appName, authentication, api);
 
-        void import('@proton/shared/lib/desktop/bootstrapAccountInboxDesktop').then((module) => {
+        void import('./bootstrapAccountInboxDesktop').then((module) => {
             void module.bootstrapAccountInboxDesktop(authentication);
         });
     }

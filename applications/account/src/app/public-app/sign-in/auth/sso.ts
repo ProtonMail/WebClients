@@ -40,7 +40,6 @@ import { getDecryptedUserKeysHelper } from '@proton/shared/lib/keys/getDecrypted
 import { generateKeySaltAndPassphrase } from '@proton/shared/lib/keys/keys';
 import { changeSSOUserKeysPasswordHelper } from '@proton/shared/lib/keys/password';
 import { getResetAddressesKeysV2 } from '@proton/shared/lib/keys/resetKeys';
-import { getOrganizationData, getUnprivatizationContextData } from '@proton/shared/lib/keys/unprivatization/helper';
 import getRandomString from '@proton/utils/getRandomString';
 import noop from '@proton/utils/noop';
 
@@ -55,6 +54,7 @@ import {
     type SSOUnlockData,
 } from './interface';
 import type { LoginFlowContext } from './loginFlowContext';
+import { getOrganizationData, getUnprivatizationContextData } from './unprivatization';
 
 /**
  * Whether the organization disabled the SSO backup password. Only present on SSO login responses.

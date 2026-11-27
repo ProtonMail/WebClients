@@ -5,7 +5,7 @@ import { fireEvent, render, screen, waitFor } from '@testing-library/react'
 
 import { useApi } from '@proton/app-context/useApi'
 import { setLocation } from '@proton/vitest-config/setLocation'
-import { DOCS_SIGNIN, DOCS_SIGNUP } from '@proton/shared/lib/docs/urls'
+import { DOCS_SIGNIN, DOCS_SIGNUP } from '../../../../../utils/urls'
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors'
 
 import { useDocsUrlPublicToken } from '@proton/docs-shared/Hooks/useDocsUrlPublicToken'

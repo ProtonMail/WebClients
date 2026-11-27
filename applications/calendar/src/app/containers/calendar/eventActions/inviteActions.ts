@@ -21,7 +21,6 @@ import type { VcalAttendeeProperty, VcalVeventComponent } from '@proton/shared/l
 import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts/Contact';
 import type { GetEncryptionPreferences } from '@proton/shared/lib/interfaces/hooks/GetEncryptionPreferences';
 import type { GetVTimezonesMap } from '@proton/shared/lib/interfaces/hooks/GetVTimezonesMap';
-import type { RelocalizeText } from '@proton/shared/lib/interfaces/hooks/RelocalizeText';
 import type { SendPreferences } from '@proton/shared/lib/interfaces/mail/crypto';
 import type { RequireSome, SimpleMap } from '@proton/shared/lib/interfaces/utils';
 import { getSupportedPlusAlias } from '@proton/shared/lib/mail/addresses';
@@ -29,6 +28,7 @@ import unary from '@proton/utils/unary';
 
 import type { InviteActions } from '../../../interfaces/Invite';
 import { INVITE_ACTION_TYPES } from '../../../interfaces/Invite';
+import type { RelocalizeText } from '../../../interfaces/RelocalizeText';
 import { withIncrementedSequence } from './sequence';
 
 type PmVcalVeventComponent = RequireSome<VcalVeventComponent, 'x-pm-shared-event-id' | 'x-pm-session-key'>;

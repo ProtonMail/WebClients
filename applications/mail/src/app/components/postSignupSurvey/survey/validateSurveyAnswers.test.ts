@@ -1,5 +1,4 @@
-import type { Variant } from '@proton/shared/lib/api/onboardingSurvey';
-
+import type { Variant } from '../../../api/onboardingSurvey';
 import { validateSurveyAnswers } from './validateSurveyAnswers';
 
 const variants: Variant[] = ['T1', 'T2', 'T3', 'T4'];

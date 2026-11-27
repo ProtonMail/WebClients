@@ -9,7 +9,6 @@ import type { RefObjectReact18Compat } from '@proton/atoms/helpers/RefObjectReac
 import type { ChallengeResult } from '@proton/challenge/interface';
 import type { ChallengeRef as ChallengeV4Ref } from '@proton/challenge/v4/interface';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
-import { runAfterScroll } from '@proton/shared/lib/dom/runAfterScroll';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import {
     confirmPasswordValidator,
@@ -37,6 +36,7 @@ import {
 } from './asyncValidator/createAsyncValidator';
 import { validateEmailAvailability, validateUsernameAvailability } from './asyncValidator/validateEmail';
 import { getAccountDetailsFromEmail } from './getAccountDetailsFromEmail';
+import { runAfterScroll } from './runAfterScroll';
 
 const first = <T,>(errors: T[]) => {
     return errors.find((x) => !!x);

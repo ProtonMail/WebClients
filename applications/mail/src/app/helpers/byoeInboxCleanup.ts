@@ -6,11 +6,6 @@ import { fetchFeatures, updateFeature } from '@proton/features/reducer';
 import { CacheType } from '@proton/redux-utilities/interface';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
-import {
-    applyNewsletterSubscriptionFilter,
-    getNewsletterSubscription,
-    unsubscribeNewsletterSubscription,
-} from '@proton/shared/lib/api/newsletterSubscription';
 import { HTTP_STATUS_CODE, MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { getIsBYOEAddress } from '@proton/shared/lib/helpers/address';
 import { canonicalizeEmail } from '@proton/shared/lib/helpers/email';
@@ -23,6 +18,11 @@ import type {
 } from '@proton/shared/lib/interfaces/NewsletterSubscription';
 import noop from '@proton/utils/noop';
 
+import {
+    applyNewsletterSubscriptionFilter,
+    getNewsletterSubscription,
+    unsubscribeNewsletterSubscription,
+} from '../api/newsletterSubscription';
 import type { MailDispatch } from '../store/store';
 
 const MAX_BYOE_INBOX_CLEANUP_SENDERS = 10;

@@ -1,7 +1,7 @@
-import type { OAuthClientInfo } from '@proton/shared/lib/api/oauth';
-import type { OAuthProduceForkParameters } from '@proton/shared/lib/authentication/fork/oauth';
 import type { ProduceForkParametersFull } from '@proton/shared/lib/authentication/fork/produce';
 
+import type { OAuthClientInfo } from '../../api/oauth';
+import type { OAuthProduceForkParameters } from '../fork/oauth';
 import type { ProduceDesktopForkParameters } from './desktopForkInterface';
 
 export enum SSOType {

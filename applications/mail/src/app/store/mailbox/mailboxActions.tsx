@@ -10,7 +10,6 @@ import {
     markConversationsAsUnread as markConversationsAsUnreadApi,
     unlabelConversations as unlabelConversationsApi,
 } from '@proton/shared/lib/api/conversations';
-import { undoActions } from '@proton/shared/lib/api/mailUndoActions';
 import {
     labelMessages as labelMessagesApi,
     markMessageAsRead,
@@ -25,6 +24,7 @@ import type { MessageMetadata } from '@proton/shared/lib/interfaces/mail/Message
 import { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
 import type { SPAM_ACTION } from '@proton/shared/lib/mail/mailSettings';
 
+import { undoActions } from '../../api/mailUndoActions';
 import UndoActionNotification from '../../components/notifications/UndoActionNotification';
 import { SUCCESS_NOTIFICATION_EXPIRATION } from '../../constants';
 import { getFilteredUndoTokens, runParallelChunkedActions } from '../../helpers/chunk';

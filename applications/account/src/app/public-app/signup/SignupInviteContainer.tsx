@@ -9,9 +9,9 @@ import { useSilentApi } from '@proton/app-context/useSilentApi';
 import StandardLoadErrorPage from '@proton/components/containers/app/StandardLoadErrorPage';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
-import { checkInvitation } from '@proton/shared/lib/api/invites';
 import type { CLIENT_TYPES } from '@proton/shared/lib/constants';
 
+import { checkInvitation } from '../../api/invites';
 import type { InviteData } from './interfaces';
 
 interface Props {

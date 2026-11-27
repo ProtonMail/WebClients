@@ -11,9 +11,9 @@ import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent
 import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import type { MessageStateWithData } from '@proton/mail-message/store/messages/messagesTypes';
-import { inboxDesktopHasPrintDialogOption, inboxDesktopPrintDialog } from '@proton/shared/lib/desktop/printing/print';
 
 import { MailboxContainerContextProvider } from '../../../containers/mailbox/MailboxContainerProvider';
+import { inboxDesktopHasPrintDialogOption, inboxDesktopPrintDialog } from '../../../desktop/printing/print';
 import MessageBody from '../MessageBody';
 
 import './MessagePrint.scss';

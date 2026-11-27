@@ -1,9 +1,9 @@
 import { act, renderHook } from '@testing-library/react';
 
 import { useApi } from '@proton/app-context/useApi';
-import type { OnboardingSurveyPayload } from '@proton/shared/lib/api/onboardingSurvey';
 import { useVariant } from '@proton/unleash/useVariant';
 
+import type { OnboardingSurveyPayload } from '../../../api/onboardingSurvey';
 import { usePostSignupSurvey } from './usePostSignupSurvey';
 
 vi.mock('@proton/app-context/useApi');

@@ -4,9 +4,9 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import Checkbox from '@proton/components/components/input/Checkbox';
-import { PREVIOUS_PROVIDERS, type PreviousProvider } from '@proton/shared/lib/api/onboardingSurvey';
 import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
 
+import { PREVIOUS_PROVIDERS, type PreviousProvider } from '../../../api/onboardingSurvey';
 import { PostSignupHeader } from '../components/PostSignupHeader';
 import { PostSignupOption } from '../components/PostSignupOption';
 import { PostSignupProgress } from '../components/PostSignupProgress';

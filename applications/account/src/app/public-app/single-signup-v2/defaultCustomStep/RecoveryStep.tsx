@@ -11,10 +11,10 @@ import { InputField as InputFieldTwo } from '@proton/components/components/v2/fi
 import PhoneInput from '@proton/components/components/v2/phone/LazyPhoneInput';
 import useFormErrors from '@proton/components/components/v2/useFormErrors';
 import useLoading from '@proton/hooks/useLoading';
-import { validateEmail, validatePhone } from '@proton/shared/lib/api/core/validate';
 import { emailValidator, requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import noop from '@proton/utils/noop';
 
+import { validateEmail, validatePhone } from '../../../api/validate';
 import Content from '../../layout/Content';
 import Header from '../../layout/Header';
 import Main from '../../layout/Main';

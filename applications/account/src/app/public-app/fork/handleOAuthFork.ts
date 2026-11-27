@@ -1,5 +1,3 @@
-import type { OAuthClientInfo } from '@proton/shared/lib/api/oauth';
-import { getOAuthClientInfo } from '@proton/shared/lib/api/oauth';
 import { getEmailSessionForkSearchParameter } from '@proton/shared/lib/authentication/fork/validation';
 import {
     GetActiveSessionType,
@@ -8,6 +6,8 @@ import {
 } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import type { Api } from '@proton/shared/lib/interfaces/Api';
 
+import type { OAuthClientInfo } from '../../api/oauth';
+import { getOAuthClientInfo } from '../../api/oauth';
 import { type OAuthData, type OAuthForkData, SSOType } from '../actions/forkInterface';
 import { getProduceForkLoginResult } from '../actions/getProduceForkLoginResult';
 import type { LoginResult } from '../actions/interface';

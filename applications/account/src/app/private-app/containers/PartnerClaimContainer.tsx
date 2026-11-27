@@ -10,7 +10,6 @@ import useKTVerifier from '@proton/components/containers/keyTransparency/useKTVe
 import useAuthentication from '@proton/components/hooks/useAuthentication';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
-import { claimOrphanDomain } from '@proton/shared/lib/api/partner';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { ADDRESS_TYPE, APPS } from '@proton/shared/lib/constants';
 import { getEmailParts } from '@proton/shared/lib/helpers/email';
@@ -18,6 +17,7 @@ import { getNonEmptyErrorMessage } from '@proton/shared/lib/helpers/error';
 import noop from '@proton/utils/noop';
 
 import AccountLoaderPage from '../../AccountLoaderPage';
+import { claimOrphanDomain } from '../../api/partner';
 
 const PartnerClaimContainer = () => {
     const silentApi = useSilentApi();

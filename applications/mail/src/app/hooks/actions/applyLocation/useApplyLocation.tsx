@@ -7,7 +7,6 @@ import useEventManager from '@proton/components/hooks/useEventManager';
 import { getHumanLabelID, isCategoryLabel, isCustomFolder, isSystemFolder } from '@proton/mail/helpers/location';
 import { useFolders, useLabels } from '@proton/mail/store/labels/hooks';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
-import { undoActions } from '@proton/shared/lib/api/mailUndoActions';
 import { trackPendingAction } from '@proton/shared/lib/eventNotifier/pendingActions';
 import { SentryMailInitiatives, captureInitiativeMessage } from '@proton/shared/lib/helpers/sentry';
 import type { Message, MessageMetadata } from '@proton/shared/lib/interfaces/mail/Message';
@@ -15,6 +14,7 @@ import type { SPAM_ACTION } from '@proton/shared/lib/mail/mailSettings';
 import isTruthy from '@proton/utils/isTruthy';
 import unique from '@proton/utils/unique';
 
+import { undoActions } from '../../../api/mailUndoActions';
 import useListTelemetry, {
     ACTION_TYPE,
     numberSelectionElements,

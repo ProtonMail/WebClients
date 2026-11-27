@@ -1,4 +1,4 @@
-import type { Variant } from '@proton/shared/lib/api/onboardingSurvey';
+import type { Variant } from '../../../api/onboardingSurvey';
 
 /**
  * Maps the Unleash variant of the user (PostSignupSurveyExperiment) to the arm the API expects.

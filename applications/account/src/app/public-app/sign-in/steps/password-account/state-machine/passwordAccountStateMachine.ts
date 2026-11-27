@@ -25,10 +25,10 @@ import { PasswordError, TOTPError } from '@proton/shared/lib/authentication/erro
 import type { AuthTypes } from '@proton/shared/lib/authentication/twoFactor';
 import { getRequiresPasswordSetup } from '@proton/shared/lib/keys/accountType';
 import { ClaimableAddressType } from '@proton/shared/lib/keys/setupAddress';
-import type { OrganizationData } from '@proton/shared/lib/keys/unprivatization/helper';
 
 import type { AuthSession } from '../../../../authSession';
 import { type ClaimedAddressSetup, UnavailableUsernameError, type UnlockedKeys } from '../../../auth/claimedAddress';
+import type { OrganizationData } from '../../../auth/unprivatization';
 import {
     ACCOUNT_FLOW_FAILED,
     type AccountFlowInput,

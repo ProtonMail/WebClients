@@ -8,9 +8,9 @@ import { useNotifications } from '@proton/app-context/useNotifications';
 import { sendErrorReport } from '@proton/drive/legacy/errorHandling';
 import { BusDriverEventName, getBusDriver } from '@proton/drive/modules/busDriver';
 import { type NodeEntity, generateNodeUid, getDriveForPhotos, splitNodeUid } from '@proton/drive/sdk';
-import { queryDeletePhotosShare } from '@proton/shared/lib/api/drive/photos';
 import { getItem, removeItem, setItem } from '@proton/shared/lib/helpers/storage';
 
+import { queryDeletePhotosShare } from '../../../api/photos';
 import type { DecryptedLink } from '../../../legacy/store/_links';
 import { useLinksActions, useLinksListing } from '../../../legacy/store/_links';
 import type { Share, ShareWithKey } from '../../../legacy/store/_shares';

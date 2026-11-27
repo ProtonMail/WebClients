@@ -22,11 +22,11 @@ import type { KeyTransparencyActivation } from '@proton/shared/lib/interfaces/Ke
 import type { User } from '@proton/shared/lib/interfaces/User';
 import { generateKeySaltAndPassphrase } from '@proton/shared/lib/keys/keys';
 import { getResetAddressesKeysV2 } from '@proton/shared/lib/keys/resetKeys';
-import type { OrganizationData } from '@proton/shared/lib/keys/unprivatization/helper';
-import { getUnprivatizationContextData } from '@proton/shared/lib/keys/unprivatization/helper';
 import type { UnauthenticatedApi } from '@proton/shared/lib/unauthApi/unAuthenticatedApi';
 
 import type { AuthSession } from '../authSession';
+import type { OrganizationData } from '../sign-in/auth/unprivatization';
+import { getUnprivatizationContextData } from '../sign-in/auth/unprivatization';
 import { stripQueryParams } from '../standalone/jwt';
 import { MissingTokenError } from './joinMagicLinkStateMachine';
 

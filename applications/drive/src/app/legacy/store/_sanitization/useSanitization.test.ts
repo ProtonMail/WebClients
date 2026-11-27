@@ -1,11 +1,8 @@
 import { renderHook } from '@testing-library/react';
 
-import {
-    queryListNodesWithMissingNodeHashKeys,
-    querySendNodesWithNewNodeHashKeys,
-} from '@proton/shared/lib/api/drive/sanitization';
 import { generateNodeHashKey } from '@proton/shared/lib/keys/driveKeys';
 
+import { queryListNodesWithMissingNodeHashKeys, querySendNodesWithNewNodeHashKeys } from '../../../api/sanitization';
 import { verifyAllWhenMocksCalled, when } from '../../../utils/tests/when';
 import { useDebouncedRequest } from '../_api';
 import { useLink } from '../_links';
@@ -15,7 +12,7 @@ vi.mock('../_api');
 const mockedDebounceRequest = vi.fn().mockResolvedValue(true);
 vi.mocked(useDebouncedRequest).mockReturnValue(mockedDebounceRequest);
 
-vi.mock('@proton/shared/lib/api/drive/sanitization');
+vi.mock('../../../api/sanitization');
 
 vi.mock('../_links');
 const mockedGetPrivateKey = vi.fn();

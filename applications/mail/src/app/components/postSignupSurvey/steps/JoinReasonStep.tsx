@@ -4,9 +4,9 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import Radio from '@proton/components/components/input/Radio';
-import { JOIN_REASONS, type JoinReason } from '@proton/shared/lib/api/onboardingSurvey';
 import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
 
+import { JOIN_REASONS, type JoinReason } from '../../../api/onboardingSurvey';
 import { PostSignupHeader } from '../components/PostSignupHeader';
 import { PostSignupOption } from '../components/PostSignupOption';
 import { PostSignupProgress } from '../components/PostSignupProgress';

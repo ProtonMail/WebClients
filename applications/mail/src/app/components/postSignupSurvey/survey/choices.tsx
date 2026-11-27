@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import type { JoinReason, PreviousProvider } from '@proton/shared/lib/api/onboardingSurvey';
+import type { JoinReason, PreviousProvider } from '../../../api/onboardingSurvey';
 
 export interface PostSignupChoice {
     title: string;

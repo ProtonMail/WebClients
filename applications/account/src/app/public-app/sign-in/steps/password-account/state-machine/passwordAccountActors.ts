@@ -1,7 +1,6 @@
 import { fromPromise } from 'xstate';
 
 import type { TwoFactorCredentials } from '@proton/shared/lib/api/auth';
-import type { OrganizationData } from '@proton/shared/lib/keys/unprivatization/helper';
 
 import type { AuthSession } from '../../../../authSession';
 import { getSignInPasswordPolicies } from '../../../auth/accountData';
@@ -14,6 +13,7 @@ import {
 } from '../../../auth/claimedAddress';
 import { finalizeSignIn } from '../../../auth/finalizeSignIn';
 import { verifyTwoFactor } from '../../../auth/secondFactor';
+import type { OrganizationData } from '../../../auth/unprivatization';
 import { type AccountFlowInput, NO_PASSWORD_POLICIES } from '../../../state-machine/accountFlow';
 import { createAccountFlowActors, getUserAndSalts } from '../../../state-machine/accountFlowActors';
 import type { SignInActorServices } from '../../../state-machine/signInActors';

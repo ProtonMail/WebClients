@@ -1,10 +1,10 @@
 import { useRef, useState } from 'react';
 
 import { useApi } from '@proton/app-context/useApi';
-import { dismissOnboardingSurvey, submitOnboardingSurvey } from '@proton/shared/lib/api/onboardingSurvey';
 import { useVariant } from '@proton/unleash/useVariant';
 import noop from '@proton/utils/noop';
 
+import { dismissOnboardingSurvey, submitOnboardingSurvey } from '../../../api/onboardingSurvey';
 import { getSurveyVariant } from '../survey/getSurveyVariant';
 import {
     type OnboardingSurveyAnswers as OnboardingSurveyForm,

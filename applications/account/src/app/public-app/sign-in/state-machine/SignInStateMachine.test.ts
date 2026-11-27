@@ -9,7 +9,6 @@ import type { KeySalt } from '@proton/shared/lib/interfaces/KeySalt';
 import type { User } from '@proton/shared/lib/interfaces/User';
 import { getRequiresPasswordSetup } from '@proton/shared/lib/keys/accountType';
 import { ClaimableAddressType } from '@proton/shared/lib/keys/setupAddress';
-import type { OrganizationData } from '@proton/shared/lib/keys/unprivatization/helper';
 
 import type { AuthSession } from '../../authSession';
 import { type ClaimedAddressSetup, UnavailableUsernameError } from '../auth/claimedAddress';
@@ -21,6 +20,7 @@ import {
     type SSOSetPasswordData,
 } from '../auth/interface';
 import type { PrepareSSOResult, SSOSignInResult } from '../auth/sso';
+import type { OrganizationData } from '../auth/unprivatization';
 import type {
     AccountType,
     CredentialsFormValues,

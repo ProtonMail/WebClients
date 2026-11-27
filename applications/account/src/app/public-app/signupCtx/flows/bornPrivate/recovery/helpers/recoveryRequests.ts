@@ -1,7 +1,7 @@
-import { bornPrivateRecovery } from '@proton/shared/lib/api/born-private';
 import { withAuthHeaders } from '@proton/shared/lib/fetch/headers';
 import type { Api } from '@proton/shared/lib/interfaces/Api';
 
+import { bornPrivateRecovery } from '../../../../../../api/born-private';
 import type { AuthenticateDonationUserResult } from '../../activation/helpers/activationHelpers';
 
 export interface BornPrivateRecoveryParams {

@@ -8,13 +8,13 @@ import { omit } from '@proton/shared/lib/helpers/object';
 import type { VcalAttendeeProperty, VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar/VcalModel';
 import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts/Contact';
 import type { GetVTimezonesMap } from '@proton/shared/lib/interfaces/hooks/GetVTimezonesMap';
-import type { RelocalizeText } from '@proton/shared/lib/interfaces/hooks/RelocalizeText';
 import type { SendPreferences } from '@proton/shared/lib/interfaces/mail/crypto';
 import type { SimpleMap } from '@proton/shared/lib/interfaces/utils';
 import { PACKAGE_TYPE } from '@proton/shared/lib/mail/mailSettings';
 import { generateTestAddress } from '@proton/shared/testing/calendarBuilders';
 
 import { INVITE_ACTION_TYPES } from '../../../interfaces/Invite';
+import type { RelocalizeText } from '../../../interfaces/RelocalizeText';
 import {
     getAddedAttendeesPublicKeysMap,
     getAttendeesDiff,

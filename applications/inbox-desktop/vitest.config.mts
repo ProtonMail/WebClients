@@ -7,8 +7,7 @@ const config = mergeConfig(sharedVitestConfig, {
         environment: "node",
         setupFiles: ["./vitest.setup.ts"],
         clearMocks: true,
-        // Runs shared URL rule specs so desktop-only MRs still check the rules shared with web.
-        include: ["src/**/*.test.ts", "../../packages/shared/tests/desktop/urls.spec.ts"],
+        include: ["src/**/*.test.ts"],
     },
     resolve: {
         alias: [

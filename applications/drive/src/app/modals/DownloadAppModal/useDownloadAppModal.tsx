@@ -16,7 +16,6 @@ import type { ModalStateProps } from '@proton/components/components/modalTwo/use
 import { useModalTwoStatic } from '@proton/components/components/modalTwo/useModalTwo';
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import { DESKTOP_PLATFORMS, DRIVE_APP_NAME, DRIVE_SHORT_APP_NAME } from '@proton/shared/lib/constants';
-import { DRIVE_ANDROID_APP, DRIVE_IOS_APP } from '@proton/shared/lib/drive/urls';
 import { isIos, isMac } from '@proton/shared/lib/helpers/browser';
 import appStoreSvg from '@proton/styles/assets/img/illustrations/app-store.svg';
 import playStoreSvg from '@proton/styles/assets/img/illustrations/play-store.svg';
@@ -25,6 +24,7 @@ import windowsLaptop from '@proton/styles/assets/img/onboarding/drive-download-p
 import noop from '@proton/utils/noop';
 
 import { useDesktopDownloads } from '../../legacy/hooks/drive/useDesktopDownloads';
+import { DRIVE_ANDROID_APP, DRIVE_IOS_APP } from '../../utils/driveUrls';
 import androidLogo from './android.webp';
 import iosLogo from './ios.webp';
 

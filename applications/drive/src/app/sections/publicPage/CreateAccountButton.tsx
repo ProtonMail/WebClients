@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -13,8 +13,9 @@ import { getPreferredCurrency } from '@proton/payments/core/currencies';
 import { getSimplePriceString } from '@proton/payments/core/price-format';
 import type { SubscriptionEstimation } from '@proton/payments/core/subscription/interface';
 import { noSubscriptionContext } from '@proton/payments/core/subscription/multi-subscription-context';
-import { DRIVE_PRICING_PAGE, DRIVE_SIGNUP } from '@proton/shared/lib/drive/urls';
 import { useFlag } from '@proton/unleash/useFlag';
+
+import { DRIVE_PRICING_PAGE, DRIVE_SIGNUP } from '../../utils/driveUrls';
 
 interface UseDriveFreePromoProps {
     codes: string[] | undefined;
@@ -22,6 +23,8 @@ interface UseDriveFreePromoProps {
 
 function useDriveFreePromo({ codes }: UseDriveFreePromoProps) {
     const { paymentsApi } = usePaymentsApi();
+    const paymentsApiRef = useRef(paymentsApi);
+    paymentsApiRef.current = paymentsApi;
     const [plansResult] = usePlans();
     const [paymentStatus] = usePaymentStatus();
 
@@ -46,7 +49,7 @@ function useDriveFreePromo({ codes }: UseDriveFreePromoProps) {
                     Codes: codesKey.split(','),
                 };
                 try {
-                    const res = await paymentsApi.checkSubscription(subscriptionData);
+                    const res = await paymentsApiRef.current.checkSubscription(subscriptionData);
                     setResult(res);
                 } catch (error) {
                     setHasError(true);
@@ -56,8 +59,6 @@ function useDriveFreePromo({ codes }: UseDriveFreePromoProps) {
         };
 
         void fetchData();
-        // paymentsApi is not stable
-        // TODO: update the usePaymentsApi with useCallback
     }, [currency, codesKey]);
 
     return { promoData: result, hasError };

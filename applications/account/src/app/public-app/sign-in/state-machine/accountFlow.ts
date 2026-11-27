@@ -4,8 +4,7 @@
  * Each shows its own screens and hands the session to the app itself, then stays on its screen, loading, until the
  * app takes the sign-in away (a new page, route or closed modal). Otherwise it ends with a result.
  */
-import type { OrganizationData } from '@proton/shared/lib/keys/unprivatization/helper';
-
+import type { OrganizationData } from '../auth/unprivatization';
 import type { SignInAuthState } from './signInAuthState';
 
 /** How an account flow ends without signing in: back to the credentials form, or failed with an error to report. */
