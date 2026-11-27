@@ -1,11 +1,54 @@
 import { createOxlintConfig } from "@proton/oxlint-config/createOxlintConfig";
+import {
+    createExtraneousDependenciesRule,
+    extraneousDependenciesDevDependencies,
+} from "@proton/oxlint-config/extraneousDependencies";
 import { allGlobs } from "@proton/oxlint-config/globs";
 
 const javaScriptGlobs = ["**/*.js", "**/*.jsx", "**/*.mjs", "**/*.cjs"];
 
+/**
+ * lint-staged runs the linter from the monorepo root with repo-relative file paths
+ * (e.g. `applications/meet-desktop/src/ipc/**`). Duplicate each package-local
+ * glob so `proton/no-extraneous-dependencies` still allows electron there.
+ */
+const withLintStagedPaths = (patterns: string[]) =>
+    patterns.flatMap((pattern) => [pattern, `**/meet-desktop/${pattern}`]);
+
+/**
+ * Electron main-process and preload code imports electron and @sentry/electron, which are devDependencies
+ * because Electron Forge bundles them with webpack.
+ */
+const meetDesktopDevDependencies = [
+    ...extraneousDependenciesDevDependencies,
+    ...withLintStagedPaths([
+        "src/index.ts",
+        "src/startup.ts",
+        "src/preload.ts",
+        "src/update.ts",
+        "src/ipc/**",
+        "src/screenPicker/**",
+        "src/utils/**",
+        "src/windows/**",
+        "forge.config.ts",
+        "webpack.*.ts",
+        "vitest.config.mts",
+        "vitest.setup.ts",
+        "tasks/**",
+    ]),
+];
+
 export default createOxlintConfig({
     preset: "base",
     overrides: [
+        {
+            files: allGlobs,
+            rules: {
+                "proton/no-extraneous-dependencies": createExtraneousDependenciesRule({
+                    devDependencies: meetDesktopDevDependencies,
+                }),
+            },
+        },
         {
             files: allGlobs,
             // TODO: These rules came with the move from a standalone ESLint config to the shared one. Fix the findings and re-enable them.
@@ -13,7 +56,6 @@ export default createOxlintConfig({
                 curly: "off",
                 "no-use-before-define": "off",
                 "proton/naming-convention": "off",
-                "proton/no-extraneous-dependencies": "off",
                 "proton/restricted-imports": "off",
                 "proton/restricted-syntax": "off",
                 "typescript/array-type": "off",
