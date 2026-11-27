@@ -46,6 +46,7 @@ export interface EditorControllerInterface {
     changes: Parameters<ClientRequiresEditorMethods['showSpreadsheetCellChanges']>[0],
   ): Promise<void>
   goToSpreadsheetCell(sheetId: number, rowIndex: number, columnIndex: number): Promise<void>
+  setSpreadsheetEditorMounted(isMounted: boolean): Promise<void>
   showCommentsPanel(): void
   toggleDebugTreeView(): Promise<void>
   initializeEditor(
@@ -467,6 +468,14 @@ export class EditorController implements EditorControllerInterface {
     }
 
     await this.editorInvoker.goToSpreadsheetCell(sheetId, rowIndex, columnIndex)
+  }
+
+  async setSpreadsheetEditorMounted(isMounted: boolean): Promise<void> {
+    if (!this.editorInvoker) {
+      throw new Error('Attempting to mount or unmount the spreadsheet editor before editor invoker is initialized')
+    }
+
+    await this.editorInvoker.setSpreadsheetEditorMounted(isMounted)
   }
 
   reloadEditingLockedState(): void {

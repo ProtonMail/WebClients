@@ -49,6 +49,11 @@ export interface ClientRequiresEditorMethods {
       | null,
   ): Promise<void>
   goToSpreadsheetCell(sheetId: number, rowIndex: number, columnIndex: number): Promise<void>
+  /**
+   * Unmounts the Sheets editor, or mounts it again from the Y.Doc as when the sheet loads. Mounting resolves once the
+   * editor has loaded. Used by the update replay debug tool to apply updates the way they are applied on load.
+   */
+  setSpreadsheetEditorMounted(isMounted: boolean): Promise<void>
   getClientId(): Promise<number>
   showEditor(): Promise<void>
   showCommentsPanel(): Promise<void>

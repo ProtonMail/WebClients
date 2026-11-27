@@ -44,6 +44,7 @@ import type { SpreadsheetRef } from '@proton-docs/sheets-editor'
 import { toSheetsInitialization } from './adapters/sheets/utils/sheets-initialization-adapter'
 import { useSheetsEditorSource } from './adapters/sheets/utils/use-sheets-editor-source'
 import SheetsLayout from './SheetsLayout'
+import { useSpreadsheetEditorMounting } from './useSpreadsheetEditorMounting'
 import { useEditorTheme } from '../Theme/EditorThemeProvider'
 import { DocsAdapter } from './adapters/docs/DocsAdapter'
 import {
@@ -99,6 +100,8 @@ export function App({ documentType, systemMode, bridgeState }: AppProps) {
 
   const editorRef = useRef<LexicalEditor | null>(null)
   const spreadsheetRef = useRef<SpreadsheetRef | null>(null)
+  const { isSpreadsheetEditorUnmounted, setSpreadsheetEditorMounted, onSpreadsheetEditorReady } =
+    useSpreadsheetEditorMounting()
   const latestSpreadsheetStateToLogRef = useRef<unknown>({})
   const [clonedEditorState, setClonedEditorState] = useState<EditorState>()
   const [isEditorRefReady, setIsEditorRefReady] = useState(false)
@@ -581,6 +584,10 @@ export function App({ documentType, systemMode, bridgeState }: AppProps) {
         spreadsheetRef.current?.goToCell(sheetId, rowIndex, columnIndex)
       },
 
+      async setSpreadsheetEditorMounted(isMounted) {
+        await setSpreadsheetEditorMounted(isMounted)
+      },
+
       async focusSpreadsheet() {
         if (spreadsheetRef.current) {
           spreadsheetRef.current.focusSheet?.()
@@ -625,6 +632,7 @@ export function App({ documentType, systemMode, bridgeState }: AppProps) {
     setEditingLocked,
     setEditorConfig,
     setEditorHidden,
+    setSpreadsheetEditorMounted,
     setTheme,
     setUserMode,
   ])
@@ -715,7 +723,10 @@ export function App({ documentType, systemMode, bridgeState }: AppProps) {
       docState.onEditorReadyToReceiveUpdates()
       application.logger.info('Editor is ready to receive updates')
     }
-  }, [docState, application.logger, documentType, sheetsInitializationMode])
+    if (documentType === 'sheet') {
+      void onSpreadsheetEditorReady()
+    }
+  }, [docState, application.logger, documentType, sheetsInitializationMode, onSpreadsheetEditorReady])
 
   const onEditorError = useCallback(
     (error: Error) => {
@@ -814,7 +825,7 @@ export function App({ documentType, systemMode, bridgeState }: AppProps) {
 
   if (documentType === 'sheet') {
     const isWaitingForInitialUpdates = sheetsInitializationMode === 'after-initial-load' && !receivedEverythingFromRTS
-    if (!sheetsEditor || isWaitingForInitialUpdates) {
+    if (!sheetsEditor || isWaitingForInitialUpdates || isSpreadsheetEditorUnmounted) {
       if (isWaitingForInitialUpdates) {
         application.logger.info('Waiting for initial updates to be applied before mounting Sheets editor')
       }

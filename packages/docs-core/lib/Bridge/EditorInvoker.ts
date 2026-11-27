@@ -143,6 +143,10 @@ export class EditorInvoker implements ClientRequiresEditorMethods {
     return this.invokeEditorMethod('goToSpreadsheetCell', [sheetId, rowIndex, columnIndex])
   }
 
+  async setSpreadsheetEditorMounted(isMounted: boolean): Promise<void> {
+    return this.invokeEditorMethod('setSpreadsheetEditorMounted', [isMounted])
+  }
+
   async getYDocAsJSON(): Promise<unknown> {
     return this.invokeEditorMethod('getYDocAsJSON', [])
   }

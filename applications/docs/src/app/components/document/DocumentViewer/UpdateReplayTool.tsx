@@ -41,6 +41,8 @@ export default function UpdateReplayTool({
     setShouldMergeBeforeApplying,
     shouldPersistAppliedUpdates,
     setShouldPersistAppliedUpdates,
+    shouldUnmountEditorWhileApplying,
+    setShouldUnmountEditorWhileApplying,
     hasAppliedRepairedState,
   } = useStore(store)
   const isAtLatestStep = snapshots.length === 0 || timeTravelIndex === snapshots.length - 1
@@ -59,7 +61,7 @@ export default function UpdateReplayTool({
   }, [createNewConnection, closeConnection])
 
   return (
-    <div className="flex max-h-[calc(100vh-1rem)] w-[24rem] max-w-[calc(100vw-1rem)] flex-col overflow-y-auto rounded border border-[--border-weak] bg-[--background-weak] px-1 py-1 [&_button]:flex [&_button]:items-center [&_button]:justify-between [&_button]:gap-3 [&_button]:text-left">
+    <div className="flex max-h-[calc(100vh-1rem)] w-[24rem] max-w-[calc(100vw-1rem)] flex-col flex-nowrap overflow-y-auto rounded border border-[--border-weak] bg-[--background-weak] px-1 py-1 *:shrink-0 [&_button]:flex [&_button]:items-center [&_button]:justify-between [&_button]:gap-3 [&_button]:text-left">
       <div className="mt-1 flex items-center justify-between gap-2 px-2 font-semibold">
         <div>Update Replay Tool</div>
         <button
@@ -70,7 +72,7 @@ export default function UpdateReplayTool({
           <IcCross className="h-3.5 w-3.5" />
         </button>
       </div>
-      <div className="flex flex-col gap-2 p-2">
+      <div className="flex flex-col flex-nowrap gap-2 p-2">
         {canSyncOverWebSocket() ? (
           <div className="flex items-center gap-2">
             {isConnected ? <IcCheckmarkCircle className="h-3.5 w-3.5" /> : <IcCrossCircle className="h-3.5 w-3.5" />}
@@ -144,6 +146,18 @@ export default function UpdateReplayTool({
           />
           <div className="text-sm leading-none">Persist applied updates</div>
         </label>
+        {isSpreadsheet && (
+          <label className="flex items-center gap-2">
+            <input
+              className="bg-norm !opacity-100"
+              id="unmount-editor-while-applying-input"
+              type="checkbox"
+              checked={shouldUnmountEditorWhileApplying}
+              onChange={(event) => setShouldUnmountEditorWhileApplying(event.target.checked)}
+            />
+            <div className="text-sm leading-none">Unmount editor while applying, as on load</div>
+          </label>
+        )}
         <Button
           size="small"
           onClick={async () => {

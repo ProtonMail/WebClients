@@ -44,6 +44,7 @@ function createEditor(edits: Edit[]) {
     }),
     showSpreadsheetCellChanges: vi.fn(async () => {}),
     goToSpreadsheetCell: vi.fn(async () => {}),
+    setSpreadsheetEditorMounted: vi.fn(async (_isMounted: boolean) => {}),
   }
   return { editor, getState: () => state }
 }
@@ -96,5 +97,16 @@ describe('createUpdateReplayToolStore', () => {
     expect(store.getState().appliedUpdates).toBe(4)
     expect(store.getState().snapshots).toHaveLength(3)
     expect(getCell(getState(), B1)).toEqual(text('y'))
+  })
+
+  it('mounts the editor again when an update fails to apply with the editor unmounted', async () => {
+    const { store, editor } = createLoadedStore(edits)
+    store.getState().setShouldUnmountEditorWhileApplying(true)
+    editor.applyUpdate.mockRejectedValueOnce(new Error('bad update'))
+
+    await expect(store.getState().applyMultipleUpdates(2)).rejects.toThrow('bad update')
+
+    expect(editor.setSpreadsheetEditorMounted.mock.calls).toEqual([[false], [true]])
+    expect(store.getState().appliedUpdates).toBe(0)
   })
 })
