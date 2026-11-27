@@ -154,12 +154,6 @@
 	}
 }
 
-.field {
-	&:focus {
-		box-shadow: 0 0 0 0.063rem var(--interaction-norm) !important;
-	}
-}
-
 .select-two-timezone-select {
 	box-shadow: none !important;
 

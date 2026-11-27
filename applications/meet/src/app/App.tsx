@@ -1,7 +1,10 @@
-import { useEffect, useRef } from 'react';
+import { Suspense, useEffect, useRef } from 'react';
 import { Route, useHistory, useLocation } from 'react-router-dom';
 
+import LoaderPage from '@proton/components/containers/app/LoaderPage';
+import LocationErrorBoundary from '@proton/components/containers/app/LocationErrorBoundary';
 import ProtonApp from '@proton/components/containers/app/ProtonApp';
+import StandardErrorPage from '@proton/components/containers/app/StandardErrorPage';
 import { useMeetSelector } from '@proton/meet/store/hooks';
 import { getIsGuestFromUrl, selectIsGuest } from '@proton/meet/store/slices/userSlice';
 import { TelemetryMeetDashboardEvents, sendMeetDashboardEvent } from '@proton/meet/telemetry/meetTelemetry';
@@ -13,13 +16,15 @@ import clsx from '@proton/utils/clsx';
 import { MacSigningMigrationTopBanner } from './components/MacSigningMigrationTopBanner/MacSigningMigrationTopBanner';
 import { WasmUnsupportedError } from './components/WasmUnsupportedError';
 import config from './config';
-import { DashboardContainer } from './containers/DashboardContainer/DashboardContainer';
-import { GuestDashboardContainer } from './containers/DashboardContainer/GuestDashboardContainer';
 import { GuestContainer } from './containers/GuestContainer';
-import { ManageRecordingsContainer } from './containers/ManageRecordingsContainer/ManageRecordingsContainer';
 import { MeetNotificationsProvider } from './containers/MeetNotificationsProvider';
-import { WrappedProtonMeetContainer } from './containers/ProtonMeetContainer/WrappedProtonMeetContainer';
 import { ProviderContainer } from './containers/ProviderContainer';
+import {
+    LazyDashboardContainer,
+    LazyGuestDashboardContainer,
+    LazyManageRecordingsContainer,
+    LazyWrappedProtonMeetContainer,
+} from './containers/lazyRouteContainers';
 import { useMeetFunnelTelemetry } from './hooks/useMeetFunnelTelemetry';
 import { useIsRecordingSupported } from './hooks/useMeetingRecorder/hooks/useIsRecordingSupported';
 
@@ -119,8 +124,12 @@ const MeetApp = () => {
                         <GuestContainer>
                             <AppLayout>
                                 <RedirectWrapper>
-                                    <Route path="/join" render={() => <WrappedProtonMeetContainer />} />
-                                    <Route path="/dashboard" component={GuestDashboardContainer} />
+                                    <LocationErrorBoundary component={<StandardErrorPage big />}>
+                                        <Suspense fallback={<LoaderPage />}>
+                                            <Route path="/join" render={() => <LazyWrappedProtonMeetContainer />} />
+                                            <Route path="/dashboard" component={LazyGuestDashboardContainer} />
+                                        </Suspense>
+                                    </LocationErrorBoundary>
                                 </RedirectWrapper>
                             </AppLayout>
                         </GuestContainer>
@@ -129,9 +138,16 @@ const MeetApp = () => {
                             <MeetAppTelemetry />
                             <AppLayout>
                                 <RedirectWrapper>
-                                    <Route path="/join" render={() => <WrappedProtonMeetContainer />} />
-                                    <Route path="/dashboard" component={DashboardContainer} />
-                                    <Route path="/manage-recordings" component={ManageRecordingsContainer} />
+                                    <LocationErrorBoundary component={<StandardErrorPage big />}>
+                                        <Suspense fallback={<LoaderPage />}>
+                                            <Route path="/join" render={() => <LazyWrappedProtonMeetContainer />} />
+                                            <Route path="/dashboard" component={LazyDashboardContainer} />
+                                            <Route
+                                                path="/manage-recordings"
+                                                component={LazyManageRecordingsContainer}
+                                            />
+                                        </Suspense>
+                                    </LocationErrorBoundary>
                                 </RedirectWrapper>
                             </AppLayout>
                         </ProviderContainer>

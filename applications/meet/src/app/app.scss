@@ -503,6 +503,10 @@ $notification-max-inline-size: min(30rem, calc(100vw - 2rem));
 	border-color: var(--border-card);
 }
 
+.field:focus {
+	box-shadow: 0 0 0 0.063rem var(--interaction-norm) !important;
+}
+
 // Global override for checkbox tick color
 .checkbox-input:checked + .checkbox-fakecheck {
 	color: black;

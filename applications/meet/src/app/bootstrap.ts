@@ -3,7 +3,6 @@ import { logger } from '@protontech/logger';
 import { ALL_CONSOLE_LEVELS } from '@protontech/logger/constants';
 import { createBrowserHistory } from 'history';
 
-import { readAccountSessions } from '@proton/account/accountSessions/storage';
 import { addressesThunk } from '@proton/account/addresses';
 import * as bootstrap from '@proton/account/bootstrap';
 import { bootstrapEvent } from '@proton/account/bootstrap/action';
@@ -19,6 +18,7 @@ import { FeatureCode } from '@proton/features/interface';
 import { fetchFeatures } from '@proton/features/reducer';
 import { setMeetCoreErrorResolver } from '@proton/meet/hooks/useMeetErrorReporting';
 import { meetEventLoop } from '@proton/meet/store/meetEventLoop';
+import { meetingsThunk } from '@proton/meet/store/slices/meetings';
 import { userSettingsThunk as meetUserSettingsThunk } from '@proton/meet/store/slices/userSettings';
 import type {
     MeetDispatch,
@@ -61,7 +61,8 @@ import { meetTelemetryConfig } from './telemetryConfig';
 import { pruneOrphanBackgroundCaches, purgeUserBackgrounds } from './utils/customBackgrounds/purge';
 import { clearStoredDevices } from './utils/deviceStorage';
 import { clearDisabledRotatePersonalMeeting } from './utils/disableRotatePersonalMeeting';
-import { forwardLiveKitLogsToLogger } from './utils/forwardLiveKitLogs';
+import { getEntryRoute } from './utils/getEntryRoute';
+import { getMaybeHasSessions } from './utils/getMaybeHasSessions';
 import {
     MEET_LOGGER_NAME,
     deleteUnusedGuestLoggerDatabases,
@@ -72,9 +73,11 @@ import { openDesktopAppOnLoad } from './utils/openDesktopAppOnLoad';
 import { sendLocaleToDesktopApp } from './utils/sendLocaleToDesktopApp';
 import { startMeetingInfoPreload } from './utils/startMeetingInfoPreload';
 import { installWaitingRoomCallbackNamespaces } from './utils/wasmUtils';
+import { deferMeetCoreClient } from './wasm/DeferredMeetCoreClient';
 import { DirectMeetCoreClient } from './wasm/DirectMeetCoreClient';
 import type { MeetCoreClient } from './wasm/MeetCoreClient';
 import { MeetCoreWorkerClient } from './wasm/MeetCoreWorkerClient';
+import { compileMeetCoreWasm } from './wasm/compileMeetCoreWasm';
 import { getMeetCoreErrorName } from './wasm/meetCoreError';
 import type { MeetCoreInitParams } from './wasm/meetCoreWorkerProtocol';
 
@@ -88,7 +91,7 @@ const MEET_EXTENDED_TELEMETRY_FLAG = 'MeetExtendedTelemetry';
 const getMeetCoreInitParams = (
     authentication: MeetExtraThunkArguments['authentication'],
     appVersion: string
-): Omit<MeetCoreInitParams, 'useCachedServerTime' | 'useMessageQueues'> => {
+): Omit<MeetCoreInitParams, 'useCachedServerTime' | 'useMessageQueues' | 'wasmModule'> => {
     const persistedSession = getPersistedSession(authentication.localID);
     const userId = persistedSession?.UserID ?? '';
     const uid = authentication.UID ?? '';
@@ -107,7 +110,7 @@ const offersDeliveryExtension: MeetStoreExtensions<OffersDeliveryState> = {
 };
 
 const createDirectMeetCoreClient = async (params: MeetCoreInitParams): Promise<DirectMeetCoreClient> => {
-    await init();
+    await init({ module_or_path: params.wasmModule });
     const app = await new App(
         params.env,
         params.appVersion,
@@ -145,14 +148,21 @@ const initializeMeetCoreClient = async ({
     meetCoreWorkerEnabled,
     useCachedServerTime,
     useMessageQueues,
+    meetCoreWasm,
 }: {
     authentication: MeetExtraThunkArguments['authentication'];
     appVersion: string;
     meetCoreWorkerEnabled: boolean;
     useCachedServerTime: boolean;
     useMessageQueues: boolean;
+    meetCoreWasm: Promise<WebAssembly.Module>;
 }): Promise<MeetCoreClient> => {
-    const params = { ...getMeetCoreInitParams(authentication, appVersion), useCachedServerTime, useMessageQueues };
+    const params = {
+        ...getMeetCoreInitParams(authentication, appVersion),
+        useCachedServerTime,
+        useMessageQueues,
+        wasmModule: await meetCoreWasm,
+    };
 
     if (!meetCoreWorkerEnabled) {
         return createDirectMeetCoreClient(params);
@@ -167,6 +177,24 @@ const initializeMeetCoreClient = async ({
         });
         return createDirectMeetCoreClient(params);
     }
+};
+
+const createDeferredMeetCoreClient = (
+    initializeClient: () => Promise<MeetCoreClient>,
+    signal: AbortSignal | undefined
+) => {
+    const meetCoreClient = deferMeetCoreClient(async () => {
+        try {
+            const client = await measureLoadPhase('wasmInitMs', initializeClient());
+            setWasmMode(client);
+            return client;
+        } catch (error) {
+            captureMessage('Meet core client init failed', { level: 'error', extra: { error } });
+            throw error;
+        }
+    });
+    bootstrap.onAbort(signal, () => meetCoreClient.dispose());
+    return meetCoreClient;
 };
 
 const getApis = (config: ProtonConfig) => {
@@ -226,7 +254,7 @@ const initializeLogger = ({
     }
 
     getLoggerKey()
-        .then(({ key, ID }) => {
+        .then(async ({ key, ID }) => {
             logger.initialize({
                 encryptionKey: key,
                 appName,
@@ -234,6 +262,10 @@ const initializeLogger = ({
                 loggerName: MEET_LOGGER_NAME,
                 consoleLevels: isProduction(window.location.host) ? undefined : ALL_CONSOLE_LEVELS,
             });
+            // Dynamic so that livekit-client stays out of the bootstrap chunk.
+            const { forwardLiveKitLogsToLogger } = await import(
+                /* webpackChunkName: "forwardLiveKitLogs" */ './utils/forwardLiveKitLogs'
+            );
             forwardLiveKitLogsToLogger();
         })
         .catch((error) => {
@@ -325,12 +357,14 @@ const completeAppBootstrap = async ({
     history,
     appVersion,
     meetEventManager,
+    meetCoreWasm,
 }: MeetExtraThunkArguments & {
     signal?: AbortSignal;
     store: MeetStore;
     sessionResult: Unwrap<ReturnType<typeof bootstrap.loadSession<false>>>;
     notificationsManager: NotificationsManager;
     appVersion: string;
+    meetCoreWasm: Promise<WebAssembly.Module>;
 }) => {
     const dispatch = store.dispatch;
 
@@ -345,10 +379,16 @@ const completeAppBootstrap = async ({
 
     startMeetingInfoPreload({ dispatch, cryptoReady: cryptoPromise });
 
+    const route = getEntryRoute(window.location.pathname);
+    if (route === 'dashboard' || route === 'start-free-meeting') {
+        dispatch(meetingsThunk()).catch(noop);
+    }
+
     const [userData] = await Promise.all([
         measureLoadPhase('sessionMs', loadUserData(dispatch)),
         cryptoPromise,
         measureLoadPhase('unleashMs', bootstrap.unleashReady({ unleashClient })).catch(noop),
+        dispatch(addressesThunk()),
     ]);
     openDesktopAppOnLoad({ unleashClient, userId: userData.user.ID });
     initializeLogger({
@@ -360,18 +400,18 @@ const completeAppBootstrap = async ({
     const meetCoreWorkerEnabled = unleashClient.isEnabled(MEET_CORE_WORKER_FLAG);
     const useCachedServerTime = unleashClient.isEnabled(MEET_USE_CACHED_SERVER_TIME_FLAG);
     const useMessageQueues = unleashClient.isEnabled(MEET_USE_MESSAGE_QUEUES_FLAG);
-    const meetCoreClient = await measureLoadPhase(
-        'wasmInitMs',
-        initializeMeetCoreClient({
-            authentication,
-            appVersion,
-            meetCoreWorkerEnabled,
-            useCachedServerTime,
-            useMessageQueues,
-        })
+    const meetCoreClient = createDeferredMeetCoreClient(
+        () =>
+            initializeMeetCoreClient({
+                authentication,
+                appVersion,
+                meetCoreWorkerEnabled,
+                useCachedServerTime,
+                useMessageQueues,
+                meetCoreWasm,
+            }),
+        signal
     );
-    setWasmMode(meetCoreClient);
-    bootstrap.onAbort(signal, () => meetCoreClient.dispose());
 
     if (!!userData.userSettings.Telemetry) {
         telemetry.init({
@@ -382,7 +422,6 @@ const completeAppBootstrap = async ({
     }
 
     await bootstrap.postLoad({ appName: config.APP_NAME, authentication, ...userData, history });
-    await dispatch(addressesThunk());
 
     eventManagerSetup({ store, signal, eventManager, unleashClient, meetEventManager });
 
@@ -416,6 +455,9 @@ const executeBootstrapSteps = async ({
     setupGuestCrossStorage({ appMode, appName: config.APP_NAME });
 
     const { sessionResult, appVersion, ...restServices } = await initAppDependencies(config, authentication);
+    // After the session resolves, so a visitor redirected to account does not download it twice
+    const meetCoreWasm = compileMeetCoreWasm();
+    meetCoreWasm.catch(noop);
 
     initElectronClassnames();
     bootstrap.init({ config, authentication, locales });
@@ -452,6 +494,7 @@ const executeBootstrapSteps = async ({
         config,
         sessionResult,
         appVersion,
+        meetCoreWasm,
     });
 
     return {
@@ -481,13 +524,9 @@ export const bootstrapApp = async (parameters: BootstrapParameters) => {
 const assertNoSessions = async (api: ApiWithListener) => {
     // First ensure all inactive persisted sessions are cleared.
     await cleanupInactivePersistedSessions({ api, persistedSessions: getPersistedSessions(), delay: 50 }).catch(noop);
-    // Read session cookie from account.
-    const accountSessions = readAccountSessions();
-    // If account reports any sessions, that value takes precedence. Otherwise, the locally persisted sessions do.
-    const maybeHasSessions = accountSessions ? accountSessions.length >= 0 : getPersistedSessions().length > 0;
 
     // No sessions, all good to proceed with guest.
-    if (!maybeHasSessions) {
+    if (!getMaybeHasSessions()) {
         return;
     }
 
@@ -522,6 +561,8 @@ export const bootstrapGuestApp = async (
     });
 
     await assertNoSessions(api);
+    const meetCoreWasm = compileMeetCoreWasm();
+    meetCoreWasm.catch(noop);
 
     const authentication = bootstrap.createAuthentication({ initialAuth: false });
     bootstrap.init({ config, authentication, locales });
@@ -536,47 +577,15 @@ export const bootstrapGuestApp = async (
         ...meetTelemetryConfig,
     });
 
-    await measureLoadPhase('unleashMs', unleashClient.start());
-    openDesktopAppOnLoad({ unleashClient });
-
-    initializeLogger({
-        api,
-        unleashClient,
-        appName: config.APP_NAME,
-        getLoggerKey: async () => {
-            const guestLoggerKey = await getGuestLoggerKey();
-            await holdGuestLoggerLock(guestLoggerKey.ID);
-            deleteUnusedGuestLoggerDatabases().catch(noop);
-            return guestLoggerKey;
-        },
-    });
-
-    const meetCoreWorkerEnabled = unleashClient.isEnabled(MEET_CORE_WORKER_FLAG);
-    const useCachedServerTime = unleashClient.isEnabled(MEET_USE_CACHED_SERVER_TIME_FLAG);
-    const useMessageQueues = unleashClient.isEnabled(MEET_USE_MESSAGE_QUEUES_FLAG);
-    const [meetCoreClient, , { localeCode }] = await Promise.all([
-        measureLoadPhase(
-            'wasmInitMs',
-            initializeMeetCoreClient({
-                authentication,
-                appVersion,
-                meetCoreWorkerEnabled,
-                useCachedServerTime,
-                useMessageQueues,
-            })
-        ),
-        measureLoadPhase('cryptoInitMs', bootstrap.loadCrypto({ appName: config.APP_NAME, unleashClient })),
-        loadLocales({ locale: getBrowserLocale(), locales, userSettings: undefined }),
-    ]);
-    sendLocaleToDesktopApp(localeCode);
-    setWasmMode(meetCoreClient);
-    bootstrap.onAbort(signal, () => meetCoreClient.dispose());
+    const unauthFlowPromise = measureLoadPhase('sessionMs', unauthenticatedApi.startUnAuthFlow());
+    const unleashPromise = measureLoadPhase('unleashMs', unleashClient.start());
+    const cryptoPromise = measureLoadPhase(
+        'cryptoInitMs',
+        bootstrap.loadCrypto({ appName: config.APP_NAME, unleashClient })
+    );
+    const localesPromise = loadLocales({ locale: getBrowserLocale(), locales, userSettings: undefined });
 
     const history = createBrowserHistory({ basename: '/guest' });
-
-    await measureLoadPhase('sessionMs', unauthenticatedApi.startUnAuthFlow());
-
-    void pruneOrphanBackgroundCaches();
 
     const store = setupStore({
         extraThunkArguments: {
@@ -598,7 +607,50 @@ export const bootstrapGuestApp = async (
         isEnabled: () => unleashClient.isEnabled(MEET_EXTENDED_TELEMETRY_FLAG),
     });
 
-    startMeetingInfoPreload({ dispatch: store.dispatch });
+    void unauthFlowPromise.then(
+        () => startMeetingInfoPreload({ dispatch: store.dispatch, cryptoReady: cryptoPromise }),
+        noop
+    );
+
+    const [meetCoreClient, , { localeCode }] = await Promise.all([
+        unleashPromise.then(() => {
+            openDesktopAppOnLoad({ unleashClient });
+
+            initializeLogger({
+                api,
+                unleashClient,
+                appName: config.APP_NAME,
+                getLoggerKey: async () => {
+                    const guestLoggerKey = await getGuestLoggerKey();
+                    await holdGuestLoggerLock(guestLoggerKey.ID);
+                    deleteUnusedGuestLoggerDatabases().catch(noop);
+                    return guestLoggerKey;
+                },
+            });
+
+            const meetCoreWorkerEnabled = unleashClient.isEnabled(MEET_CORE_WORKER_FLAG);
+            const useCachedServerTime = unleashClient.isEnabled(MEET_USE_CACHED_SERVER_TIME_FLAG);
+            const useMessageQueues = unleashClient.isEnabled(MEET_USE_MESSAGE_QUEUES_FLAG);
+            return createDeferredMeetCoreClient(
+                () =>
+                    initializeMeetCoreClient({
+                        authentication,
+                        appVersion,
+                        meetCoreWorkerEnabled,
+                        useCachedServerTime,
+                        useMessageQueues,
+                        meetCoreWasm,
+                    }),
+                signal
+            );
+        }),
+        cryptoPromise,
+        localesPromise,
+        unauthFlowPromise,
+    ]);
+    sendLocaleToDesktopApp(localeCode);
+
+    void pruneOrphanBackgroundCaches();
 
     markBootstrapEnd();
 

@@ -58,11 +58,11 @@ const meetCoreErrorEnumValues = new Set<number>(
 let wasmInitialized = false;
 let app: App | null = null;
 
-const ensureWasmInitialized = async () => {
+const ensureWasmInitialized = async (wasmModule: WebAssembly.Module) => {
     if (wasmInitialized) {
         return;
     }
-    await initWasm();
+    await initWasm({ module_or_path: wasmModule });
     wasmInitialized = true;
 };
 
@@ -192,7 +192,7 @@ const installWorkerCallbackNamespaces = () => {
 };
 
 const handleInit = async (request: MeetCoreInitRequestMessage) => {
-    await ensureWasmInitialized();
+    await ensureWasmInitialized(request.params.wasmModule);
     installWorkerCallbackNamespaces();
 
     const { env, appVersion, userAgent, dbPath, httpHost, wsHost, userId, uid } = request.params;

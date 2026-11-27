@@ -4,6 +4,7 @@ import { ConnectionError } from 'livekit-client';
 import type { Mock } from 'vitest';
 
 import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
+import { setJoiningInProgress } from '@proton/meet/store/slices/connectionSlice';
 import {
     meetingInfoThunk,
     refreshMeetingInfoThunk,
@@ -27,16 +28,19 @@ const mocks = vi.hoisted(() => ({
     getSessionKey: vi.fn(),
     enabledFlags: new Set<string>(),
     isWebRtcSupported: vi.fn(() => true),
+    room: { engine: { client: {} }, disconnect: vi.fn() },
     meetCoreClient: {
+        whenReady: vi.fn(),
         logStartToJoinRoom: vi.fn(),
         logJoinedRoomFailed: vi.fn(),
+        leaveMeeting: vi.fn(),
         prepareMlsSessionForWaitingRoom: vi.fn(),
         refreshWaitingRoomGuestSessionForJoinRequest: vi.fn(),
     },
 }));
 
 vi.mock('react-router-dom', () => ({ useHistory: () => ({ push: mocks.historyPush }) }));
-vi.mock('@livekit/components-react', () => ({ useRoomContext: () => ({ engine: { client: {} } }) }));
+vi.mock('@livekit/components-react', () => ({ useRoomContext: () => mocks.room }));
 vi.mock('@proton/components/hooks/useAuthentication', () => ({
     default: () => ({ hasSession: () => false, getUID: () => undefined }),
 }));
@@ -129,8 +133,12 @@ beforeEach(() => {
     mocks.enabledFlags.clear();
     mocks.isWebRtcSupported.mockReturnValue(true);
     mocks.getSessionKey.mockResolvedValue(undefined);
+    mocks.meetCoreClient.whenReady.mockResolvedValue(undefined);
     mocks.meetCoreClient.logStartToJoinRoom.mockResolvedValue(undefined);
     mocks.meetCoreClient.logJoinedRoomFailed.mockResolvedValue(undefined);
+    mocks.meetCoreClient.leaveMeeting.mockResolvedValue(undefined);
+    mocks.room.engine.client = {};
+    mocks.room.disconnect.mockResolvedValue(undefined);
     mockGetAccessDetails.mockResolvedValue({ accessToken: 'access-token', websocketUrl: 'wss://example.test' });
     useMeetingAuthenticationMock.mockReturnValue({
         initHandshake: mockInitHandshake,
@@ -513,4 +521,91 @@ describe('useJoinFlow waiting room', () => {
             expect(mocks.notifyError).not.toHaveBeenCalled();
         }
     );
+});
+
+describe('useJoinFlow joinInstantMeeting', () => {
+    it('does not create the meeting when meet-core failed to initialize, and unblocks the join', async () => {
+        const error = new Error('init failed');
+        mocks.meetCoreClient.whenReady.mockRejectedValue(error);
+        const { result, params } = renderJoinFlow();
+
+        await act(async () => {
+            await result.current.joinInstantMeeting('Alice');
+        });
+
+        expect(mocks.createInstantMeeting).not.toHaveBeenCalled();
+        expect(mocks.meetCoreClient.logStartToJoinRoom).not.toHaveBeenCalled();
+        expect(params.reportMeetError).not.toHaveBeenCalled();
+        expect(dispatch).toHaveBeenCalledWith(setJoiningInProgress(false));
+        expect(dispatch).toHaveBeenCalledWith(setJoinError('startFailed'));
+
+        await act(async () => {
+            await result.current.joinInstantMeeting('Alice');
+        });
+        expect(mocks.meetCoreClient.whenReady).toHaveBeenCalledTimes(2);
+    });
+
+    it('creates the meeting once meet-core is ready', async () => {
+        mocks.createInstantMeeting.mockRejectedValue(new Error('create failed'));
+        const { result } = renderJoinFlow();
+
+        await act(async () => {
+            await result.current.joinInstantMeeting('Alice');
+        });
+
+        expect(mocks.createInstantMeeting).toHaveBeenCalledTimes(1);
+        expect(mocks.meetCoreClient.whenReady.mock.invocationCallOrder[0]).toBeLessThan(
+            mocks.createInstantMeeting.mock.invocationCallOrder[0]
+        );
+    });
+});
+
+describe('useJoinFlow leaving the join page while an instant meeting starts', () => {
+    const instantMeeting = { meetingLinkName: 'instant-abc', passwordBase: 'instant-pw' };
+
+    const leaveWhilePending = async (step: Mock, settle: (pending: PromiseWithResolvers<unknown>) => void) => {
+        const pending = Promise.withResolvers<unknown>();
+        step.mockReturnValue(pending.promise);
+        const { result, unmount } = renderJoinFlow();
+
+        const starting = result.current.joinInstantMeeting('Alice');
+        await waitFor(() => expect(step).toHaveBeenCalled());
+        unmount();
+        settle(pending);
+        await starting;
+    };
+
+    beforeEach(() => {
+        mocks.createInstantMeeting.mockResolvedValue(instantMeeting);
+        mockConnectWithMls.mockResolvedValue({});
+    });
+
+    it('does not create the meeting when the host left while meet-core got ready', async () => {
+        await leaveWhilePending(mocks.meetCoreClient.whenReady, ({ resolve }) => resolve(undefined));
+
+        expect(mocks.createInstantMeeting).not.toHaveBeenCalled();
+        expect(mocks.historyPush).not.toHaveBeenCalled();
+    });
+
+    it('does not join the meeting when the host left while it was created', async () => {
+        await leaveWhilePending(mocks.createInstantMeeting, ({ resolve }) => resolve(instantMeeting));
+
+        expect(mockConnectWithMls).not.toHaveBeenCalled();
+        expect(mocks.historyPush).not.toHaveBeenCalled();
+    });
+
+    it('leaves the meeting when the host left while connecting to it', async () => {
+        await leaveWhilePending(mockConnectWithMls, ({ resolve }) => resolve({}));
+
+        expect(mocks.room.disconnect).toHaveBeenCalled();
+        expect(mocks.meetCoreClient.leaveMeeting).toHaveBeenCalled();
+        expect(mocks.historyPush).not.toHaveBeenCalled();
+    });
+
+    it('shows no error when connecting fails after the host left', async () => {
+        await leaveWhilePending(mockConnectWithMls, ({ reject }) => reject(new Error('connect failed')));
+
+        expect(dispatch).not.toHaveBeenCalledWith(expect.objectContaining({ type: setJoinError.type }));
+        expect(mocks.notifyError).not.toHaveBeenCalled();
+    });
 });

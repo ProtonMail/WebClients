@@ -76,6 +76,22 @@ describe('MeetCoreWorkerClient.restart', () => {
         await expect(restartPromise).resolves.toBe(true);
     });
 
+    it('sends the precompiled WASM module with the init of every new worker', async () => {
+        const wasmModule = {} as WebAssembly.Module;
+        const client = new MeetCoreWorkerClient();
+        const initPromise = client.init({ ...initParams, wasmModule });
+        FakeWorker.instances[0].ackInit();
+        await initPromise;
+
+        void client.restart();
+
+        for (const worker of FakeWorker.instances) {
+            const init = worker.posted.find((message) => message.type === 'meet-core:init');
+            expect(init.params.wasmModule).toBe(wasmModule);
+        }
+        expect(FakeWorker.instances).toHaveLength(2);
+    });
+
     it('holds calls made during the restart until the new worker is ready', async () => {
         const client = await createInitializedClient();
 

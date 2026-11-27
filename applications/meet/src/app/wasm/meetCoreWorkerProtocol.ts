@@ -13,6 +13,7 @@ export interface MeetCoreInitParams {
     uid: string;
     useCachedServerTime: boolean;
     useMessageQueues: boolean;
+    wasmModule: WebAssembly.Module;
 }
 
 export interface MeetCoreCookieAckMessage {

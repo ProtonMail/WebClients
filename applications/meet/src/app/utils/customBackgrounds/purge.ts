@@ -5,7 +5,7 @@ import { getPersistedSessions } from '@proton/shared/lib/authentication/persiste
 import isTruthy from '@proton/utils/isTruthy';
 
 import { pruneOrphanBackgroundNamespaces, purgeBackgroundNamespace } from './cache/backgroundCache';
-import { forgetBackgroundsFolderUid } from './drive/backgroundsFolder';
+import { forgetBackgroundsFolderUid } from './drive/backgroundsFolderUidStorage';
 
 /** Drops one user's records on logout, mirroring Redux persist's `deleteStore(persistedSession.UserID)`. */
 export const purgeUserBackgrounds = async (userId: string): Promise<void> => {
