@@ -4125,6 +4125,9 @@
       ],
       "Your system time zone seems to have changed to ${ timezone }. Do you want to update your time zone preference?": [
         "Izḍi usrid n unagraw-inek·inem yettban yettusenfel ɣer ${ timezone }. Tebɣiḍ ad tleqqmeḍ asmenyif-inek·inem n yizḍi usrid?"
+      ],
+      "Add ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
+        "Rnu ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }"
       ]
     },
     "info": {
@@ -4202,6 +4205,9 @@
     "Keyboard shortcut section name": {
       "Basic actions": [
         "Tigawin tizadurin"
+      ],
+      "Desktop app navigation": [
+        "Tunigin deg usnas n tnarit"
       ]
     },
     "Knowledge base link label": {
@@ -5629,6 +5635,9 @@
       "The specially discounted price is valid for the first ${ subscriptionLength } month.": [
         "Atig yettwasenqsen s wudem uzzig yeṣleḥ i ${ subscriptionLength } n wayyur amezwaru.",
         "Atig yettwasenqsen s wudem uzzig yeṣleḥ i ${ subscriptionLength } n wayyuren imezwura."
+      ],
+      "Taxes ${ rate }%": [
+        "Tiwsiwin ${ rate }%"
       ]
     },
     "Payments.Error": {
@@ -7226,6 +7235,9 @@
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "Aneɛruḍ-ik n baṭel ad ifakk deg ${ textDate }. ${ action }"
+      ],
+      "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
+        "Taremt-ik ad tfakk deg ${ textDate }. Ur tettxelliṣeḍ ara ma yella tsemmteḍ uqbel ${ textDate }.${ action }"
       ]
     },
     "Weekly recurring event, frequency": {
@@ -7471,6 +7483,27 @@
       ],
       "Yearly, ${ untilString }": [
         "S useggas, ${ untilString }"
+      ]
+    },
+    "collider_2025: feature": {
+      "Basic chat history": [
+        "Azray n udiwenni agejdan"
+      ],
+      "Unlimited daily chats": [
+        "Idiwenniten n yal ass war tilisa"
+      ]
+    },
+    "Provider option": {
+      "Yahoo": [
+        "Yahoo"
+      ]
+    },
+    "Tor out of date": {
+      "stable release": [
+        "lqem urkid"
+      ],
+      "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
+        "Lqem-agi n yiminig Tor ur yettwadhel ara. Ma ulac uɣilif leqqem ɣer ${ stableRelease } aneggaru"
       ]
     }
   }

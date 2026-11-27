@@ -31,7 +31,7 @@
         "En potentiell läcka på ${ name } upptäcktes. Aktivera ${ DARK_WEB_MONITORING_NAME } för att se detaljer och vidta åtgärd. ${ link }"
       ],
       "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
-        "En potentiell läcka från ${ name } upptäcktes. Slå på ${ DARK_WEB_MONITORING_NAME } för att visa detaljer och vita åtgärd. ${ link }"
+        "En potentiell läcka från ${ name } upptäcktes. Slå på ${ DARK_WEB_MONITORING_NAME } för att visa detaljer och vidta åtgärd. ${ link }"
       ],
       "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
         "En potentiell läcka från ${ name } upptäcktes. Aktivera ${ DARK_WEB_MONITORING_NAME } för att se detaljer. ${ link }"
@@ -6033,7 +6033,7 @@
         "Uppdatera sidan eller ${ link } kommer automatiskt att lösa de flesta problemen."
       ],
       "Registering your subscription…": [
-        "Registrerar din prenumeration …"
+        "Registrerar din prenumeration…"
       ],
       "Removed participants will be notified.": [
         "Borttagna deltagare kommer att meddelas."
@@ -8683,7 +8683,7 @@
         "${ CALENDAR_APP_NAME }: Säkra ditt schema med end-to-end-kryptering. Inkluderar stöd för anpassade kalendrar, kalenderdelning och mer."
       ],
       "${ DOCS_APP_NAME }: Create, edit, and collaborate on end-to-end encrypted docs.": [
-        " ${ DOCS_APP_NAME } Skapa, redigera och samarbeta kring dokument med end-to-end kryptering."
+        "${ DOCS_APP_NAME } Skapa, redigera och samarbeta kring dokument med end-to-end kryptering."
       ],
       "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "${ DRIVE_APP_NAME }: Säkra dina filer med krypterad molnlagring. Inkluderar automatisk synkronisering, krypterad fildelning och mer."
@@ -12539,6 +12539,24 @@
       ],
       "Version 6 OpenPGP key": [
         "OpenPGP-nyckel version 6"
+      ],
+      "Add a data recovery method to unlock your data if you forget your password.": [
+        "Lägg till en dataåterställningsmetod för att låsa upp din data om du glömmer bort ditt lösenord."
+      ],
+      "Create a recovery phrase so you can recover your data if you forget your password.": [
+        "Skapa en återställningsfras så att du kan återställa dina data om du glömmer ditt lösenord."
+      ],
+      "Generate a recovery phrase to protect your account against data loss.": [
+        "Generera en återställningsfras för att skydda ditt konto mot dataförlust."
+      ],
+      "Some of your data is locked. Use a recovery method to unlock it.": [
+        "En del av din data är låst. Använd en återställningsmetod för att låsa upp den."
+      ],
+      "Your recovery file is out of date. Download a new one so you can still recover your data.": [
+        "Din återställningsfil är föråldrad. Ladda ner en ny så att du fortfarande kan återställa dina data."
+      ],
+      "Your recovery phrase is out of date. Get a new one so you can still recover your data.": [
+        "Din återställningsfras är föråldrad. Skaffa en ny så att du fortfarande kan återställa din data."
       ]
     },
     "tooltip": {
@@ -13132,6 +13150,14 @@
       ],
       "Passcode:": [
         "Lösenkod:"
+      ]
+    },
+    "Tor out of date": {
+      "stable release": [
+        "stabil utgåva"
+      ],
+      "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
+        "Denna version av Tor-webbläsaren stöds inte. Uppdatera till senaste ${ stableRelease }"
       ]
     }
   }

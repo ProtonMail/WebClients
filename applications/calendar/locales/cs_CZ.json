@@ -13233,6 +13233,14 @@
       "Passcode:": [
         "Přístupový kód:"
       ]
+    },
+    "Tor out of date": {
+      "stable release": [
+        "stabilní verze"
+      ],
+      "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
+        "Tato verze prohlížeče Tor není podporována. Prosím aktualizujte na poslední ${ stableRelease }"
+      ]
     }
   }
 }

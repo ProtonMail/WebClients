@@ -12549,6 +12549,14 @@
       "Passcode:": [
         "Koda za dostop:"
       ]
+    },
+    "Tor out of date": {
+      "stable release": [
+        "izdajno različico"
+      ],
+      "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
+        "Ta različica brskalnika Tor ni podprta. Posodobite na najnovejšo ${ stableRelease }"
+      ]
     }
   }
 }

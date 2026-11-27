@@ -13438,6 +13438,14 @@
       "Passcode:": [
         "Cod de acces:"
       ]
+    },
+    "Tor out of date": {
+      "stable release": [
+        "versiune stabilă"
+      ],
+      "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
+        "Această versiune a navigatorului web Tor nu este suportată. Actualizați-l la cea mai recentă versiune ${ stableRelease }."
+      ]
     }
   }
 }

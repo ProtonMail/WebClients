@@ -12668,6 +12668,14 @@
       "Passcode:": [
         "საკვანძო კოდი:"
       ]
+    },
+    "Tor out of date": {
+      "stable release": [
+        "სტაბილური რელიზი"
+      ],
+      "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
+        "Tor Browser-ის ეს ვერსია მხარდაუჭერელია. განაახლეთ უკანასკნელ ვერსიამდე: ${ stableRelease }"
+      ]
     }
   }
 }

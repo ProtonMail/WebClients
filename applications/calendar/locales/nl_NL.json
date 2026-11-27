@@ -12920,6 +12920,14 @@
       "Passcode:": [
         "Toegangscode:"
       ]
+    },
+    "Tor out of date": {
+      "stable release": [
+        "stabiele release"
+      ],
+      "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
+        "Deze versie van Tor Browser wordt niet ondersteund. Werk de browser bij tot de meest recente versie ${ stableRelease }"
+      ]
     }
   }
 }

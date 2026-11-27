@@ -12460,7 +12460,7 @@
         "Afegeix un mètode de recuperació de dades per desbloquejar-les si oblideu la contrasenya."
       ],
       "Add a recovery email or phone so you can reset your password if you forget it.": [
-        "Afegiu un correu electrònic o un telèfon de recuperació per poder restablir la contrasenya si l'oblideu."
+        "Afegiu un correu electrònic o un telèfon de recuperació per a poder restablir la contrasenya si l'oblideu."
       ],
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "Automàtic indica que el format del compositor s'utilitza per enviar-lo a aquest usuari. El text sense format indica que el missatge sempre es convertirà a text sense format en enviar."
@@ -12529,7 +12529,7 @@
         "Mostra el panell lateral"
       ],
       "Some of your data is locked. Use a recovery method to unlock it.": [
-        "Part de les vostres dades estan bloquejades. Feu servir un mètode de recuperació per desbloquejar-les."
+        "Part de les vostres dades estan bloquejades. Feu servir un mètode de recuperació per a desbloquejar-les."
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Les subcarpetes del sistema es mostraran com a carpetes independents a ${ MAIL_APP_NAME }"
@@ -13165,6 +13165,14 @@
       ],
       "Passcode:": [
         "Codi d'accés:"
+      ]
+    },
+    "Tor out of date": {
+      "stable release": [
+        "versió estable"
+      ],
+      "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
+        "Aquesta versió del Navegador Tor no és compatible. Actualitzeu a la darrera ${ stableRelease }."
       ]
     }
   }

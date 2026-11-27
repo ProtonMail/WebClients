@@ -12615,6 +12615,14 @@
       "Passcode:": [
         "비밀번호:"
       ]
+    },
+    "Tor out of date": {
+      "stable release": [
+        "안정 배포판"
+      ],
+      "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
+        "이 버전의 Tor 브라우저가 지원되지 않습니다. 최신 ${ stableRelease }(으)로 업데이트 해주세요"
+      ]
     }
   }
 }

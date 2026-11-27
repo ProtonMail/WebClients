@@ -11773,6 +11773,14 @@
       "Passcode:": [
         "Belépési kód:"
       ]
+    },
+    "Tor out of date": {
+      "stable release": [
+        "stabil kiadásra"
+      ],
+      "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
+        "Az a Tor Browser verzió nem támogatott. Kérjük, frissítsen a legfrissebb ${ stableRelease }"
+      ]
     }
   }
 }

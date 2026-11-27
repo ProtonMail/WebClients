@@ -13710,6 +13710,14 @@
       "Passcode:": [
         "Prístupový kód:"
       ]
+    },
+    "Tor out of date": {
+      "stable release": [
+        "stabilná verzia"
+      ],
+      "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
+        "Táto verzia Tor browsera nie je podporovaná. Aktualizujte na najnovšiu verziu ${ stableRelease }, prosím."
+      ]
     }
   }
 }

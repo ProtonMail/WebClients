@@ -12723,6 +12723,14 @@
       "Passcode:": [
         "Tunnuskoodi:"
       ]
+    },
+    "Tor out of date": {
+      "stable release": [
+        "vakaaseen versioon"
+      ],
+      "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
+        "Tätä Tor-selaimen versiota ei tueta. Päivitä viimeisimpään ${ stableRelease }"
+      ]
     }
   }
 }

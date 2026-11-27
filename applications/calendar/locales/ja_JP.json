@@ -12702,6 +12702,14 @@
       "Passcode:": [
         "パスコード："
       ]
+    },
+    "Tor out of date": {
+      "stable release": [
+        "安定版"
+      ],
+      "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
+        "Torブラウザのこのバージョンはサポートされていません。最新の${ stableRelease }へアップグレードしてください。"
+      ]
     }
   }
 }

@@ -13343,6 +13343,14 @@
       "Passcode:": [
         "Код доступу"
       ]
+    },
+    "Tor out of date": {
+      "stable release": [
+        "стабільна версія"
+      ],
+      "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
+        "Ця версія Tor Browser не підтримується. Будь ласка, оновіть до останньої версії ${ stableRelease }"
+      ]
     }
   }
 }

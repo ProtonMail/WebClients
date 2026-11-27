@@ -1046,6 +1046,12 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "A sua avaliação gratuita da aplicação para desktop termina em ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Next contact": [
+        "Novo contacto"
+      ],
+      "Previous contact": [
+        "Contacto anterior"
       ]
     },
     "action": {
@@ -7304,6 +7310,9 @@
       ],
       "Zoom meeting": [
         "Reunião Zoom"
+      ],
+      "${ BRAND_NAME } Account password": [
+        "Palavra-passe da conta ${ BRAND_NAME }"
       ]
     },
     "label": {
@@ -8274,7 +8283,7 @@
         "Suporte para router"
       ],
       "Save time emailing": [
-        "Economize tempo ao enviar e-mails"
+        "Poupe tempo ao enviar mensagens"
       ],
       "Schedule and snooze emails for any time": [
         "Agende e adie e-mails para quando quiser"
@@ -12910,6 +12919,96 @@
       ],
       "Passcode:": [
         "Código de acesso:"
+      ]
+    },
+    "lumo_2026: feature": {
+      "5x Plus usage": [
+        "5x mais utilização Plus"
+      ],
+      "API access, with ${ credit } a month credit": [
+        "Acesso à API, com um crédito de ${ credit } por mês"
+      ],
+      "API access, with ${ credit } a month credit per user": [
+        "Acesso à API, com um crédito de ${ credit } por mês por utilizador"
+      ],
+      "Everything in Basic, and:": [
+        "Tudo o que está incluído no plano Básico, e:"
+      ],
+      "Everything in Free, and:": [
+        "Tudo o que está incluído no plano Gratuito, e:"
+      ],
+      "Includes:": [
+        "Incluí:"
+      ],
+      "Limited messages and chat history": [
+        "Mensagens e histórico de conversas limitados"
+      ],
+      "Maximum image generation": [
+        "Geração de imagem máxima"
+      ],
+      "Maximum Skills and Projects": [
+        "Competências e Projetos Máximos"
+      ],
+      "More image generation": [
+        "Mais geração de imagem"
+      ],
+      "More usage": [
+        "Mais utilização"
+      ]
+    },
+    "Tor out of date": {
+      "stable release": [
+        "lançamento estável"
+      ],
+      "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
+        "Esta versão do navegador Tor não é suportada. Atualize para a última versão ${ stableRelease }"
+      ]
+    },
+    "Visionary upsell": {
+      "${ devicesPerUser } per user": [
+        "${ devicesPerUser } por utilizador"
+      ],
+      "10 years": [
+        "10 anos"
+      ],
+      "Calendars": [
+        "Calendários"
+      ],
+      "Custom email domains": [
+        "Domínios de ''e-mail'' personalizados"
+      ],
+      "Email addresses": [
+        "Endereços de correio electrónico"
+      ],
+      "Hide-my-email aliases": [
+        "Pseudónimos Hide-my-email"
+      ],
+      "New ${ BRAND_NAME } services at no extra cost": [
+        "Novos serviços de ${ BRAND_NAME } sem custos adicionais"
+      ],
+      "Password vaults": [
+        "Cofres de palavras-passe"
+      ],
+      "Previous versions": [
+        "Versões anteriores"
+      ],
+      "Storage": [
+        "Armazenamento"
+      ],
+      "Ultra servers, reserved for you": [
+        "Ultra servidores, reservados para si"
+      ],
+      "Unlimited": [
+        "Ilimitado"
+      ],
+      "Up to ${ limit }": [
+        "Até ${ limit }"
+      ],
+      "Users": [
+        "Utilizadores"
+      ],
+      "VPN devices at once": [
+        "Dispositivos VPN em simultâneo"
       ]
     }
   }

@@ -12493,6 +12493,14 @@
       "Passcode:": [
         "數字密碼:"
       ]
+    },
+    "Tor out of date": {
+      "stable release": [
+        "穩定版本"
+      ],
+      "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
+        "此版本的 Tor 瀏覽器已經不被支援。請更新到最新版 ${ stableRelease }"
+      ]
     }
   }
 }

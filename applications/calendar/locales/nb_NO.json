@@ -12969,6 +12969,19 @@
       "Passcode:": [
         "Adgangskode:"
       ]
+    },
+    "Event popover close button": {
+      "Close": [
+        "Lukk"
+      ]
+    },
+    "Tor out of date": {
+      "stable release": [
+        "stabil utgivelse"
+      ],
+      "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
+        "Denne versjonen av Tor-nettleser støttes ikke. Oppdater til seneste ${ stableRelease }"
+      ]
     }
   }
 }

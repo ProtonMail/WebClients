@@ -13132,6 +13132,14 @@
       "Passcode:": [
         "Código de acceso:"
       ]
+    },
+    "Tor out of date": {
+      "stable release": [
+        "versión estable"
+      ],
+      "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
+        "Esta versión del navegador Tor no es compatible. Actualiza a la última ${ stableRelease }."
+      ]
     }
   }
 }
