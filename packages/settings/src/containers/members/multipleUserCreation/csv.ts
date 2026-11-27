@@ -17,6 +17,8 @@ export interface CsvConfig {
     includeStorage?: boolean;
     includeVpnAccess?: boolean;
     includePrivateSubUser?: boolean;
+    /** Users can only be invited by email, so files with passwords are rejected */
+    invitationsOnly?: boolean;
     mode: CreateMemberMode;
 }
 
@@ -247,6 +249,10 @@ export const parseMultiUserCsv = async (files: File[], fallbackConfig: CsvConfig
             type: CSV_FORMAT_ERROR_TYPE.MISSING_REQUIRED_FIELD,
             fieldName: 'EmailAddress',
         });
+    }
+
+    if (config.invitationsOnly && config.mode !== CreateMemberMode.Invitation) {
+        throw new CsvFormatError({ type: CSV_FORMAT_ERROR_TYPE.INVITATIONS_ONLY });
     }
 
     if (config.mode === CreateMemberMode.Password) {

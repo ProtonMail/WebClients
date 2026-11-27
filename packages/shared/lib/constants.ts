@@ -702,6 +702,8 @@ export enum ORGANIZATION_FLAGS {
     PHONE_SUPPORT = 256,
     TO_MIGRATE_ORG_KEY = 1 << 9,
     DELETION_WHITELISTED = 1 << 11,
+    /** Set on Pass Basic signup: the organization is limited to Pass and can only invite users */
+    PASS_ONLY = 1 << 15,
 }
 
 export enum OrganizationPlanFlag {

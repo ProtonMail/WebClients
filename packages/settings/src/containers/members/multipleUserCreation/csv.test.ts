@@ -239,6 +239,31 @@ describe('parseMultiUserCsv', () => {
                 `It looks like your file is missing the 'Password' header.`
             );
         });
+
+        describe('when only invitations are allowed', () => {
+            const inviteOnlyConfig = getCsvConfig({
+                mode: CreateMemberMode.Invitation,
+                multipleAddresses: false,
+                invitationsOnly: true,
+            });
+            const invitationsOnlyError = `Users on your plan can only be invited by email. Remove the 'Password' column and try again.`;
+
+            it('rejects a file with a Password header', async () => {
+                const file = getFile(['EmailAddress,Password', 'alice@example.com,alice_example_password'].join('\n'));
+
+                await expect(parseMultiUserCsv([file], inviteOnlyConfig)).rejects.toThrow(invitationsOnlyError);
+            });
+
+            it('imports a file without passwords with invite links', async () => {
+                const file = getFile(['DisplayName,EmailAddress', 'Alice,alice@example.com'].join('\n'));
+
+                const result = await parseMultiUserCsv([file], inviteOnlyConfig);
+
+                expect(result.mode).toBe(CreateMemberMode.Invitation);
+                expect(result.errors.length).toBe(0);
+                expect(result.users[0].invitationEmail).toBe('alice@example.com');
+            });
+        });
     });
 
     describe('errors', () => {

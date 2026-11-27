@@ -45,8 +45,16 @@ import {
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { revokeSessions } from '@proton/shared/lib/api/memberSessions';
 import { resendUnprivatizationLink } from '@proton/shared/lib/api/members';
-import { APPS, type APP_NAMES, MEMBER_PRIVATE, MEMBER_TYPE, ORGANIZATION_STATE } from '@proton/shared/lib/constants';
+import {
+    APPS,
+    type APP_NAMES,
+    MEMBER_PRIVATE,
+    MEMBER_TYPE,
+    ORGANIZATION_FLAGS,
+    ORGANIZATION_STATE,
+} from '@proton/shared/lib/constants';
 import { getAvailableAddressDomains } from '@proton/shared/lib/helpers/address';
+import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import { hasOrganizationSetupWithKeys } from '@proton/shared/lib/helpers/organization';
 import type { Address } from '@proton/shared/lib/interfaces/Address';
 import { type EnhancedMember, MEMBER_STATE, type Member } from '@proton/shared/lib/interfaces/Member';
@@ -158,6 +166,9 @@ export const useMemberActions = ({
         app !== APPS.PROTONPASS;
     // Allow to update seats (this should be done automatically for visionary)
     const allowLumoUpdate = lumoAddonAvailable;
+
+    // Pass-only organizations (Pass Basic) can only invite users, so they confirm they own their email
+    const invitationsOnly = hasBit(organization?.Flags, ORGANIZATION_FLAGS.PASS_ONLY);
 
     const showMultipleUserUploadButton = hasExternalMemberCapableB2BPlan;
     const showAddressesSection = !hasExternalMemberCapableB2BPlan && hasMaxAddresses;
@@ -449,6 +460,7 @@ export const useMemberActions = ({
                     allowPrivateMemberConfiguration={allowPrivateMemberConfiguration}
                     allowAIAssistantConfiguration={allowAIAssistantConfiguration}
                     allowLumoConfiguration={allowLumoConfiguration}
+                    invitationsOnly={invitationsOnly}
                     showMultipleUserUploadButton={showMultipleUserUploadButton}
                     disableStorageValidation={!allowStorageConfiguration}
                     disableDomainValidation={useEmail}

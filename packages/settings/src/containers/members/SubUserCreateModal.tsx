@@ -90,6 +90,7 @@ interface Props extends ModalProps {
     allowPrivateMemberConfiguration?: boolean;
     allowAIAssistantConfiguration?: boolean;
     allowLumoConfiguration: boolean;
+    invitationsOnly?: boolean;
     showMultipleUserUploadButton?: boolean;
     disableStorageValidation?: boolean;
     disableDomainValidation?: boolean;
@@ -112,6 +113,7 @@ const SubUserCreateModal = ({
     allowPrivateMemberConfiguration,
     allowAIAssistantConfiguration,
     allowLumoConfiguration,
+    invitationsOnly,
     showMultipleUserUploadButton,
     disableStorageValidation,
     disableDomainValidation,
@@ -313,6 +315,7 @@ const SubUserCreateModal = ({
                     includeStorage: allowStorageConfiguration,
                     includeVpnAccess: allowVpnAccessConfiguration,
                     includePrivateSubUser: allowPrivateMemberConfiguration,
+                    invitationsOnly,
                 }}
             />
         );
@@ -437,13 +440,18 @@ const SubUserCreateModal = ({
                         label={c('user_modal').t`Invitation email`}
                         assistiveText={
                             <>
-                                {c('user_modal').t`An invitation will be sent to this email address.`}&nbsp;
-                                <InlineLinkButton
-                                    className="inline-block"
-                                    onClick={() => setMode(CreateMemberMode.Password)}
-                                >
-                                    {c('user_modal').t`Create password instead`}
-                                </InlineLinkButton>
+                                {c('user_modal').t`An invitation will be sent to this email address.`}
+                                {!invitationsOnly && (
+                                    <>
+                                        &nbsp;
+                                        <InlineLinkButton
+                                            className="inline-block"
+                                            onClick={() => setMode(CreateMemberMode.Password)}
+                                        >
+                                            {c('user_modal').t`Create password instead`}
+                                        </InlineLinkButton>
+                                    </>
+                                )}
                             </>
                         }
                     />
