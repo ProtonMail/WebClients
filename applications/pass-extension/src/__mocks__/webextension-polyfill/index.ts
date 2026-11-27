@@ -61,6 +61,7 @@ const browser = {
         onRemoved: { addListener: vi.fn() },
     },
     webRequest: {
+        onAuthRequired: { addListener: vi.fn() },
         onBeforeRequest: { addListener: vi.fn() },
         onCompleted: { addListener: vi.fn() },
         onErrorOccurred: { addListener: vi.fn() },

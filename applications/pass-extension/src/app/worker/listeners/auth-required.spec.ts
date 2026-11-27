@@ -1,8 +1,13 @@
+import type { Mock } from 'vitest';
+import type { WebRequest } from 'webextension-polyfill';
+
+import browser from '@proton/pass/lib/globals/browser';
 import { itemBuilder } from '@proton/pass/lib/items/item.builder';
 import type { ItemRevision } from '@proton/pass/types/data/items';
 import { createTestItem } from '@proton/pass/utils/tests/fixtures/items';
 
-import { BASIC_AUTH_URL_RE, resolveCredentials } from './auth-required';
+import { WorkerContext } from '../context/inject';
+import { BASIC_AUTH_URL_RE, createBasicAuthController, resolveCredentials } from './auth-required';
 
 const createMockLoginItem = (username: string, password: string): ItemRevision<'login'> =>
     createTestItem('login', {
@@ -108,6 +113,56 @@ describe('Basic auth listener', () => {
                 const result = resolveCredentials({ items, url, attempt: 2 });
 
                 expect(result).toEqual({ cancel: false });
+            });
+        });
+    });
+
+    describe('onAuthRequired', () => {
+        const savedLogins = [
+            createMockLoginItem('::username::', '::password::'),
+            createMockLoginItem('::username-2::', '::password-2::'),
+        ];
+
+        let onAuthRequired: (details: Partial<WebRequest.OnAuthRequiredDetailsType>) => WebRequest.BlockingResponse;
+
+        const pageLoadAsksForLogin = (isProxy: boolean) =>
+            onAuthRequired({ requestId: '1', url: 'https://intranet.example.com/', type: 'main_frame', isProxy });
+
+        const siteAsksForLogin = () => pageLoadAsksForLogin(false);
+        const proxyAsksForLogin = () => pageLoadAsksForLogin(true);
+
+        beforeEach(async () => {
+            WorkerContext.set({
+                getState: () => ({ authorized: true }),
+                service: {
+                    autofill: { getLoginCandidates: () => savedLogins },
+                    store: { getState: () => ({ settings: { autofill: { basicAuth: true } } }) },
+                },
+            } as any);
+
+            createBasicAuthController().listen();
+            const addListener = browser.webRequest.onAuthRequired.addListener as Mock;
+            await vi.waitFor(() => expect(addListener).toHaveBeenCalled());
+            onAuthRequired = addListener.mock.lastCall?.[0];
+        });
+
+        afterEach(() => WorkerContext.clear());
+
+        it('should fill the saved login when the site asks for it', () => {
+            expect(siteAsksForLogin()).toEqual({
+                authCredentials: { username: '::username::', password: '::password::' },
+            });
+        });
+
+        it('should not fill a saved login when a proxy asks for credentials', () => {
+            expect(proxyAsksForLogin()).toEqual({ cancel: false });
+        });
+
+        it('should start from the first saved login when the site asks after the proxy', () => {
+            proxyAsksForLogin();
+
+            expect(siteAsksForLogin()).toEqual({
+                authCredentials: { username: '::username::', password: '::password::' },
             });
         });
     });
