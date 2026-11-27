@@ -3,6 +3,7 @@ import { useMemo } from 'react';
 import { IcUpgrade } from '@proton/icons/icons/IcUpgrade';
 
 import { UpsellRef } from '../../../constants';
+import { useLessAggressiveUpsell } from '../../../hooks/useLessAggressiveUpsell';
 import { useMatchUser } from '../../../hooks/useMatchUser';
 import { useMemoSelector } from '../../../hooks/useMemoSelector';
 import { selectActivePromoNotification } from '../../../store/notifications/in-app/selectors';
@@ -15,11 +16,16 @@ export const UpsellButton = () => {
     const now = useMemo(() => getEpoch(), []);
     const promo = useMemoSelector(selectActivePromoNotification, [now, false]);
 
+    /** B2C only: when the softer upsell applies, the navbar upgrade button is
+     * removed and the card in the menu / sidebar is the only in-app upsell.
+     * Promo notifications are time-boxed campaigns and keep their button. */
+    const lessAggressiveUpsell = useLessAggressiveUpsell();
+
     /* Apple refuses that we sell anything in apps including Safari extensions */
     if (BUILD_TARGET === 'safari') return null;
 
     const showPromo = !!promo;
-    const showUpgrade = !showPromo && !paidUser;
+    const showUpgrade = !showPromo && !paidUser && !lessAggressiveUpsell;
 
     return (
         <>
