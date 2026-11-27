@@ -70,7 +70,7 @@ export const ScheduledSidebarSection = ({ onItemClick }: { onItemClick?: () => v
                 )}
                 {scheduleEntries.length === 0 && (
                     // translator: Empty state beneath the Scheduled sidebar heading.
-                    <div className="px-1.5 py-1 lumo-body-small lumo-color-glyph-mid">
+                    <div className="px-3 py-2 lumo-body-small lumo-color-glyph-mid">
                         {c('collider_2025:Info').t`No scheduled tasks yet.`}
                     </div>
                 )}
