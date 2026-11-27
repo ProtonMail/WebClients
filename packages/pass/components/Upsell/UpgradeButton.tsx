@@ -26,6 +26,7 @@ type UpgradeButtonProps = PromotionButtonProps<typeof ButtonLike> & {
     label?: string;
     onClick?: () => void;
     path?: string;
+    plan?: string;
     style?: CSSProperties;
     upsellRef: UpsellRef;
 };
@@ -40,6 +41,7 @@ export const UpgradeButton: FC<UpgradeButtonProps> = ({
     label,
     onClick = noop,
     path,
+    plan,
     style,
     upsellRef,
     ...rest
@@ -55,7 +57,7 @@ export const UpgradeButton: FC<UpgradeButtonProps> = ({
     /** When PassNavbarUpgradeToAccount is enabled, upgrade button opens the
      * account upgrade page instead of the signup page. */
     const upgradeToAccount = useFeatureFlag(PassFeature.PassNavbarUpgradeToAccount);
-    const navigateToUpgrade = useNavigateToUpgrade({ upsellRef, path, upgradeToAccount });
+    const navigateToUpgrade = useNavigateToUpgrade({ upsellRef, path, plan, upgradeToAccount });
 
     /** `onClick` may trigger async wrapped code - since `navigateToUpgrade`
      * will close the popup, ensure we execute `navigateToUpgrade` on next tick */

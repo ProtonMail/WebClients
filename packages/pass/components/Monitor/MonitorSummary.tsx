@@ -9,6 +9,7 @@ import { Scroll } from '@proton/atoms/Scroll/Scroll';
 import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
 import { IcExclamationFilled } from '@proton/icons/icons/IcExclamationFilled';
 import { DARK_WEB_MONITORING_NAME, PASS_SHORT_APP_NAME } from '@proton/shared/lib/constants';
+import clsx from '@proton/utils/clsx';
 
 import { UpsellRef } from '../../constants';
 import { useFeatureFlag } from '../../hooks/useFeatureFlag';
@@ -209,9 +210,15 @@ export const MonitorSummary: FC = () => {
                                 upsellRef={UpsellRef.PASS_MONITOR}
                                 upsellType={upsellType}
                                 upgradePath={upgradePath}
+                                size={features.length > 5 ? 'xlarge' : undefined}
                                 onClose={() => setUpsellModalOpen(false)}
                                 features={
-                                    <div className="border border-weak p-4 w-full rounded-xl">
+                                    <div
+                                        className={clsx(
+                                            'border border-weak p-4 w-full rounded-xl',
+                                            features.length > 5 && 'grid grid-cols-1 md:grid-cols-2'
+                                        )}
+                                    >
                                         {features.map(({ label, icon: Icon }) => (
                                             <CardContent
                                                 key={label}
