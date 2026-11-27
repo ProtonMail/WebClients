@@ -1,4 +1,5 @@
 import { type FC, useCallback, useRef } from 'react';
+import { useSelector } from 'react-redux';
 import type { List } from 'react-virtualized';
 
 import { c } from 'ttag';
@@ -12,6 +13,7 @@ import { useTelemetryEvent } from '../../../hooks/useTelemetryEvent';
 import { itemEq } from '../../../lib/items/item.predicates';
 import { getItemKey } from '../../../lib/items/item.utils';
 import { selectSelectedItems } from '../../../store/selectors/items';
+import { selectCanCheckInactive2FAs } from '../../../store/selectors/monitor';
 import type { ItemRevision } from '../../../types/data/items';
 import { TelemetryEventName } from '../../../types/data/telemetry';
 import { useContextMenu } from '../../ContextMenu/ContextMenuProvider';
@@ -28,8 +30,9 @@ export const Missing2FAs: FC = () => {
     const containerRef = useRef<HTMLDivElement>(null);
     const selectItem = useSelectItemAction();
 
+    const allowed = useSelector(selectCanCheckInactive2FAs);
     const { missing2FAs } = useMonitor();
-    const items = useMemoSelector(selectSelectedItems, [missing2FAs.data, 'titleASC']);
+    const items = useMemoSelector(selectSelectedItems, [allowed ? missing2FAs.data : [], 'titleASC']);
     const selectedItem = useSelectedItem();
     const { close } = useContextMenu();
     const { item: contextMenuItem, onContextMenu } = useItemContextMenu();
@@ -43,9 +46,11 @@ export const Missing2FAs: FC = () => {
     }, []);
 
     if (items.length === 0) {
+        const emptyLabel = allowed ? c('Title').t`No inactive 2FAs` : c('Title').t`Upgrade to check for inactive 2FAs`;
+
         return (
             <div className="flex items-center justify-center color-weak text-sm text-center text-break h-full">
-                <strong>{missing2FAs.loading ? <CircleLoader size="small" /> : c('Title').t`No inactive 2FAs`}</strong>
+                <strong>{missing2FAs.loading ? <CircleLoader size="small" /> : emptyLabel}</strong>
             </div>
         );
     }

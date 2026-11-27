@@ -34,9 +34,8 @@ import { useFeatureFlag } from '../../../hooks/useFeatureFlag';
 import { useItemLoading } from '../../../hooks/useItemLoading';
 import { isVaultShare } from '../../../lib/shares/share.predicates';
 import { selectAllVaults } from '../../../store/selectors/shares';
-import { selectPassPlan, selectUserPlan } from '../../../store/selectors/user';
+import { selectUserAutoTypeAllowed } from '../../../store/selectors/user';
 import { PassFeature } from '../../../types/api/features';
-import { UserPassPlan } from '../../../types/api/plan';
 import type { ItemType } from '../../../types/protobuf';
 import { VaultIcon } from '../../../types/protobuf/vault-v1.static';
 import { SpotlightMessage } from '../../../types/worker/spotlight';
@@ -72,8 +71,7 @@ export const ItemViewPanel: FC<Props> = ({
     handleSecureLinkClick,
 }) => {
     const upsell = useUpselling();
-    const isFreePlan = useSelector(selectPassPlan) === UserPassPlan.FREE;
-    const isPassEssentials = useSelector(selectUserPlan)?.InternalName === 'passpro2024';
+    const autoTypeAllowed = useSelector(selectUserAutoTypeAllowed);
 
     const { data, optimistic, failed } = revision;
     const { name } = data.metadata;
@@ -110,8 +108,7 @@ export const ItemViewPanel: FC<Props> = ({
     const signalQuickActions =
         BUILD_TARGET !== 'linux' &&
         autotypeEnabled &&
-        !isFreePlan &&
-        !isPassEssentials &&
+        autoTypeAllowed &&
         autotypeDiscoverySpotlight.open &&
         data.type === 'login' &&
         [data.content.password, data.content.itemEmail, data.content.itemUsername].some(({ v }) => v?.length);

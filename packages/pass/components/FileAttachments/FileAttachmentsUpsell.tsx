@@ -13,18 +13,18 @@ import { selectUser, selectUserPlan } from '../../store/selectors/user';
 import { Card } from '../Layout/Card/Card';
 
 type Props = {
-    /** Pass Ess users upgrade via an inline link (admin) or their admin (member),
+    /** B2B users upgrade via an inline link (admin) or their admin (member),
      * instead of the B2C upsell modal. */
-    isPassEssentials: boolean;
+    isPassB2BPlan: boolean;
 
-    /** Open the B2C upsell modal (non-Essentials users). */
+    /** Open the B2C upsell modal (non-B2B users). */
     onUpsell: () => void;
 };
 
 /** Upsell rendered in place of the upload button when the user cannot use
  * storage. Existing files are still rendered (e.g. in case of downgrade)
  */
-export const FileAttachmentsUpsell: FC<Props> = ({ isPassEssentials, onUpsell }) => {
+export const FileAttachmentsUpsell: FC<Props> = ({ isPassB2BPlan, onUpsell }) => {
     const user = useSelector(selectUser);
     const userPlan = useSelector(selectUserPlan);
     const navigateToUpgrade = useNavigateToUpgrade({
@@ -33,7 +33,7 @@ export const FileAttachmentsUpsell: FC<Props> = ({ isPassEssentials, onUpsell })
         plan: userPlan?.InternalName,
     });
 
-    if (isPassEssentials) {
+    if (isPassB2BPlan) {
         const userIsAdmin = user ? isAdmin(user) : false;
         const upgradeLink = (
             <InlineLinkButton key="upgrade-link" className="p-0" onClick={() => navigateToUpgrade()}>

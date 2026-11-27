@@ -11,7 +11,7 @@ import { useTelemetryEvent } from '../../../hooks/useTelemetryEvent';
 import { itemEq } from '../../../lib/items/item.predicates';
 import { getItemKey } from '../../../lib/items/item.utils';
 import { selectSelectedItemGroups } from '../../../store/selectors/items';
-import { selectCanCheckDuplicatePasswords } from '../../../store/selectors/monitor';
+import { selectCanCheckReusedPasswords } from '../../../store/selectors/monitor';
 import type { ItemRevision } from '../../../types/data/items';
 import { TelemetryEventName } from '../../../types/data/telemetry';
 import { useContextMenu } from '../../ContextMenu/ContextMenuProvider';
@@ -46,7 +46,7 @@ export const DuplicatePasswords: FC = () => {
     const containerRef = useRef<HTMLDivElement>(null);
     const selectItem = useSelectItemAction();
 
-    const allowed = useSelector(selectCanCheckDuplicatePasswords);
+    const allowed = useSelector(selectCanCheckReusedPasswords);
     const { duplicates } = useMonitor();
 
     const groups = useMemoSelector(selectSelectedItemGroups, [allowed ? duplicates.data : [], 'titleASC']);

@@ -1,12 +1,15 @@
 import { createSelector } from '@reduxjs/toolkit';
 import { c } from 'ttag';
 
+import { PLANS } from '@proton/payments/core/constants';
 import type { Address } from '@proton/shared/lib/interfaces/Address';
 import { UserType } from '@proton/shared/lib/interfaces/User';
 import { SETTINGS_PASSWORD_MODE } from '@proton/shared/lib/interfaces/UserSettings';
 import { AuthDeviceState } from '@proton/shared/lib/keys/device';
+import { isAdmin } from '@proton/shared/lib/user/helpers';
 
 import type { AuthStore } from '../../lib/auth/store';
+import { isPassB2BPlan } from '../../lib/b2b/b2b.utils';
 import { isShareHidingSensitiveContent } from '../../lib/shares/share.predicates';
 import { getPassPlan } from '../../lib/user/user.plan';
 import { isWritableVault } from '../../lib/vaults/vault.predicates';
@@ -54,6 +57,21 @@ export const selectUserStorageQuota = ({ user }: State) => user.plan?.StorageQuo
 export const selectUserStorageMaxFileSize = ({ user }: State) => user.plan?.StorageMaxFileSize ?? 0;
 export const selectUserStorageAllowed = ({ user }: State) => user.plan?.StorageAllowed;
 export const selectUserFolderAllowed = ({ user }: State) => user.plan?.FolderAllowed;
+export const selectUserCliAllowed = ({ user }: State) => user.plan?.CliAllowed ?? false;
+export const selectUserSshAgentAllowed = ({ user }: State) => user.plan?.SshAgentAllowed ?? false;
+export const selectUserAutoTypeAllowed = ({ user }: State) => user.plan?.AutoTypeAllowed ?? false;
+
+/** B2B users upgrade through their organization admin rather than the B2C upsell modal */
+export const selectIsPassB2BPlan = ({ user: { plan } }: State) => Boolean(plan && isPassB2BPlan(plan));
+
+/** Pass Basic is reported as a paid `plus` plan, so its admins need their own upgrade entry point */
+export const selectIsPassBasicAdmin = ({ user: { user, plan } }: State) =>
+    Boolean(user && isAdmin(user)) && plan?.InternalName === PLANS.PASS_BASIC;
+
+/** B2B users are never offered Pass Plus: admins upgrade from their current plan, members ask their admin */
+export const selectB2BUpsell = createSelector([selectUser, selectUserPlan], (user, plan) =>
+    plan && isPassB2BPlan(plan) ? { admin: Boolean(user && isAdmin(user)), plan: plan.InternalName } : null
+);
 
 /* Specification for pass specific plans in `/user/access` response :
  * `business` -> Plan: Business | Trial: null | Limits: none

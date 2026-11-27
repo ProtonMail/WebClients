@@ -2,15 +2,14 @@ import type { FC, PropsWithChildren } from 'react';
 import { createContext, useContext, useEffect, useMemo } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { PLANS } from '@proton/payments/core/constants';
 import type { Organization } from '@proton/shared/lib/interfaces/Organization';
 import { isAdmin } from '@proton/shared/lib/user/helpers';
 
-import { isB2BAdmin } from '../../lib/organization/helpers';
+import { isPassB2BPlan } from '../../lib/b2b/b2b.utils';
 import { getOrganizationSettings } from '../../store/actions/creators/organization';
 import { withRevalidate } from '../../store/request/enhancers';
 import { selectOrganizationState } from '../../store/selectors/organization';
-import { selectPassPlan, selectUser, selectUserPlan } from '../../store/selectors/user';
+import { selectUser, selectUserPlan } from '../../store/selectors/user';
 import type { OrganizationSettings } from '../../types/data/organization';
 import type { MaybeNull } from '../../types/utils';
 
@@ -25,13 +24,11 @@ const OrganizationContext = createContext<MaybeNull<OrganizationContextValue>>(n
 /** Organization context will always be `null` for
  * users which do not belong to an organization. */
 export const OrganizationProvider: FC<PropsWithChildren> = ({ children }) => {
-    const passPlan = useSelector(selectPassPlan);
     const userPlan = useSelector(selectUserPlan);
     const user = useSelector(selectUser);
     const org = useSelector(selectOrganizationState);
 
-    const isPassEssentialsAdmin = !!user && isAdmin(user) && userPlan?.InternalName === PLANS.PASS_PRO;
-    const b2bAdmin = (user ? isB2BAdmin(user, passPlan) : false) || isPassEssentialsAdmin;
+    const b2bAdmin = !!user && isAdmin(user) && !!userPlan && isPassB2BPlan(userPlan);
 
     const context = useMemo<MaybeNull<OrganizationContextValue>>(
         () =>

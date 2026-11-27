@@ -10,8 +10,7 @@ import { IcCross } from '@proton/icons/icons/IcCross';
 import stamp from '../../../../assets/alias/alias-contact-stamp.svg';
 import { UpsellRef } from '../../../../constants';
 import { useItem } from '../../../../hooks/useItem';
-import { selectPassPlan } from '../../../../store/selectors/user';
-import { UserPassPlan } from '../../../../types/api/plan';
+import { selectCanManageAlias } from '../../../../store/selectors/alias';
 import { SidebarModal } from '../../../Layout/Modal/SidebarModal';
 import { Panel } from '../../../Layout/Panel/Panel';
 import { PanelHeader } from '../../../Layout/Panel/PanelHeader';
@@ -31,12 +30,12 @@ export const AliasContactsView: FC<Props> = ({ onClose }) => {
     const [openCreate, setOpenCreate] = useState(false);
     const [openMoreInfo, setOpenMoreInfo] = useState(false);
     const aliasEmail = useItem<'alias'>(shareId, itemId)?.aliasEmail;
-    const isFreePlan = useSelector(selectPassPlan) === UserPassPlan.FREE;
+    const canManageAlias = useSelector(selectCanManageAlias);
 
     const empty = !loading && contacts.active.length + contacts.blocked.length === 0;
 
     const handleCreateClick = () => {
-        if (isFreePlan) upsell({ type: 'pass-plus', upsellRef: UpsellRef.LIMIT_ALIAS });
+        if (!canManageAlias) upsell({ type: 'pass-plus', upsellRef: UpsellRef.LIMIT_ALIAS });
         else setOpenCreate(true);
     };
 
@@ -63,7 +62,7 @@ export const AliasContactsView: FC<Props> = ({ onClose }) => {
                                 </Button>,
                                 <Button color="norm" key="modal-submit-button" pill onClick={handleCreateClick}>
                                     {c('Action').t`Create contact`}
-                                    {isFreePlan && <PassPlusIcon className="ml-2" />}
+                                    {!canManageAlias && <PassPlusIcon className="ml-2" />}
                                 </Button>,
                             ]}
                         />

@@ -2,6 +2,7 @@ import { Fragment } from 'react';
 
 import { c } from 'ttag';
 
+import { useEntitlementChecksForOrgAndUser } from '@proton/account/entitlementCatalog/hooks';
 import { usePlans } from '@proton/account/plans/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { useApi } from '@proton/app-context/useApi';
@@ -20,11 +21,12 @@ import { IcPlus } from '@proton/icons/icons/IcPlus';
 import { clients } from '@proton/pass/clients';
 import { Clients } from '@proton/pass/constants';
 import { PLANS } from '@proton/payments/core/constants';
+import { EntitlementName } from '@proton/payments/core/entitlements/entitlement-names';
 import { getSubscriptionSearchParamsString } from '@proton/payments/core/subscription/search-params';
 import { TelemetryAccountDashboardEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
 import { APPS, PASS_APP_NAME, PASS_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
-import { hasPassLifetime } from '@proton/shared/lib/user/helpers';
+import { hasPassLifetime, hasPassViaSimpleLogin } from '@proton/shared/lib/user/helpers';
 import clsx from '@proton/utils/clsx';
 
 type Section = { header: string; platforms: Clients[] };
@@ -64,10 +66,17 @@ const PaidDownloadClientTitle = ({ title }: { title: string }) => {
 const PassDownloadsSettingsPage = () => {
     const api = useApi();
     const [user] = useUser();
+    const [entitlements, loadingEntitlements] = useEntitlementChecksForOrgAndUser();
     const [plansResult, loadingPlans] = usePlans();
 
     const passPlan = plansResult?.plans?.find(({ Name }) => Name === PLANS.PASS);
     const showUpsell = !loadingPlans && user.isFree && passPlan && !hasPassLifetime(user);
+    // Free users see the CLI as an upsell. Lifetime and SimpleLogin users get Pass outside a subscription
+    const showCli =
+        user.isFree ||
+        hasPassLifetime(user) ||
+        hasPassViaSimpleLogin(user) ||
+        (!loadingEntitlements && entitlements.hasEntitlement(EntitlementName.PassCli));
 
     const handleDownloadClick = (destination: string) => {
         void sendTelemetryReport({
@@ -89,7 +98,10 @@ const PassDownloadsSettingsPage = () => {
             platforms: [Clients.Chrome, Clients.Firefox, Clients.Brave, Clients.Edge, Clients.Safari],
         },
         { header: c('Title').t`Mobile`, platforms: [Clients.Android, Clients.iOS] },
-        { header: c('Title').t`Desktop`, platforms: [Clients.Windows, Clients.macOS, Clients.Linux, Clients.CLI] },
+        {
+            header: c('Title').t`Desktop`,
+            platforms: [Clients.Windows, Clients.macOS, Clients.Linux, ...(showCli ? [Clients.CLI] : [])],
+        },
     ];
 
     return (

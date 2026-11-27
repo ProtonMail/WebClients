@@ -1,8 +1,11 @@
+import { PLANS } from '@proton/payments/core/constants';
+import { USER_ROLES } from '@proton/shared/lib/constants';
+
 import { PassFeature } from '../../types/api/features';
 import { ShareFlags } from '../../types/data/shares';
 import type { FeatureFlagState, FeatureFlagVariants, ShareItem } from '../reducers';
 import type { State } from '../types';
-import { selectAutofillModelExperimentGroup, selectCanRevealSensitiveContent } from './user';
+import { selectAutofillModelExperimentGroup, selectCanRevealSensitiveContent, selectIsPassBasicAdmin } from './user';
 
 const mockState = (featureVariants: FeatureFlagVariants | null): State => ({ user: { featureVariants } }) as State;
 
@@ -54,5 +57,23 @@ describe('`selectCanRevealSensitiveContent`', () => {
     test('is not revealable when the flag is on and the share hides sensitive content', () => {
         const state = mockShareState({ [PassFeature.Pass__V1_44__ShareWithHiddenPassword]: true }, { [shareId]: hiddenShare });
         expect(selectCanRevealSensitiveContent(shareId)(state)).toBe(false);
+    });
+});
+
+describe('`selectIsPassBasicAdmin`', () => {
+    const mockUserState = (Role: USER_ROLES, InternalName: string): State =>
+        ({ user: { user: { Role }, plan: { InternalName } } }) as State;
+
+    test('is true for a Pass Basic admin', () => {
+        expect(selectIsPassBasicAdmin(mockUserState(USER_ROLES.ADMIN_ROLE, PLANS.PASS_BASIC))).toBe(true);
+    });
+
+    test('is false for a Pass Basic member', () => {
+        expect(selectIsPassBasicAdmin(mockUserState(USER_ROLES.MEMBER_ROLE, PLANS.PASS_BASIC))).toBe(false);
+    });
+
+    test('is false for admins of other plans', () => {
+        expect(selectIsPassBasicAdmin(mockUserState(USER_ROLES.ADMIN_ROLE, PLANS.PASS_PRO))).toBe(false);
+        expect(selectIsPassBasicAdmin(mockUserState(USER_ROLES.ADMIN_ROLE, PLANS.PASS_BUSINESS))).toBe(false);
     });
 });

@@ -11,7 +11,7 @@ import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 
 import { AccountPath } from '../../../constants';
 import { useFeatureFlag } from '../../../hooks/useFeatureFlag';
-import { useNavigateToAccount } from '../../../hooks/useNavigateToAccount';
+import { useNavigateToAccount, useNavigateToAccountHome } from '../../../hooks/useNavigateToAccount';
 import { selectOrgAliasCreationDisabled } from '../../../store/selectors/organization';
 import { PassFeature } from '../../../types/api/features';
 import type { Unpack } from '../../../types/utils';
@@ -69,7 +69,7 @@ type Props = RouteChildrenProps & {
 
 const SettingsTabs: FC<Props> = ({ exportTab, ...props }) => {
     const navigate = useNavigate();
-    const navigateToAccount = useNavigateToAccount(AccountPath.DASHBOARD);
+    const navigateToAccount = useNavigateToAccountHome();
     const navigateToOrganization = useNavigateToAccount(AccountPath.POLICIES);
     const pathname = props.location.hash?.substring(1, props.location.hash.length);
 

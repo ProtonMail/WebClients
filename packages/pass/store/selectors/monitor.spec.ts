@@ -5,6 +5,7 @@ import { getItemKey } from '../../lib/items/item.utils';
 import type { CompromisedPasswordEntry } from '../../lib/monitor/types';
 import { MonitorCheckType } from '../../lib/monitor/types';
 import { PassFeature } from '../../types/api/features';
+import type { PassPlanResponse } from '../../types/api/pass';
 import { ContentFormatVersion } from '../../types/crypto/pass-types';
 import type { ItemRevision } from '../../types/data/items';
 import { ItemFlag, ItemState } from '../../types/data/items';
@@ -12,6 +13,7 @@ import { createTestItem } from '../../utils/tests/fixtures/items';
 import type { State } from '../types';
 import type * as ItemsSelectorsModule from './items';
 import {
+    selectCanCheckReusedPasswords,
     selectCompromisedPasswordsReportCount,
     selectExcludedItems,
     selectLoginsEligibleForMonitorCheck,
@@ -176,5 +178,18 @@ describe('monitor selectors', () => {
                 .map((item) => item.itemId)
                 .sort()
         ).toEqual(['excluded', 'weak-ignored']);
+    });
+});
+
+describe('`selectCanCheckReusedPasswords`', () => {
+    const mockPlanState = (plan: Partial<PassPlanResponse>) => ({ user: { plan } }) as State;
+
+    test('follows `MonitorReusedPasswords`, not `MonitorDeduplication`', () => {
+        expect(selectCanCheckReusedPasswords(mockPlanState({ MonitorReusedPasswords: true, MonitorDeduplication: false }))).toBe(true);
+        expect(selectCanCheckReusedPasswords(mockPlanState({ MonitorReusedPasswords: false, MonitorDeduplication: true }))).toBe(false);
+    });
+
+    test('blocks reused passwords when the plan does not report the field', () => {
+        expect(selectCanCheckReusedPasswords(mockPlanState({ MonitorDeduplication: true }))).toBe(false);
     });
 });

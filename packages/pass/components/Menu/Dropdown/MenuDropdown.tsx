@@ -22,7 +22,7 @@ import { PASS_APP_NAME, PASS_SHORT_APP_NAME } from '@proton/shared/lib/constants
 import { AccountPath } from '../../../constants';
 import { useUserInitiatedLock } from '../../../hooks/auth/useUserInitiatedLock';
 import { type MenuItem, useMenuItems } from '../../../hooks/useMenuItems';
-import { useNavigateToAccount } from '../../../hooks/useNavigateToAccount';
+import { useNavigateToAccount, useNavigateToAccountHome } from '../../../hooks/useNavigateToAccount';
 import { offlineResume } from '../../../store/actions/creators/client';
 import { lockCreateRequest } from '../../../store/actions/requests';
 import { selectRequestInFlight } from '../../../store/request/selectors';
@@ -58,7 +58,7 @@ export const MenuDropdown: FC<Props> = ({ onLock, onLogout, interactive }) => {
     const { popup, openSettings } = usePassCore();
     const navigate = useNavigate();
 
-    const navigateToAccount = useNavigateToAccount(AccountPath.DASHBOARD);
+    const navigateToAccount = useNavigateToAccountHome();
     const navigateToAdminPanel = useNavigateToAccount(AccountPath.USERS);
     const canLock = useSelector(selectLockEnabled);
     const lockCreateInFlight = useSelector(selectRequestInFlight(lockCreateRequest()));
@@ -88,7 +88,7 @@ export const MenuDropdown: FC<Props> = ({ onLock, onLogout, interactive }) => {
                 icon: IcArrowOutFromRectangle,
             },
         ],
-        []
+        [navigateToAccount]
     );
 
     const handleLock = useUserInitiatedLock(onLock);
