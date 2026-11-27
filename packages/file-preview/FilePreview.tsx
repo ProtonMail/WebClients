@@ -48,6 +48,7 @@ import TextPreview from './TextPreview';
 import UnsupportedPreview from './UnsupportedPreview';
 import VideoPreview from './VideoPreview';
 import { VideoStreamingPreview } from './VideoStreamingPreview';
+import { isPdfContent } from './pdfContentDetection';
 import type { DownloadHandler } from './useDownloading';
 import useDownloading from './useDownloading';
 
@@ -57,6 +58,21 @@ const IWADPreview = lazy(() => import(/* webpackChunkName: "iwad-preview" */ './
 
 // Lazy Loaded since it includes three.js and it's a rare file type (not common)
 const STLPreview = lazy(() => import(/* webpackChunkName: "stl-preview" */ './3DPreview/STLPreview'));
+
+const shouldUsePdfPreview = (mimeType: string, fileName: string | undefined, contents: Uint8Array<ArrayBuffer>[]) => {
+    // Correctly mimetyped PDFs, the common case
+    if (isPDF(mimeType)) {
+        return true;
+    }
+
+    // A user who renames a PDF (e.g. to .txt) wants to see it as text, so we respect that
+    if (!fileName || !/\.pdf$/i.test(fileName)) {
+        return false;
+    }
+
+    // Some senders give PDFs a wrong mime type (e.g. text/pdf), so the file's own content header decides
+    return isPdfContent(contents);
+};
 
 interface FilePreviewProps {
     isMetaLoading?: boolean;
@@ -301,12 +317,12 @@ export const FilePreviewContent = ({
             );
         }
 
-        if (mimeType && isSupportedText(mimeType)) {
-            return <TextPreview contents={contents} onNewContents={onNewContents} />;
+        if (mimeType && contents && shouldUsePdfPreview(mimeType, fileName, contents)) {
+            return <PDFPreview contents={contents} filename={fileName} />;
         }
 
-        if (mimeType && isPDF(mimeType) && contents) {
-            return <PDFPreview contents={contents} filename={fileName} />;
+        if (mimeType && isSupportedText(mimeType)) {
+            return <TextPreview contents={contents} onNewContents={onNewContents} />;
         }
 
         if (mimeType && isWordDocument(mimeType)) {
