@@ -398,6 +398,8 @@ describe('DocsAdapter runtime services', () => {
     host.dependencies.reportTelemetry(DocsEditorTelemetryEvents.table_of_contents_available)
     host.dependencies.reportTelemetry(DocsEditorTelemetryEvents.table_of_contents_opened)
     host.dependencies.reportTelemetry(DocsEditorTelemetryEvents.table_of_contents_heading_clicked)
+    host.dependencies.reportTelemetry(DocsEditorTelemetryEvents.subscript_applied)
+    host.dependencies.reportTelemetry(DocsEditorTelemetryEvents.superscript_applied)
     expect(host.clientInvoker.editorReportingTelemetry).toHaveBeenNthCalledWith(
       1,
       TelemetryDocsEditorEvents.table_of_contents_available,
@@ -409,6 +411,14 @@ describe('DocsAdapter runtime services', () => {
     expect(host.clientInvoker.editorReportingTelemetry).toHaveBeenNthCalledWith(
       3,
       TelemetryDocsEditorEvents.table_of_contents_heading_clicked,
+    )
+    expect(host.clientInvoker.editorReportingTelemetry).toHaveBeenNthCalledWith(
+      4,
+      TelemetryDocsEditorEvents.subscript_applied,
+    )
+    expect(host.clientInvoker.editorReportingTelemetry).toHaveBeenNthCalledWith(
+      5,
+      TelemetryDocsEditorEvents.superscript_applied,
     )
   })
 })

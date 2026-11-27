@@ -29,6 +29,8 @@ const hostTelemetryEvents: Record<DocsEditorTelemetryEvent, TelemetryDocsEditorE
   [DocsEditorTelemetryEvents.table_of_contents_opened]: TelemetryDocsEditorEvents.table_of_contents_opened,
   [DocsEditorTelemetryEvents.table_of_contents_heading_clicked]:
     TelemetryDocsEditorEvents.table_of_contents_heading_clicked,
+  [DocsEditorTelemetryEvents.subscript_applied]: TelemetryDocsEditorEvents.subscript_applied,
+  [DocsEditorTelemetryEvents.superscript_applied]: TelemetryDocsEditorEvents.superscript_applied,
 }
 
 function useFeatureFlag(clientInvoker: EditorRequiresClientMethods, featureFlag: FeatureFlag) {
