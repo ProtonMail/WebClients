@@ -34,7 +34,7 @@ const AccountSessionsSwitcher = ({
 }: Props) => {
     const [, ...sessionsExceptSelf] = sessions;
     return (
-        <div className="relative">
+        <div className="account-sessions-switcher relative">
             <div className="flex justify-space-between flex-nowrap items-center mx-4 text-sm">
                 <span className="text-semibold text-ellipsis">{c('Info').t`Other accounts`}</span>
                 <SimpleDropdown

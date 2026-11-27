@@ -930,6 +930,40 @@
 			animation-timing-function: var(--lumo-easing-enter);
 		}
 
+		&.account-sessions-switcher {
+			margin-inline: var(--lumo-space-12);
+
+			& > :first-child {
+				margin-inline: var(--lumo-space-4) 0;
+			}
+
+			a.interactive-pseudo-inset {
+				border-radius: var(--lumo-radius-8);
+				padding-inline: var(--lumo-space-8);
+
+				&::after {
+					border-width: var(--border-width-2);
+					box-shadow: none;
+				}
+			}
+
+			& > a.interactive-pseudo-inset:last-child {
+				padding-inline-start: var(--lumo-space-16);
+
+				svg {
+					stroke: currentcolor;
+					stroke-width: 0.2px;
+					inline-size: var(--lumo-icon-size-12);
+					block-size: var(--lumo-icon-size-12);
+				}
+			}
+		}
+
+		& a.add-account-button-dropdown {
+			border-radius: var(--lumo-radius-8);
+			padding: var(--lumo-space-12);
+		}
+
 		// Preserve animation names/end events used to close portals and tooltips.
 		// A tiny duration completes them without visible motion; removing the animation
 		// entirely would leave transition-driven components mounted indefinitely.

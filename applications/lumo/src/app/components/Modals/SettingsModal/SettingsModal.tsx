@@ -1,17 +1,18 @@
-import React, { useEffect, useMemo, useState } from 'react';
+import React, { useMemo, useState } from 'react';
 
 import { clsx } from 'clsx';
 import { c } from 'ttag';
 
 import { useAllSubscriptions } from '@proton/account/allSubscriptions/hooks';
-import { selectEntitlementCatalog } from '@proton/account/entitlementCatalog';
-import { useGetEntitlementCatalog } from '@proton/account/entitlementCatalog/hooks';
+import { useEntitlementChecksForOrgAndUser } from '@proton/account/entitlementCatalog/hooks';
 import { useOrganization } from '@proton/account/organization/hooks';
 import { useUser } from '@proton/account/user/hooks';
+import { useUserPermissions } from '@proton/account/userPermissions/hooks';
 import { Avatar } from '@proton/atoms/Avatar/Avatar';
 import { Button } from '@proton/atoms/Button/Button';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
-import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
+import { Card } from '@proton/atoms/Card/Card';
+import { SkeletonLoader } from '@proton/atoms/SkeletonLoader/SkeletonLoader';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import SettingsLink from '@proton/components/components/link/SettingsLink';
 import type { ModalOwnProps } from '@proton/components/components/modalTwo/Modal';
@@ -19,20 +20,20 @@ import ModalTwo, { ModalContext } from '@proton/components/components/modalTwo/M
 import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
 import Toggle from '@proton/components/components/toggle/Toggle';
 import { isDesktopEnvironment } from '@proton/lumo-api-client/core/desktop-tools';
-import { PLAN_NAMES, PLANS } from '@proton/payments/core/constants';
+import { ADDON_PREFIXES, PLAN_NAMES, PLANS } from '@proton/payments/core/constants';
 import { EntitlementName } from '@proton/payments/core/entitlements/entitlement-names';
-import type { EntitlementCatalog } from '@proton/payments/core/entitlements/interface';
-import { createEntitlementResolverForSelection } from '@proton/payments/core/entitlements/resolver';
 import { getUnreadableSubscriptionsReason } from '@proton/payments/core/entitlements/unreadable-subscriptions';
+import { hasAddonFromPlanIDs, supportsAddonType } from '@proton/payments/core/plan/addons';
 import { isManagedExternally } from '@proton/payments/core/subscription/helpers/external-management';
 import { getPlanIDs } from '@proton/payments/core/subscription/helpers/plan-ids';
 import type { Subscription } from '@proton/payments/core/subscription/interface';
 import { LUMO_TIER_PLANS } from '@proton/payments/core/subscription/lumo-purchase-rules';
-import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
+import { getUpgradePath } from '@proton/payments/core/subscription/upsell';
+import { BRAND_NAME, LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
+import { getCanUpdateBilling } from '@proton/shared/lib/helpers/orgPermissions';
 import type { Organization } from '@proton/shared/lib/interfaces/Organization';
 import { isOrganizationDuo, isOrganizationFamily } from '@proton/shared/lib/organization/helper';
 import { getPlanName as getSubscriptionPlanName } from '@proton/shared/lib/payments/subscription/helpers/plan-info';
-import noop from '@proton/utils/noop';
 
 import { useLumoUserSettings } from '../../../hooks';
 import { useDictationLanguage } from '../../../hooks/useDictationLanguage';
@@ -529,54 +530,136 @@ const getFamilyPlanName = (organization?: Organization) => {
     }
 };
 
-const getBusinessPlanName = (subscriptions: Subscription[], catalog: EntitlementCatalog) => {
-    const seatSubscriptions = subscriptions.filter(
-        (subscription) =>
-            createEntitlementResolverForSelection(catalog, subscription).quantityTotal(EntitlementName.MaxLumoSeats) > 0
-    );
+interface AccountSubscriptionSkeletonProps {
+    /** Reserve space for the subscription actions while business billing permissions load. */
+    showActions: boolean;
+}
 
-    // The member's seat is allocated from the organization, so multiple matches are ambiguous.
-    if (seatSubscriptions.length === 1) {
-        const plan = getSubscriptionPlanName(seatSubscriptions[0]);
-        return plan ? PLAN_NAMES[plan] : undefined;
-    }
-};
+const AccountSubscriptionSkeleton = ({ showActions }: AccountSubscriptionSkeletonProps) => (
+    <div className="flex flex-column flex-nowrap gap-2">
+        <output className="sr-only">
+            {
+                // translator: Screen reader status while Account Settings loads the user's subscription details.
+                c('collider_2025: Info').t`Loading subscription details`
+            }
+        </output>
+        <SkeletonLoader width="6rem" height="1.25rem" />
+        <Card background={false} padded={false} rounded="xl" className="flex flex-column flex-nowrap gap-1.5 p-5">
+            <SkeletonLoader width="45%" height="1.75rem" />
+            <SkeletonLoader width="60%" height="1.25rem" index={1} />
+            <SkeletonLoader width="75%" height="1.25rem" index={2} />
+            {showActions && (
+                <div className="flex flex-wrap gap-2 mt-2">
+                    <SkeletonLoader width="11rem" height="2.5rem" className="max-w-full radius-8" index={3} />
+                    <SkeletonLoader width="8rem" height="2.5rem" className="max-w-full radius-8" index={3} />
+                </div>
+            )}
+        </Card>
+    </div>
+);
 
-const AccountSettingsPanel = () => {
+const AccountSettingsPanel = ({ onClose }: { onClose?: () => void }) => {
     const [user] = useUser();
     const [organization] = useOrganization();
-    const { hasLumoSeat, isVisionary, hasLumoB2B, userIsMember, isLumoPlanLoading } = useLumoPlan();
+    const { hasLumoSeat, isVisionary, hasLumoB2B, isLumoPlanLoading } = useLumoPlan();
     const [subscriptions, subscriptionsLoading] = useAllSubscriptions();
+    const [entitlements, entitlementsLoading] = useEntitlementChecksForOrgAndUser();
+    const [{ permissions }, userPermissionsLoading] = useUserPermissions();
+    const { apiKeyManagement } = useLumoFlags();
     const storePlan = getStoreManagedLumoPlan(subscriptions);
-    const { value: entitlementCatalog } = useLumoSelector(selectEntitlementCatalog);
-    const getEntitlementCatalog = useGetEntitlementCatalog();
-    const visibleBusinessSubscriptions =
-        hasLumoB2B && !storePlan && !getUnreadableSubscriptionsReason({ user, organization })
-            ? subscriptions
+    const familyPlanName = user.isMember ? getFamilyPlanName(organization) : undefined;
+    const unreadableSubscriptionsReason = getUnreadableSubscriptionsReason({ user, organization });
+    const billingPermissionsLoading =
+        !unreadableSubscriptionsReason && (userPermissionsLoading || permissions === null);
+    const isBusiness = organization?.IsBusiness || entitlements.isB2B;
+    const isBusinessLoading = isBusiness && (entitlementsLoading || billingPermissionsLoading);
+    const canManageBilling =
+        !unreadableSubscriptionsReason && !billingPermissionsLoading && getCanUpdateBilling(user, permissions);
+    const organizationHasLumo = entitlements.quantityTotal(EntitlementName.MaxLumoSeats) > 0;
+    const { subscriptions: businessLumoSubscriptions } = entitlements.findSubscriptionsMatching({
+        includes: [EntitlementName.Business, EntitlementName.MaxLumoSeats],
+    });
+    const businessLumoSubscription = businessLumoSubscriptions.length === 1 ? businessLumoSubscriptions[0] : undefined;
+    const addonSubscriptions =
+        !organizationHasLumo && canManageBilling
+            ? subscriptions?.filter(
+                  (subscription) =>
+                      !isManagedExternally(subscription) &&
+                      entitlements.withSelection(subscription).isB2B &&
+                      supportsAddonType(getPlanIDs(subscription), ADDON_PREFIXES.LUMO)
+              )
+            : [];
+    const addonSubscription = addonSubscriptions?.length === 1 ? addonSubscriptions[0] : undefined;
+    const businessSubscription = businessLumoSubscription ?? addonSubscription;
+    const subscriptionPlan = businessSubscription && getSubscriptionPlanName(businessSubscription);
+    // Members of a multi-user plan cannot fetch its subscription. Use the organization label only for display.
+    const memberPlanName =
+        unreadableSubscriptionsReason === 'member' && organization ? PLAN_NAMES[organization.PlanName] : undefined;
+    const businessPlanName = subscriptionPlan ? PLAN_NAMES[subscriptionPlan] : memberPlanName;
+    const brandedBusinessPlanName =
+        businessPlanName &&
+        (businessPlanName.startsWith(`${BRAND_NAME} `) ? businessPlanName : `${BRAND_NAME} ${businessPlanName}`);
+    const isLumoProfessional =
+        subscriptionPlan === PLANS.LUMO_BUSINESS ||
+        (unreadableSubscriptionsReason === 'member' &&
+            entitlements.hasMatchingSubscription({
+                includes: [EntitlementName.Business, EntitlementName.MaxLumoSeats, EntitlementName.FlagsLumo],
+                excludes: [
+                    EntitlementName.FlagsDrive,
+                    EntitlementName.FlagsInbox,
+                    EntitlementName.FlagsMeet,
+                    EntitlementName.FlagsPass,
+                    EntitlementName.FlagsVpn,
+                    EntitlementName.FlagsWallet,
+                ],
+            }));
+    const isLumoAddon =
+        businessLumoSubscription && hasAddonFromPlanIDs(ADDON_PREFIXES.LUMO, getPlanIDs(businessLumoSubscription));
+    const addLumoPath =
+        addonSubscription &&
+        getUpgradePath({
+            user,
+            subscription: addonSubscription,
+            target: 'checkout',
+            cycle: addonSubscription.Cycle,
+            fixedCycle: true,
+            disablePlanSelection: true,
+        });
+    const showApiCreditsLink = canManageBilling && apiKeyManagement && entitlements.hasLumoApi;
+    const businessPlan =
+        entitlements.isB2B && !isBusinessLoading
+            ? ({
+                  managedBy: 'organization',
+                  planName: brandedBusinessPlanName,
+                  lumo: !organizationHasLumo
+                      ? 'unavailable'
+                      : !hasLumoSeat && !canManageBilling
+                        ? 'unassigned'
+                        : isLumoProfessional
+                          ? 'professional'
+                          : isLumoAddon
+                            ? 'addon'
+                            : 'included',
+                  canManageBilling,
+                  addLumoPath,
+                  showApiCreditsLink,
+                  onOpenApi: onClose,
+              } as const)
             : undefined;
-    const shouldLoadEntitlementCatalog = !!visibleBusinessSubscriptions?.length && !entitlementCatalog;
-
-    useEffect(() => {
-        if (shouldLoadEntitlementCatalog) {
-            void getEntitlementCatalog().catch(noop);
-        }
-    }, [shouldLoadEntitlementCatalog, getEntitlementCatalog]);
-
-    const familyPlanName = hasLumoSeat && userIsMember ? getFamilyPlanName(organization) : undefined;
-    const businessPlanName =
-        visibleBusinessSubscriptions && entitlementCatalog
-            ? getBusinessPlanName(visibleBusinessSubscriptions, entitlementCatalog)
-            : undefined;
-    const managedSeat =
-        hasLumoB2B && userIsMember
-            ? ({ managedBy: 'organization', planName: businessPlanName } as const)
-            : familyPlanName
-              ? ({ managedBy: 'family', planName: familyPlanName } as const)
-              : undefined;
-    const managedSubscription = storePlan ?? managedSeat;
+    const managedSubscription =
+        storePlan ??
+        businessPlan ??
+        (familyPlanName ? ({ managedBy: 'family', planName: familyPlanName, hasLumoSeat } as const) : undefined);
+    const isSubscriptionLoading =
+        !managedSubscription && (subscriptionsLoading || isLumoPlanLoading || isBusinessLoading);
+    // translator: Account badge for a member whose organization includes Lumo in its business subscription. ${BRAND_NAME} is the company name.
+    const businessMemberBadge = c('collider_2025: Badge').t`${BRAND_NAME} Business`;
+    const businessBadge = businessPlan
+        ? (businessPlanName ?? (user.isMember && businessPlan.lumo === 'included' ? businessMemberBadge : undefined))
+        : undefined;
     const planName = storePlan
         ? PLAN_NAMES[storePlan.tier]
-        : (businessPlanName ?? familyPlanName ?? getPlanName(hasLumoSeat, isVisionary, hasLumoB2B));
+        : (businessBadge ?? familyPlanName ?? getPlanName(hasLumoSeat, isVisionary, hasLumoB2B));
     const { isEnabled: isNativeAuthEnabled, trigger: triggerAuthAction } = useLumoAuthAction();
 
     // On native mobile the account settings live outside the WebView, so hand the
@@ -595,7 +678,7 @@ const AccountSettingsPanel = () => {
                 as={SettingsLink}
                 path={''}
                 onClick={handleClick}
-                className="user-settings-card flex flex-row flex-nowrap items-center gap-3 w-full text-left cursor-pointer"
+                className="user-settings-card flex flex-row flex-nowrap shrink-0 items-center gap-3 w-full text-left cursor-pointer"
             >
                 <Avatar className="shrink-0 lumo-title-small">{getInitials(user.DisplayName ?? user.Name)}</Avatar>
                 <div className="flex flex-column flex-nowrap flex-1 items-start gap-0.5 min-w-0">
@@ -603,13 +686,16 @@ const AccountSettingsPanel = () => {
                         <span className="min-w-0 lumo-title-small text-break lumo-color-glyph">
                             {user.DisplayName ?? user.Name}
                         </span>
-                        {planName && (
+                        {isSubscriptionLoading && (
+                            <SkeletonLoader width="6.5rem" height="1.25rem" className="max-w-full radius-full" />
+                        )}
+                        {!isSubscriptionLoading && planName && (
                             <span className="plan-name inline-flex items-center min-w-0 px-2 py-0.5 radius-full lumo-label-small text-break lumo-color-glyph-brand-text lumo-bg-control-fill-mid">
                                 {planName}
                             </span>
                         )}
 
-                        {isVisionary && (
+                        {!isSubscriptionLoading && isVisionary && (
                             <span className="plan-name inline-flex items-center px-2 py-0.5 radius-full lumo-label-small lumo-color-glyph-brand-text lumo-bg-control-fill-mid">
                                 {c('collider_2025: Title').t`Visionary`}
                             </span>
@@ -620,15 +706,15 @@ const AccountSettingsPanel = () => {
                 <LumoIcon name="ChevronRight" className="shrink-0 lumo-color-glyph-mid" size={16} aria-hidden="true" />
             </ButtonLike>
 
-            {managedSubscription ? (
-                <ExternallyManagedSubscriptionSection {...managedSubscription} />
-            ) : subscriptionsLoading || isLumoPlanLoading ? (
-                <output className="flex justify-center py-3">
-                    <CircleLoader size="small" aria-hidden="true" />
-                </output>
-            ) : (
-                <LumoSettingsUpsellSection />
-            )}
+            <div className="shrink-0">
+                {managedSubscription ? (
+                    <ExternallyManagedSubscriptionSection {...managedSubscription} />
+                ) : isSubscriptionLoading ? (
+                    <AccountSubscriptionSkeleton showActions={isBusiness && !unreadableSubscriptionsReason} />
+                ) : (
+                    <LumoSettingsUpsellSection />
+                )}
+            </div>
         </div>
     );
 };
@@ -766,7 +852,11 @@ const SettingsModal = ({ initialPanel = 'account', ...modalProps }: SettingsModa
                                 style={{ minHeight: 0 }}
                             >
                                 {activePanel === 'account' &&
-                                    (isGuest ? <AccountSettingsPanelGuest /> : <AccountSettingsPanel />)}
+                                    (isGuest ? (
+                                        <AccountSettingsPanelGuest />
+                                    ) : (
+                                        <AccountSettingsPanel onClose={closeModal} />
+                                    ))}
                                 {activePanel === 'personalization' && <PersonalizationPanel />}
                                 {activePanel === 'memory' && isMemoryFeatureEnabled && (
                                     <MemoryPanel onClose={closeModal} />

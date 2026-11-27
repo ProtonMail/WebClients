@@ -326,7 +326,9 @@ const UserDropdownContent = ({ matchAnchorWidth = false }: { matchAnchorWidth?: 
                                 onOpenSignoutAll();
                             }}
                             addAccountButton={<AddAccountButton className="pl-5 pr-4 gap-4" />}
-                            addAccountButtonDropdown={<AddAccountButton className="px-4 gap-2" />}
+                            addAccountButtonDropdown={
+                                <AddAccountButton className="add-account-button-dropdown px-4 gap-2" />
+                            }
                         />
                     </div>
                 )}
