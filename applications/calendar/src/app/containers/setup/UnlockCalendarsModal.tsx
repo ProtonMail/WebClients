@@ -21,15 +21,16 @@ import GenericError from '@proton/components/containers/error/GenericError';
 import useDrawer from '@proton/components/hooks/drawer/useDrawer';
 import useLoading from '@proton/hooks/useLoading';
 import { getPersonalCalendars } from '@proton/shared/lib/calendar/calendar';
-import { process } from '@proton/shared/lib/calendar/crypto/keys/resetHelper';
 import { getCalendarsSettingsPath } from '@proton/shared/lib/calendar/settingsRoutes';
 import { APPS, APPS_CONFIGURATION } from '@proton/shared/lib/constants';
 import { closeDrawerFromChildApp } from '@proton/shared/lib/drawer/helpers';
+import { traceError } from '@proton/shared/lib/helpers/sentry';
 import { continueToPlanOrAppNameText } from '@proton/shared/lib/i18n/ttag';
 
 import CalendarReactivateSection from './CalendarReactivateSection';
 import CalendarResetSection from './CalendarResetSection';
 import type { CalendarsToAct } from './helper';
+import { process } from './resetHelper';
 
 interface Props {
     calendarsToAct: CalendarsToAct;
@@ -104,7 +105,7 @@ const UnlockCalendarsModal = ({
                 }
             })
             .catch((error) => {
-                console.error(error);
+                traceError(error);
                 setResetModalOpen(false);
                 setErrorModalOpen(true);
             });
@@ -122,7 +123,7 @@ const UnlockCalendarsModal = ({
                 onDone();
             })
             .catch((error) => {
-                console.error(error);
+                traceError(error);
                 setReactivateModalOpen(false);
                 setErrorModalOpen(true);
             });

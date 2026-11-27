@@ -1,18 +1,18 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
-import {
-    applyNewsletterSubscriptionFilter,
-    deleteNewsletterSubscriptionByID,
-    getNewsletterSubscription,
-    unsubscribeNewsletterSubscription,
-    updateNewsletterSubscription,
-} from '@proton/shared/lib/api/newsletterSubscription';
 import type {
     GetNewsletterSubscriptionsApiResponse,
     NewsletterSubscription,
     POSTSubscriptionAPIResponse,
 } from '@proton/shared/lib/interfaces/NewsletterSubscription';
 
+import {
+    applyNewsletterSubscriptionFilter,
+    deleteNewsletterSubscriptionByID,
+    getNewsletterSubscription,
+    unsubscribeNewsletterSubscription,
+    updateNewsletterSubscription,
+} from '../../api/newsletterSubscription';
 import type { MailThunkExtra } from '../store';
 import { getPaginationQueryString } from './constants';
 import {

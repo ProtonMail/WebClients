@@ -6,7 +6,8 @@ import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import useAuthentication from '@proton/components/hooks/useAuthentication';
 import { getLinkToCalendarEvent } from '@proton/shared/lib/calendar/helper';
 import { APPS } from '@proton/shared/lib/constants';
-import { openCalendarEventInDrawer } from '@proton/shared/lib/drawer/calendar';
+
+import { openCalendarEventInDrawer } from '../../../../../helpers/calendar/drawer';
 
 interface Props {
     linkString: string;

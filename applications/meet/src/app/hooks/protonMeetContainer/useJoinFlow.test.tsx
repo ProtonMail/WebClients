@@ -53,7 +53,7 @@ vi.mock('@proton/meet/store/slices/meetingInfoModel', () => ({
     refreshMeetingInfoThunk: vi.fn((options) => ({ type: 'refreshMeetingInfoThunk', options })),
     selectMeetingInfoModel: vi.fn(),
 }));
-vi.mock('@proton/shared/lib/helpers/isWebRtcSupported', () => ({ isWebRtcSupported: mocks.isWebRtcSupported }));
+vi.mock('../../utils/isWebRtcSupported', () => ({ isWebRtcSupported: mocks.isWebRtcSupported }));
 vi.mock('@proton/meet/utils/cryptoUtils', () => ({
     deriveEncryptionKeyFromSessionKey: async () => ({}),
     encryptDisplayNameWithKey: async () => 'encrypted-name',

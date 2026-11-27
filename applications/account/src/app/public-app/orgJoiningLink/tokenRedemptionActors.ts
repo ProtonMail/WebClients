@@ -3,7 +3,6 @@ import { computeKeyPassword } from '@protontech/crypto/srp';
 import { fromCallback, fromPromise } from 'xstate';
 
 import { getAllAddresses } from '@proton/shared/lib/api/addresses';
-import { redeemToken, verifyCode } from '@proton/shared/lib/api/authLoginLink';
 import { getAuthAPI } from '@proton/shared/lib/api/helpers/customConfig';
 import { getKeySalts, updatePrivateKeyRoute } from '@proton/shared/lib/api/keys';
 import { getPasswordPolicies } from '@proton/shared/lib/api/passwordPolicies';
@@ -24,6 +23,7 @@ import { generateKeySaltAndPassphrase } from '@proton/shared/lib/keys/keys';
 import { srpVerify } from '@proton/shared/lib/srp';
 import type { UnauthenticatedApi } from '@proton/shared/lib/unauthApi/unAuthenticatedApi';
 
+import { redeemToken, verifyCode } from '../../api/authLoginLink';
 import type { AuthSession } from '../authSession';
 import type { TokenRedemptionConfig } from './tokenRedemptionStateMachine';
 

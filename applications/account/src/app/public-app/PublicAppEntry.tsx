@@ -73,7 +73,7 @@ const bootstrapApp = () => {
     const publicAppMachine = createPublicAppMachine({ services, history, initialSessionsLength });
 
     if (isElectronMail) {
-        void import('@proton/shared/lib/desktop/bootstrapPublicAccountInboxDesktop').then((module) => {
+        void import('./bootstrapPublicAccountInboxDesktop').then((module) => {
             void module.bootstrapPublicAccountInboxDesktop(authentication);
         });
     }

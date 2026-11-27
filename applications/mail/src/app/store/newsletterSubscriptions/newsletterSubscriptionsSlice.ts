@@ -3,9 +3,9 @@ import { createSlice } from '@reduxjs/toolkit';
 import { serverEvent } from '@proton/account/eventLoop';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types/interface';
 import { createAsyncModelThunk, handleAsyncModel, previousSelector } from '@proton/redux-utilities/creator';
-import { getNewsletterSubscription } from '@proton/shared/lib/api/newsletterSubscription';
 import type { GetNewsletterSubscriptionsApiResponse } from '@proton/shared/lib/interfaces/NewsletterSubscription';
 
+import { getNewsletterSubscription } from '../../api/newsletterSubscription';
 import { getPaginationQueryString, initialState, initialStateValue } from './constants';
 import { getTabData, normalizeSubscriptions } from './helpers';
 import { type NewsletterSubscriptionsInterface, SubscriptionTabs } from './interface';

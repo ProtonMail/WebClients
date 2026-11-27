@@ -2,8 +2,8 @@ import { useEffect, useRef, useState } from 'react';
 
 import { Card } from '@proton/atoms/Card/Card';
 import { Portal } from '@proton/atoms/Portal/Portal';
-import type { JoinReason, PreviousProvider } from '@proton/shared/lib/api/onboardingSurvey';
 
+import type { JoinReason, PreviousProvider } from '../../api/onboardingSurvey';
 import { usePostSignupSurvey } from './hooks/usePostSignupSurvey';
 import { JoinReasonStep } from './steps/JoinReasonStep';
 

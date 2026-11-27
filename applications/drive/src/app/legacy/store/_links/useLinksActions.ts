@@ -18,8 +18,6 @@ import {
     queryRestoreLinks,
     queryTrashLinks,
 } from '@proton/shared/lib/api/drive/link';
-import type { FavoriteData, RelatedPhotos } from '@proton/shared/lib/api/drive/photos';
-import { queryAddPhotoToFavorite } from '@proton/shared/lib/api/drive/photos';
 import { queryMoveLink } from '@proton/shared/lib/api/drive/share';
 import {
     queryRecoverPhotoLinks,
@@ -36,6 +34,8 @@ import { getDecryptedSessionKey } from '@proton/shared/lib/keys/drivePassphrase'
 import groupWith from '@proton/utils/groupWith';
 import isTruthy from '@proton/utils/isTruthy';
 
+import type { FavoriteData, RelatedPhotos } from '../../../api/photos';
+import { queryAddPhotoToFavorite } from '../../../api/photos';
 import { useDebouncedRequest } from '../_api';
 import { ShareType } from '../_shares/interface';
 import { useDefaultShare } from '../_shares/useDefaultShare';

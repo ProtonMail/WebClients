@@ -1,7 +1,6 @@
-import { queryDevices } from '@proton/shared/lib/api/drive/devices';
-import type { DevicesResult } from '@proton/shared/lib/interfaces/drive/device';
-
+import { queryDevices } from '../../../api/devices';
 import { deviceInfoToDevices, useDebouncedRequest } from '../_api';
+import type { DevicesResult } from './devicePayload';
 import type { DevicesState } from './interface';
 
 export default function useDevicesApi() {

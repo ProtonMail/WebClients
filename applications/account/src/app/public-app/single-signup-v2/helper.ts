@@ -55,7 +55,6 @@ import {
 import { SelectedPlan } from '@proton/payments/core/subscription/selected-plan';
 import { isFreeSubscription, isValidPlanName } from '@proton/payments/core/type-guards';
 import { tracePaymentError } from '@proton/payments/sentry/capture';
-import { partnerWhitelist } from '@proton/shared/lib/api/partner';
 import type { ActiveSession, ResumedSessionResult } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS } from '@proton/shared/lib/constants';
@@ -84,6 +83,7 @@ import {
     hasPassLifetime,
 } from '@proton/shared/lib/user/helpers';
 
+import { partnerWhitelist } from '../../api/partner';
 import { getSubscriptionPrices } from '../signup/helper';
 import type { SessionData, SignupCacheResult, SubscriptionData } from '../signup/interfaces';
 import type {

@@ -22,10 +22,10 @@ import { IcQuestionCircle } from '@proton/icons/icons/IcQuestionCircle';
 import { TelemetryPassNudgeEvents } from '@proton/shared/lib/api/telemetry';
 import { APPS, BRAND_NAME, PASS_APP_NAME } from '@proton/shared/lib/constants';
 import { isPassUser } from '@proton/shared/lib/helpers/usedClientsFlags';
-import PasswordResetDetector from '@proton/shared/lib/mail/PasswordResetDetector';
 import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
+import PasswordResetDetector from '../../../../helpers/message/PasswordResetDetector';
 import usePassNudgeTelemetry, {
     PASS_NUDGE_INTERACTION_TYPE,
     PASS_NUDGE_SOURCE,

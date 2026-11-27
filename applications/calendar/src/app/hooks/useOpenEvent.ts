@@ -8,7 +8,6 @@ import { CacheType } from '@proton/redux-utilities/interface';
 import { getEvent, updateMember } from '@proton/shared/lib/api/calendars';
 import { MAXIMUM_DATE, MINIMUM_DATE } from '@proton/shared/lib/calendar/constants';
 import { getMemberAndAddress } from '@proton/shared/lib/calendar/members';
-import getRecurrenceIdValueFromTimestamp from '@proton/shared/lib/calendar/recurrence/getRecurrenceIdValueFromTimestamp';
 import { getOccurrences } from '@proton/shared/lib/calendar/recurrence/recurring';
 import { getIsPropertyAllDay, getPropertyTzid } from '@proton/shared/lib/calendar/vcalHelper';
 import { getRecurrenceIdDate } from '@proton/shared/lib/calendar/veventHelper';
@@ -21,6 +20,7 @@ import type { VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar
 
 import parseMainEventData from '../containers/calendar/event/parseMainEventData';
 import getAllEventsByUID from '../containers/calendar/getAllEventsByUID';
+import getRecurrenceIdValueFromTimestamp from '../helpers/getRecurrenceIdValueFromTimestamp';
 
 interface HandlerProps {
     calendars: VisualCalendar[];

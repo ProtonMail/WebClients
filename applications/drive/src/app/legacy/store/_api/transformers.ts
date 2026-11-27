@@ -1,7 +1,6 @@
 import { getUnixTime } from 'date-fns';
 
 import { isProtonDocsDocument } from '@proton/shared/lib/helpers/mimetype';
-import type { DevicePayload } from '@proton/shared/lib/interfaces/drive/device';
 import { type DriveFileRevisionPayload, PhotoTag } from '@proton/shared/lib/interfaces/drive/file';
 import type { LinkMeta, LinkSharedUrlInfo } from '@proton/shared/lib/interfaces/drive/link';
 import { LinkType } from '@proton/shared/lib/interfaces/drive/link';
@@ -10,6 +9,7 @@ import type { ShareMeta, ShareMetaShort } from '@proton/shared/lib/interfaces/dr
 import type { ShareURL as ShareURLPayload } from '@proton/shared/lib/interfaces/drive/sharing';
 
 import type { Device } from '../_devices';
+import type { DevicePayload } from '../_devices/devicePayload';
 import type { EncryptedLink } from '../_links/interface';
 import type { DriveFileRevision } from '../_revisions';
 import type { Share, ShareMembership, ShareWithKey } from '../_shares/interface';

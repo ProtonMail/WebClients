@@ -4,12 +4,12 @@ import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 
 import { useApi } from '@proton/app-context/useApi';
 import localStorageWithExpiry from '@proton/shared/lib/api/helpers/localStorageWithExpiry';
-import { DRIVE_SIGNIN } from '@proton/shared/lib/drive/urls';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import { assignUrl } from '@proton/shared/lib/helpers/location';
 import { setLocation } from '@proton/vitest-config/setLocation';
 
 import usePublicToken from '../../../../legacy/hooks/drive/usePublicToken';
+import { DRIVE_SIGNIN } from '../../../../utils/driveUrls';
 import type * as TelemetryModule from '../../../../utils/telemetry';
 import { PUBLIC_SHARE_REDIRECT_PASSWORD_STORAGE_KEY } from '../../../../utils/url/password';
 import { SignupFlowModal } from './SignupFlowModal';

@@ -6,13 +6,13 @@ import useModalState from '@proton/components/components/modalTwo/useModalState'
 import Option from '@proton/components/components/option/Option';
 import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
 import type { Address } from '@proton/shared/lib/interfaces/Address';
-import { isMailVersionOlderThan } from '@proton/shared/lib/mobile/isMailVersionOlderThan';
 import clsx from '@proton/utils/clsx';
 
 import EditProfileModal from '../EditProfileModal';
 import MobileSectionAction from '../MobileSectionAction';
 import MobileSectionLabel from '../MobileSectionLabel';
 import MobileSectionRow from '../MobileSectionRow';
+import { isMailVersionOlderThan } from './isMailVersionOlderThan';
 import { useDefaultAddress } from './useDefaultAddress';
 
 const MobileAddressSection = () => {

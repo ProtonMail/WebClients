@@ -2,12 +2,10 @@ import { signInWithAnotherDevicePush } from '@proton/account/signInWithAnotherDe
 import { getForkCodeLocation, pushForkSession } from '@proton/shared/lib/api/auth';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { getUIDApi } from '@proton/shared/lib/api/helpers/customConfig';
-import { type OAuthLastAccess, getOAuthLastAccess } from '@proton/shared/lib/api/oauth';
 import { getClientID, isExtension } from '@proton/shared/lib/apps/helper';
 import { SessionSource } from '@proton/shared/lib/authentication/SessionInterface';
 import { produceExtensionFork } from '@proton/shared/lib/authentication/fork/extension';
 import { getValidatedProtonProtocol } from '@proton/shared/lib/authentication/fork/getValidatedProtonProtocol';
-import { produceOAuthFork } from '@proton/shared/lib/authentication/fork/oauth';
 import { getProduceForkUrl, getShouldReAuth, produceFork } from '@proton/shared/lib/authentication/fork/produce';
 import type { ForkCodeLocation, PushForkResponse } from '@proton/shared/lib/authentication/interface';
 import { type APP_NAMES, APPS, SSO_PATHS } from '@proton/shared/lib/constants';
@@ -17,9 +15,11 @@ import type { Api } from '@proton/shared/lib/interfaces/Api';
 import { getRequiresAddressSetup, getRequiresProtonAddressFromAdmin } from '@proton/shared/lib/keys/setupAddress';
 import { canPay } from '@proton/shared/lib/user/helpers';
 
+import { type OAuthLastAccess, getOAuthLastAccess } from '../../api/oauth';
 import type { AuthSession } from '../authSession';
 import type { AuthDesktopState } from '../fork/AuthDesktop';
 import type { AuthExtensionState } from '../fork/AuthExtension';
+import { produceOAuthFork } from '../fork/oauth';
 import type { Paths } from '../helper';
 import { hasInterruption } from '../interruptions';
 import { getReAuthState } from '../reAuth/reauthContainerState';

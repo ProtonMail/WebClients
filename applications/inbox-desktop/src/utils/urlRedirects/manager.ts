@@ -1,5 +1,5 @@
 import type { SerializedUrlRule } from "@proton/shared/lib/desktop/urls/builder";
-import { matchUrlRules } from "@proton/shared/lib/desktop/urls/matcher";
+import { matchUrlRules } from "./matcher";
 import { URL_RULES } from "@proton/shared/lib/desktop/urls/rules";
 import { urlRedirectsLogger } from "../log";
 

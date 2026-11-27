@@ -19,7 +19,6 @@ import { ProtonStoreProvider } from '@proton/redux-shared-store/sharedProvider';
 import createApi from '@proton/shared/lib/api/createApi';
 import type { PersistedSession } from '@proton/shared/lib/authentication/SessionInterface';
 import { handleLogoutFromURL } from '@proton/shared/lib/authentication/handleLogoutFromURL';
-import { getLoginPath } from '@proton/shared/lib/authentication/loginPath';
 import { replaceUrl } from '@proton/shared/lib/helpers/browser';
 import { initSafariFontFixClassnames } from '@proton/shared/lib/helpers/initSafariFontFixClassnames';
 import { telemetry } from '@proton/shared/lib/telemetry';
@@ -28,6 +27,7 @@ import PrivateApp from './PrivateApp';
 import PublicApp, { publicRoutes } from './PublicApp';
 import config from './config';
 import locales from './locales';
+import { getLoginPath } from './loginPath';
 import { extendStore, setupStore } from './store/store';
 import { extraThunkArguments } from './store/thunk';
 

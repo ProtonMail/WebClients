@@ -29,7 +29,6 @@ import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { HTTP_STATUS_CODE, SECOND } from '@proton/shared/lib/constants';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import { isMobile } from '@proton/shared/lib/helpers/browser';
-import { isWebRtcSupported } from '@proton/shared/lib/helpers/isWebRtcSupported';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { useFlag } from '@proton/unleash/useFlag';
 import noop from '@proton/utils/noop';
@@ -40,6 +39,7 @@ import { type JoinTimer, createJoinTimer, trackJoinSucceeded } from '../../telem
 import type { JoinTelemetryDimensions } from '../../telemetry/useJoinTelemetryDimensions';
 import { getIceCandidateInfo } from '../../utils/checkIfUsingTurnRelay';
 import { MeetingErrorKind, classifyMeetingError } from '../../utils/classifyMeetingError';
+import { isWebRtcSupported } from '../../utils/isWebRtcSupported';
 import { useMeetingAuthentication } from '../srp/useMeetingAuthentication';
 import { logJoinStats } from '../telemetry/meetingTelemetry';
 import { getUrlWithoutProtocol } from '../telemetry/utils';

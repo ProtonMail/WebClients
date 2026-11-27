@@ -19,7 +19,6 @@ import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { queryCheckEmailAvailability } from '@proton/shared/lib/api/user';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { APPS, DRIVE_APP_NAME, SSO_PATHS } from '@proton/shared/lib/constants';
-import { DRIVE_SIGNIN } from '@proton/shared/lib/drive/urls';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import { emailValidator } from '@proton/shared/lib/helpers/formValidators';
 import { assignUrl } from '@proton/shared/lib/helpers/location';
@@ -30,6 +29,7 @@ import {
     RedirectionReason,
     drivePublicRedirectionReasonKey,
 } from '../../../../legacy/hooks/util/useRedirectToPublicPage';
+import { DRIVE_SIGNIN } from '../../../../utils/driveUrls';
 import { Actions, countActionWithTelemetry, traceTelemetry } from '../../../../utils/telemetry';
 import { deleteStoredUrlPassword, saveUrlPasswordForRedirection } from '../../../../utils/url/password';
 

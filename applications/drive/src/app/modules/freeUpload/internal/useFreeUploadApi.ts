@@ -1,11 +1,8 @@
 import { useCallback } from 'react';
 
 import { useApi } from '@proton/app-context/useApi';
-import {
-    queryFreshAccountStatus,
-    queryOnboardingStatus,
-    queryUpdateFreshAccount,
-} from '@proton/shared/lib/api/drive/onboarding';
+
+import { queryFreshAccountStatus, queryOnboardingStatus, queryUpdateFreshAccount } from '../../../api/onboarding';
 
 export function useFreeUploadApi() {
     const api = useApi();

@@ -1,7 +1,8 @@
 import type { ParsedUnprivatizationData } from '@proton/account/members/unprivatization';
 import type { Address } from '@proton/shared/lib/interfaces/Address';
 import type { AuthDeviceOutput, DeviceData, DeviceSecretData } from '@proton/shared/lib/keys/device';
-import type { UnprivatizationContextData } from '@proton/shared/lib/keys/unprivatization/helper';
+
+import type { UnprivatizationContextData } from './unprivatization';
 
 export enum AuthType {
     /** Two-step sign-in: the username first, then the password (`AutoSrp`) or the SSO provider. */

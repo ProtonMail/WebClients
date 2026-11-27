@@ -5,7 +5,6 @@ import { Href } from '@proton/atoms/Href/Href';
 import { IcImage } from '@proton/icons/icons/IcImage';
 import { IcMobile } from '@proton/icons/icons/IcMobile';
 import { DRIVE_APP_NAME } from '@proton/shared/lib/constants';
-import { DRIVE_ANDROID_APP, DRIVE_IOS_APP } from '@proton/shared/lib/drive/urls';
 import { isAndroid, isIos, isMobile } from '@proton/shared/lib/helpers/browser';
 import appStoreSvg from '@proton/styles/assets/img/illustrations/app-store.svg';
 import playStoreSvg from '@proton/styles/assets/img/illustrations/play-store.svg';
@@ -13,6 +12,7 @@ import androidImg from '@proton/styles/assets/img/onboarding/drive-v2-android.pn
 import iosImg from '@proton/styles/assets/img/onboarding/drive-v2-ios.png';
 import mobileImg from '@proton/styles/assets/img/onboarding/drive-v2-mobile.svg';
 
+import { DRIVE_ANDROID_APP, DRIVE_IOS_APP } from '../../../utils/driveUrls';
 import { Container } from '../Container';
 import { IconList } from '../IconList';
 import type { OnboardingProps } from '../interface';

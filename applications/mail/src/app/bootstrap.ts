@@ -32,7 +32,6 @@ import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
 import { initSafariFontFixClassnames } from '@proton/shared/lib/helpers/initSafariFontFixClassnames';
 import { isProduction } from '@proton/shared/lib/helpers/sentry';
 import type { ProtonConfig } from '@proton/shared/lib/interfaces/config';
-import { startMailForegroundTelemetry } from '@proton/shared/lib/telemetry/mailForegroundTelemetry';
 import { appMode } from '@proton/shared/lib/webpack.constants';
 import { initTracker } from '@proton/telemetry-tracker/lib/tracker';
 import { CommonFeatureFlag } from '@proton/unleash/Flags';
@@ -47,6 +46,7 @@ import { migrationToolWorker } from './helpers/encryptedSearch/migration-system/
 import { registerMailToProtocolHandler } from './helpers/url';
 import locales from './locales';
 import { type MailState, extendStore, setupStore } from './store/store';
+import { startMailForegroundTelemetry } from './telemetry/mailForegroundTelemetry';
 import { rememberWebSignup } from './telemetry/signupOrigin';
 
 const getAppContainer = () =>
@@ -70,7 +70,7 @@ export const bootstrapApp = async ({ config }: { config: ProtonConfig }) => {
     }
 
     if (isElectronMail) {
-        void import('@proton/shared/lib/desktop/bootstrapMailInboxDesktop').then((module) => {
+        void import('./desktop/bootstrapMailInboxDesktop').then((module) => {
             // Also registers baseline IPC and redirect protocols for the inbox desktop app.
             module.bootstrapMailInboxDesktop({
                 config,

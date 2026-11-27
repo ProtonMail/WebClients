@@ -16,13 +16,13 @@ import {
     getAuthDeviceDataByUser,
     setPersistedAuthDeviceDataByUser,
 } from '@proton/shared/lib/keys/device';
-import { type OrganizationData, getOrganizationData } from '@proton/shared/lib/keys/unprivatization/helper';
 
 import type { AuthSession } from '../../authSession';
 import { finalizeSignIn } from './finalizeSignIn';
 import { SSOLoginCapabilites, type SSOUnlockData } from './interface';
 import type { LoginFlowContext } from './loginFlowContext';
 import { prepareSSOSignIn, unlockSSO } from './sso';
+import { type OrganizationData, getOrganizationData } from './unprivatization';
 
 // The crypto, the session and the device requests are out of scope: these tests only look at what the sign-in does
 // with their results
@@ -42,8 +42,8 @@ vi.mock('@proton/shared/lib/keys/device', async () => ({
     createAuthDeviceToActivate: vi.fn(),
     setPersistedAuthDeviceDataByUser: vi.fn(),
 }));
-vi.mock('@proton/shared/lib/keys/unprivatization/helper', async () => ({
-    ...(await vi.importActual<any>('@proton/shared/lib/keys/unprivatization/helper')),
+vi.mock('./unprivatization', async () => ({
+    ...(await vi.importActual<any>('./unprivatization')),
     getOrganizationData: vi.fn(),
 }));
 vi.mock('./finalizeSignIn', () => ({ finalizeSignIn: vi.fn() }));

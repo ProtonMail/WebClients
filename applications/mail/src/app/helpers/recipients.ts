@@ -2,7 +2,6 @@ import { isSelfAddress } from '@proton/mail-message/helpers/addresses';
 import type { Conversation } from '@proton/mail-message/models/conversation';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { canonicalizeInternalEmail } from '@proton/shared/lib/helpers/email';
-import { isBlockedIncomingDefaultAddress } from '@proton/shared/lib/helpers/incomingDefaults';
 import type { Address, Recipient } from '@proton/shared/lib/interfaces/Address';
 import type { IncomingDefault } from '@proton/shared/lib/interfaces/IncomingDefault';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
@@ -14,6 +13,7 @@ import uniqueBy from '@proton/utils/uniqueBy';
 import type { Element } from '../models/element';
 import { getRecipients as getConversationRecipients, getSenders } from './conversation';
 import { isElementConversation, isElementMessage } from './elementTypeGuards';
+import { isBlockedIncomingDefaultAddress } from './incomingDefaults';
 
 /** The locations whose rows are about who the mail went *to*, not who it came from. */
 const RECIPIENT_DISPLAY_LABEL_IDS = new Set<MAILBOX_LABEL_IDS>([

@@ -3,7 +3,6 @@ import { getAppHref, getProduct } from '@proton/shared/lib/apps/helper';
 import { getSlugFromApp } from '@proton/shared/lib/apps/slugHelper';
 import { SessionSource } from '@proton/shared/lib/authentication/SessionInterface';
 import { getToApp } from '@proton/shared/lib/authentication/apps';
-import { getOAuthSettingsUrl } from '@proton/shared/lib/authentication/fork/oauth2SettingsUrl';
 import { getReturnUrl } from '@proton/shared/lib/authentication/returnUrl';
 import { APPS, type APP_NAMES, SETUP_ADDRESS_PATH } from '@proton/shared/lib/constants';
 import { invokeInboxDesktopIPC } from '@proton/shared/lib/desktop/ipcHelpers';
@@ -14,6 +13,7 @@ import noop from '@proton/utils/noop';
 
 import { getAppSwitcherState } from '../appSwitcher/appSwitcherState';
 import type { AppIntent, AuthSession } from '../authSession';
+import { getOAuthSettingsUrl } from '../fork/oauth2SettingsUrl';
 import type { Paths } from '../helper';
 import type { LocalRedirect } from '../localRedirect';
 import { type ProduceForkData, SSOType } from './forkInterface';

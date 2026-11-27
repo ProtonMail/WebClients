@@ -1,4 +1,4 @@
-import type { OnboardingSurveyPayload, Variant } from '@proton/shared/lib/api/onboardingSurvey';
+import type { OnboardingSurveyPayload, Variant } from '../../../api/onboardingSurvey';
 
 export type OnboardingSurveyAnswers = Partial<Omit<OnboardingSurveyPayload, 'Variant'>>;
 

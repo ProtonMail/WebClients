@@ -10,7 +10,6 @@ import { getIsGuestFromUrl, selectIsGuest } from '@proton/meet/store/slices/user
 import { TelemetryMeetDashboardEvents, sendMeetDashboardEvent } from '@proton/meet/telemetry/meetTelemetry';
 import { isMac } from '@proton/shared/lib/helpers/browser';
 import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
-import { isWasmSupported } from '@proton/shared/lib/helpers/isWasmSupported';
 import clsx from '@proton/utils/clsx';
 
 import { MacSigningMigrationTopBanner } from './components/MacSigningMigrationTopBanner/MacSigningMigrationTopBanner';
@@ -27,6 +26,7 @@ import {
 } from './containers/lazyRouteContainers';
 import { useMeetFunnelTelemetry } from './hooks/useMeetFunnelTelemetry';
 import { useIsRecordingSupported } from './hooks/useMeetingRecorder/hooks/useIsRecordingSupported';
+import { isWasmSupported } from './utils/isWasmSupported';
 
 // @ts-ignore
 import meetTheme from './styles/meet.theme.css';

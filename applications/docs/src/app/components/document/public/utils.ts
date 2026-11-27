@@ -6,7 +6,7 @@ import { stripLocalBasenameFromPathname } from '@proton/shared/lib/authenticatio
 import { PLANS } from '@proton/payments/core/constants'
 import { Actions, countActionWithTelemetry, traceTelemetry } from './telemetry'
 import { getCurrentTab, getNewWindow } from '@proton/shared/lib/helpers/window'
-import { DOCS_SIGNIN, DOCS_SIGNUP } from '@proton/shared/lib/docs/urls'
+import { DOCS_SIGNIN, DOCS_SIGNUP } from '../../../utils/urls'
 import { RedirectionReason, drivePublicRedirectionReasonKey } from '@proton/docs-shared/URL/publicRedirectionReason'
 import { saveUrlPasswordForRedirection } from '@proton/docs-shared/URL/saveUrlPasswordForRedirection'
 import type { DocumentType } from '@proton/docs-shared/BasicTypes'
