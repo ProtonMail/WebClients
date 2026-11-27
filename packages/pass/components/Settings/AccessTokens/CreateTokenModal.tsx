@@ -14,9 +14,11 @@ import Toggle from '@proton/components/components/toggle/Toggle';
 import { InputField as InputFieldTwo } from '@proton/components/components/v2/field/InputField';
 
 import { useRequest } from '../../../hooks/useRequest';
+import type { PatUiGrantRole, PatVaultGrant } from '../../../lib/access-token/access-token.grants';
 import type { PersonalAccessToken } from '../../../lib/access-token/access-token.types';
 import { createAccessToken } from '../../../store/actions/creators/access-token';
 import { selectWritableVaults } from '../../../store/selectors/shares';
+import { ShareRole } from '../../../types/data/shares';
 import { sortOn } from '../../../utils/fp/sort';
 import {
     DAY_IN_MINUTES,
@@ -26,7 +28,7 @@ import {
     YEAR_IN_MINUTES,
 } from '../../../utils/time/constants';
 import { PassModal } from '../../Layout/Modal/PassModal';
-import { VaultMultiSelect } from '../../Vault/VaultSelect';
+import { VaultPatGrantSelect } from './VaultPatGrantSelect';
 
 type Props = {
     onClose: () => void;
@@ -67,6 +69,9 @@ const EXPIRATION_PRESETS = {
 
 const EXPIRATION_PRESET_OPTIONS = Object.keys(EXPIRATION_PRESETS) as ExpirationPreset[];
 
+const grantsFromMap = (grantsByShareId: Map<string, PatUiGrantRole>): PatVaultGrant[] =>
+    Array.from(grantsByShareId.entries()).map(([shareId, role]) => ({ shareId, role }));
+
 export const CreateTokenModal: FC<Props> = ({ onClose, onCreated }) => {
     const writableVaults = useSelector(selectWritableVaults);
 
@@ -76,7 +81,7 @@ export const CreateTokenModal: FC<Props> = ({ onClose, onCreated }) => {
     const [expirationPreset, setExpirationPreset] = useState<ExpirationPreset>('hour');
     const [customExpirationMinutes, setCustomExpirationMinutes] = useState('60');
     const [isAgent, setIsAgent] = useState(false);
-    const [selectedShareIds, setSelectedShareIds] = useState<Set<string>>(() => new Set());
+    const [grantsByShareId, setGrantsByShareId] = useState<Map<string, PatUiGrantRole>>(() => new Map());
     const [nameError, setNameError] = useState('');
     const [minutesError, setMinutesError] = useState('');
 
@@ -85,12 +90,16 @@ export const CreateTokenModal: FC<Props> = ({ onClose, onCreated }) => {
     });
 
     const toggleVault = (shareId: string) => {
-        setSelectedShareIds((prev) => {
-            const next = new Set(prev);
+        setGrantsByShareId((prev) => {
+            const next = new Map(prev);
             if (next.has(shareId)) next.delete(shareId);
-            else next.add(shareId);
+            else next.set(shareId, ShareRole.READ);
             return next;
         });
+    };
+
+    const setVaultRole = (shareId: string, role: PatUiGrantRole) => {
+        setGrantsByShareId((prev) => new Map(prev).set(shareId, role));
     };
 
     const handleCreate = () => {
@@ -127,7 +136,7 @@ export const CreateTokenModal: FC<Props> = ({ onClose, onCreated }) => {
             name: trimmedName,
             expirationMinutes: minutes,
             isAgent,
-            shareIds: Array.from(selectedShareIds),
+            grants: grantsFromMap(grantsByShareId),
         });
     };
 
@@ -212,20 +221,21 @@ export const CreateTokenModal: FC<Props> = ({ onClose, onCreated }) => {
                         <h3 className="text-bold text-lg m-0">{c('Label').t`Vault access`}</h3>
                         {vaults.length > 0 && (
                             <span className="text-sm color-weak">
-                                {selectedShareIds.size > 0
-                                    ? c('Info').t`${selectedShareIds.size} selected`
+                                {grantsByShareId.size > 0
+                                    ? c('Info').t`${grantsByShareId.size} selected`
                                     : c('Info').t`None selected`}
                             </span>
                         )}
                     </div>
                     <p className="text-sm color-weak mt-0 mb-2">
                         {c('Info')
-                            .t`This token gets read-only access to the vaults you select. It can read items, but cannot edit them, share vaults, or invite others. You can change this later.`}
+                            .t`Optional. Choose vaults and set a role for each: Viewer is read-only; Editor can create, edit, and delete items but cannot share vaults or manage members. You can change this later.`}
                     </p>
-                    <VaultMultiSelect
+                    <VaultPatGrantSelect
                         vaults={vaults}
-                        selectedShareIds={selectedShareIds}
+                        grantsByShareId={grantsByShareId}
                         onToggle={toggleVault}
+                        onRoleChange={setVaultRole}
                         maxHeight="20rem"
                     />
                 </div>
@@ -234,12 +244,7 @@ export const CreateTokenModal: FC<Props> = ({ onClose, onCreated }) => {
                 <Button onClick={onClose} disabled={create.loading}>
                     {c('Action').t`Cancel`}
                 </Button>
-                <Button
-                    color="norm"
-                    onClick={handleCreate}
-                    loading={create.loading}
-                    disabled={create.loading || selectedShareIds.size === 0}
-                >
+                <Button color="norm" onClick={handleCreate} loading={create.loading} disabled={create.loading}>
                     {c('Action').t`Create token`}
                 </Button>
             </ModalTwoFooter>

@@ -1,5 +1,6 @@
-import { all, call, select } from 'redux-saga/effects';
+import { all, call, put, select } from 'redux-saga/effects';
 
+import { type PatVaultGrant, diffPatGrants } from '../../../lib/access-token/access-token.grants';
 import {
     createPersonalAccessToken,
     deletePersonalAccessToken,
@@ -21,6 +22,7 @@ import type {
 import { buildAccessTokenEnvVar } from '../../../lib/access-token/access-token.utils';
 import { PassCrypto } from '../../../lib/crypto';
 import type { PersonalAccessTokenShareResponse } from '../../../types/api/pass';
+import type { ShareId } from '../../../types/crypto/pass-types';
 import type { Maybe } from '../../../types/utils';
 import { prop } from '../../../utils/fp/lens';
 import { logger } from '../../../utils/logger';
@@ -34,7 +36,32 @@ import {
     updateAccessTokenAccess,
 } from '../../actions/creators/access-token';
 import { createRequestSaga } from '../../request/sagas';
-import { selectAccessTokenById, selectAccessTokenGrants } from '../../selectors/access-token';
+import { selectAccessTokenById, selectAccessTokenGrantsOrEmpty } from '../../selectors/access-token';
+import { selectWritableVaults } from '../../selectors/shares';
+
+function* syncAccessTokenGrantsWithBackend(tokenId: string) {
+    try {
+        const accessGrants: PersonalAccessTokenShareResponse[] = yield call(listPersonalAccessTokenAccess, tokenId);
+        yield put(getAccessTokenGrants.success(getAccessTokenGrants.requestID(tokenId), { tokenId, grants: accessGrants }));
+    } catch (err) {
+        logger.error(`[PAT] Failed to refresh grants after update error`, err);
+    }
+}
+
+function* grantPatVaultAccess(tokenId: string, grants: PatVaultGrant[], rawPatKey: Uint8Array<ArrayBuffer>) {
+    const failedGrantShareIds: ShareId[] = [];
+
+    for (const { shareId, role } of grants) {
+        try {
+            yield call(grantPersonalAccessTokenVaultAccess, tokenId, shareId, role, rawPatKey);
+        } catch (err) {
+            failedGrantShareIds.push(shareId);
+            logger.error(`[PAT] Granting access to vault ${shareId} failed`, err);
+        }
+    }
+
+    return failedGrantShareIds;
+}
 
 const listSaga = createRequestSaga({
     actions: getAccessTokens,
@@ -44,16 +71,18 @@ const listSaga = createRequestSaga({
 const createSaga = createRequestSaga({
     actions: createAccessToken,
     call: function* (intent: CreateAccessTokenIntent) {
-        const { shareIds, isAgent } = intent;
+        const { grants, isAgent } = intent;
         const { data, rawPatKey }: PersonalAccessTokenWithKey = yield call(createPersonalAccessToken, intent);
         const tokenId = data.PersonalAccessTokenID;
 
-        if (shareIds.length > 0) {
+        const failedGrantShareIds: ShareId[] = grants.length > 0 ? yield call(grantPatVaultAccess, tokenId, grants, rawPatKey) : [];
+
+        if (grants.length > 0) {
             try {
-                const grantRequests = shareIds.map((shareId) => call(grantPersonalAccessTokenVaultAccess, tokenId, shareId, rawPatKey));
-                yield all(grantRequests);
+                const accessGrants: PersonalAccessTokenShareResponse[] = yield call(listPersonalAccessTokenAccess, tokenId);
+                yield put(getAccessTokenGrants.success(getAccessTokenGrants.requestID(tokenId), { tokenId, grants: accessGrants }));
             } catch (err) {
-                logger.error(`[PAT] Granting access to PAT failed`, err);
+                logger.error(`[PAT] Failed to refresh grants after create`, err);
             }
         }
 
@@ -61,6 +90,7 @@ const createSaga = createRequestSaga({
             pat: data,
             envVar: buildAccessTokenEnvVar(data.Token, rawPatKey),
             isAgent,
+            failedGrantShareIds,
         };
     },
 });
@@ -83,30 +113,45 @@ const listAccessSaga = createRequestSaga({
 
 const updateAccessSaga = createRequestSaga({
     actions: updateAccessTokenAccess,
-    call: function* ({ tokenId, shareIds }: UpdateAccessTokenAccessIntent) {
+    call: function* ({ tokenId, grants }: UpdateAccessTokenAccessIntent) {
         const pat: Maybe<PersonalAccessToken> = yield select(selectAccessTokenById(tokenId));
         if (!pat) throw new Error(`Access token ${tokenId} not found in state`);
 
-        const currentGrants: PersonalAccessTokenShareResponse[] = yield select(selectAccessTokenGrants(tokenId));
-        const nextGrantedShareIDs = new Set(shareIds);
-        const currentGrantedShareIDs = new Set(currentGrants.map(prop('ParentShareID')));
+        const currentGrants: PersonalAccessTokenShareResponse[] = yield select(selectAccessTokenGrantsOrEmpty(tokenId));
+        const writableVaults: { shareId: ShareId }[] = yield select(selectWritableVaults);
+        const manageableVaultShareIds = new Set<ShareId>(writableVaults.map(prop('shareId')));
+        const { toAdd, toRemovePatShareIds, roleUpdates } = diffPatGrants(currentGrants, grants, manageableVaultShareIds);
 
-        const toRevoke = currentGrants.filter((grant) => !nextGrantedShareIDs.has(grant.ParentShareID)).map(prop('ShareID'));
-        const toGrant = shareIds.filter((sid) => !currentGrantedShareIDs.has(sid));
+        const needsGrant = toAdd.length > 0 || roleUpdates.length > 0;
 
-        if (toGrant.length > 0) {
-            const rawPatKey: Uint8Array<ArrayBuffer> = yield call(PassCrypto.openAccessTokenKey, pat.PersonalAccessTokenKey);
-            const grantRequests = toGrant.map((shareId) => call(grantPersonalAccessTokenVaultAccess, tokenId, shareId, rawPatKey));
-            yield all(grantRequests);
+        try {
+            if (needsGrant) {
+                const rawPatKey: Uint8Array<ArrayBuffer> = yield call(PassCrypto.openAccessTokenKey, pat.PersonalAccessTokenKey);
+
+                if (toAdd.length > 0) {
+                    yield all(
+                        toAdd.map(({ shareId, role }) => call(grantPersonalAccessTokenVaultAccess, tokenId, shareId, role, rawPatKey))
+                    );
+                }
+
+                if (toRemovePatShareIds.length > 0) {
+                    yield all(toRemovePatShareIds.map((patShareId) => call(revokePersonalAccessTokenAccess, tokenId, patShareId)));
+                }
+
+                for (const { revokePatShareId, grant } of roleUpdates) {
+                    yield call(revokePersonalAccessTokenAccess, tokenId, revokePatShareId);
+                    yield call(grantPersonalAccessTokenVaultAccess, tokenId, grant.shareId, grant.role, rawPatKey);
+                }
+            } else if (toRemovePatShareIds.length > 0) {
+                yield all(toRemovePatShareIds.map((patShareId) => call(revokePersonalAccessTokenAccess, tokenId, patShareId)));
+            }
+
+            const updatedGrants: PersonalAccessTokenShareResponse[] = yield call(listPersonalAccessTokenAccess, tokenId);
+            return { tokenId, grants: updatedGrants };
+        } catch (error) {
+            yield call(syncAccessTokenGrantsWithBackend, tokenId);
+            throw error;
         }
-
-        if (toRevoke.length > 0) {
-            const revokeRequests = toRevoke.map((shareId) => call(revokePersonalAccessTokenAccess, tokenId, shareId));
-            yield all(revokeRequests);
-        }
-
-        const grants: PersonalAccessTokenShareResponse[] = yield call(listPersonalAccessTokenAccess, tokenId);
-        return { tokenId, grants };
     },
 });
 

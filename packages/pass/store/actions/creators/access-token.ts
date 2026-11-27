@@ -32,6 +32,17 @@ export const getAccessTokens = requestActionsFactory<void, PersonalAccessToken[]
 
 export const createAccessToken = requestActionsFactory<CreateAccessTokenIntent, CreateAccessTokenSuccess>('access-token::create')({
     key: () => uniqueId(),
+    success: {
+        prepare: (payload) => {
+            if (payload.failedGrantShareIds.length === 0) return { payload };
+
+            return withNotification({
+                type: 'warning',
+                text: c('Warning')
+                    .t`Access token created, but some vault permissions could not be applied. Use Manage vault access to try again.`,
+            })({ payload });
+        },
+    },
     failure: {
         prepare: (error) =>
             withNotification({
