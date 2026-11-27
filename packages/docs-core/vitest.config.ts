@@ -8,6 +8,7 @@ import { sharedVitestConfig } from '@proton/vitest-config/shared'
 const domFiles = [
   'lib/Crypto/*.spec.ts',
   'lib/Realtime/WebsocketConnection.spec.ts',
+  'lib/Bridge/EditorToClientRequestHandler.test.ts',
   'lib/Services/CacheService.test.ts',
   'lib/Services/Websockets/WebsocketService.spec.ts',
 ]
