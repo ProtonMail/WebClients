@@ -5,6 +5,7 @@ import { MAX_NUMBER_OF_USER_ROWS } from '../constants';
 export enum CSV_FORMAT_ERROR_TYPE {
     MISSING_REQUIRED_FIELD = 0,
     PARSED_CSV_ERRORS = 1,
+    INVITATIONS_ONLY = 2,
 }
 
 const getCsvFormatErrorMessage = (options: CsvFormatErrorOptions) => {
@@ -20,11 +21,16 @@ const getCsvFormatErrorMessage = (options: CsvFormatErrorOptions) => {
         const erroredRowsString = options.rowsThatErrored.join(', ');
         return c('CSV format error').t`Error on row ${erroredRowsString}.`;
     }
+    if (options.type === CSV_FORMAT_ERROR_TYPE.INVITATIONS_ONLY) {
+        return c('CSV format error')
+            .t`Users on your plan can only be invited by email. Remove the 'Password' column and try again.`;
+    }
 };
 
 type CsvFormatErrorOptions =
     | { type: CSV_FORMAT_ERROR_TYPE.MISSING_REQUIRED_FIELD; fieldName: string }
-    | { type: CSV_FORMAT_ERROR_TYPE.PARSED_CSV_ERRORS; rowsThatErrored: string[] };
+    | { type: CSV_FORMAT_ERROR_TYPE.PARSED_CSV_ERRORS; rowsThatErrored: string[] }
+    | { type: CSV_FORMAT_ERROR_TYPE.INVITATIONS_ONLY };
 
 export class CsvFormatError extends Error {
     constructor(options: CsvFormatErrorOptions) {
