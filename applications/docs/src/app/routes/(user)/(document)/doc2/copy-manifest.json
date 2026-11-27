@@ -472,6 +472,16 @@
     "notes": "Six method bodies verbatim; the comment methods served from the session's comments, converted to docs-shared's types, each answering a failure as one; the suggestion and sheets methods stubbed. The source's later 952608e316c only retypes storeSpreadsheetPatches, which doc2 stubs."
   },
   {
+    "doc2": "__utils/createClientHandler.ts",
+    "doc2Symbol": "OPENABLE_LINK_PROTOCOLS",
+    "kind": "mirror",
+    "source": "packages/docs-core/lib/Bridge/EditorToClientRequestHandler.ts",
+    "sourceSymbol": "OPENABLE_LINK_PROTOCOLS",
+    "sourceCommit": "9b4a7acea3d7dc9e2bce37e94656a58bd99b3e32",
+    "copiedIn": "2c87bef530dbda28a9f919363a40ac929f7608d5",
+    "notes": "The schemes openLink follows and its check, as the source's openLink has them since web/clients!31586 (not on main yet when copied): doc2's openLink ignores a URL of any other scheme."
+  },
+  {
     "doc2": "__utils/createDocsApiFetch.ts",
     "kind": "adaptation",
     "source": "packages/drive/internal/useHttpClient.ts",
