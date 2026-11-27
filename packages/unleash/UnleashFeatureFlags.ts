@@ -413,6 +413,7 @@ enum MeetFeatureFlag {
     MeetScheduleInAdvance = 'MeetScheduleInAdvance',
     MeetScreenShareAudioSupportedElectronVersion = 'MeetScreenShareAudioSupportedElectronVersion',
     MeetSeamlessKeyRotationEnabled = 'MeetSeamlessKeyRotationEnabled',
+    MeetSelfViewMirrorToggle = 'MeetSelfViewMirrorToggle',
     MeetShowReconnectionBannerIfServerConnectionLost = 'MeetShowReconnectionBannerIfServerConnectionLost',
     MeetShowReloadTrackButton = 'MeetShowReloadTrackButton',
     MeetSimulcast = 'MeetSimulcast',

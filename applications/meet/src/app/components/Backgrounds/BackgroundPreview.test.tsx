@@ -5,6 +5,7 @@ import { render, screen, waitFor } from '@testing-library/react';
 
 import { backgroundReducer } from '@proton/meet/store/slices/backgroundSlice';
 import { deviceManagementReducer } from '@proton/meet/store/slices/deviceManagementSlice';
+import { settingsReducer } from '@proton/meet/store/slices/settings';
 import { ProtonStoreContext } from '@proton/react-redux-store/ProtonStoreContext';
 
 import type { MediaManagementContextType } from '../../contexts/MediaManagementProvider/MediaManagementContext';
@@ -30,6 +31,7 @@ const createMockStore = (cameraPermission: PermissionState) =>
         reducer: {
             ...deviceManagementReducer,
             ...backgroundReducer,
+            ...settingsReducer,
         },
         preloadedState: {
             deviceManagement: {

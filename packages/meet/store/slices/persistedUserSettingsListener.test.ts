@@ -4,11 +4,13 @@ import { afterEach, describe, expect, it } from 'vitest';
 
 import type { MeetState } from '../rootReducer';
 import type { MeetAppStartListening } from '../store';
-import { joinLeaveSoundsListener } from './joinLeaveSoundsListener';
+import { persistedUserSettingsListener } from './persistedUserSettingsListener';
 import {
     getPersistedSettingsState,
     selectJoinLeaveSoundsEnabled,
+    selectMirrorSelfView,
     setJoinLeaveSoundsEnabledAndPersist,
+    setMirrorSelfViewAndPersist,
     settingsReducer,
 } from './settings';
 
@@ -22,9 +24,9 @@ const userSlice = createSlice({
     },
 });
 
-const createStore = () => {
+const createStore = (select: (state: MeetState) => boolean) => {
     const listenerMiddleware = createListenerMiddleware();
-    joinLeaveSoundsListener(listenerMiddleware.startListening as unknown as MeetAppStartListening);
+    persistedUserSettingsListener(listenerMiddleware.startListening as unknown as MeetAppStartListening);
 
     const store = configureStore({
         reducer: { ...settingsReducer, user: userSlice.reducer },
@@ -34,18 +36,39 @@ const createStore = () => {
 
     return {
         dispatch: store.dispatch as (action: unknown) => void,
-        isEnabled: () => selectJoinLeaveSoundsEnabled(store.getState() as unknown as MeetState),
+        isEnabled: () => select(store.getState() as unknown as MeetState),
     };
 };
 
-describe('joinLeaveSoundsListener', () => {
+describe.each([
+    {
+        setting: 'join and leave sounds',
+        storageName: 'joinLeaveSounds',
+        select: selectJoinLeaveSoundsEnabled,
+        setAndPersist: setJoinLeaveSoundsEnabledAndPersist,
+    },
+    {
+        setting: 'mirror self view',
+        storageName: 'mirrorSelfView',
+        select: selectMirrorSelfView,
+        setAndPersist: setMirrorSelfViewAndPersist,
+    },
+])('persistedUserSettingsListener with $setting', ({ storageName, select, setAndPersist }) => {
     afterEach(() => {
         localStorage.clear();
     });
 
+    it('should be on when the user never chose', () => {
+        const { dispatch, isEnabled } = createStore(select);
+
+        dispatch(userSlice.actions.setUser('user-1'));
+
+        expect(isEnabled()).toBe(true);
+    });
+
     it('should load the choice of the user once they are known', () => {
-        localStorage.setItem('user.user-1.joinLeaveSounds', 'false');
-        const { dispatch, isEnabled } = createStore();
+        localStorage.setItem(`user.user-1.${storageName}`, 'false');
+        const { dispatch, isEnabled } = createStore(select);
 
         expect(isEnabled()).toBe(true);
 
@@ -55,12 +78,12 @@ describe('joinLeaveSoundsListener', () => {
     });
 
     it('should not carry the choice of the guest over to the user', () => {
-        const { dispatch, isEnabled } = createStore();
+        const { dispatch, isEnabled } = createStore(select);
 
-        dispatch(setJoinLeaveSoundsEnabledAndPersist(false));
+        dispatch(setAndPersist(false));
         dispatch(userSlice.actions.setUser('user-1'));
 
         expect(isEnabled()).toBe(true);
-        expect(localStorage.getItem('guest.joinLeaveSounds')).toBe('false');
+        expect(localStorage.getItem(`guest.${storageName}`)).toBe('false');
     });
 });
