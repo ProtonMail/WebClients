@@ -860,6 +860,9 @@
       ],
       "Your password manager is not here? Request it.": [
         "Parola yöneticiniz burada yok mu? İstekte bulunun."
+      ],
+      "Enable offline mode": [
+        "Çevrim dışı kipi aç"
       ]
     },
     "Activity": {
@@ -2323,8 +2326,7 @@
         "\"${ payload.content.name }\" içindeki tüm ögeler taşınıyor"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Bir öğeyi başka bir kasaya taşıdığınızda ilgili öğenin güvenli bağlantıları silinir.",
-        "Öğeleri başka bir kasaya taşıdığınızda ilgili öğenin güvenli bağlantıları silinir."
+        "Bir ögeyi başka bir kasaya taşımak bu ögenin güvenli bağlantılarını siler."
       ],
       "Moving items": [
         "Ögeler taşınıyor"
@@ -3089,6 +3091,12 @@
       ],
       "Your session could not be authorized.": [
         "Oturumunuza yetki verilemedi."
+      ],
+      "Access your ${ PASS_SHORT_APP_NAME } data if you lose internet connectivity or if ${ BRAND_NAME } servers are unreachable.": [
+        "İnternet bağlantınızı kaybederseniz veya ${ BRAND_NAME } sunucularına ulaşılamıyorsa ${ PASS_SHORT_APP_NAME } verilerinize erişin."
+      ],
+      "You can turn on offline mode any time in ${ BRAND_NAME } Pass settings": [
+        "${ BRAND_NAME } Pass ayarlarından istediğiniz zaman çevrim dışı kipi açabilirsiniz"
       ]
     },
     "Keyboard key": {

@@ -862,6 +862,9 @@
       ],
       "Your password manager is not here? Request it.": [
         "Managerul de parole pe care îl folosiți nu apare aici? Solicitați-l."
+      ],
+      "Enable offline mode": [
+        "Activare mod local"
       ]
     },
     "Activity": {
@@ -2351,9 +2354,7 @@
         "Se mută toate articolele din „${ payload.content.name }”."
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Mutarea unui articol într-un alt seif va șterge legăturile sale securizate.",
-        "Mutarea articolelor într-un alt seif va șterge legăturile lor securizate.",
-        "Mutarea articolelor într-un alt seif va șterge legăturile lor securizate."
+        "Mutarea unui articol într-un alt seif va șterge legăturile sale securizate."
       ],
       "Moving items": [
         "Se mută articolele."
@@ -3126,6 +3127,12 @@
       ],
       "Your session could not be authorized.": [
         "Sesiunea nu a putut fi autorizată."
+      ],
+      "Access your ${ PASS_SHORT_APP_NAME } data if you lose internet connectivity or if ${ BRAND_NAME } servers are unreachable.": [
+        "Accesați ${ PASS_SHORT_APP_NAME } dacă pierdeți conexiunea la internet sau dacă serverele ${ BRAND_NAME } nu sunt accesibile."
+      ],
+      "You can turn on offline mode any time in ${ BRAND_NAME } Pass settings": [
+        "Puteți activa oricând accesul local în setările din ${ BRAND_NAME } Pass"
       ]
     },
     "Keyboard key": {

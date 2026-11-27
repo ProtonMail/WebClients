@@ -860,6 +860,9 @@
       ],
       "Your password manager is not here? Request it.": [
         "Seu gerenciador de senhas não está aqui? Solicite."
+      ],
+      "Enable offline mode": [
+        "Ativar modo off-line"
       ]
     },
     "Activity": {
@@ -2320,8 +2323,7 @@
         "Movendo todos os itens de \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Movendo um item para outra pasta apagará seus links seguros.",
-        "Mover itens para outro cofre apagará seus links seguros."
+        "Movendo um item para outra pasta apagará seus links seguros."
       ],
       "Moving items": [
         "Movendo itens"
@@ -5082,7 +5084,7 @@
         "Verificação da propriedade do domínio"
       ],
       "Enable offline mode": [
-        "Ativar omodo off-line"
+        "Ativar modo off-line"
       ],
       "Encrypted import": [
         "Importação criptografada"

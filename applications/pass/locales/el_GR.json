@@ -860,6 +860,9 @@
       ],
       "Your password manager is not here? Request it.": [
         "Ο διαχειριστής κωδικών πρόσβασης σας δεν είναι εδώ; Ζητήστε τον."
+      ],
+      "Enable offline mode": [
+        "Ενεργοποίηση λειτουργίας εκτός σύνδεσης"
       ]
     },
     "Activity": {
@@ -2323,8 +2326,7 @@
         "Μετακίνηση όλων των στοιχείων από το \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Η μετακίνηση ενός στοιχείου σε άλλη κρύπτη θα διαγράψει τους ασφαλείς συνδέσμους του.",
-        "Η μετακίνηση στοιχείων σε άλλη κρύπτη θα διαγράψει τους ασφαλείς συνδέσμους των."
+        "Η μετακίνηση ενός στοιχείου σε άλλη κρύπτη θα διαγράψει τους ασφαλείς συνδέσμους του."
       ],
       "Moving items": [
         "Μετακίνηση στοιχείων"
@@ -3089,6 +3091,12 @@
       ],
       "Your session could not be authorized.": [
         "Δεν ήταν δυνατή η εξουσιοδότηση της συνεδρίας."
+      ],
+      "Access your ${ PASS_SHORT_APP_NAME } data if you lose internet connectivity or if ${ BRAND_NAME } servers are unreachable.": [
+        "Αποκτήστε πρόσβαση στα δεδομένα σας στο ${ PASS_SHORT_APP_NAME } εάν χάσετε τη σύνδεση στο διαδίκτυο ή εάν οι διακομιστές του ${ BRAND_NAME } δεν είναι προσβάσιμοι."
+      ],
+      "You can turn on offline mode any time in ${ BRAND_NAME } Pass settings": [
+        "Μπορείτε να ενεργοποιήσετε τη λειτουργία εκτός σύνδεσης ανά πάσα στιγμή στις ρυθμίσεις του ${ BRAND_NAME } Pass"
       ]
     },
     "Keyboard key": {

@@ -860,6 +860,9 @@
       ],
       "Your password manager is not here? Request it.": [
         "Il tuo gestore di password non è presente? Richiedilo."
+      ],
+      "Enable offline mode": [
+        "Abilita la modalità offline"
       ]
     },
     "Activity": {
@@ -2323,8 +2326,7 @@
         "Spostamento di tutti gli elementi da \"${ payload.content.name }\" in corso"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Spostare un elemento in un'altra cassaforte comporterà l'eliminazione dei link sicuri.",
-        "Lo spostamento degli elementi in un'altra cassaforte comporterà l'eliminazione dei link sicuri."
+        "Spostare un elemento in un'altra cassaforte comporterà l'eliminazione dei link sicuri."
       ],
       "Moving items": [
         "Spostamento degli elementi"
@@ -3089,6 +3091,12 @@
       ],
       "Your session could not be authorized.": [
         "Non è possibile autorizzare la tua sessione."
+      ],
+      "Access your ${ PASS_SHORT_APP_NAME } data if you lose internet connectivity or if ${ BRAND_NAME } servers are unreachable.": [
+        "Accedi ai tuoi dati ${ PASS_SHORT_APP_NAME } se perdi la connessione a Internet o se i server ${ BRAND_NAME } non sono raggiungibili."
+      ],
+      "You can turn on offline mode any time in ${ BRAND_NAME } Pass settings": [
+        "È possibile attivare la modalità offline in qualsiasi momento nelle impostazioni di ${ BRAND_NAME } Pass."
       ]
     },
     "Keyboard key": {

@@ -860,6 +860,9 @@
       ],
       "Your password manager is not here? Request it.": [
         "No hi apareix el vostre gestor de contrasenyes? Demaneu-lo."
+      ],
+      "Enable offline mode": [
+        "Activa el mode fora de línia"
       ]
     },
     "Activity": {
@@ -2323,8 +2326,7 @@
         "S'estan movent tots els elements de «${ payload.content.name }»"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Moure un element a una altra caixa forta farà que se n'esborrin els enllaços segurs.",
-        "Moure elements a una altra caixa forta farà que se n'esborrin els enllaços segurs."
+        "Moure un element a una altra caixa forta farà que s'esborrin els seus enllaços segurs."
       ],
       "Moving items": [
         "S'estan movent elements"
@@ -3089,6 +3091,12 @@
       ],
       "Your session could not be authorized.": [
         "No s'ha pogut autoritzar la sessió."
+      ],
+      "Access your ${ PASS_SHORT_APP_NAME } data if you lose internet connectivity or if ${ BRAND_NAME } servers are unreachable.": [
+        "Accediu a les vostres dades de ${ PASS_SHORT_APP_NAME } si perdeu la connexió a Internet o si els servidors de ${ BRAND_NAME } no són accessibles."
+      ],
+      "You can turn on offline mode any time in ${ BRAND_NAME } Pass settings": [
+        "Podeu activar el mode sense connexió en qualsevol moment a les preferències de ${ BRAND_NAME } Pass"
       ]
     },
     "Keyboard key": {
