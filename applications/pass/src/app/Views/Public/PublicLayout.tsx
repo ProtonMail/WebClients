@@ -5,18 +5,19 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import PassLogo from '@proton/components/components/logo/PassLogo';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
-import { PASS_BLOG_TRIAL_URL } from '@proton/pass/constants';
+import { buildSecureLinkPageSignupUrl } from '@proton/pass/lib/secure-links/signup-url';
 
 import './PublicLayout.scss';
 
 export const PublicLayout: FC<PropsWithChildren> = ({ children }) => {
-    const { onLink } = usePassCore();
+    const { config, onLink } = usePassCore();
+    const signupUrl = buildSecureLinkPageSignupUrl(config.SSO_URL);
 
     return (
         <>
             <nav className="flex justify-space-between w-full absolute top-0 left-0 p-4 bg-norm">
                 <PassLogo />
-                <Button type="button" color="norm" className="rounded-full" onClick={() => onLink(PASS_BLOG_TRIAL_URL)}>
+                <Button type="button" color="norm" className="rounded-full" onClick={() => onLink(signupUrl)}>
                     {c('Action').t`Try for free`}
                 </Button>
             </nav>

@@ -8,7 +8,7 @@ import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
 
-import { PASS_BLOG_TRIAL_URL } from '../../constants';
+import { buildSecureLinkPageSignupUrl } from '../../lib/secure-links/signup-url';
 import { usePassCore } from '../Core/PassCoreProvider';
 
 import './UpsellFloatingModal.scss';
@@ -21,7 +21,8 @@ type UpsellFloatingModalProps = {
 };
 
 export const UpsellFloatingModal: FC<UpsellFloatingModalProps> = ({ className, title, subtitle, badgeText }) => {
-    const { onLink } = usePassCore();
+    const { config, onLink } = usePassCore();
+    const signupUrl = buildSecureLinkPageSignupUrl(config.SSO_URL);
     const [showModal, setShowModal] = useState(true);
 
     return (
@@ -61,7 +62,7 @@ export const UpsellFloatingModal: FC<UpsellFloatingModalProps> = ({ className, t
                         color="norm"
                         size="large"
                         shape="solid"
-                        onClick={() => onLink(PASS_BLOG_TRIAL_URL)}
+                        onClick={() => onLink(signupUrl)}
                     >
                         {c('Action').t`Get ${PASS_APP_NAME}`}
                     </Button>
