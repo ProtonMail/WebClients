@@ -116,6 +116,32 @@ describe('DocumentsTable rename', () => {
     expect(await startRename('Plan')).toBeEnabled()
   })
 
+  test('refuses a name with a slash, as Drive does, and leaves the name box open to fix it', async () => {
+    const { renameNode, createNotification } = renderTable([createDocument({})])
+    const input = await startRenameAndClear('Plan')
+
+    await userEvent.keyboard('Plans/2027{Enter}')
+
+    expect(createNotification).toHaveBeenCalledWith({ type: 'error', text: 'Name must not contain slashes (/)' })
+    expect(renameNode).not.toHaveBeenCalled()
+    expect(input).toHaveValue('Plans/2027')
+  })
+
+  test('refuses a name of only spaces, which Drive trims to nothing, and saves a name without its outer spaces', async () => {
+    const { renameNode, createNotification } = renderTable([createDocument({})])
+    const input = await startRenameAndClear('Plan')
+
+    await userEvent.keyboard('   {Enter}')
+
+    expect(createNotification).toHaveBeenCalledWith({ type: 'error', text: 'Name must not be empty' })
+    expect(renameNode).not.toHaveBeenCalled()
+
+    await userEvent.clear(input)
+    await userEvent.keyboard('  Budget  {Enter}')
+
+    expect(renameNode).toHaveBeenCalledWith('volume1~link1', 'Budget')
+  })
+
   test('Escape gives the new name up', async () => {
     const { renameNode } = renderTable([createDocument({})])
     await startRenameAndClear('Plan')

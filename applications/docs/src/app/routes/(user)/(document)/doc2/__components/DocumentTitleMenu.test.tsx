@@ -519,6 +519,34 @@ describe('DocumentTitleMenu', () => {
   })
 
   describe('rename', () => {
+    test.each([['a member'], ['a public visitor']])(
+      'refuses a name with a slash, as Drive does, and keeps the name box open, for %s',
+      async (who) => {
+        const publicRename = vi.fn()
+        await openMenu(
+          'Editor',
+          who === 'a public visitor'
+            ? { isPublic: true, publicRename: { isAllowed: () => true, rename: publicRename } }
+            : {},
+        )
+        await userEvent.click(menuItem('Rename document'))
+        await userEvent.clear(screen.getByTestId('rename-input'))
+        await userEvent.type(screen.getByTestId('rename-input'), 'Plans/2027{Enter}')
+
+        expect(mockCreateNotification).toHaveBeenCalledWith({
+          type: 'error',
+          text: 'Name must not contain slashes (/)',
+        })
+        expect(getAvailableName).not.toHaveBeenCalled()
+        expect(renameNode).not.toHaveBeenCalled()
+        expect(publicRename).not.toHaveBeenCalled()
+        // The name box stays open, to fix the name; Escape keeps the old one
+        expect(screen.getByTestId('rename-input')).toHaveValue('Plans/2027')
+        await userEvent.keyboard('{Escape}')
+        expect(screen.getByTestId('document-name-dropdown')).toHaveTextContent(/^Plans$/)
+      },
+    )
+
     test('Rename is disabled while a rename is pending, so renames never overlap', async () => {
       let finishRename: () => void = () => {}
       renameNode.mockReturnValue(new Promise<void>((resolve) => (finishRename = resolve)))

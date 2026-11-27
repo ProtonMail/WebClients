@@ -11,6 +11,7 @@ const domFiles = [
   'lib/Bridge/EditorToClientRequestHandler.test.ts',
   'lib/Services/CacheService.test.ts',
   'lib/Services/Websockets/WebsocketService.spec.ts',
+  'lib/UseCase/ExportAndDownload.test.ts',
 ]
 
 // The projects do not use `extends: true`: it measured 4-6x slower on import (10s vs 1.6s for the node project).

@@ -27,6 +27,7 @@ import { useApplication } from '~/utils/application-context'
 import { useDebugMode } from '~/utils/debug-mode-context'
 import { downloadJSONFile } from '~/utils/download-json-file'
 import { useIsODTEnabled } from '~/utils/flags'
+import { getSafeFileName } from '~/utils/safeFileName'
 
 import { exportAndDownload } from '../__utils/downloadExport'
 import type { EditorInvoker } from '../__utils/EditorInvoker'
@@ -358,7 +359,10 @@ function HistoryViewerModalContent({
                         if (!data) {
                           return
                         }
-                        downloadJSONFile(data, `${documentName}-editor-state-${selectedBatchTimestamp}.json`)
+                        downloadJSONFile(
+                          data,
+                          getSafeFileName(`${documentName}-editor-state-${selectedBatchTimestamp}`, 'json'),
+                        )
                       })
                     }
                   >
@@ -375,7 +379,10 @@ function HistoryViewerModalContent({
                         if (!data) {
                           return
                         }
-                        downloadFile(new Blob([data]), `${documentName}-yjs-state-${selectedBatchTimestamp}.bin`)
+                        downloadFile(
+                          new Blob([data]),
+                          getSafeFileName(`${documentName}-yjs-state-${selectedBatchTimestamp}`, 'bin'),
+                        )
                       })
                     }
                   >

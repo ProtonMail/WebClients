@@ -69,6 +69,7 @@ import { downloadLogsAsJSON } from '~/utils/downloadLogs'
 import { useEvent } from '~/utils/misc'
 import { useIsSheetsEnabled, useIsDownloadLogsAllowed, useIsODTEnabled } from '~/utils/flags'
 import { useDebugMode } from '~/utils/debug-mode-context'
+import { validateDocumentName } from '~/utils/validateDocumentName'
 import * as Ariakit from '@ariakit/react'
 import clsx from '@proton/utils/clsx'
 import * as UI from '@proton/docs-shared/components/ui/ui'
@@ -191,6 +192,13 @@ export function DocumentTitleDropdown({
     const newName = renameInputValue?.trim()
     if (newName) {
       setIsRenaming(false)
+
+      const invalidNameError = oldName !== newName ? validateDocumentName(newName) : undefined
+      if (invalidNameError) {
+        createNotification({ type: 'error', text: invalidNameError })
+        setRenameInputValue(oldName)
+        return
+      }
 
       if (oldName !== newName) {
         void renameController.renameDocument(newName).then((result) => {

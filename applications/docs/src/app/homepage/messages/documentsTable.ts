@@ -11,6 +11,11 @@ export const documentsTableMessages = {
     moveToTrash: 'Move to trash',
     actions: 'Actions',
     renameFailed: 'Failed to rename document',
+    invalidName: {
+      empty: 'Name must not be empty',
+      tooLong: (maxLength: number) => `Name must be ${maxLength} characters long at most`,
+      slashes: 'Name must not contain slashes (/)',
+    },
     justNow: 'Just now',
     header: {
       createdBy: 'Created by',

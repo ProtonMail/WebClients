@@ -45,6 +45,14 @@ describe('exportAndDownload', () => {
     expect(saved[0].blob.type).toBe(type)
   })
 
+  test('saves under a name made safe for file systems, as the document name may hold any character', async () => {
+    const editorInvoker = { exportData: vi.fn().mockResolvedValue(new TextEncoder().encode('Hello')) }
+
+    await exportAndDownload(editorInvoker, '../../Plans/2027', 'md')
+
+    expect(saved).toEqual([{ name: '_.._Plans_2027.md', blob: expect.any(Blob) }])
+  })
+
   test('saves nothing when the export fails', async () => {
     const editorInvoker = { exportData: vi.fn().mockRejectedValue(new Error('Editor did not answer exportData')) }
 
