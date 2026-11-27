@@ -21,6 +21,7 @@ import {
 import type { BridgeRequest } from '../../bridge/types';
 import { InlineToastAction } from '../../constants.runtime';
 import { withContext } from '../../context/context';
+import { resolveDefaultAutosaveSiteNameForPage } from '../../utils/resolve-default-autosave-site-name';
 import { PasskeyServiceError } from './passkey.errors';
 
 type PasskeyServiceState = {
@@ -137,11 +138,14 @@ export const createPasskeyService = () => {
 
                 return approve(token, approvePasskeyCreate)
                     .then(() => {
+                        const defaultItemName = ctx ? resolveDefaultAutosaveSiteNameForPage(ctx, document) : null;
+
                         ctx?.service.inline.toast.open({
                             action: InlineToastAction.PASSKEY_CREATE,
                             domain,
                             request,
                             token,
+                            ...(defaultItemName ? { defaultItemName } : {}),
                         });
                     })
                     .catch((err) => onPasskeyError(token, err));

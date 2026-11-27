@@ -97,6 +97,7 @@ export const ItemNew: FC = () => {
     };
 
     const ItemNewComponent = itemNewMap[type] as FC<ItemNewViewProps>;
+    const extensionClientState = getExtensionClientState?.();
 
     return (
         shareId && (
@@ -106,7 +107,8 @@ export const ItemNew: FC = () => {
                 onSubmit={handleSubmit}
                 shareId={shareId}
                 folderId={folderId}
-                url={getExtensionClientState?.()?.url ?? null}
+                url={extensionClientState?.url ?? null}
+                defaultItemName={extensionClientState?.defaultItemName ?? null}
             />
         )
     );

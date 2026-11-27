@@ -27,6 +27,7 @@ export type InlineToastRequest =
           domain: string;
           request: string;
           token: string;
+          defaultItemName?: string;
       }
     | {
           action: InlineToastAction.PASSKEY_GET;

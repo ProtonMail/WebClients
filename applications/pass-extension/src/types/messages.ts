@@ -180,6 +180,7 @@ export enum WorkerMessageType {
     PORT_UNAUTHORIZED = 'PORT_UNAUTHORIZED',
     REGISTER_ELEMENTS = 'REGISTER_ELEMENTS',
     REGISTER_ELEMENTS_FALLBACK = 'REGISTER_ELEMENTS_FALLBACK',
+    RESOLVE_DEFAULT_ITEM_NAME = 'RESOLVE_DEFAULT_ITEM_NAME',
     RESOLVE_EXTENSION_KEY = 'RESOLVE_EXTENSION_KEY',
     RESOLVE_USER = 'RESOLVE_USER',
     SENTRY_CS_EVENT = 'SENTRY_CS_EVENT',
@@ -293,6 +294,7 @@ type PopupInitMessage = WithPayload<WorkerMessageType.POPUP_INIT, { tabId: TabId
 export type PortUnauthorizedMessage = { type: WorkerMessageType.PORT_UNAUTHORIZED };
 type RegisterElementsLegacyMessage = WithPayload<WorkerMessageType.REGISTER_ELEMENTS_FALLBACK, { hash: string }>;
 type RegisterElementsMessage = { type: WorkerMessageType.REGISTER_ELEMENTS };
+type ResolveDefaultItemNameMessage = { type: WorkerMessageType.RESOLVE_DEFAULT_ITEM_NAME };
 type ResolveExtensionKeyMessage = { type: WorkerMessageType.RESOLVE_EXTENSION_KEY };
 type ResolveUserDataMessage = { type: WorkerMessageType.RESOLVE_USER };
 type SentryCSEventMessage = WithPayload<WorkerMessageType.SENTRY_CS_EVENT, { message: string; data: any }>;
@@ -394,6 +396,7 @@ export type WorkerMessage =
     | PromptDismissMessage
     | RegisterElementsLegacyMessage
     | RegisterElementsMessage
+    | ResolveDefaultItemNameMessage
     | ResolveExtensionKeyMessage
     | ResolveUserDataMessage
     | SentryCSEventMessage
@@ -463,6 +466,7 @@ type WorkerMessageResponseMap = {
     [WorkerMessageType.PASSKEY_QUERY]: { passkeys: SelectedPasskey[] };
     [WorkerMessageType.POPUP_INIT]: PopupInitialState;
     [WorkerMessageType.REGISTER_ELEMENTS]: { hash: string; scriptFallback: boolean };
+    [WorkerMessageType.RESOLVE_DEFAULT_ITEM_NAME]: { defaultItemName: MaybeNull<string> };
     [WorkerMessageType.RESOLVE_EXTENSION_KEY]: { key: string };
     [WorkerMessageType.RESOLVE_USER]: { user: MaybeNull<User> };
     [WorkerMessageType.SPOTLIGHT_CHECK]: { enabled: boolean };

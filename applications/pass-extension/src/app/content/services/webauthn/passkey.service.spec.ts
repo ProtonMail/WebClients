@@ -1,6 +1,8 @@
 import type { MockInstance, MockedObject } from 'vitest';
 
+import { parseUrl } from '@proton/pass/lib/urls/utils/parser';
 import type { ProxiedSettings } from '@proton/pass/store/reducers/settings';
+import { PassFeature } from '@proton/pass/types/api/features';
 import { AppStatus } from '@proton/pass/types/worker/state';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
 
@@ -54,6 +56,8 @@ describe('PasskeyService', () => {
             getState: () => state,
             getSettings: () => settings,
             getFeatures: () => features,
+            getFeatureFlags: () => ({}),
+            getExtensionContext: () => ({ frameUrl: parseUrl('https://localhost/') }),
             service: { inline: { toast: toast } },
         } as any;
 
@@ -201,6 +205,29 @@ describe('PasskeyService', () => {
                     request: 'test-challenge',
                     token,
                 });
+            });
+
+            test('should include defaultItemName when PassAutosaveSiteName is enabled', async () => {
+                const meta = document.createElement('meta');
+                meta.setAttribute('property', 'og:site_name');
+                meta.setAttribute('content', 'Netflix');
+                document.head.appendChild(meta);
+
+                (context as any).getFeatureFlags = () => ({ [PassFeature.PassAutosaveSiteName]: true });
+                (context as any).getExtensionContext = () => ({ frameUrl: parseUrl('https://www.netflix.com/') });
+
+                const token = uniqueId();
+                await service.handler(createPasskeyCreateRequest(token));
+
+                expect(toast.open).toHaveBeenCalledWith({
+                    action: InlineToastAction.PASSKEY_CREATE,
+                    domain: 'localhost',
+                    request: 'test-challenge',
+                    token,
+                    defaultItemName: 'Netflix',
+                });
+
+                meta.remove();
             });
 
             test('should abort when passkey creation is disabled', async () => {

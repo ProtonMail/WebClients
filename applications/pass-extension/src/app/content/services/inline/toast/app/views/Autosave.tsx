@@ -31,13 +31,15 @@ import { ToastHeader } from '../components/ToastHeader';
 type Props = Extract<InlineToastRequest, { action: InlineToastAction.AUTOSAVE }>;
 
 const getInitialValues = (
-    { userIdentifier, password, type, iframeUrl }: AutosavePayload,
+    { userIdentifier, password, type, iframeUrl, defaultItemName }: AutosavePayload,
     { domain, optimisticId }: { domain: string; optimisticId: string }
-): AutosaveFormValues =>
-    type === AutosaveMode.UPDATE
-        ? { itemId: '', name: domain, password, shareId: '', step: 'select', type, userIdentifier, iframeUrl }
+): AutosaveFormValues => {
+    const name = defaultItemName ?? domain;
+
+    return type === AutosaveMode.UPDATE
+        ? { itemId: '', name, password, shareId: '', step: 'select', type, userIdentifier, iframeUrl }
         : {
-              name: domain,
+              name,
               optimisticId,
               password,
               shareId: '',
@@ -47,6 +49,7 @@ const getInitialValues = (
               userIdentifier,
               iframeUrl,
           };
+};
 
 export const Autosave: FC<Props> = ({ data }) => {
     const { visible, domain } = useIFrameAppState();
@@ -73,7 +76,8 @@ export const Autosave: FC<Props> = ({ data }) => {
             prev &&
             (data.password !== prev?.password ||
                 data.type !== prev?.type ||
-                data.userIdentifier !== prev?.userIdentifier)
+                data.userIdentifier !== prev?.userIdentifier ||
+                data.defaultItemName !== prev?.defaultItemName)
         );
     }, [data]);
 
@@ -146,10 +150,15 @@ export const Autosave: FC<Props> = ({ data }) => {
 
     useEffect(() => {
         if (shouldUpdate) {
-            form.setValues({
+            const nextValues = {
                 ...getInitialValues(data, { domain, optimisticId }),
                 shareId: form.values.shareId,
-            }).catch(noop);
+            };
+
+            const prevDefaultName = prev ? getInitialValues(prev, { domain, optimisticId }).name : undefined;
+            if (form.touched.name || form.values.name !== prevDefaultName) nextValues.name = form.values.name;
+
+            form.setValues(nextValues).catch(noop);
         }
     }, [shouldUpdate, data]);
 

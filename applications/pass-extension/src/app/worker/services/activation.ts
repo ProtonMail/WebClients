@@ -29,6 +29,7 @@ import { backgroundMessage } from '../../../lib/message/send-message';
 import { resolveEndpointContext } from '../../../lib/utils/endpoint';
 import { hasHostPermissions } from '../../../lib/utils/permissions';
 import { isPopupPort } from '../../../lib/utils/port';
+import { resolveDefaultItemNameForTab } from '../../../lib/utils/resolve-default-item-name';
 import { isVivaldiBrowser } from '../../../lib/utils/vivaldi';
 import type { ClientInitMessage, WorkerMessageWithSender } from '../../../types/messages';
 import { WorkerMessageType } from '../../../types/messages';
@@ -316,24 +317,25 @@ export const createActivationService = () => {
         }
     };
 
-    const handleEndpointInit: MessageHandlerCallback<WorkerMessageType.ENDPOINT_INIT> = async (
-        { payload },
-        { tab, frameId = -1 }
-    ) => {
-        if (payload.popup) {
-            /** POPUP specific: the popup uses the same ENDPOINT_INIT sequence to setup its
-             * ExtensionContext. In this instance, the `tabUrl` and `frameUrl` will always
-             * refer to the underlying active tab below the popup. In the popup, this will
-             * be used for hydrating the initial filters and default URL on item creation. */
-            const current = first(await browser.tabs.query({ active: true, currentWindow: true }));
-            if (!(current && current?.id)) throw new Error('No active tabs');
-            const tabUrl = parseUrl(current.url);
-            const senderTabId = tab?.id ?? 0; /** NOTE: on firefox, popup does not have a tab */
-            return { tabId: current.id, frameUrl: tabUrl, tabUrl, senderTabId, frameId };
-        }
+    const handleEndpointInit = withContext<MessageHandlerCallback<WorkerMessageType.ENDPOINT_INIT>>(
+        async (ctx, { payload }, { tab, frameId = -1 }) => {
+            if (payload.popup) {
+                /** POPUP specific: the popup uses the same ENDPOINT_INIT sequence to setup its
+                 * ExtensionContext. In this instance, the `tabUrl` and `frameUrl` will always
+                 * refer to the underlying active tab below the popup. In the popup, this will
+                 * be used for hydrating the initial filters and default URL on item creation. */
+                const current = first(await browser.tabs.query({ active: true, currentWindow: true }));
+                if (!(current && current?.id)) throw new Error('No active tabs');
+                const tabUrl = parseUrl(current.url);
+                const senderTabId = tab?.id ?? 0; /** NOTE: on firefox, popup does not have a tab */
+                const defaultItemName = await resolveDefaultItemNameForTab(ctx, current.id, tabUrl);
 
-        return resolveEndpointContext(tab, frameId);
-    };
+                return { tabId: current.id, frameUrl: tabUrl, tabUrl, senderTabId, frameId, defaultItemName };
+            }
+
+            return resolveEndpointContext(tab, frameId);
+        }
+    );
 
     /** Checks host permissions required for Pass to function properly.
      * Broadcasts permission status to all connected clients via PERMISSIONS_UPDATE. */

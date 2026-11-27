@@ -4,6 +4,7 @@ export enum PassFeature {
     PassAccessTokens = 'PassAccessTokens',
     PassAutofillUrlAdvancedModes = 'PassAutofillUrlAdvancedModes',
     PassAutofillUrlRegex = 'PassAutofillUrlRegex',
+    PassAutosaveSiteName = 'PassAutosaveSiteName',
     PassAllowCreditCardFreeUsers = 'PassAllowCreditCardFreeUsers',
     PassAutofillModelExperimentGroup = 'PassAutofillModelExperimentGroup',
     PassBasicAuthAutofill = 'PassBasicAuthAutofill',
