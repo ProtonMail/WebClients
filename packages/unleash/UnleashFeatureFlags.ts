@@ -138,7 +138,6 @@ export enum CommonFeatureFlag {
     LumoDeactivateGuestModeFrontend = 'LumoDeactivateGuestModeFrontend',
     LumoEarlyAccess = 'LumoEarlyAccess',
     LumoHighLoad = 'LumoHighLoad',
-    LumoSignInHelp = 'LumoSignInHelp',
     LumoSmoothedRendering = 'LumoSmoothedRendering',
     LumoTooling = 'LumoTooling',
     MailPostSignupZeroNinetyNinePromo = 'MailPostSignupZeroNinetyNinePromo',

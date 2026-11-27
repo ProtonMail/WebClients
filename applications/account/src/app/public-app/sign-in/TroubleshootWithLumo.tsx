@@ -8,7 +8,6 @@ import { IcCross } from '@proton/icons/icons/IcCross';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { APPS, LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import lumoCatIcon from '@proton/styles/assets/img/lumo/lumo-cat-icon.svg';
-import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
 import './TroubleshootWithLumo.scss';
@@ -37,7 +36,6 @@ const TroubleshootWithLumo = () => {
     // theme toggle on the host page can't reload it and wipe the conversation.
     const [src, setSrc] = useState<string | undefined>(undefined);
     const theme = useTheme();
-    const lumoSignInHelperEnabled = useFlag('LumoSignInHelp');
 
     const title = c('Title').t`Troubleshoot with ${LUMO_SHORT_APP_NAME}`;
 
@@ -48,20 +46,11 @@ const TroubleshootWithLumo = () => {
         setIsOpen(true);
     };
 
-    // Allows external entry points (e.g. the login form's "Get help from Lumo" link) to open the
-    // panel. Only wired up when the feature is enabled so the event is a no-op otherwise.
+    // Allows external entry points (e.g. the login form's "Get help from Lumo" link) to open the panel.
     useEffect(() => {
-        if (!lumoSignInHelperEnabled) {
-            return;
-        }
         window.addEventListener(TROUBLESHOOT_WITH_LUMO_OPEN_EVENT, open);
         return () => window.removeEventListener(TROUBLESHOOT_WITH_LUMO_OPEN_EVENT, open);
     });
-
-    // Gated behind the rollout flag: when off, no Lumo entry point appears on the sign-in page.
-    if (!lumoSignInHelperEnabled) {
-        return null;
-    }
 
     return (
         <div className="relative inline-block text-left">

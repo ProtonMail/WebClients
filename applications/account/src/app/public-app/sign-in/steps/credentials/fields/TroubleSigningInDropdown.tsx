@@ -10,7 +10,6 @@ import { IcQrCode } from '@proton/icons/icons/IcQrCode';
 import { IcUserCircle } from '@proton/icons/icons/IcUserCircle';
 import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-import { useFlag } from '@proton/unleash/useFlag';
 
 import type { Paths } from '../../../../helper';
 import SupportDropdown from '../../../../layout/SupportDropdown';
@@ -28,7 +27,6 @@ export const TroubleSigningInDropdown = ({
     resetPath: string;
     forgotUsernamePath: string;
 }) => {
-    const lumoSignInHelperEnabled = useFlag('LumoSignInHelp');
     return (
         <>
             <hr className="my-4" />
@@ -51,16 +49,10 @@ export const TroubleSigningInDropdown = ({
                             </Link>
                         )
                     }
-                    {lumoSignInHelperEnabled && (
-                        <button
-                            type="button"
-                            onClick={() => openTroubleshootWithLumo()}
-                            className={dropdownItemClassName}
-                        >
-                            <IcLifeRing />
-                            {c('Link').t`Get help from ${LUMO_SHORT_APP_NAME}`}
-                        </button>
-                    )}
+                    <button type="button" onClick={() => openTroubleshootWithLumo()} className={dropdownItemClassName}>
+                        <IcLifeRing />
+                        {c('Link').t`Get help from ${LUMO_SHORT_APP_NAME}`}
+                    </button>
                     <hr className="m-0" />
                     <Href href={getKnowledgeBaseUrl('/common-login-problems')} className={dropdownItemClassName}>
                         {c('Link').t`Frequent sign-in problems`}
