@@ -1,7 +1,6 @@
 import type { MockInstance } from 'vitest'
 import { deleteDocument, reportTrashError, restoreDocument, trashDocument } from './driveSdk/trash'
-import { RecentDocumentsItem } from './recentDocumentsItem'
-import { ServerTime } from './utils/serverTime'
+import { createRecentDocument } from './test-helpers'
 import { generateNodeUid, type ProtonDriveClient } from '@protontech/drive-sdk'
 import { act, renderHook, screen, waitFor, within } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
@@ -22,19 +21,7 @@ vi.mock('./driveSdk/trash', () => ({
 const openShareModal = vi.fn()
 const openMoveItemsModal = vi.fn()
 
-const recentDocument = RecentDocumentsItem.create({
-  type: 'document',
-  name: 'Document1',
-  linkId: 'link1',
-  parentLinkId: undefined,
-  volumeId: 'volume1',
-  lastViewed: new ServerTime(Date.now()),
-  lastModified: new ServerTime(Date.now()),
-  createdBy: 'Me',
-  location: { type: 'root' },
-  isSharedWithMe: false,
-  shareId: 'share1',
-})
+const recentDocument = createRecentDocument({ name: 'Document1' })
 const nodeUid = generateNodeUid(recentDocument.volumeId, recentDocument.linkId)
 const drive = {} as ProtonDriveClient
 const errorTracking = {} as ErrorTracking
@@ -317,7 +304,7 @@ describe('DocumentActionsProvider', () => {
 
     test('opens a spreadsheet in the spreadsheet editor, in a new tab', () => {
       const { result, reportTelemetry } = renderDocumentActions()
-      const spreadsheet = RecentDocumentsItem.create({ ...recentDocument.value, type: 'spreadsheet' })
+      const spreadsheet = createRecentDocument({ ...recentDocument.value, type: 'spreadsheet' })
 
       act(() => result.current.open(spreadsheet))
 
@@ -337,7 +324,7 @@ describe('DocumentActionsProvider', () => {
 
     test('openParent opens the folder in Drive, not in Docs', () => {
       const { result, reportTelemetry } = renderDocumentActions()
-      const inFolder = RecentDocumentsItem.create({ ...recentDocument.value, parentLinkId: 'folder1' })
+      const inFolder = createRecentDocument({ ...recentDocument.value, parentLinkId: 'folder1' })
 
       act(() => result.current.openParent(inFolder))
 

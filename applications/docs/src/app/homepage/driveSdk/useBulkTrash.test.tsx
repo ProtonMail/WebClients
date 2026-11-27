@@ -1,9 +1,8 @@
 import { act, renderHook, waitFor } from '@testing-library/react'
 import type { ReactNode } from 'react'
-import { RecentDocumentsItem } from '../recentDocumentsItem'
+import type { RecentDocumentsItem } from '../recentDocumentsItem'
 import { generateNodeUid, type ProtonDriveClient } from '@protontech/drive-sdk'
-import { ServerTime } from '../utils/serverTime'
-import type { RecentDocumentsItemValue } from '../recentDocumentsItem'
+import { createRecentDocument } from '../test-helpers'
 import { trashManyAndNotify } from './trashRestoreNotify'
 import { HomepageViewContext, type HomepageViewValue } from '../homepageViewContext'
 import type { ErrorTracking } from '../utils/errorTracking'
@@ -19,25 +18,8 @@ const mockUpdateRecentDocuments = vi.fn()
 
 const mockReportTelemetry = vi.fn()
 
-function createMockRecentDocument(data: Partial<RecentDocumentsItemValue> = {}): RecentDocumentsItem {
-  return RecentDocumentsItem.create({
-    type: 'document',
-    name: 'Untitled',
-    linkId: 'link1',
-    parentLinkId: undefined,
-    volumeId: 'volume1',
-    lastViewed: new ServerTime(Date.now()),
-    lastModified: new ServerTime(Date.now()),
-    createdBy: 'Me',
-    location: { type: 'root' },
-    isSharedWithMe: false,
-    shareId: 'share1',
-    ...data,
-  })
-}
-
-const d1 = createMockRecentDocument({ name: 'Document1', linkId: 'link1' })
-const d2 = createMockRecentDocument({ name: 'Document2', linkId: 'link2' })
+const d1 = createRecentDocument({ name: 'Document1', linkId: 'link1' })
+const d2 = createRecentDocument({ name: 'Document2', linkId: 'link2' })
 const uid = (doc: RecentDocumentsItem) => generateNodeUid(doc.volumeId, doc.linkId)
 const drive = {} as ProtonDriveClient
 const errorTracking = {} as ErrorTracking
@@ -85,7 +67,7 @@ describe('useBulkTrash', () => {
   })
 
   it("offers Undo only when every document is the user's own", async () => {
-    const shared = createMockRecentDocument({ name: 'Shared', linkId: 'link3', isSharedWithMe: true })
+    const shared = createRecentDocument({ name: 'Shared', linkId: 'link3', isSharedWithMe: true })
     const { result } = renderBulkTrash()
 
     await act(() => result.current.trash([d1, shared]))

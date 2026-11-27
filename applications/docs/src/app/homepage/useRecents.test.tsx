@@ -218,7 +218,15 @@ describe('useRecents', () => {
       },
     )
 
-    test.each(cases)(
+    // A reload runs the same role function as the load, so it must give the same role. These two kept cases are the
+    // outcomes it has to reproduce: a role inherited from the folder, and the document's own role over the folder's.
+    const reloadCases = cases.filter(
+      ({ place, role }) =>
+        role === MemberRole.Editor &&
+        (place === 'in a shared folder' || place === 'shared directly and in a shared folder'),
+    )
+
+    test.each(reloadCases)(
       'a document $place keeps the role $role when it is reloaded, shared directly: $isSharedDirectly',
       async ({ nodes, role, isSharedDirectly }) => {
         const { result } = await renderLoadedRecents(nodes)

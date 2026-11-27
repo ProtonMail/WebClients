@@ -1,6 +1,5 @@
 import * as Ariakit from '@ariakit/react'
-import { RecentDocumentsItem } from '../../../recentDocumentsItem'
-import { ServerTime } from '../../../utils/serverTime'
+import { createRecentDocument } from '../../../test-helpers'
 import { render, screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import type { ReactNode } from 'react'
@@ -9,19 +8,7 @@ import { DeletePermanentlyButton } from './DeletePermanently'
 import { MoveToTrashButton } from './MoveToTrashButton'
 import { RestoreFromTrashButton } from './RestoreFromTrash'
 
-const recentDocument = RecentDocumentsItem.create({
-  type: 'document',
-  name: 'Document1',
-  linkId: 'link1',
-  parentLinkId: undefined,
-  volumeId: 'volume1',
-  lastViewed: new ServerTime(Date.now()),
-  lastModified: new ServerTime(Date.now()),
-  createdBy: 'Me',
-  location: { type: 'root' },
-  isSharedWithMe: false,
-  shareId: 'share1',
-})
+const recentDocument = createRecentDocument({ name: 'Document1' })
 
 function renderWithActions(node: ReactNode, actions: Partial<DocumentActionsContextValue>) {
   const value = {

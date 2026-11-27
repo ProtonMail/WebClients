@@ -10,9 +10,8 @@ import { createMemoryNavigation } from './memoryNavigation'
 import type { HomepageRoute } from './homepageNavigation'
 import { useHomepageTitle } from './useHomepageTitle'
 import { useRecentsStore } from './useRecentsStore'
-import type { ProtonDocumentType } from './utils/mimetype'
 import { RecentDocumentsItem, type RecentDocumentsItemValue } from './recentDocumentsItem'
-import type { RecentDocumentsItemLocation } from './recentDocumentsItem'
+import { createRecentDocument } from './test-helpers'
 
 const { names } = defaultHomepageMessages
 
@@ -274,21 +273,11 @@ describe('buildSearchState', () => {
   })
 })
 
+/** A document viewed and modified in 2001, in the 'earlier' section. */
 function createDocumentItem(name: string, overrides: Partial<RecentDocumentsItemValue> = {}): RecentDocumentsItemValue {
-  return {
-    type: 'document' as ProtonDocumentType,
-    name,
-    linkId: '',
-    parentLinkId: undefined,
-    volumeId: '',
-    lastViewed: new ServerTime(1_000_000_000),
-    lastModified: new ServerTime(1_000_000_000),
-    createdBy: undefined,
-    location: { type: 'root' } as RecentDocumentsItemLocation,
-    isSharedWithMe: false,
-    shareId: '',
-    ...overrides,
-  }
+  const longAgo = new ServerTime(1_000_000_000)
+  return createRecentDocument({ name, createdBy: undefined, lastViewed: longAgo, lastModified: longAgo, ...overrides })
+    .value
 }
 
 function renderProvider(path: string, { myFilesRootFolder = new Promise<never>(() => {}) } = {}) {
