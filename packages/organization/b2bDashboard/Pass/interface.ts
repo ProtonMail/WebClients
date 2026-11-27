@@ -24,6 +24,8 @@ export interface PassEvent {
     /** Localized server-side from `x-pm-locale`, so it is rendered as-is. */
     eventTypeName: string;
     ip: string;
+    /** Client app and version that triggered the event, e.g. `browser-pass@1.17.2`. Empty when unknown. */
+    appVersion?: string;
     /** Absent on some event types, and not guaranteed even where the contract expects it. */
     eventData?: PassEventData;
 }
