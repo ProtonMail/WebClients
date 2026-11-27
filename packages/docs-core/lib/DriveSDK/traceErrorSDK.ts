@@ -1,4 +1,5 @@
 import { ValidationError } from '@proton/drive/sdk'
+import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper'
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors'
 import { getSentryError, SentryRealtimeInitiatives, traceError } from '@proton/shared/lib/helpers/sentry'
 
@@ -8,7 +9,9 @@ export function traceErrorSDK(error: any, feature: string) {
   if (!getSentryError(error) || error instanceof ValidationError) {
     return
   }
-  const errorWithCurrentStack = new Error(error?.message ?? 'Failed while calling Drive SDK')
+  const errorWithCurrentStack = new Error(
+    getApiError(error).message || error?.message || 'Failed while calling Drive SDK',
+  )
   errorWithCurrentStack.cause = error
   traceError(errorWithCurrentStack, {
     tags: {
