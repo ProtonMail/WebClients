@@ -43,6 +43,11 @@ interface TargetIdProps {
     to?: string;
 }
 
+interface AppVersionProps {
+    /** `<app>@<version>`, e.g. `browser-pass@1.17.2`. */
+    appVersion?: string;
+}
+
 interface SortConfig {
     key: keyof PassEvent;
     direction: SORT_DIRECTION;
@@ -133,6 +138,24 @@ const Details = ({ eventType, eventData, shareId, onEmailClick }: DetailsProps) 
     return <div className="flex flex-column">{parts}</div>;
 };
 
+/**
+ * The API only knows the client app and its version, not the machine, so `<app>@<version>` stands
+ * in for the device. Older events predate the field and have nothing to show.
+ */
+const AppVersion = ({ appVersion }: AppVersionProps) => {
+    const value = asText(appVersion);
+
+    if (!value) {
+        return <span className="color-weak">-</span>;
+    }
+
+    return (
+        <span title={value} className="text-ellipsis max-w-full">
+            {value}
+        </span>
+    );
+};
+
 const PassEventsTable = ({ events, loading, onEventClick, onTimeClick, onEmailOrIpClick, onToggleSort }: Props) => {
     const api = useApi();
     const [shareIds, setShareIds] = useState<IdsMap>({});
@@ -193,14 +216,15 @@ const PassEventsTable = ({ events, loading, onEventClick, onTimeClick, onEmailOr
                 config={sortConfig}
                 onToggleSort={toggleSort}
                 cells={[
-                    { content: c('Title').t`User`, className: 'w-1/4' },
-                    { key: 'time', content: c('TableHeader').t`Event`, sorting: true, className: 'w-1/4' },
-                    { content: c('Title').t`Details`, className: 'w-1/4' },
-                    { content: c('Title').t`IP`, className: 'w-1/4' },
+                    { content: c('Title').t`User`, className: 'w-1/5' },
+                    { key: 'time', content: c('TableHeader').t`Event`, sorting: true, className: 'w-1/5' },
+                    { content: c('Title').t`Details`, className: 'w-1/5' },
+                    { content: c('Title').t`Device`, className: 'w-1/5' },
+                    { content: c('Title').t`IP`, className: 'w-1/5' },
                 ]}
             />
             <TableBody colSpan={5} loading={loading}>
-                {events.map(({ time, user, eventType, eventTypeName, ip, eventData }, index) => {
+                {events.map(({ time, user, eventType, eventTypeName, ip, appVersion, eventData }, index) => {
                     const { name, email } = user;
                     const { vaultId } = eventData ?? {};
                     const key = index;
@@ -239,6 +263,7 @@ const PassEventsTable = ({ events, loading, onEventClick, onTimeClick, onEmailOr
                                     shareId={shareId}
                                     onEmailClick={onEmailOrIpClick}
                                 />,
+                                <AppVersion appVersion={appVersion} />,
                                 // eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions
                                 <span onClick={() => onEmailOrIpClick(ip)} className="cursor-pointer">
                                     {ip}
