@@ -8,7 +8,7 @@ import { convertConversationToMarkdown } from './convertConversationToMarkdown';
 
 export type Format = 'json' | 'md';
 
-const sanitizeTitle = (title: string) => {
+export const sanitizeTitle = (title: string) => {
     // Strip characters illegal in filenames on Windows/macOS/Linux, plus control characters, then trim trailing
     // dots/spaces (invalid on Windows) and cap the length so titles don't produce unwieldy filenames.
     return title
@@ -18,12 +18,14 @@ const sanitizeTitle = (title: string) => {
         .replace(/[. ]+$/, '');
 };
 
-const toFilename = (conversation: Conversation, extension: string) => {
-    return `${
-        sanitizeTitle(conversation.title) ||
-        // translator: Fallback filename slug used when the conversation has no title.
-        sanitizeTitle(c('collider_2025:Title').t`Untitled conversation`)
-    }.${extension}`;
+export const getConversationExportBasename = (title: string) => {
+    const basename = sanitizeTitle(title);
+    if (basename) {
+        return basename;
+    }
+    // translator: Fallback filename slug used when a conversation has no title.
+    const fallbackTitle = c('collider_2025:Title').t`Untitled conversation`;
+    return sanitizeTitle(fallbackTitle);
 };
 
 export const exportConversation = (conversation: Conversation, messages: MessageMap, format: Format) => {
@@ -31,13 +33,13 @@ export const exportConversation = (conversation: Conversation, messages: Message
         case 'json': {
             return triggerFileDownload(
                 new Blob([convertConversationToJson(conversation, messages)], { type: 'application/json' }),
-                toFilename(conversation, 'json')
+                `${getConversationExportBasename(conversation.title)}.json`
             );
         }
         case 'md': {
             return triggerFileDownload(
                 new Blob([convertConversationToMarkdown(conversation, messages)], { type: 'text/markdown' }),
-                toFilename(conversation, 'md')
+                `${getConversationExportBasename(conversation.title)}.md`
             );
         }
     }

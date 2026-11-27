@@ -11,7 +11,6 @@ import type { Priority } from '../../remote/scheduler';
 import type {
     GetSpaceRemote,
     IdMapEntry,
-    ListSpacesRemote,
     LocalId,
     PullSpacesRemote,
     RemoteDeletedSpace,
@@ -29,7 +28,6 @@ import { SearchService } from '../../services/search/searchService';
 import type { SerializedSpace, Space, SpaceId } from '../../types';
 import { SpaceType, cleanSerializedSpace, cleanSpace } from '../../types';
 import { listify, mapIds, mapify } from '../../util/collections';
-import { isoToUnixTimestamp } from '../../util/date';
 import {
     selectAttachmentsBySpaceId,
     selectConversationsBySpaceId,
@@ -67,7 +65,6 @@ import {
     pullSpaceFailure,
     pullSpaceSuccess,
     pullSpacesFailure,
-    pullSpacesPageResponse,
     pullSpacesRequest,
     pullSpacesSuccess,
     pushSpaceFailure,
@@ -470,34 +467,6 @@ export function* pullSpace({ payload }: { payload: PullSpaceRequest }): SagaIter
     }
 }
 
-export function* pullSpaces(): SagaIterator<void> {
-    console.log('Saga triggered: pullSpaces');
-    try {
-        const lumoApi: LumoApi = yield getContext('lumoApi');
-        let lastTimestamp: number | undefined;
-
-        while (true) {
-            const listSpacesArgs = lastTimestamp ? { createTimeUntil: lastTimestamp } : undefined;
-            const pageResult: ListSpacesRemote = yield call([lumoApi, lumoApi.listSpaces], listSpacesArgs);
-            yield put(pullSpacesPageResponse(pageResult));
-
-            // Use the raw page's oldest CreateTime: spaces skipped during conversion still advance the cursor.
-            if (!pageResult.oldestCreatedAt) break;
-            const newLastTimestamp = isoToUnixTimestamp(pageResult.oldestCreatedAt);
-
-            if (lastTimestamp && newLastTimestamp >= lastTimestamp) break;
-
-            lastTimestamp = newLastTimestamp;
-            yield delay(1000);
-        }
-
-        yield put(pullSpacesSuccess());
-    } catch (e) {
-        console.error('Error pulling spaces:', e);
-        yield put(pullSpacesFailure());
-    }
-}
-
 function* processPullSpacesGeneric(payload: PullSpacesRemote): SagaIterator<any> {
     const { conversations, deletedConversations, deletedSpaces, spaces, assets, deletedAssets, requestFull } = payload;
     for (const space of listify(deletedSpaces)) {
@@ -539,16 +508,6 @@ export function* processPullSpaceResult({ payload }: { payload: GetSpaceRemote }
         assets: mapify(assets),
         deletedAssets: mapify(deletedAssets),
         requestFull: true,
-    };
-    yield call(processPullSpacesGeneric, pagePayload);
-}
-
-export function* processPullSpacesPage({ payload }: { payload: ListSpacesRemote }): SagaIterator<any> {
-    console.log('Saga triggered: processPullSpacesPage', payload);
-    const pagePayload: PullSpacesRemote = {
-        ...payload,
-        // we're requesting ALL spaces (upon app startup usually), don't pull children attachments now
-        requestFull: false,
     };
     yield call(processPullSpacesGeneric, pagePayload);
 }

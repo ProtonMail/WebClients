@@ -92,7 +92,6 @@ import {
     pullSpaceRequest,
     pullSpaceSuccess,
     pullSpacesFailure,
-    pullSpacesPageResponse,
     pullSpacesRequest,
     pullSpacesSuccess,
     pushSpaceFailure,
@@ -157,6 +156,7 @@ import {
     retryPushMessage,
 } from './messages';
 import { moveConversationToSpace } from './moveConversation';
+import { pullSpaces } from './pullSpaces';
 import {
     cleanupProjectSearchIndexOnSpaceUpdate,
     deserializeSpaceSaga,
@@ -171,9 +171,7 @@ import {
     logPushSpaceSuccess,
     migrateSpaceMasterKeyIfNeeded,
     processPullSpaceResult,
-    processPullSpacesPage,
     pullSpace,
-    pullSpaces,
     pushSpace,
     reconcileProjectSearchIndex,
     refreshSpaceFromRemote,
@@ -510,7 +508,6 @@ export function* rootSaga(opts?: { crashIfErrors: boolean }) {
         function*() { yield takeEvery(pullSpaceSuccess, processPullSpaceResult)},
         function*() { yield takeEvery(pullSpaceFailure, logPullSpaceFailure)},
         function*() { yield takeLeading(pullSpacesRequest, pullSpaces)},
-        function*() { yield takeEvery(pullSpacesPageResponse, processPullSpacesPage)},
         function*() { yield takeEvery(pullSpacesSuccess, logPullSpacesSuccess)},
         function*() { yield takeEvery(pullSpacesFailure, logPullSpacesFailure)},
         function*() { yield takeEvery(locallyDeleteSpaceFromLocalRequest, softDeleteSpaceFromLocal)},

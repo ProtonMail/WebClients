@@ -83,7 +83,7 @@ export const ConversationListItem = memo(
                         to={`/c/${conversation.id}`}
                         className={clsx(
                             'absolute inset-0 flex flex-nowrap items-center gap-1.5 min-w-0 overflow-hidden pl-3',
-                            showDropdown || attentionKey ? 'sidebar-chat-link--with-actions' : 'pr-3'
+                            showDropdown || attentionKey ? 'sidebar-list-link--with-actions' : 'pr-3'
                         )}
                         onClick={onItemClick}
                     >

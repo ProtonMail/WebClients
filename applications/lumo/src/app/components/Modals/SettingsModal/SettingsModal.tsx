@@ -18,6 +18,7 @@ import SettingsLink from '@proton/components/components/link/SettingsLink';
 import type { ModalOwnProps } from '@proton/components/components/modalTwo/Modal';
 import ModalTwo, { ModalContext } from '@proton/components/components/modalTwo/Modal';
 import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
+import { useModalStateObject } from '@proton/components/components/modalTwo/useModalState';
 import Toggle from '@proton/components/components/toggle/Toggle';
 import { isDesktopEnvironment } from '@proton/lumo-api-client/core/desktop-tools';
 import { ADDON_PREFIXES, PLAN_NAMES, PLANS } from '@proton/payments/core/constants';
@@ -47,6 +48,7 @@ import { DbApi } from '../../../indexedDb/db';
 import LumoLogoHeader from '../../../layouts/header/LumoLogo';
 import { useLumoTheme } from '../../../providers';
 import { useIsGuest } from '../../../providers/IsGuestProvider';
+import { isBulkConversationExportSupported } from '../../../redux/bulkConversationExport';
 import { useLumoSelector } from '../../../redux/hooks';
 import { selectAttachments, selectConversations, selectMessages } from '../../../redux/selectors';
 import { selectSpaceMap } from '../../../redux/slices/core/spaces';
@@ -63,6 +65,7 @@ import { IndexingStatusBanner } from '../../Files/DriveBrowser/IndexingStatusBan
 import { CreateFreeAccountLink } from '../../Guest/CreateFreeAccountLink/CreateFreeAccountLink';
 import { SignInButton } from '../../Guest/SignInLink';
 import { type IconName, LumoIcon } from '../../LumoIcon/LumoIcon';
+import { ConversationExportModal } from '../ConversationExportModal/ConversationExportModal';
 import AboutPanel from './AboutPanel';
 import DeleteAllButton from './DeleteAllButton';
 import DesktopSettingsPanel from './DesktopSettingsPanel';
@@ -227,6 +230,7 @@ const GeneralSettingsPanelAuth = ({ onClose }: { onClose?: () => void }) => {
     const [user] = useUser();
     const userId = user?.ID;
     const { lumoUserSettings, updateSettings } = useLumoUserSettings();
+    const exportModal = useModalStateObject();
     const { language: dictationLanguage, setLanguage: setDictationLanguage } = useDictationLanguage();
     const showProjectConversationsInHistory = lumoUserSettings.showProjectConversationsInHistory ?? false;
     const automaticWebSearch = lumoUserSettings.automaticWebSearch ?? false;
@@ -302,6 +306,9 @@ const GeneralSettingsPanelAuth = ({ onClose }: { onClose?: () => void }) => {
     const hasError = indexError || messageIndexingStatus.error;
 
     const hasToolSettings = isLumoToolingEnabled || isArtifactsViewEnabled || isVisualizationInstructionsEnabled;
+
+    // translator: Title of the Settings row and dialog for exporting the account's chat history.
+    const exportAllChatsLabel = c('collider_2025: Title').t`Export all chats`;
 
     return (
         <div className="flex flex-column flex-nowrap shrink-0 *:min-size-auto gap-6 pb-6">
@@ -484,6 +491,25 @@ const GeneralSettingsPanelAuth = ({ onClose }: { onClose?: () => void }) => {
             </SettingsGroup>
 
             <SettingsGroup title={c('collider_2025: Title').t`Your data`}>
+                {isBulkConversationExportSupported() && (
+                    <SettingsSectionItem
+                        icon="Download"
+                        text={exportAllChatsLabel}
+                        subtext={
+                            // translator: Describes the account chat history download. ZIP is the archive format.
+                            c('collider_2025: Description').t`Download your full chat history as a ZIP archive.`
+                        }
+                        button={
+                            <Button
+                                shape="outline"
+                                aria-label={exportAllChatsLabel}
+                                onClick={() => exportModal.openModal(true)}
+                            >
+                                {c('collider_2025:Action').t`Export`}
+                            </Button>
+                        }
+                    />
+                )}
                 <SettingsSectionItem
                     icon="MessageSquare"
                     text={c('collider_2025: Title').t`Delete all data`}
@@ -492,6 +518,7 @@ const GeneralSettingsPanelAuth = ({ onClose }: { onClose?: () => void }) => {
                     button={<DeleteAllButton onClose={onClose} />}
                 />
             </SettingsGroup>
+            {exportModal.render && <ConversationExportModal {...exportModal.modalProps} allChats />}
         </div>
     );
 };
