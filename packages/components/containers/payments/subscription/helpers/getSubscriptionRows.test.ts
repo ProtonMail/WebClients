@@ -318,6 +318,24 @@ describe('getSubscriptionRows', () => {
         expect(lifetimeRow.isLifetime).toBe(true);
     });
 
+    it('hides reactivate on the auto-assigned Pass Professional trial, which has no payment method', () => {
+        const autoAssignedTrial: Subscription = {
+            ...withId(buildSubscription(PLANS.PASS_BUSINESS), 'cur'),
+            IsTrial: true,
+            Renew: Renew.Disabled,
+        };
+
+        const [withoutPaymentMethod] = getSubscriptionRows(paidUser, [autoAssignedTrial], entitlementCatalog, {
+            hasPaymentMethod: false,
+        });
+        expect(withoutPaymentMethod.showReactivate).toBe(false);
+
+        const [withPaymentMethod] = getSubscriptionRows(paidUser, [autoAssignedTrial], entitlementCatalog, {
+            hasPaymentMethod: true,
+        });
+        expect(withPaymentMethod.showReactivate).toBe(true);
+    });
+
     it('an upcoming row never shows the reactivate action', () => {
         const upcoming: Subscription = { ...withMembers(1, 'up'), Renew: Renew.Disabled };
         const subscription: Subscription = { ...withMembers(3, 'cur'), UpcomingSubscription: upcoming };

@@ -395,6 +395,7 @@ export const FREE_PASS_ALIASES = 10;
 export const FREE_VAULTS = 2;
 export const FREE_VAULT_SHARING = 2;
 
+export const PASS_BASIC_MAX_USERS = 30;
 export const PASS_BASIC_VAULTS = 1;
 export const PASS_BASIC_DEVICES = 1;
 export const PASS_BASIC_ALIASES = 10;

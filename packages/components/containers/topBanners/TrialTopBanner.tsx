@@ -23,6 +23,8 @@ import SettingsLink from '../../components/link/SettingsLink';
 import useModalState from '../../components/modalTwo/useModalState';
 import Time from '../../components/time/Time';
 import TimeRemaining from '../../components/timeRemaining/TimeRemaining';
+import PassTrialTopBanner from '../pass/dashboard/PassTrialTopBanner';
+import { isAutoAssignedPassProfessionalTrial } from '../pass/dashboard/helpers';
 import LearnMoreModal from './LearnMoreModal';
 import TopBanner from './TopBanner';
 import TrialCanceledModal from './TrialCanceledModal';
@@ -173,10 +175,15 @@ const TrialTopBannerPerSubscription = ({ app, subscription }: { app: APP_NAMES; 
         [entitlementCatalog, subscription]
     );
 
-    if (loadingEntitlementCatalog) {
+    const [paymentMethods, loadingPaymentMethods] = usePaymentMethods();
+
+    if (loadingEntitlementCatalog || loadingPaymentMethods) {
         return null;
     }
     if (trialInfo.isB2BTrial) {
+        if (isAutoAssignedPassProfessionalTrial(subscription, !!paymentMethods?.length)) {
+            return <PassTrialTopBanner subscription={subscription} />;
+        }
         return <B2BTrialTopBanner subscription={subscription} />;
     }
     if (trialInfo.isReferralTrial) {

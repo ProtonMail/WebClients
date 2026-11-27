@@ -11,6 +11,7 @@ import Meter from '@proton/components/components/progress/Meter';
 import StripedItem from '@proton/components/components/stripedList/StripedItem';
 import { StripedList } from '@proton/components/components/stripedList/StripedList';
 import Time from '@proton/components/components/time/Time';
+import PassSwitchToBasicPrompt from '@proton/components/containers/pass/dashboard/PassSwitchToBasicPrompt';
 import { getBasicFeatures, getVersionHistory } from '@proton/components/containers/payments/features/drive';
 import { getPassKeys, getSentinel, getSupport } from '@proton/components/containers/payments/features/highlights';
 import {
@@ -216,7 +217,11 @@ const SubscriptionPanel = ({
 
         const maxBaseSpace = humanSize({ bytes: space.maxBaseSpace, unit: 'GB', fraction: 0 });
         const maxDriveSpace = humanSize({ bytes: space.maxDriveSpace, unit: 'GB', fraction: 0 });
-        const humanMaxSpace = humanSize({ bytes: space.maxBaseSpace + space.maxDriveSpace, unit: 'GB', fraction: 0 });
+        const humanMaxSpace = humanSize({
+            bytes: space.maxBaseSpace + space.maxDriveSpace,
+            unit: 'GB',
+            fraction: 0,
+        });
 
         return (
             <StripedItem left={<IcStorage className="color-success" size={5} />}>
@@ -699,6 +704,7 @@ const SubscriptionPanel = ({
                 })()}
                 <SubscriptionPanelManageUserButton />
                 <ActionButtons user={user} subscription={subscription} />
+                {trialInfo.isTrial && <PassSwitchToBasicPrompt subscription={subscription} />}
             </Panel>
         </>
     );

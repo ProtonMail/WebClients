@@ -25,6 +25,7 @@ import { hasLifetimeCoupon } from '@proton/shared/lib/payments/coupons';
 
 import type { BadgeType } from '../../../../components/badge/Badge';
 import Info from '../../../../components/link/Info';
+import { isAutoAssignedPassProfessionalTrial } from '../../../pass/dashboard/helpers';
 import { getSubscriptionManagerName } from '../InAppPurchaseModal';
 
 // A renewal notice rendered as up to two lines: the next charge (primary) and the eventual recurring price (secondary).
@@ -383,8 +384,18 @@ const forgeSubscriptionRow = (row: {
     parent?: Subscription;
     scheduledChange?: ScheduledChange;
     entitlementCatalog: EntitlementCatalog;
+    hasPaymentMethod: boolean;
 }): SubscriptionRow => {
-    const { user, subscription, kind, hasSeparateUpcomingRow, parent, scheduledChange, entitlementCatalog } = row;
+    const {
+        user,
+        subscription,
+        kind,
+        hasSeparateUpcomingRow,
+        parent,
+        scheduledChange,
+        entitlementCatalog,
+        hasPaymentMethod,
+    } = row;
 
     const { planTitle } = getSubscriptionPlanTitle(user, subscription);
     const { renewDisabled, subscriptionExpiresSoon } = subscriptionExpires(subscription);
@@ -400,6 +411,9 @@ const forgeSubscriptionRow = (row: {
 
     const isLifetime = hasLifetimeCoupon(subscription);
     const hideRenewalText = shouldHaveUpcomingSubscription(subscription) && !subscription.UpcomingSubscription;
+    // Reactivating the auto-assigned Pass Professional trial would turn on auto-renewal and skip the choice
+    // between subscribing and going back to Pass Basic
+    const isAutoAssignedPassTrial = isAutoAssignedPassProfessionalTrial(subscription, hasPaymentMethod);
 
     return {
         id: `${subscription.ID}-${kind}`,
@@ -417,7 +431,7 @@ const forgeSubscriptionRow = (row: {
         isLifetime,
         isManagedExternally: managedExternally,
         isExpiring: subscriptionExpiresSoon,
-        showReactivate: !isUpcomingKind && renewDisabled && !managedExternally,
+        showReactivate: !isUpcomingKind && renewDisabled && !managedExternally && !isAutoAssignedPassTrial,
         hideRenewalText,
         hasSeparateUpcomingRow,
         scheduledChange,
@@ -441,7 +455,8 @@ const forgeSubscriptionRow = (row: {
 const extractInnerUpcomingSubscription = (
     user: UserModel,
     subscription: Subscription,
-    entitlementCatalog: EntitlementCatalog
+    entitlementCatalog: EntitlementCatalog,
+    hasPaymentMethod: boolean
 ): SubscriptionRow[] => {
     const upcoming = getEffectiveUpcomingSubscription(subscription);
 
@@ -454,6 +469,7 @@ const extractInnerUpcomingSubscription = (
                 hasSeparateUpcomingRow: false,
                 scheduledChange: getScheduledChange(subscription, upcoming),
                 entitlementCatalog,
+                hasPaymentMethod,
             }),
         ];
     }
@@ -465,6 +481,7 @@ const extractInnerUpcomingSubscription = (
             kind: 'current',
             hasSeparateUpcomingRow: !!upcoming,
             entitlementCatalog,
+            hasPaymentMethod,
         }),
     ];
     if (upcoming) {
@@ -476,6 +493,7 @@ const extractInnerUpcomingSubscription = (
                 hasSeparateUpcomingRow: false,
                 parent: subscription,
                 entitlementCatalog,
+                hasPaymentMethod,
             })
         );
     }
@@ -486,8 +504,11 @@ const extractInnerUpcomingSubscription = (
 export const getSubscriptionRows = (
     user: UserModel,
     subscriptions: Subscription[],
-    entitlementCatalog: EntitlementCatalog
+    entitlementCatalog: EntitlementCatalog,
+    { hasPaymentMethod = false }: { hasPaymentMethod?: boolean } = {}
 ): SubscriptionRow[] =>
     subscriptions
         .filter(isPaidSubscription)
-        .flatMap((subscription) => extractInnerUpcomingSubscription(user, subscription, entitlementCatalog));
+        .flatMap((subscription) =>
+            extractInnerUpcomingSubscription(user, subscription, entitlementCatalog, hasPaymentMethod)
+        );
