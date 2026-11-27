@@ -19,6 +19,7 @@ export interface MeetSettingsState {
     pipEnabled: boolean;
     waitingRoomSetting: boolean;
     joinLeaveSoundsEnabled: boolean;
+    mirrorSelfView: boolean;
 }
 
 export const initialState: MeetSettingsState = {
@@ -29,17 +30,35 @@ export const initialState: MeetSettingsState = {
     pipEnabled: true,
     waitingRoomSetting: false,
     joinLeaveSoundsEnabled: true,
+    mirrorSelfView: true,
 };
 
-const getJoinLeaveSoundsStorageKey = (userId?: string) =>
-    userId ? `user.${userId}.joinLeaveSounds` : 'guest.joinLeaveSounds';
+const USER_SETTING_STORAGE_NAMES = {
+    joinLeaveSoundsEnabled: 'joinLeaveSounds',
+    mirrorSelfView: 'mirrorSelfView',
+} as const;
 
-const getPersistedJoinLeaveSoundsEnabled = (userId?: string) =>
-    getItem(getJoinLeaveSoundsStorageKey(userId)) !== 'false';
+type UserSetting = keyof typeof USER_SETTING_STORAGE_NAMES;
+
+type UserSettings = Pick<MeetSettingsState, UserSetting>;
+
+const getUserSettingStorageKey = (userId: string | undefined, setting: UserSetting) => {
+    const storageName = USER_SETTING_STORAGE_NAMES[setting];
+
+    return userId ? `user.${userId}.${storageName}` : `guest.${storageName}`;
+};
+
+const getPersistedUserSetting = (userId: string | undefined, setting: UserSetting) =>
+    getItem(getUserSettingStorageKey(userId, setting)) !== 'false';
+
+const getPersistedUserSettings = (userId?: string): UserSettings => ({
+    joinLeaveSoundsEnabled: getPersistedUserSetting(userId, 'joinLeaveSoundsEnabled'),
+    mirrorSelfView: getPersistedUserSetting(userId, 'mirrorSelfView'),
+});
 
 export const getPersistedSettingsState = (userId?: string): MeetSettingsState => ({
     ...initialState,
-    joinLeaveSoundsEnabled: getPersistedJoinLeaveSoundsEnabled(userId),
+    ...getPersistedUserSettings(userId),
 });
 
 export const toggleMeetingLockThunk = createAsyncThunk<
@@ -109,9 +128,7 @@ const slice = createSlice({
         resetWaitingRoomSetting: (state) => {
             state.waitingRoomSetting = initialState.waitingRoomSetting;
         },
-        setJoinLeaveSoundsEnabled: (state, action: PayloadAction<boolean>) => {
-            state.joinLeaveSoundsEnabled = action.payload;
-        },
+        setUserSettings: (state, action: PayloadAction<Partial<UserSettings>>) => ({ ...state, ...action.payload }),
     },
     extraReducers: (builder) => {
         builder.addCase(toggleMeetingLockThunk.fulfilled, (state, action) => {
@@ -137,21 +154,23 @@ export const selectParticipantsWithDisabledVideos = (state: MeetState) =>
 export const selectSelfView = (state: MeetState) => state.meetSettings.selfView;
 export const selectWaitingRoomSetting = (state: MeetState) => state.meetSettings.waitingRoomSetting;
 export const selectJoinLeaveSoundsEnabled = (state: MeetState) => state.meetSettings.joinLeaveSoundsEnabled;
+export const selectMirrorSelfView = (state: MeetState) => state.meetSettings.mirrorSelfView;
 
-export const loadPersistedJoinLeaveSoundsSetting =
+export const loadPersistedUserSettings =
     (): ThunkAction<void, MeetState, ProtonThunkArguments, UnknownAction> => (dispatch, getState) => {
-        const userId = selectUserId(getState());
-
-        dispatch(slice.actions.setJoinLeaveSoundsEnabled(getPersistedJoinLeaveSoundsEnabled(userId)));
+        dispatch(slice.actions.setUserSettings(getPersistedUserSettings(selectUserId(getState()))));
     };
 
-export const setJoinLeaveSoundsEnabledAndPersist =
-    (enabled: boolean): ThunkAction<void, MeetState, ProtonThunkArguments, UnknownAction> =>
+const setUserSettingAndPersist =
+    (setting: UserSetting, enabled: boolean): ThunkAction<void, MeetState, ProtonThunkArguments, UnknownAction> =>
     (dispatch, getState) => {
-        const userId = selectUserId(getState());
-
-        dispatch(slice.actions.setJoinLeaveSoundsEnabled(enabled));
-        setItem(getJoinLeaveSoundsStorageKey(userId), enabled.toString());
+        dispatch(slice.actions.setUserSettings({ [setting]: enabled }));
+        setItem(getUserSettingStorageKey(selectUserId(getState()), setting), enabled.toString());
     };
+
+export const setJoinLeaveSoundsEnabledAndPersist = (enabled: boolean) =>
+    setUserSettingAndPersist('joinLeaveSoundsEnabled', enabled);
+
+export const setMirrorSelfViewAndPersist = (enabled: boolean) => setUserSettingAndPersist('mirrorSelfView', enabled);
 
 export const settingsReducer = { meetSettings: slice.reducer };

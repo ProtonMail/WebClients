@@ -5,6 +5,8 @@ import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import type { TrackInfo } from './types';
 import { usePiPRenderer } from './usePiPRenderer';
 
+vi.mock('../useMirrorSelfView', () => ({ useMirrorSelfView: () => true }));
+
 const createTrackInfo = (sid: string): TrackInfo & { track: { attach: ReturnType<typeof vi.fn> } } => {
     const mediaStreamTrack = { id: `${sid}-media` } as MediaStreamTrack;
     const track = {

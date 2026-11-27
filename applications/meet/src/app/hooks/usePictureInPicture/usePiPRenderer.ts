@@ -6,6 +6,8 @@ import { meetingLogger } from '@proton/meet/utils/meetingLogger';
 
 import { PIP_PREVIEW_ITEM_HEIGHT } from '../../constants';
 import { getParticipantInitials } from '../../utils/getParticipantInitials';
+import { useLatest } from '../useLatest';
+import { useMirrorSelfView } from '../useMirrorSelfView';
 import { drawMessageOverlay, drawParticipantPlaceholder, drawVideoWithAspectRatio } from './drawingUtils';
 import type { DrawablePiPTile, PiPOverlayMessage } from './types';
 
@@ -19,6 +21,7 @@ export function usePiPRenderer() {
     const renderGenerationRef = useRef(0);
     const renderedVideosRef = useRef<Map<string, RenderedVideo>>(new Map());
     const classColorsRef = useRef<Map<string, string>>(new Map());
+    const mirrorSelfViewRef = useLatest(useMirrorSelfView());
 
     const getClassColor = useCallback((className: string, property: 'backgroundColor' | 'color') => {
         const cacheKey = `${className}:${property}`;
@@ -186,7 +189,7 @@ export function usePiPRenderer() {
 
                     // Mirror the local participant's camera feed (but not screen share)
                     const isLocalParticipant = tile.participant?.isLocal || false;
-                    const shouldMirror = isLocalParticipant && !tile.isScreenShare;
+                    const shouldMirror = isLocalParticipant && !tile.isScreenShare && mirrorSelfViewRef.current;
 
                     // The subscription manager disables remote camera publications when incoming video is turned off,
                     // so no frames will ever arrive for them
@@ -241,7 +244,7 @@ export function usePiPRenderer() {
             // Draw message overlay on top of everything (highest z-index)
             drawMessageOverlay({ ctx, canvasWidth: canvas.width, canvasHeight: canvas.height, messages });
         },
-        [createVideoElement, ensureVideoPlaying, cleanupStaleVideoElements, getClassColor]
+        [createVideoElement, ensureVideoPlaying, cleanupStaleVideoElements, getClassColor, mirrorSelfViewRef]
     );
 
     const cancelRenderLoop = useCallback(() => {

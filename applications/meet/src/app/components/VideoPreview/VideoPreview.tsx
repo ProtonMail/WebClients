@@ -4,6 +4,7 @@ import { isAndroid, isIos, isMobile, isSafari } from '@proton/shared/lib/helpers
 import clsx from '@proton/utils/clsx';
 
 import { useMediaManagementContext } from '../../contexts/MediaManagementProvider/MediaManagementContext';
+import { useMirrorSelfView } from '../../hooks/useMirrorSelfView';
 import { useStableCallback } from '../../hooks/useStableCallback';
 import { BackgroundEffectInitializingOverlay } from '../BackgroundEffectInitializingOverlay/BackgroundEffectInitializingOverlay';
 
@@ -19,6 +20,8 @@ export const VideoPreview = ({ selectedCameraId, facingMode }: VideoPreviewProps
     const [isVideoVertical, setIsVideoVertical] = useState(false);
 
     const { handlePreviewCameraToggle, cleanupPreviewTrack } = useMediaManagementContext();
+    const mirrorSelfView = useMirrorSelfView();
+    const isMirrored = mirrorSelfView && !((isSafari() || facingMode === 'environment') && isMobile());
 
     const stableHandlePreviewCameraToggle = useStableCallback(handlePreviewCameraToggle);
     useEffect(() => {
@@ -80,8 +83,7 @@ export const VideoPreview = ({ selectedCameraId, facingMode }: VideoPreviewProps
                     playsInline
                     style={{
                         background: '#000',
-                        transform:
-                            (isSafari() || facingMode === 'environment') && isMobile() ? undefined : 'scaleX(-1)',
+                        transform: isMirrored ? 'scaleX(-1)' : undefined,
                     }}
                 />
                 <BackgroundEffectInitializingOverlay />

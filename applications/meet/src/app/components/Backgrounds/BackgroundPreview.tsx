@@ -10,13 +10,15 @@ import { selectCameraPermission } from '@proton/meet/store/slices/deviceManageme
 import { isMobile, isSafari } from '@proton/shared/lib/helpers/browser';
 
 import { useMediaManagementContext } from '../../contexts/MediaManagementProvider/MediaManagementContext';
+import { useMirrorSelfView } from '../../hooks/useMirrorSelfView';
 import { useStableCallback } from '../../hooks/useStableCallback';
 import { BackgroundEffectInitializingOverlay } from '../BackgroundEffectInitializingOverlay/BackgroundEffectInitializingOverlay';
 
 const useIsMirrored = () => {
     const { facingMode } = useMediaManagementContext();
+    const mirrorSelfView = useMirrorSelfView();
 
-    return !(isSafari() && isMobile()) && facingMode === 'user';
+    return mirrorSelfView && !(isSafari() && isMobile()) && facingMode === 'user';
 };
 
 const PublishedCameraPreview = () => {

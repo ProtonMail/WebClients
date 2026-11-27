@@ -102,6 +102,7 @@ const createMockStore = (
                 pipEnabled: true,
                 waitingRoomSetting: false,
                 joinLeaveSoundsEnabled: true,
+                mirrorSelfView: true,
                 ...settingsState,
             },
             uiState: {
@@ -328,6 +329,42 @@ describe('Settings', () => {
 
             expect(soundsCheckbox).not.toBeChecked();
             expect(localStorage.getItem('guest.joinLeaveSounds')).toBe('false');
+        });
+    });
+
+    describe('mirror self view', () => {
+        beforeEach(() => {
+            localStorage.clear();
+        });
+
+        it('should be hidden when the feature is off', () => {
+            render(
+                <Wrapper>
+                    <Settings />
+                </Wrapper>
+            );
+
+            expect(screen.queryByRole('checkbox', { name: 'Mirror self view' })).not.toBeInTheDocument();
+        });
+
+        it('should allow for toggling it and remember the choice', async () => {
+            enabledFlags.current = [...enabledFlags.current, 'MeetSelfViewMirrorToggle'];
+
+            render(
+                <Wrapper>
+                    <Settings />
+                </Wrapper>
+            );
+
+            const user = userEvent.setup();
+
+            const mirrorCheckbox = screen.getByRole('checkbox', { name: 'Mirror self view' });
+            expect(mirrorCheckbox).toBeChecked();
+
+            await user.click(mirrorCheckbox);
+
+            expect(mirrorCheckbox).not.toBeChecked();
+            expect(localStorage.getItem('guest.mirrorSelfView')).toBe('false');
         });
     });
 

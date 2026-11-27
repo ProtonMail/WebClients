@@ -38,6 +38,7 @@ import { CaptionLanguageSelect } from './CaptionLanguageSelect';
 import { JoinLeaveSoundsToggle } from './JoinLeaveSoundsToggle';
 import { LiveCaptionsHostAvailabilityToggle } from './LiveCaptionsHostAvailabilityToggle';
 import { LiveCaptionsToggle } from './LiveCaptionsToggle';
+import { MirrorSelfViewToggle } from './MirrorSelfViewToggle';
 import { NoiseCancellingToggle } from './NoiseCancellingToggle';
 import { WaitingRoomToggle } from './WaitingRoomToggle';
 
@@ -65,6 +66,7 @@ export const Settings = () => {
     const isVirtualBackgroundEnabled = useFlag('MeetVirtualBackground');
     const canPickCaptionLanguage = useFlag('MeetSaveCaptionLanguagePreference');
     const isJoinLeaveSoundsEnabled = useFlag('MeetJoinLeaveSoundsNotifications');
+    const isMirrorSelfViewToggleEnabled = useFlag('MeetSelfViewMirrorToggle');
 
     const [loadingLock, withLoadingLock] = useLoading();
     const [loadingBackgroundBlur, withLoadingBackgroundBlur] = useLoading();
@@ -140,6 +142,7 @@ export const Settings = () => {
                             onChange={() => dispatch(setSelfView(!selfView))}
                             checked={selfView}
                         />
+                        {isMirrorSelfViewToggleEnabled && <MirrorSelfViewToggle />}
                         <SettingToggle
                             id="pip-enabled"
                             label={c('Action').t`Picture-in-picture while sharing`}

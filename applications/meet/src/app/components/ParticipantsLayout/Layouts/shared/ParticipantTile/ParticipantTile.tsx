@@ -29,6 +29,7 @@ import { SecurityShield } from '../../../../../atoms/SecurityShield/SecurityShie
 import { SpeakingIndicator } from '../../../../../atoms/SpeakingIndicator';
 import { useCameraTrackSubscriptionManager } from '../../../../../contexts/CameraTrackSubscriptionCacheProvider/CameraTrackSubscriptionManagerProvider';
 import { useMediaManagementContext } from '../../../../../contexts/MediaManagementProvider/MediaManagementContext';
+import { useMirrorSelfView } from '../../../../../hooks/useMirrorSelfView';
 import { useParticipantDisplayColors } from '../../../../../hooks/useParticipantDisplayColors';
 import { shouldShowParticipantVideo } from '../../../../../utils/shouldShowParticipantVideo';
 import { BackgroundEffectInitializingOverlay } from '../../../../BackgroundEffectInitializingOverlay/BackgroundEffectInitializingOverlay';
@@ -61,6 +62,7 @@ export const ParticipantTile = memo(({ participant, viewSize = 'large' }: Partic
     const isLocalParticipant = participant.identity === localParticipant.identity;
 
     const { facingMode } = useMediaManagementContext();
+    const mirrorSelfView = useMirrorSelfView();
     const { disableVideos } = useMeetSelector(selectMeetSettings);
 
     // Suppress the local self-view only during that init window, afterwards it follows the real camera state
@@ -333,7 +335,10 @@ export const ParticipantTile = memo(({ participant, viewSize = 'large' }: Partic
                         muted={participant.isLocal}
                         style={{
                             transform:
-                                isLocalParticipant && !(isSafari() && isMobile()) && facingMode === 'user'
+                                isLocalParticipant &&
+                                mirrorSelfView &&
+                                !(isSafari() && isMobile()) &&
+                                facingMode === 'user'
                                     ? 'scaleX(-1)'
                                     : undefined,
                         }}
