@@ -5425,6 +5425,15 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Wyszukiwanie pasuje do zbyt wielu wyników. Sprecyzuj wyszukiwanie i spróbuj ponownie."
+      ],
+      "Couldn't save the attachment to ${ DRIVE_APP_NAME }. Try again.": [
+        "Nie można zapisać załącznika w ${ DRIVE_APP_NAME }. Spróbuj ponownie."
+      ],
+      "Not enough ${ DRIVE_SHORT_APP_NAME } storage to save this attachment. Free up space in ${ DRIVE_SHORT_APP_NAME } and try again.": [
+        "W ${ DRIVE_SHORT_APP_NAME } nie ma wystarczającej ilości miejsca, aby zapisać ten załącznik. Zwolnij miejsce w ${ DRIVE_SHORT_APP_NAME } i spróbuj ponownie."
+      ],
+      "Not enough ${ DRIVE_SHORT_APP_NAME } storage to save this attachment. Free up space in ${ DRIVE_SHORT_APP_NAME } or contact your administrator to get more storage.": [
+        "W ${ DRIVE_SHORT_APP_NAME } nie ma wystarczającej ilości miejsca, aby zapisać ten załącznik. Zwolnij miejsce w ${ DRIVE_SHORT_APP_NAME } lub skontaktuj się z administratorem, aby uzyskać więcej miejsca."
       ]
     },
     "error": {
@@ -9509,6 +9518,12 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Od uporządkowanej skrzynki odbiorczej dzieli Cię kilka kliknięć"
+      ],
+      "Do you want to save this attachment anyway?": [
+        "Czy mimo to chcesz zapisać ten załącznik?"
+      ],
+      "Results came from the local search.": [
+        "Wyniki pochodzą z wyszukiwania lokalnego."
       ]
     },
     "info": {
@@ -17371,6 +17386,9 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "Twoja wersja próbna zakończy się ${ textDate }. Nie zostaną naliczone opłaty, jeśli anulujesz subskrypcję przed ${ textDate }. ${ action }"
+      ],
+      "The attachment's signature failed verification. You can still save it to ${ DRIVE_APP_NAME }, but it might have been tampered with.": [
+        "Nie udało się zweryfikować podpisu załącznika. Nadal możesz go zapisać w ${ DRIVE_APP_NAME }, ale może on być sfałszowany."
       ]
     },
     "WeekDay": {

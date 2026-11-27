@@ -1601,8 +1601,7 @@
         "Αξιόπιστο"
       ],
       "Trust key": [
-        "Κλειδί Εμπιστοσύνης",
-        "Κλειδιά Εμπιστοσύνης"
+        "Κλειδί Εμπιστοσύνης"
       ],
       "Trust public key": [
         "Εμπιστοσύνη στο δημόσιο κλειδί"
@@ -5758,6 +5757,15 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Η αναζήτησή σας ταίριαξε με υπερβολικό αριθμό αποτελεσμάτων. Παρακαλούμε περιορίστε την αναζήτησή σας και δοκιμάστε ξανά."
+      ],
+      "Couldn't save the attachment to ${ DRIVE_APP_NAME }. Try again.": [
+        "Δεν ήταν δυνατή η αποθήκευση του συνημμένου στο ${ DRIVE_APP_NAME }. Δοκιμάστε ξανά."
+      ],
+      "Not enough ${ DRIVE_SHORT_APP_NAME } storage to save this attachment. Free up space in ${ DRIVE_SHORT_APP_NAME } and try again.": [
+        "Δεν υπάρχει αρκετός αποθηκευτικός χώρος στο ${ DRIVE_SHORT_APP_NAME } για την αποθήκευση αυτού του συνημμένου. Ελευθερώστε χώρο στο ${ DRIVE_SHORT_APP_NAME } και δοκιμάστε ξανά."
+      ],
+      "Not enough ${ DRIVE_SHORT_APP_NAME } storage to save this attachment. Free up space in ${ DRIVE_SHORT_APP_NAME } or contact your administrator to get more storage.": [
+        "Δεν υπάρχει αρκετός αποθηκευτικός χώρος στο ${ DRIVE_SHORT_APP_NAME } για την αποθήκευση αυτού του συνημμένου. Ελευθερώστε χώρο στο ${ DRIVE_SHORT_APP_NAME } ή επικοινωνήστε με τον διαχειριστή σας για να αποκτήσετε περισσότερο αποθηκευτικό χώρο."
       ]
     },
     "error": {
@@ -8267,7 +8275,8 @@
         "Προετοιμασία…"
       ],
       "Insert image": [
-        "Εισαγωγή εικόνας"
+        "Εισαγωγή εικόνας",
+        "Εισαγωγή εικόνων"
       ],
       "Insert link": [
         "Εισαγωγή συνδέσμου"
@@ -10123,6 +10132,12 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Είστε μόνο μερικά κλικ μακριά από τα εισερχόμενα χωρίς ακαταστασία"
+      ],
+      "Do you want to save this attachment anyway?": [
+        "Θέλετε να αποθηκεύσετε αυτό το συνημμένο ούτως ή άλλως;"
+      ],
+      "Press ${ shortcut } to keep ${ MAIL_APP_NAME } one click away.": [
+        "Πατήστε ${ shortcut } για να έχετε την εφαρμογή ${ MAIL_APP_NAME } σε απόσταση ενός κλικ."
       ]
     },
     "info": {
@@ -13625,6 +13640,36 @@
       ],
       "Your domain and subscription are ready to use.": [
         "Ο τομέας και η συνδρομή σας είναι έτοιμα για χρήση."
+      ],
+      "Another private email service (e.g. Tuta)": [
+        "Μια άλλη ιδιωτική υπηρεσία ηλεκτρονικού ταχυδρομείου (π.χ. Tuta)"
+      ],
+      "I don't want to use Big Tech anymore": [
+        "Δε θέλω να χρησιμοποιώ πλέον τις Μεγάλες Εταιρείες Τεχνολογίας."
+      ],
+      "I need a new email address": [
+        "Χρειάζομαι μια νέα διεύθυνση ηλεκτρονικού ταχυδρομείου"
+      ],
+      "I use other Proton apps, or want them all in one place": [
+        "Χρησιμοποιώ άλλες εφαρμογές της Proton ή θέλω να τις έχω όλες σε ένα μέρος"
+      ],
+      "I want an inbox without ads or spam": [
+        "Θέλω ένα γραμματοκιβώτιο χωρίς διαφημίσεις ή ανεπιθύμητα μηνύματα"
+      ],
+      "I want my emails private and secure": [
+        "Θέλω τα μηνύματα ηλεκτρονικού ταχυδρομείου μου να είναι ιδιωτικά και ασφαλή."
+      ],
+      "None, this is my first email": [
+        "Κανένα, αυτό είναι η πρώτη διεύθυνση ηλεκτρονικού ταχυδρομείου μου"
+      ],
+      "Others (tell us)": [
+        "Άλλοι (πείτε μας)"
+      ],
+      "Outlook or Hotmail": [
+        "Outlook ή Hotmail"
+      ],
+      "Tell us in a few words": [
+        "Πείτε μας με λίγα λόγια"
       ]
     },
     "Onboarding Proton": {
@@ -16357,6 +16402,9 @@
       ],
       "You have successfully canceled your subscription.": [
         "Ακυρώσατε επιτυχώς τη συνδρομή σας."
+      ],
+      "\"${ name }\" saved to ${ DRIVE_APP_NAME }": [
+        "Το \"${ name }\" αποθηκεύτηκε στο ${ DRIVE_APP_NAME }"
       ]
     },
     "Success notification": {
@@ -17692,6 +17740,9 @@
       ],
       "Your shorter address is now ready": [
         "Η συντομότερη διεύθυνσή σας είναι τώρα έτοιμη"
+      ],
+      "Bookmark your shortcut to privacy": [
+        "Αποθηκεύστε τη συντόμευσή σας για την ιδιωτικότητα"
       ]
     },
     "Title header for keys table": {
@@ -18182,6 +18233,9 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "Η δοκιμαστική περίοδος θα λήξει στις ${ textDate }. Δε θα χρεωθείτε αν ακυρώσετε πριν από τις ${ textDate }. ${ action }"
+      ],
+      "The attachment's signature failed verification. You can still save it to ${ DRIVE_APP_NAME }, but it might have been tampered with.": [
+        "Η επαλήθευση της υπογραφής του συνημμένου απέτυχε. Μπορείτε ακόμα να το αποθηκεύσετε στο ${ DRIVE_APP_NAME }, αλλά ενδέχεται να έχει υποστεί αλλοίωση."
       ]
     },
     "WeekDay": {

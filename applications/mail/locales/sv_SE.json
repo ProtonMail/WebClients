@@ -23,7 +23,7 @@
         "En potentiell läcka på ${ name } upptäcktes. Aktivera ${ DARK_WEB_MONITORING_NAME } för att se detaljer och vidta åtgärd. ${ link }"
       ],
       "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
-        "En potentiell läcka från ${ name } upptäcktes. Slå på ${ DARK_WEB_MONITORING_NAME } för att visa detaljer och vita åtgärd. ${ link }"
+        "En potentiell läcka från ${ name } upptäcktes. Slå på ${ DARK_WEB_MONITORING_NAME } för att visa detaljer och vidta åtgärd. ${ link }"
       ],
       "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
         "En potentiell läcka från ${ name } upptäcktes. Aktivera ${ DARK_WEB_MONITORING_NAME } för att se detaljer. ${ link }"
@@ -1097,7 +1097,7 @@
         "Öppna felsökningsmeny"
       ],
       "Open Mailing lists": [
-        "Öppna E-postlistor"
+        "Öppna e-postlistor"
       ],
       "Open navigation": [
         "Öppna navigering"
@@ -5751,6 +5751,9 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Din sökning matchade för många resultat. Begränsa din sökning och försök igen."
+      ],
+      "Couldn't save the attachment to ${ DRIVE_APP_NAME }. Try again.": [
+        "Kunde inte spara bilagan i ${ DRIVE_APP_NAME }. Försök igen."
       ]
     },
     "error": {
@@ -7869,7 +7872,7 @@
         "Ladda ner din favoritapp idag och ta integritet med dig var du än går."
       ],
       "Downloading assistant… ${ progressDisplay } GB": [
-        "Laddar ner assistent … ${ progressDisplay } GB"
+        "Laddar ned assistent … ${ progressDisplay } GB"
       ],
       "Downloading paused": [
         "Nedladdning pausad"
@@ -8254,7 +8257,8 @@
         "Initierar …"
       ],
       "Insert image": [
-        "Infoga bild"
+        "Infoga bild",
+        "Infoga bilder"
       ],
       "Insert link": [
         "Infoga länk"
@@ -8880,7 +8884,7 @@
         "Uppdatera sidan eller ${ link } kommer automatiskt att lösa de flesta problemen."
       ],
       "Registering your subscription…": [
-        "Registrerar din prenumeration …"
+        "Registrerar din prenumeration…"
       ],
       "Remember to update this in your password manager or wherever you keep your account and login information.": [
         "Kom ihåg att uppdatera detta i din lösenordshanterare eller var du än förvarar ditt konto och inloggningsinformation."
@@ -9705,7 +9709,7 @@
         "Vi skickar en ny verifieringskod till ${ strong }"
       ],
       "We've added the newsletters from your Gmail import to Mailing lists, grouped by sender. Read, keep or stop them in one place.": [
-        "\nVi har lagt till nyhetsbreven från din Gmail-import i e-postlistor, grupperade efter avsändare. Läs, spara eller avsluta prenumerationen – allt på ett och samma ställe."
+        "Vi har lagt till nyhetsbreven från din Gmail-import i e-postlistor, grupperade efter avsändare. Läs, spara eller avsluta prenumerationen – allt på ett och samma ställe."
       ],
       "Web URL": [
         "Webb-URL"
@@ -10107,6 +10111,12 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Du är bara några klick bort från en skräpfri inkorg"
+      ],
+      "Do you want to save this attachment anyway?": [
+        "Vill du spara denna bilaga ändå?"
+      ],
+      "Press ${ shortcut } to keep ${ MAIL_APP_NAME } one click away.": [
+        "Tryck på ${ shortcut } för att behålla ${ MAIL_APP_NAME } ett klick borta."
       ]
     },
     "info": {
@@ -12977,7 +12987,7 @@
         "${ CALENDAR_APP_NAME }: Säkra ditt schema med end-to-end-kryptering. Inkluderar stöd för anpassade kalendrar, kalenderdelning och mer."
       ],
       "${ DOCS_APP_NAME }: Create, edit, and collaborate on end-to-end encrypted docs.": [
-        " ${ DOCS_APP_NAME } Skapa, redigera och samarbeta kring dokument med end-to-end kryptering."
+        "${ DOCS_APP_NAME } Skapa, redigera och samarbeta kring dokument med end-to-end kryptering."
       ],
       "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "${ DRIVE_APP_NAME }: Säkra dina filer med krypterad molnlagring. Inkluderar automatisk synkronisering, krypterad fildelning och mer."
@@ -13609,6 +13619,36 @@
       ],
       "Your domain and subscription are ready to use.": [
         "Din domän och din prenumeration är redo att användas."
+      ],
+      "Another private email service (e.g. Tuta)": [
+        "En annan privat e-posttjänst (t.ex. Tuta)"
+      ],
+      "I don't want to use Big Tech anymore": [
+        "Jag ville inte använda storföretagen längre"
+      ],
+      "I need a new email address": [
+        "Jag behöver en ny e-postadress"
+      ],
+      "I use other Proton apps, or want them all in one place": [
+        "Jag använder andra Proton-appar, eller vill ha alla samlade på ett ställe"
+      ],
+      "I want an inbox without ads or spam": [
+        "Jag vill ha en inkorg utan annonser eller skräppost"
+      ],
+      "I want my emails private and secure": [
+        "Jag vill ha min e-post privat och säker"
+      ],
+      "None, this is my first email": [
+        "Ingen, det här är mitt första mejl"
+      ],
+      "Others (tell us)": [
+        "Annat (berätta)"
+      ],
+      "Outlook or Hotmail": [
+        "Outlook eller Hotmail"
+      ],
+      "Tell us in a few words": [
+        "Berätta för oss med några få ord"
       ]
     },
     "Onboarding Proton": {
@@ -16347,6 +16387,9 @@
       ],
       "You have successfully canceled your subscription.": [
         "Du har avbrutit din prenumeration."
+      ],
+      "\"${ name }\" saved to ${ DRIVE_APP_NAME }": [
+        "${ name } sparad till ${ DRIVE_APP_NAME }"
       ]
     },
     "Success notification": {
@@ -17679,6 +17722,12 @@
       ],
       "Your shorter address is now ready": [
         "Din kortare adress är redo nu"
+      ],
+      "Bookmark your shortcut to privacy": [
+        "Bokmärk din genväg till integritet"
+      ],
+      "Meet Mailing lists": [
+        "Bli bekant med e-postlistor"
       ]
     },
     "Title header for keys table": {
@@ -17802,6 +17851,24 @@
       ],
       "Version 6 OpenPGP key": [
         "OpenPGP-nyckel version 6"
+      ],
+      "Add a data recovery method to unlock your data if you forget your password.": [
+        "Lägg till en dataåterställningsmetod för att låsa upp din data om du glömmer bort ditt lösenord."
+      ],
+      "Create a recovery phrase so you can recover your data if you forget your password.": [
+        "Skapa en återställningsfras så att du kan återställa dina data om du glömmer ditt lösenord."
+      ],
+      "Generate a recovery phrase to protect your account against data loss.": [
+        "Generera en återställningsfras för att skydda ditt konto mot dataförlust."
+      ],
+      "Some of your data is locked. Use a recovery method to unlock it.": [
+        "En del av din data är låst. Använd en återställningsmetod för att låsa upp den."
+      ],
+      "Your recovery file is out of date. Download a new one so you can still recover your data.": [
+        "Din återställningsfil är föråldrad. Ladda ner en ny så att du fortfarande kan återställa dina data."
+      ],
+      "Your recovery phrase is out of date. Get a new one so you can still recover your data.": [
+        "Din återställningsfras är föråldrad. Skaffa en ny så att du fortfarande kan återställa din data."
       ]
     },
     "tooltip": {

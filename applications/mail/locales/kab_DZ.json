@@ -1242,6 +1242,9 @@
       ],
       "Zoom out": [
         "Semẓi"
+      ],
+      "Modify selection": [
+        "Snifel tafrayt"
       ]
     },
     "action": {
@@ -1252,6 +1255,9 @@
     "Actions": {
       "Set up categories": [
         "Sbadu taggayin"
+      ],
+      "Skip": [
+        "Zger"
       ]
     },
     "Actions message": {
@@ -3171,6 +3177,12 @@
       ],
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
         "Tzemreḍ ad tcerḍeḍ ɣef yinermisen ur tebɣiḍ ara ad tesmezdiḍ neɣ ad tḥerzeḍ. Tukksa ur tetteddu ara alamma tessdeḍ ɣef tqeffalt n usmezdi"
+      ],
+      "Move emails to the right category to improve categorization.": [
+        "Senkez imaylen ɣer taggayt iwulmen akken ad yelhu ufran s taggayin."
+      ],
+      "You've connected one external account address to ${ MAIL_APP_NAME }.": [
+        "Teqqneḍ yiwet n tansa n umiḍan azɣaray ɣer ${ MAIL_APP_NAME }."
       ]
     },
     "description": {
@@ -3671,6 +3683,9 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Ddeqs n igmaḍ i d-yerra unadi-ik. Ma ulac aɣilif, err talast i unadi-inek sakin ɛreḍ tikelt- nniḍen."
+      ],
+      "Problem downloading the writing assistant. If you're using private mode, try using normal browsing mode or run the writing assistant on servers.": [
+        "Ugur deg usader n umalal n tira. Ma yella tesseqdaceḍ askar uslig, ɛreḍ ad tesqedceḍ askar amagnu n tunigin neɣ selkem amalal n tira ɣef yiqeddacen."
       ]
     },
     "Error adding participants to a calendar event": {
@@ -5880,6 +5895,15 @@
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Uṭṭun-ik n tiliɣṛi ad yettwaseqdec kan tikkelt deg usenqed-agi."
+      ],
+      "Add ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
+        "Rnu ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }"
+      ],
+      "Move their past emails to Archive. You can still search them.": [
+        "Senkez imaylen-nsen izrin ɣer Uɣbaṛ. Tzemreḍ mazal ad ten-tnadiḍ."
+      ],
+      "Source document in encrypted search index": [
+        "Asemli aɣbalu deg umatar n unadi awgelhan"
       ]
     },
     "info": {
@@ -6130,6 +6154,9 @@
       ],
       "Message shortcuts": [
         "Inegzumen n yizen"
+      ],
+      "Desktop app navigation": [
+        "Tunigin deg usnas n tnarit"
       ]
     },
     "Label": {
@@ -7791,6 +7818,9 @@
       "The specially discounted price is valid for the first ${ subscriptionLength } month.": [
         "Atig yettwasenqsen s wudem uzzig yeṣleḥ i ${ subscriptionLength } n wayyur amezwaru.",
         "Atig yettwasenqsen s wudem uzzig yeṣleḥ i ${ subscriptionLength } n wayyuren imezwura."
+      ],
+      "Taxes ${ rate }%": [
+        "Tiwsiwin ${ rate }%"
       ]
     },
     "Payments.Error": {
@@ -9947,6 +9977,12 @@
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "Aneɛruḍ-ik n baṭel ad ifakk deg ${ textDate }. ${ action }"
+      ],
+      "The attachment's signature failed verification. You can still save it to ${ DRIVE_APP_NAME }, but it might have been tampered with.": [
+        "Aselken n uzmul n umedday yecceḍ. Mazal tzemreḍ ad t-tḥerzeḍ deg ${ DRIVE_APP_NAME }, maca yezmer ad yili yettwasedɣel."
+      ],
+      "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
+        "Taremt-ik ad tfakk deg ${ textDate }. Ur tettxelliṣeḍ ara ma yella tsemmteḍ uqbel ${ textDate }.${ action }"
       ]
     },
     "Weekly recurring event, frequency": {
@@ -10192,6 +10228,19 @@
       ],
       "Yearly, ${ untilString }": [
         "S useggas, ${ untilString }"
+      ]
+    },
+    "collider_2025: feature": {
+      "Basic chat history": [
+        "Azray n udiwenni agejdan"
+      ],
+      "Unlimited daily chats": [
+        "Idiwenniten n yal ass war tilisa"
+      ]
+    },
+    "Provider option": {
+      "Yahoo": [
+        "Yahoo"
       ]
     }
   }

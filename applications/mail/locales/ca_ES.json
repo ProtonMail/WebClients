@@ -1601,8 +1601,7 @@
         "De confiança"
       ],
       "Trust key": [
-        "Clau de confiança",
-        "Claus de confiança"
+        "Clau de confiança"
       ],
       "Trust public key": [
         "Confia en la clau pública"
@@ -5758,6 +5757,15 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "La vostra cerca coincideix amb massa resultats. Limiteu-la i torneu-ho a provar."
+      ],
+      "Couldn't save the attachment to ${ DRIVE_APP_NAME }. Try again.": [
+        "No s'ha pogut desar el fitxer adjunt a ${ DRIVE_APP_NAME }. Torneu-ho a provar."
+      ],
+      "Not enough ${ DRIVE_SHORT_APP_NAME } storage to save this attachment. Free up space in ${ DRIVE_SHORT_APP_NAME } and try again.": [
+        "No hi ha prou espai d'emmagatzematge a ${ DRIVE_SHORT_APP_NAME } per desar aquest fitxer adjunt. Allibereu espai a ${ DRIVE_SHORT_APP_NAME } i torneu-ho a provar."
+      ],
+      "Not enough ${ DRIVE_SHORT_APP_NAME } storage to save this attachment. Free up space in ${ DRIVE_SHORT_APP_NAME } or contact your administrator to get more storage.": [
+        "No hi ha prou espai d'emmagatzematge a ${ DRIVE_SHORT_APP_NAME } per desar aquest fitxer adjunt. Allibereu espai a ${ DRIVE_SHORT_APP_NAME } o contacteu amb el vostre administrador per obtenir més emmagatzematge."
       ]
     },
     "error": {
@@ -8267,7 +8275,8 @@
         "S'està inicialitzant…"
       ],
       "Insert image": [
-        "Insereix una imatge"
+        "Insereix una imatge",
+        "Insereix imatges"
       ],
       "Insert link": [
         "Insereix un enllaç"
@@ -9721,7 +9730,7 @@
         "Enviarem un codi de verificació nou a ${ strong }"
       ],
       "We've added the newsletters from your Gmail import to Mailing lists, grouped by sender. Read, keep or stop them in one place.": [
-        "Hem afegit els butlletins de la vostra importació de Gmail a Llistes de correu, agrupats per remitent. Llegiu-los, conserveu-los o doneu-los de baixa en un sol lloc."
+        "Hem afegit els butlletins de la vostra importació de Gmail a les Llistes de correu, agrupats per remitent. Llegiu-los, conserveu-los o doneu-los de baixa en un sol lloc."
       ],
       "Web URL": [
         "URL del web"
@@ -10123,6 +10132,12 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Sou tot just a uns quants clics d'una safata d'entrada ordenada"
+      ],
+      "Do you want to save this attachment anyway?": [
+        "Voleu desar aquest fitxer adjunt de totes maneres?"
+      ],
+      "Press ${ shortcut } to keep ${ MAIL_APP_NAME } one click away.": [
+        "Premeu ${ shortcut } per a tenir ${ MAIL_APP_NAME } a un clic."
       ]
     },
     "info": {
@@ -13625,6 +13640,36 @@
       ],
       "Your domain and subscription are ready to use.": [
         "El vostre domini i la subscripció ja es poden utilitzar."
+      ],
+      "Another private email service (e.g. Tuta)": [
+        "Un altre servei de correu electrònic privat (per exemple, Tuta)"
+      ],
+      "I don't want to use Big Tech anymore": [
+        "Ja no vull fer servir les grans tecnològiques."
+      ],
+      "I need a new email address": [
+        "Necessito una nova adreça de correu electrònic"
+      ],
+      "I use other Proton apps, or want them all in one place": [
+        "Faig servir altres aplicacions de Proton, o bé les vull totes en un mateix lloc"
+      ],
+      "I want an inbox without ads or spam": [
+        "Vull una safata d'entrada sense anuncis ni correu brossa."
+      ],
+      "I want my emails private and secure": [
+        "Vull que els meus correus electrònics siguin privats i segurs."
+      ],
+      "None, this is my first email": [
+        "Cap, aquest és el meu primer correu electrònic."
+      ],
+      "Others (tell us)": [
+        "Altres (indiqueu-nos-ho)"
+      ],
+      "Outlook or Hotmail": [
+        "Outlook o Hotmail"
+      ],
+      "Tell us in a few words": [
+        "Expliqueu-nos-ho en poques paraules"
       ]
     },
     "Onboarding Proton": {
@@ -16357,6 +16402,9 @@
       ],
       "You have successfully canceled your subscription.": [
         "Heu cancel·lat la subscripció."
+      ],
+      "\"${ name }\" saved to ${ DRIVE_APP_NAME }": [
+        "\"${ name }\" s'ha desat a ${ DRIVE_APP_NAME }"
       ]
     },
     "Success notification": {
@@ -17692,6 +17740,9 @@
       ],
       "Your shorter address is now ready": [
         "La vostra adreça més curta ja està a punt."
+      ],
+      "Bookmark your shortcut to privacy": [
+        "Desa la drecera a la privacitat a les adreces d'interès"
       ]
     },
     "Title header for keys table": {
@@ -17724,7 +17775,7 @@
         "Afegeix un mètode de recuperació de dades per desbloquejar-les si oblideu la contrasenya."
       ],
       "Add a recovery email or phone so you can reset your password if you forget it.": [
-        "Afegiu un correu electrònic o un telèfon de recuperació per poder restablir la contrasenya si l'oblideu."
+        "Afegiu un correu electrònic o un telèfon de recuperació per a poder restablir la contrasenya si l'oblideu."
       ],
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "Automàtic indica que el format del compositor s'utilitza per enviar-lo a aquest usuari. El text sense format indica que el missatge sempre es convertirà a text sense format en enviar."
@@ -17790,7 +17841,7 @@
         "Mostra el panell lateral"
       ],
       "Some of your data is locked. Use a recovery method to unlock it.": [
-        "Part de les vostres dades estan bloquejades. Feu servir un mètode de recuperació per desbloquejar-les."
+        "Part de les vostres dades estan bloquejades. Feu servir un mètode de recuperació per a desbloquejar-les."
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Les subcarpetes del sistema es mostraran com a carpetes independents a ${ MAIL_APP_NAME }"
@@ -18182,6 +18233,9 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "La vostra prova finalitzarà el ${ textDate }. No se us cobrarà si cancel·leu abans del ${ textDate }. ${ action }"
+      ],
+      "The attachment's signature failed verification. You can still save it to ${ DRIVE_APP_NAME }, but it might have been tampered with.": [
+        "Ha fallat la verificació de la signatura del fitxer adjunt. Encara el podeu desar a ${ DRIVE_APP_NAME }, però podria ser que s'hagués manipulat."
       ]
     },
     "WeekDay": {

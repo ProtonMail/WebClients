@@ -1605,9 +1605,7 @@
         "Aprobare"
       ],
       "Trust key": [
-        "Cheie de încredere",
-        "Cheie de încredere",
-        "Chei de încredere"
+        "Aprobare cheie"
       ],
       "Trust public key": [
         "Aprobare cheie publică"
@@ -5809,6 +5807,15 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Căutarea a găsit prea multe rezultate. Vă rugăm să limitați căutarea și să reîncercați."
+      ],
+      "Couldn't save the attachment to ${ DRIVE_APP_NAME }. Try again.": [
+        "Nu s-a putut salva atașamentul în ${ DRIVE_APP_NAME }. Reîncercați."
+      ],
+      "Not enough ${ DRIVE_SHORT_APP_NAME } storage to save this attachment. Free up space in ${ DRIVE_SHORT_APP_NAME } and try again.": [
+        "Nu există suficient spațiu de stocare în ${ DRIVE_SHORT_APP_NAME } pentru a salva acest atașament. Eliberați spațiu în ${ DRIVE_SHORT_APP_NAME } și reîncercați."
+      ],
+      "Not enough ${ DRIVE_SHORT_APP_NAME } storage to save this attachment. Free up space in ${ DRIVE_SHORT_APP_NAME } or contact your administrator to get more storage.": [
+        "Nu există suficient spațiu de stocare în ${ DRIVE_SHORT_APP_NAME } pentru a salva acest atașament. Eliberați spațiu în ${ DRIVE_SHORT_APP_NAME } sau contactați administratorul pentru a obține mai mult spațiu de stocare."
       ]
     },
     "error": {
@@ -8409,7 +8416,9 @@
         "Se inițializează…"
       ],
       "Insert image": [
-        "Inserare imagine"
+        "Inserare imagine",
+        "Inserare imagini",
+        "Inserare imagini"
       ],
       "Insert link": [
         "Inserare legătură web"
@@ -10302,6 +10311,12 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Sunteți la doar câteva clicuri distanță de un cont cu mesaje ordonate."
+      ],
+      "Do you want to save this attachment anyway?": [
+        "Doriți totuși să salvați acest atașament?"
+      ],
+      "Press ${ shortcut } to keep ${ MAIL_APP_NAME } one click away.": [
+        "Apăsați ${ shortcut } pentru a menține ${ MAIL_APP_NAME } la un singur clic distanță."
       ]
     },
     "info": {
@@ -13858,6 +13873,36 @@
       ],
       "Your domain and subscription are ready to use.": [
         "Domeniul și abonamentul sunt pregătite de utilizare."
+      ],
+      "Another private email service (e.g. Tuta)": [
+        "Un alt serviciu de e-mail privat (de exemplu, Tuta)"
+      ],
+      "I don't want to use Big Tech anymore": [
+        "Nu mai vreau să folosesc de la marile companii tehnologice"
+      ],
+      "I need a new email address": [
+        "Am nevoie de o nouă adresă de e-mail"
+      ],
+      "I use other Proton apps, or want them all in one place": [
+        "Folosesc și alte aplicații Proton sau vreau să le am pe toate într-un singur loc"
+      ],
+      "I want an inbox without ads or spam": [
+        "Vreau un cont fără reclame sau mesaje nedorite"
+      ],
+      "I want my emails private and secure": [
+        "Vreau ca mesajele mele să fie private și sigure"
+      ],
+      "None, this is my first email": [
+        "Niciunul, aceasta este primul"
+      ],
+      "Others (tell us)": [
+        "Altul (spuneți-ne)"
+      ],
+      "Outlook or Hotmail": [
+        "Outlook sau Hotmail"
+      ],
+      "Tell us in a few words": [
+        "Spuneți-ne în câteva cuvinte"
       ]
     },
     "Onboarding Proton": {
@@ -16669,6 +16714,9 @@
       ],
       "You have successfully canceled your subscription.": [
         "V-ați anulat abonamentul."
+      ],
+      "\"${ name }\" saved to ${ DRIVE_APP_NAME }": [
+        "„${ name }” s-a salvat în ${ DRIVE_APP_NAME }"
       ]
     },
     "Success notification": {
@@ -18027,6 +18075,9 @@
       ],
       "Your shorter address is now ready": [
         "Adresa scurtă este pregătită acum"
+      ],
+      "Bookmark your shortcut to privacy": [
+        "Salvați scurtătura către confidențialitate"
       ]
     },
     "Title header for keys table": {
@@ -18532,6 +18583,9 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "Perioada de evaluare se va încheia la ${ textDate }. Nu vă vom taxa dacă anulați înainte de ${ textDate }. ${ action }"
+      ],
+      "The attachment's signature failed verification. You can still save it to ${ DRIVE_APP_NAME }, but it might have been tampered with.": [
+        "Verificarea semnăturii atașamentului a eșuat. Îl puteți salva în continuare în ${ DRIVE_APP_NAME }, dar este posibil ca acesta să fi fost modificat."
       ]
     },
     "WeekDay": {

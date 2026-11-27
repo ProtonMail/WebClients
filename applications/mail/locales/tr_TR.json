@@ -1097,7 +1097,7 @@
         "Hata ayıklama menüsünü aç"
       ],
       "Open Mailing lists": [
-        "E-posta Listelerini aç"
+        "E-posta listelerini aç"
       ],
       "Open navigation": [
         "Gezinmeyi aç"
@@ -1601,8 +1601,7 @@
         "Güven"
       ],
       "Trust key": [
-        "Anahtara güven",
-        "Anahtarlara güven"
+        "Güvenilen anahtar"
       ],
       "Trust public key": [
         "Herkese açık anahtara güven"
@@ -5758,6 +5757,15 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Aramanız çok fazla sonuç döndürdü. Lütfen aramanızı sınırlandırıp yeniden deneyin."
+      ],
+      "Couldn't save the attachment to ${ DRIVE_APP_NAME }. Try again.": [
+        "Ek dosya ${ DRIVE_APP_NAME } üzerine kaydedilemedi. Lütfen yeniden deneyin."
+      ],
+      "Not enough ${ DRIVE_SHORT_APP_NAME } storage to save this attachment. Free up space in ${ DRIVE_SHORT_APP_NAME } and try again.": [
+        "Bu ek dosyayı kaydetmek için yeterli ${ DRIVE_SHORT_APP_NAME } depolama alanı yok. ${ DRIVE_SHORT_APP_NAME } üzerinde yer açıp yeniden deneyin."
+      ],
+      "Not enough ${ DRIVE_SHORT_APP_NAME } storage to save this attachment. Free up space in ${ DRIVE_SHORT_APP_NAME } or contact your administrator to get more storage.": [
+        "Bu ek dosyayı kaydetmek için yeterli ${ DRIVE_SHORT_APP_NAME } depolama alanı yok. ${ DRIVE_SHORT_APP_NAME } üzerinde yer açın veya daha fazla depolama alanı edinmek için yöneticiniz ile görüşün."
       ]
     },
     "error": {
@@ -7365,11 +7373,11 @@
         "Hesap güncellendi"
       ],
       "Activate ${ MAIL_APP_NAME } to start receiving emails at ${ count } of your domains.": [
-        "${ MAIL_APP_NAME } hizmetini etkinleştirerek ${ count } etki alanınızda e-posta almaya başlayın.",
-        "${ MAIL_APP_NAME } hizmetini etkinleştirerek ${ count } etki alanınızda e-posta almaya başlayın."
+        "${ MAIL_APP_NAME } hizmetini etkinleştirerek ${ count } etki alanınızdan e-posta almaya başlayın.",
+        "${ MAIL_APP_NAME } hizmetini etkinleştirerek ${ count } etki alanınızdan e-posta almaya başlayın."
       ],
       "Activate ${ MAIL_APP_NAME } to start receiving emails at ${ domainName }. ${ activateLink }": [
-        "${ MAIL_APP_NAME } uygulamasını etkinleştirerek ${ domainName } adresinden e-posta almaya başlayın. ${ activateLink }"
+        "${ MAIL_APP_NAME } uygulamasını etkinleştirerek ${ domainName } etki alanından e-posta almaya başlayın. ${ activateLink }"
       ],
       "Activation in progress": [
         "Kullanıma alınıyor"
@@ -8267,6 +8275,7 @@
         "Hazırlanıyor…"
       ],
       "Insert image": [
+        "Görsel ekle",
         "Görsel ekle"
       ],
       "Insert link": [
@@ -9721,7 +9730,7 @@
         "${ strong } alıcısına yeni bir doğrulama kodu göndereceğiz"
       ],
       "We've added the newsletters from your Gmail import to Mailing lists, grouped by sender. Read, keep or stop them in one place.": [
-        "Gmail'den içe aktardığınız bültenleri gönderenlere göre gruplandırılmış olarak E-posta Listelerine ekledik. Hepsini tek bir yerden okuyabilir, saklayabilir veya aboneliğinizi iptal edebilirsiniz."
+        "Gmail üzerinden içe aktardığınız duyurular, göndericilerine göre gruplanmış olarak e-posta listelerine eklendi. Tümünü tek bir yerde okuyabilir, saklayabilir veya aboneliğinden ayrılabilirsiniz."
       ],
       "Web URL": [
         "Site adresi"
@@ -9970,11 +9979,11 @@
         "${ trialEndsOnFormatted } tarihinden önce iptal ederseniz ücret ödemezsiniz."
       ],
       "You won't receive emails at ${ count } of your domains until you activate ${ MAIL_APP_NAME }. You can do this anytime in Settings > Domain names.": [
-        "${ MAIL_APP_NAME } uygulamasını etkinleştirene kadar ${ count } etki alanınızla ilgili e-posta almayacaksınız. Bunu Ayarlar > Etki alanları bölümünden istediğiniz zaman yapabilirsiniz.",
-        "${ MAIL_APP_NAME } uygulamasını etkinleştirene kadar ${ count } etki alanınızla ilgili e-posta almayacaksınız. Bunu Ayarlar > Etki alanları bölümünden istediğiniz zaman yapabilirsiniz."
+        "${ MAIL_APP_NAME } uygulamasını etkinleştirene kadar ${ count } etki alanınızdan e-posta almayacaksınız. Bu işlemi istediğiniz zaman Ayarlar > Etki alanları bölümünden yapabilirsiniz.",
+        "${ MAIL_APP_NAME } uygulamasını etkinleştirene kadar ${ count } etki alanınızdan e-posta almayacaksınız. Bu işlemi istediğiniz zaman Ayarlar > Etki alanları bölümünden yapabilirsiniz."
       ],
       "You won't receive emails at ${ domainName } until you activate ${ MAIL_APP_NAME }. You can do this anytime in Settings > Domain names.": [
-        "${ MAIL_APP_NAME } uygulamasını etkinleştirene kadar ${ domainName } adresine e-posta almayacaksınız. Bunu Ayarlar > Etki alanları bölümünden istediğiniz zaman yapabilirsiniz."
+        "${ MAIL_APP_NAME } uygulamasını etkinleştirene kadar ${ domainName } etki alanından e-posta almayacaksınız. Bu işlemi istediğiniz zaman Ayarlar > Etki alanları bölümünden yapabilirsiniz."
       ],
       "You wrote “${ attachmentsFoundKeyword }”, but no attachment has been added. Do you want to send your message anyway?": [
         "“${ attachmentsFoundKeyword }” yazdınız ama bir ek dosya eklemediniz. İletinizi yine de göndermek istiyor musunuz?"
@@ -10048,7 +10057,7 @@
         "Gmail hesabınız bu ${ MAIL_APP_NAME } adresine bağlanır"
       ],
       "Your Gmail newsletters are now grouped by sender, away from your personal mail. Read, keep or stop them in one place.": [
-        "Gmail’deki bültenleriniz artık kişisel e-postalarınızdan ayrı olarak gönderenlere göre gruplandırılıyor. Bunları tek bir yerden okuyabilir, saklayabilir veya aboneliğinizi iptal edebilirsiniz."
+        "Gmail üzerindeki duyurularınız artık kişisel e-postalarınızdan ayrı olarak göndercilere göre gruplanıyor. Bunları tek bir yerde okuyabilir, saklayabilir veya aboneliğinden ayrılabilirsiniz."
       ],
       "Your hardware doesn't support running the writing assistant locally. Try running it on servers.": [
         "Donanımınız yazma yardımcısının yerel olarak çalıştırılmasını desteklemiyor. Sunucular üzerinden çalıştırmayı deneyin."
@@ -10123,6 +10132,12 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Dağınıklıktan arındırılmış bir gelen kutusundan yalnızca birkaç tık uzaktasınız."
+      ],
+      "Do you want to save this attachment anyway?": [
+        "Yine de bu ek dosyayı kaydetmek ister misiniz?"
+      ],
+      "Press ${ shortcut } to keep ${ MAIL_APP_NAME } one click away.": [
+        "${ MAIL_APP_NAME } uygulamasına tek tık ile erişmek için ${ shortcut } üzerine basın."
       ]
     },
     "info": {
@@ -13002,7 +13017,7 @@
         "${ MAIL_APP_NAME }: E-postalarınızı uçtan uca şifrelemeyle koruyun. Özel e-posta etki alanları, 15 e-posta adresi, sınırsız hide-my-email takma adları ve diğer özellikler."
       ],
       "${ SHEETS_APP_NAME }: Create, edit, and collaborate on end-to-end encrypted sheets.": [
-        "${ SHEETS_APP_NAME }: Uçtan uca şifrelenmiş tablolar oluşturun, düzenleyin ve üzerinde birlikte çalışın."
+        "${ SHEETS_APP_NAME }: Uçtan uca şifrelenmiş elektronik tablolar oluşturun, düzenleyin ve üzerinde birlikte çalışın."
       ],
       "${ VPN_APP_NAME }: Access blocked content and browse privately. Includes ${ serversAndCountries }, highest VPN speeds, access to worldwide streaming services, malware and ad-blocker, fast BitTorrent downloads, and more.": [
         "${ VPN_APP_NAME }: Engellenen içeriğe erişin ve gizliliğinizi koruyarak gezinin. ${ serversAndCountries }, en yüksek VPN hızları, tüm Dünya'daki yayın akışı hizmetlerine erişim, kötü amaçlı yazılım ve reklam engelleyici, hızlı BitTorrent indirmeleri ve diğer özellikler."
@@ -13625,6 +13640,36 @@
       ],
       "Your domain and subscription are ready to use.": [
         "Etki alanınız ve aboneliğiniz kullanılmaya hazır."
+      ],
+      "Another private email service (e.g. Tuta)": [
+        "Başka bir gizli e-posta hizmeti (Tuta gibi)"
+      ],
+      "I don't want to use Big Tech anymore": [
+        "Artık Big Tech şirketlerini kullanmak istemiyorum"
+      ],
+      "I need a new email address": [
+        "Yeni bir e-posta adresine gerek duyuyorum"
+      ],
+      "I use other Proton apps, or want them all in one place": [
+        "Diğer Proton uygulamalarını kullanıyorum ya da tümünü tek bir yerde toplamak istiyorum"
+      ],
+      "I want an inbox without ads or spam": [
+        "Reklamların ve istenmeyen iletilerin olmadığı bir gelen kutusu istiyorum"
+      ],
+      "I want my emails private and secure": [
+        "E-postalarımın gizliliğinin korunmasını ve güvende olmasını istiyorum"
+      ],
+      "None, this is my first email": [
+        "Yok, bu benim ilk e-postam"
+      ],
+      "Others (tell us)": [
+        "Diğerleri (bize bildirin)"
+      ],
+      "Outlook or Hotmail": [
+        "Outlook ya da Hotmail"
+      ],
+      "Tell us in a few words": [
+        "Bize birkaç sözcükle anlatın"
       ]
     },
     "Onboarding Proton": {
@@ -16357,6 +16402,9 @@
       ],
       "You have successfully canceled your subscription.": [
         "Aboneliğinizi iptal ettiniz."
+      ],
+      "\"${ name }\" saved to ${ DRIVE_APP_NAME }": [
+        "\"${ name }\" dosyası ${ DRIVE_APP_NAME } üzerine kaydedildi"
       ]
     },
     "Success notification": {
@@ -16997,7 +17045,7 @@
         "Yardım merkezi"
       ],
       "Hide this reminder?": [
-        "Bu hatırlatıcı gizlensin mi?"
+        "Bu anımsatıcı gizlensin mi?"
       ],
       "Hide your email with ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME } ile e-posta adresinizi gizleyin"
@@ -17125,7 +17173,7 @@
         "İletileri okunmamış olarak işaretle"
       ],
       "Meet Mailing lists": [
-        "E-posta listeleriyle tanışın"
+        "E-posta listeleri ile tanışın"
       ],
       "Merge contacts": [
         "Kişileri birleştir"
@@ -17676,7 +17724,7 @@
         "Ücretsiz deneme süreniz sona erdi"
       ],
       "Your Gmail newsletters are here": [
-        "Gmail bültenleriniz burada"
+        "Gmail duyurularınız burada"
       ],
       "Your Gmail newsletters, now easier to manage": [
         "Gmail duyurularınızı artık daha kolay yönetebilirsiniz"
@@ -17692,6 +17740,9 @@
       ],
       "Your shorter address is now ready": [
         "Daha kısa adresiniz hazır"
+      ],
+      "Bookmark your shortcut to privacy": [
+        "Gizlilik kısayolunuzu yer imlerine ekleyin"
       ]
     },
     "Title header for keys table": {
@@ -17721,10 +17772,10 @@
     },
     "Tooltip": {
       "Add a data recovery method to unlock your data if you forget your password.": [
-        "Parolanızı unutursanız verilerinize erişebilmek için veri kurtarma yöntemi ekleyin."
+        "Parolanızı unutursanız verilerinize erişebilmek için bir veri kurtarma yöntemi ekleyin."
       ],
       "Add a recovery email or phone so you can reset your password if you forget it.": [
-        "Parolanızı unuttuğunuzda sıfırlayabilmeniz için yedek e-posta adresi veya telefon numarası ekleyin."
+        "Parolanızı unuttuğunuzda sıfırlayabilmeniz için bir kurtarma e-posta adresi veya telefon numarası ekleyin."
       ],
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "Otomatik, bu kullanıcıya gönderim için oluşturucudaki biçimin kullanılacağını belirtir. Düz metin, iletinin gönderim sırasında her zaman düz metne dönüştürüleceğini belirtir."
@@ -17733,7 +17784,7 @@
         "Sisteminizin gündüz veya gece kipinde olmasına göre gündüz ve gece için seçtiğiniz temalar arasında otomatik olarak geçiş yapın"
       ],
       "Create a recovery phrase so you can recover your data if you forget your password.": [
-        "Parolanızı unutursanız verilerinizi geri alabilmek için kurtarma ifadesi oluşturun."
+        "Parolanızı unutursanız verilerinizi geri alabilmek için bir kurtarma ifadesi oluşturun."
       ],
       "Customize import to reduce the number of folders": [
         "Klasör sayısını azaltmak için içe aktarmayı özelleştirin"
@@ -17763,7 +17814,7 @@
         "Doğrulanmış dijital imza ile şifrelenmiş veri"
       ],
       "Generate a recovery phrase to protect your account against data loss.": [
-        "Hesabınızı veri kaybına karşı korumak için kurtarma ifadesi oluşturun."
+        "Hesabınızdaki verilerin kaybolmasını engellemek için bir kurtarma ifadesi oluşturun."
       ],
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail bazı e-postaları Sosyal ya da Tanıtım gibi kategorilere ayırır. Bu e-postaların nereye içe aktarılacağını seçebilirsiniz."
@@ -17790,7 +17841,7 @@
         "Yan panoyu görüntüle"
       ],
       "Some of your data is locked. Use a recovery method to unlock it.": [
-        "Verilerinizin bir kısmı kilitli. Kilidi açmak için kurtarma yöntemi kullanın."
+        "Verilerinizin bir kısmı kilitli. Kilidi açmak için bir kurtarma yöntemi kullanın."
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Sistem alt klasörleri ${ MAIL_APP_NAME } üzerinde ayrı klasörler olarak görünecek"
@@ -17832,7 +17883,7 @@
         "Kurtarma dosyanız güncel değil. Verilerinizi kurtarabilmek için yeni bir dosya indirin."
       ],
       "Your recovery phrase is out of date. Get a new one so you can still recover your data.": [
-        "Geri alma ifadenizin geçerlilik süresi doldu. Verilerinizi geri alabilmek için yeni bir tane alın."
+        "Kurtarma ifadenizin geçerlilik süresi doldu. Verilerinizi kurtarabilmek için yeni bir tane alın."
       ]
     },
     "tooltip": {
@@ -18182,6 +18233,9 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "Deneme süreniz ${ textDate } tarihinde sona erecek. ${ textDate } tarihinden önce iptal ederseniz sizden ücret alınmayacak. ${ action }"
+      ],
+      "The attachment's signature failed verification. You can still save it to ${ DRIVE_APP_NAME }, but it might have been tampered with.": [
+        "Ek dosyanın imzası doğrulanamadı. Yine de ${ DRIVE_APP_NAME } üzerine kaydedebilirsiniz. Ancak dosyanın üzerinde oynanmış olabilir."
       ]
     },
     "WeekDay": {

@@ -1784,6 +1784,18 @@
       ],
       "Zoom out": [
         "Reduzir"
+      ],
+      "Next contact": [
+        "Novo contacto"
+      ],
+      "Open Mailing lists": [
+        "Abrir Listas de Correio"
+      ],
+      "Previous contact": [
+        "Contacto anterior"
+      ],
+      "Trust key": [
+        "Confiar na chave"
       ]
     },
     "action": {
@@ -5293,7 +5305,7 @@
         "Processo abortado"
       ],
       "Public key could not be trusted": [
-        "A chave pública não era de confiança."
+        "Não foi possível confiar na chave pública"
       ],
       "re-activate the previous key": [
         "reativar a chave anterior"
@@ -5586,6 +5598,15 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "A sua pesquisa obteve muitas correspondências. Limite a pesquisa e tente novamente."
+      ],
+      "Couldn't save the attachment to ${ DRIVE_APP_NAME }. Try again.": [
+        "Não foi possível guardar o anexo em ${ DRIVE_APP_NAME }. Tente novamente."
+      ],
+      "Not enough ${ DRIVE_SHORT_APP_NAME } storage to save this attachment. Free up space in ${ DRIVE_SHORT_APP_NAME } and try again.": [
+        "Não há armazenamento suficiente no ${ DRIVE_SHORT_APP_NAME } para guardar este anexo. Liberte espaço no ${ DRIVE_SHORT_APP_NAME } e tente novamente."
+      ],
+      "Not enough ${ DRIVE_SHORT_APP_NAME } storage to save this attachment. Free up space in ${ DRIVE_SHORT_APP_NAME } or contact your administrator to get more storage.": [
+        "Não há armazenamento suficiente no ${ DRIVE_SHORT_APP_NAME } para guardar este anexo. Liberte espaço no ${ DRIVE_SHORT_APP_NAME } ou contacte o seu administrador para obter mais armazenamento."
       ]
     },
     "error": {
@@ -6285,7 +6306,7 @@
         "Obter a aplicação móvel do ${ MAIL_APP_NAME }"
       ],
       "Keep using ${ MAIL_APP_NAME } to discover more ways ${ BRAND_NAME } protects your privacy and simplifies emailing.": [
-        "Continue a utilizar ${ MAIL_APP_NAME } para descobrir mais formas da ${ BRAND_NAME } proteger a sua privacidade e simplificar a gestão de e-mails."
+        "Continue a utilizar ${ MAIL_APP_NAME } para descobrir mais formas de a ${ BRAND_NAME } proteger a sua privacidade e simplificar o envio de mensagens."
       ],
       "Learn more": [
         "Mais informação"
@@ -7228,7 +7249,7 @@
         "Todas as mensagens desta lista de correio serão movidas para o arquivo."
       ],
       "All messages from this mailing list will be moved to Trash.": [
-        "Todas as mensagens desta lista de correio serão movidas para o lixo."
+        "Todas as mensagens desta lista de correio serão movidas para o 'Lixo'."
       ],
       "All messages stored in this folder will be permanently deleted.": [
         "Todas as mensagens armazenadas nesta pasta serão permanentemente apagadas."
@@ -7752,7 +7773,7 @@
         "Encriptar a mensagem"
       ],
       "Enjoy a faster, focused emailing experience with the desktop app.": [
-        "Desfrute de uma experiência de e-mail mais rápida e focada com a aplicação para desktop."
+        "Desfrute de uma experiência de mensagens mais rápida e focada com a aplicação para PC."
       ],
       "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
         "Garanta comunicações totalmente privadas e encriptadas. Crie já o seu endereço de e-mail ${ BRAND_NAME } gratuito."
@@ -8007,7 +8028,8 @@
         "A inicializar…"
       ],
       "Insert image": [
-        "Inserir uma imagem"
+        "Inserir imagem",
+        "Inserir imagens"
       ],
       "Insert link": [
         "Inserir uma ligação"
@@ -8515,7 +8537,7 @@
         "Rever o texto"
       ],
       "Protect your email from being leaked to mailing lists or spammers with ${ hideMyEmailAliasesLink }.": [
-        "Evite que o seu e-mail seja incluído em listas de e-mail ou apropriado por spammers com ${ hideMyEmailAliasesLink }."
+        "Evite que o seu ''e-mail'' seja divulgado nas listas de correio ou ''spammers'' com ${ hideMyEmailAliasesLink }."
       ],
       "Protection from hackers and leaks": [
         "Protector contra piratas informáticos e divulgações"
@@ -9030,7 +9052,7 @@
         "Esta mensagem está assinada por uma chave pública que ainda não foi confiada."
       ],
       "This message is signed by the key attached, that has not been trusted yet.": [
-        "Esta mensagem está assinada pela chave anexada, que ainda não foi confiada."
+        "Esta mensagem está assinada pela chave anexada, que ainda não foi considerada de confiança."
       ],
       "This message will be automatically deleted at ${ value }": [
         "Esta mensagem será apagada automaticamente em ${ value }"
@@ -9088,7 +9110,7 @@
         "Esta chave pública será utilizada automaticamente para encriptar as mensagens enviadas para este endereço."
       ],
       "This sender's public key has not been trusted yet.": [
-        "A chave pública deste remetente ainda não foi confiada."
+        "A chave pública deste remetente ainda não foi considerada de confiança."
       ],
       "This unique code can be used by websites and ISPs (internet service providers) to link your location and browsing history to your device": [
         "Este código único pode ser utilizado por sítios web e fornecedores de serviços de internet (ISP) para ligar a sua localização e histórico de navegação ao seu dispositivo."
@@ -9148,7 +9170,7 @@
         "Para cancelar a subscrição desta lista de e-mails, será enviada um e-mail de ${ boldFrom } com os seguintes detalhes, conforme definido pelo remetente da newsletter:"
       ],
       "To unsubscribe from this mailing list, you will be taken to the following URL where instructions will be provided by the sender of the newsletter:": [
-        "Para cancelar a subscrição desta lista de ''e-mails'', será encaminhado para o seguinte URL, onde o remetente do boletim informativo fornecerá instruções:"
+        "Para cancelar a subscrição desta lista de correio, será encaminhado para o seguinte URL, onde o remetente do boletim informativo fornecerá instruções:"
       ],
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
         "Para utilizar a verificação de endereço, tem de confiar numa ou mais chaves públicas disponíveis, incluindo a que pretende utilizar para envio. Isto impede que as chaves de encriptação sejam falsificadas."
@@ -9407,7 +9429,7 @@
         "Quando se liga a uma VPN, esta utiliza tecnologia de encriptação para ocultar o seu endereço IP (um código único atribuído ao seu dispositivo)."
       ],
       "When you enabled trusted keys for ${ senderName }, the public keys were added to the contact details.": [
-        "Quando ativou as chaves confiadas para ${ senderName }, as chaves públicas foram adicionadas aos detalhes do contacto."
+        "Quando ativou as chaves de confiança para ${ senderName }, as chaves públicas foram adicionadas aos detalhes do contacto."
       ],
       "When you sign up for a newsletter, use an alias instead of your email address. Your identity stays hidden, and you can disable the alias at any time.": [
         "Quando se inscrever para receber uma newsletter, utilize um alias em vez do seu endereço de e-mail. A sua identidade permanece oculta e pode desativar o alias em qualquer altura."
@@ -9751,6 +9773,9 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Está a alguns cliques de ter uma caixa de entrada organizada"
+      ],
+      "Do you want to save this attachment anyway?": [
+        "Mesmo assim, deseja guardar este anexo?"
       ]
     },
     "info": {
@@ -9827,7 +9852,7 @@
     },
     "Key pinning": {
       "Clicking \"Trust Key\" will associate this public key with this sender and emails from this address will be automatically cryptographically verified.": [
-        "Ao clicar em \"Chave Confiável\", irá associar esta chave pública a este remetente e as mensagens deste endereço serão automaticamente verificados de forma encriptada."
+        "Ao clicar em \"Confiar na Chave\", esta chave pública será associada a este remetente e as mensagens enviadas deste endereço serão verificadas criptograficamente de forma automática."
       ],
       "Clicking \"Trust Key\" will create a new contact and associate this public key with this sender. Emails from this address will be automatically cryptographically verified.": [
         "Clicar em \"Confiar na Chave\" criará um novo contacto e associará esta chave pública a este remetente. Os e-mails deste endereço serão automaticamente verificados com encriptação."
@@ -11069,6 +11094,9 @@
       ],
       "ZIP code": [
         "Código postal"
+      ],
+      "${ BRAND_NAME } Account password": [
+        "Palavra-passe da conta ${ BRAND_NAME }"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -11157,7 +11185,7 @@
         "A carregar as suas subscrições de newsletters..."
       ],
       "Newsletters or mailing lists you unsubscribe from will show up here.": [
-        "Os boletins informativos ou listas de correio das quais cancelar a subscrição aparecerão aqui."
+        "Os boletins informativos ou as listas de correio das quais cancelou a subscrição serão mostradas aqui."
       ],
       "You don't have any active newsletters or mailing list subscriptions.": [
         "Não tem nenhuma subscrição ativa de boletim ou de listas de correio."
@@ -12225,7 +12253,7 @@
         "Suporte para router"
       ],
       "Save time emailing": [
-        "Economize tempo ao enviar e-mails"
+        "Poupe tempo ao enviar mensagens"
       ],
       "Schedule and snooze emails for any time": [
         "Agende e adie e-mails para quando quiser"
@@ -13108,6 +13136,36 @@
       ],
       "Your domain and subscription are ready to use.": [
         "O seu domínio e a sua subscrição estão prontos para serem usados."
+      ],
+      "Another private email service (e.g. Tuta)": [
+        "Outro serviço de ''e-mail'' privado (exemplo, Tuta)"
+      ],
+      "I don't want to use Big Tech anymore": [
+        "Eu já não quero utilizar Big Tech"
+      ],
+      "I need a new email address": [
+        "Eu preciso de um novo endereço de correio eletrónico"
+      ],
+      "I use other Proton apps, or want them all in one place": [
+        "Eu utilizo outras aplicações Proton, ou quero-as todas num único lugar "
+      ],
+      "I want an inbox without ads or spam": [
+        "Eu quero uma caixa de entrada sem anúncios ou lixo eletronico"
+      ],
+      "I want my emails private and secure": [
+        "Eu quero as minhas mensagens privadas e segurras"
+      ],
+      "None, this is my first email": [
+        "Nenhum, é a minha primeira mensagem"
+      ],
+      "Others (tell us)": [
+        "Outros (diga-nos)"
+      ],
+      "Outlook or Hotmail": [
+        "Outlook ou Hotmail"
+      ],
+      "Tell us in a few words": [
+        "Diga-nos em poucas palavras"
       ]
     },
     "Onboarding Proton": {
@@ -15775,7 +15833,7 @@
         "Problema comunicado"
       ],
       "Public key trusted": [
-        "Chave pública confiada"
+        "Chave pública considerada de confiança"
       ],
       "Read receipt sent": [
         "Recibo de leitura enviado"
@@ -15793,8 +15851,8 @@
         "Desfazer em curso"
       ],
       "Unsubscribed from ${ count } mailing list and moved its messages to Archive.": [
-        "Cancelou a subscrição de ${ count } lista de correio e moveu as respetivas mensagens para o Arquivo.",
-        "Cancelou a subscrição de ${ count } listas de correio e moveu as respetivas mensagens para o Arquivo."
+        "Cancelou a subscrição de ${ count } lista de correio e moveu as respetivas mensagens para o 'Arquivo'.",
+        "Cancelou a subscrição de ${ count } listas de correio e moveu as respetivas mensagens para o 'Arquivo'."
       ],
       "Unsubscribed from ${ count } mailing list.": [
         "Cancelou a subscrição de ${ count } lista de correio.",
@@ -15814,6 +15872,9 @@
       ],
       "You have successfully canceled your subscription.": [
         "A sua subscrição foi cancelada."
+      ],
+      "\"${ name }\" saved to ${ DRIVE_APP_NAME }": [
+        "\"${ name }\" guardado em ${ DRIVE_APP_NAME }"
       ]
     },
     "Success notification": {
@@ -16328,7 +16389,7 @@
         "Descubra os benefícios da sua subscrição"
       ],
       "Distraction-free emailing": [
-        "Uma caixa de entrada de e-mail sem distrações"
+        "E-mails sem distrações"
       ],
       "Don't give spam a chance": [
         "Não dê oportunidade ao spam"
@@ -17553,6 +17614,9 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "O seu período experimental termina em ${ textDate }. Não lhe será cobrado qualquer valor se cancelar antes de ${ textDate }. ${ action }"
+      ],
+      "The attachment's signature failed verification. You can still save it to ${ DRIVE_APP_NAME }, but it might have been tampered with.": [
+        "O anexo falhou a verificação da assinatura. Ainda pode guardá-lo no ${ DRIVE_APP_NAME }, mas pode ter sido adulterado."
       ]
     },
     "WeekDay": {
@@ -17822,6 +17886,88 @@
       ],
       "Passcode:": [
         "Código de acesso:"
+      ]
+    },
+    "lumo_2026: feature": {
+      "5x Plus usage": [
+        "5x mais utilização Plus"
+      ],
+      "API access, with ${ credit } a month credit": [
+        "Acesso à API, com um crédito de ${ credit } por mês"
+      ],
+      "API access, with ${ credit } a month credit per user": [
+        "Acesso à API, com um crédito de ${ credit } por mês por utilizador"
+      ],
+      "Everything in Basic, and:": [
+        "Tudo o que está incluído no plano Básico, e:"
+      ],
+      "Everything in Free, and:": [
+        "Tudo o que está incluído no plano Gratuito, e:"
+      ],
+      "Includes:": [
+        "Incluí:"
+      ],
+      "Limited messages and chat history": [
+        "Mensagens e histórico de conversas limitados"
+      ],
+      "Maximum image generation": [
+        "Geração de imagem máxima"
+      ],
+      "Maximum Skills and Projects": [
+        "Competências e Projetos Máximos"
+      ],
+      "More image generation": [
+        "Mais geração de imagem"
+      ],
+      "More usage": [
+        "Mais utilização"
+      ]
+    },
+    "Visionary upsell": {
+      "${ devicesPerUser } per user": [
+        "${ devicesPerUser } por utilizador"
+      ],
+      "10 years": [
+        "10 anos"
+      ],
+      "Calendars": [
+        "Calendários"
+      ],
+      "Custom email domains": [
+        "Domínios de ''e-mail'' personalizados"
+      ],
+      "Email addresses": [
+        "Endereços de correio electrónico"
+      ],
+      "Hide-my-email aliases": [
+        "Pseudónimos Hide-my-email"
+      ],
+      "New ${ BRAND_NAME } services at no extra cost": [
+        "Novos serviços de ${ BRAND_NAME } sem custos adicionais"
+      ],
+      "Password vaults": [
+        "Cofres de palavras-passe"
+      ],
+      "Previous versions": [
+        "Versões anteriores"
+      ],
+      "Storage": [
+        "Armazenamento"
+      ],
+      "Ultra servers, reserved for you": [
+        "Ultra servidores, reservados para si"
+      ],
+      "Unlimited": [
+        "Ilimitado"
+      ],
+      "Up to ${ limit }": [
+        "Até ${ limit }"
+      ],
+      "Users": [
+        "Utilizadores"
+      ],
+      "VPN devices at once": [
+        "Dispositivos VPN em simultâneo"
       ]
     }
   }

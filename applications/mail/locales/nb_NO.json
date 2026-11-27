@@ -1589,8 +1589,7 @@
         "Klarér"
       ],
       "Trust key": [
-        "Stol på nøkkel",
-        "Stol på nøkler"
+        "Stol på nøkkel"
       ],
       "Trust public key": [
         "Klarér offentlig nøkkel"
@@ -5719,6 +5718,15 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Søket samsvarte med for mange resultater. Begrens søket, og prøv på nytt."
+      ],
+      "Couldn't save the attachment to ${ DRIVE_APP_NAME }. Try again.": [
+        "Kunne ikke lagre vedlegget i ${ DRIVE_APP_NAME }. Prøv igjen."
+      ],
+      "Not enough ${ DRIVE_SHORT_APP_NAME } storage to save this attachment. Free up space in ${ DRIVE_SHORT_APP_NAME } and try again.": [
+        "Ikke nok ${ DRIVE_SHORT_APP_NAME }-lagringsplass til å lagre dette vedlegget. Frigjør plass i ${ DRIVE_SHORT_APP_NAME } og prøv igjen."
+      ],
+      "Not enough ${ DRIVE_SHORT_APP_NAME } storage to save this attachment. Free up space in ${ DRIVE_SHORT_APP_NAME } or contact your administrator to get more storage.": [
+        "Ikke nok ${ DRIVE_SHORT_APP_NAME }-lagringsplass til å lagre dette vedlegget. Frigjør plass i ${ DRIVE_SHORT_APP_NAME } eller kontakt administratoren din for å få mer lagringsplass."
       ]
     },
     "error": {
@@ -8219,7 +8227,8 @@
         "Initialiserer…"
       ],
       "Insert image": [
-        "Sett inn bilde"
+        "Sett inn bilde",
+        "Sett inn bilder"
       ],
       "Insert link": [
         "Sett inn kobling"
@@ -10066,6 +10075,12 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Du er bare noen få klikk unna en ryddig innboks"
+      ],
+      "Do you want to save this attachment anyway?": [
+        "Vil du lagre dette vedlegget allikevel?"
+      ],
+      "Press ${ shortcut } to keep ${ MAIL_APP_NAME } one click away.": [
+        "Trykk ${ shortcut } for å ha ${ MAIL_APP_NAME } bare ett klikk unna."
       ]
     },
     "info": {
@@ -13489,6 +13504,36 @@
       ],
       "Your domain and subscription are ready to use.": [
         "Domenet og abonnementet ditt er klart til bruk."
+      ],
+      "Another private email service (e.g. Tuta)": [
+        "En annen privat e-posttjeneste (f.eks. Tuta)"
+      ],
+      "I don't want to use Big Tech anymore": [
+        "Jeg vil ikke bruke Big Tech lenger"
+      ],
+      "I need a new email address": [
+        "Jeg trenger en ny e-postadresse"
+      ],
+      "I use other Proton apps, or want them all in one place": [
+        "Jeg bruker andre Proton-apper, eller vil ha dem alle på ett sted"
+      ],
+      "I want an inbox without ads or spam": [
+        "Jeg vil ha en innboks uten annonser eller spam"
+      ],
+      "I want my emails private and secure": [
+        "Jeg vil ha e-postene mine private og sikre"
+      ],
+      "None, this is my first email": [
+        "Ingen, dette er min første e-post"
+      ],
+      "Others (tell us)": [
+        "Annet (fortell oss)"
+      ],
+      "Outlook or Hotmail": [
+        "Outlook eller Hotmail"
+      ],
+      "Tell us in a few words": [
+        "Fortell oss med noen få ord"
       ]
     },
     "Onboarding Proton": {
@@ -16221,6 +16266,9 @@
       ],
       "You have successfully canceled your subscription.": [
         "Du har sagt opp abonnementet."
+      ],
+      "\"${ name }\" saved to ${ DRIVE_APP_NAME }": [
+        "\"${ name }\" lagret i ${ DRIVE_APP_NAME }"
       ]
     },
     "Success notification": {
@@ -17553,6 +17601,9 @@
       ],
       "Your shorter address is now ready": [
         "Den kortere adressen din er nå klar"
+      ],
+      "Bookmark your shortcut to privacy": [
+        "Bokmerk snarveien til personvern"
       ]
     },
     "Title header for keys table": {
@@ -17978,6 +18029,9 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "Prøveperioden avsluttes ${ textDate }. Du blir ikke belastet hvis du avbryter før ${ textDate }. ${ action }"
+      ],
+      "The attachment's signature failed verification. You can still save it to ${ DRIVE_APP_NAME }, but it might have been tampered with.": [
+        "Signaturen til vedlegget kunne ikke verifiseres. Du kan likevel lagre det i ${ DRIVE_APP_NAME }, men det kan ha blitt tuklet med."
       ]
     },
     "WeekDay": {

@@ -5758,6 +5758,15 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "La tua ricerca ha restituito troppi risultati. Limita la ricerca e riprova."
+      ],
+      "Couldn't save the attachment to ${ DRIVE_APP_NAME }. Try again.": [
+        "Impossibile salvare l'allegato in ${ DRIVE_APP_NAME }. Riprova."
+      ],
+      "Not enough ${ DRIVE_SHORT_APP_NAME } storage to save this attachment. Free up space in ${ DRIVE_SHORT_APP_NAME } and try again.": [
+        "Spazio insufficiente in ${ DRIVE_SHORT_APP_NAME } per salvare questo allegato. Libera spazio in ${ DRIVE_SHORT_APP_NAME } e riprova."
+      ],
+      "Not enough ${ DRIVE_SHORT_APP_NAME } storage to save this attachment. Free up space in ${ DRIVE_SHORT_APP_NAME } or contact your administrator to get more storage.": [
+        "Spazio insufficiente in ${ DRIVE_SHORT_APP_NAME } per salvare questo allegato. Libera spazio in ${ DRIVE_SHORT_APP_NAME } o contatta l'amministratore per ottenere più spazio di archiviazione."
       ]
     },
     "error": {
@@ -8267,7 +8276,8 @@
         "Inizializzazione…"
       ],
       "Insert image": [
-        "Inserisci immagine"
+        "Inserisci immagine",
+        "Inserisci immagini"
       ],
       "Insert link": [
         "Inserisci link"
@@ -10123,6 +10133,12 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Sei a pochi clic da una posta in arrivo organizzata"
+      ],
+      "Do you want to save this attachment anyway?": [
+        "Desideri comunque salvare questo allegato?"
+      ],
+      "Press ${ shortcut } to keep ${ MAIL_APP_NAME } one click away.": [
+        "Premi ${ shortcut } per tenere ${ MAIL_APP_NAME } a portata di clic."
       ]
     },
     "info": {
@@ -13625,6 +13641,36 @@
       ],
       "Your domain and subscription are ready to use.": [
         "Il tuo dominio e il tuo abbonamento sono pronti per essere usati."
+      ],
+      "Another private email service (e.g. Tuta)": [
+        "Un altro servizio email privato (ad es. Tuta)"
+      ],
+      "I don't want to use Big Tech anymore": [
+        "Non voglio più affidarmi alle Big Tech"
+      ],
+      "I need a new email address": [
+        "Ho bisogno di un nuovo indirizzo email"
+      ],
+      "I use other Proton apps, or want them all in one place": [
+        "Utilizzo altre app di Proton o le voglio tutte in un unico posto"
+      ],
+      "I want an inbox without ads or spam": [
+        "Voglio una casella di posta senza pubblicità né spam"
+      ],
+      "I want my emails private and secure": [
+        "Voglio le mie email private e sicure"
+      ],
+      "None, this is my first email": [
+        "Nessuna, questa è la mia prima email"
+      ],
+      "Others (tell us)": [
+        "Altro (spiegacelo)"
+      ],
+      "Outlook or Hotmail": [
+        "Outlook o Hotmail"
+      ],
+      "Tell us in a few words": [
+        "Raccontacelo in poche parole"
       ]
     },
     "Onboarding Proton": {
@@ -16357,6 +16403,9 @@
       ],
       "You have successfully canceled your subscription.": [
         "Hai annullato l'abbonamento con successo."
+      ],
+      "\"${ name }\" saved to ${ DRIVE_APP_NAME }": [
+        "\"${ name }\" salvato in ${ DRIVE_APP_NAME }"
       ]
     },
     "Success notification": {
@@ -17689,6 +17738,9 @@
       ],
       "Your shorter address is now ready": [
         "Il tuo indirizzo breve ora è pronto"
+      ],
+      "Bookmark your shortcut to privacy": [
+        "Aggiungi ai segnalibri la tua scorciatoia per la privacy"
       ]
     },
     "Title header for keys table": {
@@ -18179,6 +18231,9 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "La tua prova finirà il ${ textDate }. Non ti verrà addebitato alcun costo se annulli prima del ${ textDate }. ${ action }"
+      ],
+      "The attachment's signature failed verification. You can still save it to ${ DRIVE_APP_NAME }, but it might have been tampered with.": [
+        "La verifica della firma dell'allegato non è andata a buon fine. È comunque possibile salvarlo in ${ DRIVE_APP_NAME }, ma potrebbe essere stato manomesso."
       ]
     },
     "WeekDay": {

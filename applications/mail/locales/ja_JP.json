@@ -1781,6 +1781,9 @@
       ],
       "Zoom out": [
         "縮小"
+      ],
+      "Open Mailing lists": [
+        "メーリングリストを開く"
       ]
     },
     "action": {
@@ -8029,7 +8032,7 @@
         "初期化中…"
       ],
       "Insert image": [
-        "画像の挿入"
+        "画像を挿入"
       ],
       "Insert link": [
         "リンクを挿入"
@@ -9785,6 +9788,15 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "不要なものが整理された受信トレイまで、あと数クリックです。"
+      ],
+      "Press ${ shortcut } to keep ${ MAIL_APP_NAME } one click away.": [
+        "${ shortcut }を押すと${ MAIL_APP_NAME } をワンクリックで開けます。"
+      ],
+      "We've added the newsletters from your Gmail import to Mailing lists, grouped by sender. Read, keep or stop them in one place.": [
+        "Gmailからインポートしたニュースレターを、送信者ごとにまとめてメーリングリストに追加しました。ニュースレターの閲覧、受信の継続、配信の停止を1か所で行えます。"
+      ],
+      "Your Gmail newsletters are now grouped by sender, away from your personal mail. Read, keep or stop them in one place.": [
+        "Gmailのニュースレターは、個人のメールとは別に、送信者ごとにまとめられました。ニュースレターの閲覧、受信の継続、配信の停止を1か所で行えます。"
       ]
     },
     "info": {
@@ -17087,6 +17099,15 @@
       ],
       "Your shorter address is now ready": [
         "短いアドレスの準備ができました"
+      ],
+      "Bookmark your shortcut to privacy": [
+        "プライバシーへのショートカットをブックマーク"
+      ],
+      "Meet Mailing lists": [
+        "メーリングリストのご紹介"
+      ],
+      "Your Gmail newsletters are here": [
+        "Gmailのニュースレターを取り込みました"
       ]
     },
     "Title header for keys table": {

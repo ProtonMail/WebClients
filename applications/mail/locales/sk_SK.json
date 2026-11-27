@@ -1817,6 +1817,12 @@
       ],
       "Zoom out": [
         "Oddialiť"
+      ],
+      "Open Mailing lists": [
+        "Otvoriť Distribučné zoznamy"
+      ],
+      "Trust key": [
+        "Dôverovať kľúču"
       ]
     },
     "action": {
@@ -5851,6 +5857,15 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Vyhľadávanie našlo príliš veľa výsledkov. Upresnite hľadanie a skúste to prosím znova."
+      ],
+      "Couldn't save the attachment to ${ DRIVE_APP_NAME }. Try again.": [
+        "Prílohu sa nepodarilo uložiť do ${ DRIVE_APP_NAME }. Skúste to znova."
+      ],
+      "Not enough ${ DRIVE_SHORT_APP_NAME } storage to save this attachment. Free up space in ${ DRIVE_SHORT_APP_NAME } and try again.": [
+        "V ${ DRIVE_SHORT_APP_NAME } nie je dostatok miesta na uloženie tejto prílohy. Uvoľnite miesto v ${ DRIVE_SHORT_APP_NAME } a skúste to znova."
+      ],
+      "Not enough ${ DRIVE_SHORT_APP_NAME } storage to save this attachment. Free up space in ${ DRIVE_SHORT_APP_NAME } or contact your administrator to get more storage.": [
+        "V ${ DRIVE_SHORT_APP_NAME } nie je dostatok miesta na uloženie tejto prílohy. Uvoľnite miesto v ${ DRIVE_SHORT_APP_NAME } alebo požiadajte správcu o väčšie úložisko."
       ]
     },
     "error": {
@@ -8542,7 +8557,10 @@
         "Inicializácia…"
       ],
       "Insert image": [
-        "Vložiť obrázok"
+        "Vložiť obrázok",
+        "Vložiť obrázky",
+        "Vložiť obrázky",
+        "Vložiť obrázky"
       ],
       "Insert link": [
         "Vložiť odkaz"
@@ -10466,6 +10484,18 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Ste len pár kliknutí od prehľadnej doručenej pošty."
+      ],
+      "Do you want to save this attachment anyway?": [
+        "Chcete túto prílohu napriek tomu uložiť?"
+      ],
+      "Press ${ shortcut } to keep ${ MAIL_APP_NAME } one click away.": [
+        "Stlačte ${ shortcut } a majte ${ MAIL_APP_NAME } vždy na jedno kliknutie."
+      ],
+      "We've added the newsletters from your Gmail import to Mailing lists, grouped by sender. Read, keep or stop them in one place.": [
+        "Newslettery z vášho importu z Gmailu sme pridali do Distribučných zoznamov a zoskupili ich podľa odosielateľa. Na jednom mieste ich môžete čítať, ponechať si ich alebo zrušiť ich odber."
+      ],
+      "Your Gmail newsletters are now grouped by sender, away from your personal mail. Read, keep or stop them in one place.": [
+        "Vaše newslettery z Gmailu sú teraz zoskupené podľa odosielateľa, oddelene od vašej osobnej pošty. Na jednom mieste ich môžete čítať, ponechať si ich alebo zrušiť ich odber."
       ]
     },
     "info": {
@@ -14076,6 +14106,36 @@
       ],
       "Your domain and subscription are ready to use.": [
         "Vaša doména a predplatné sú pripravené na používanie."
+      ],
+      "Another private email service (e.g. Tuta)": [
+        "Iná súkromná emailová služba (napr. Tuta)"
+      ],
+      "I don't want to use Big Tech anymore": [
+        "Už nechcem používať služby technologických gigantov"
+      ],
+      "I need a new email address": [
+        "Potrebujem novú emailovú adresu"
+      ],
+      "I use other Proton apps, or want them all in one place": [
+        "Používam iné aplikácie Proton alebo ich chcem mať všetky na jednom mieste"
+      ],
+      "I want an inbox without ads or spam": [
+        "Chcem schránku bez reklám a spamu"
+      ],
+      "I want my emails private and secure": [
+        "Chcem, aby boli moje emaily súkromné a zabezpečené"
+      ],
+      "None, this is my first email": [
+        "Žiadna, toto je môj prvý email"
+      ],
+      "Others (tell us)": [
+        "Iné (napíšte nám)"
+      ],
+      "Outlook or Hotmail": [
+        "Outlook alebo Hotmail"
+      ],
+      "Tell us in a few words": [
+        "Napíšte nám to v niekoľkých slovách"
       ]
     },
     "Onboarding Proton": {
@@ -16966,6 +17026,9 @@
       ],
       "You have successfully canceled your subscription.": [
         "Úspešne ste zrušili svoje predplatné."
+      ],
+      "\"${ name }\" saved to ${ DRIVE_APP_NAME }": [
+        "Súbor „${ name }“ bol uložený do ${ DRIVE_APP_NAME }"
       ]
     },
     "Success notification": {
@@ -18341,6 +18404,15 @@
       ],
       "Your shorter address is now ready": [
         "Vaša skrátená adresa je pripravená"
+      ],
+      "Bookmark your shortcut to privacy": [
+        "Uložte si svoju skratku k súkromiu do záložiek"
+      ],
+      "Meet Mailing lists": [
+        "Spoznajte Distribučné zoznamy"
+      ],
+      "Your Gmail newsletters are here": [
+        "Vaše newslettery z Gmailu sú tu"
       ]
     },
     "Title header for keys table": {
@@ -18861,6 +18933,9 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "Vaše skúšobné obdobie skončí dňa ${ textDate }. Ak ho zrušíte pred ${ textDate }, nebudú vám účtované žiadne poplatky. ${ action }"
+      ],
+      "The attachment's signature failed verification. You can still save it to ${ DRIVE_APP_NAME }, but it might have been tampered with.": [
+        "Overenie podpisu prílohy zlyhalo. Do ${ DRIVE_APP_NAME } ju môžete uložiť aj tak, ale mohla byť pozmenená."
       ]
     },
     "WeekDay": {

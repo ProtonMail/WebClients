@@ -1808,6 +1808,9 @@
       ],
       "Zoom out": [
         "Alejar"
+      ],
+      "Trust key": [
+        "Clave de confianza"
       ]
     },
     "action": {
@@ -8252,7 +8255,8 @@
         "Inicializando…"
       ],
       "Insert image": [
-        "Insertar imagen"
+        "Insertar una imagen",
+        "Insertar imágenes"
       ],
       "Insert link": [
         "Insertar enlace"
@@ -10101,6 +10105,9 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Estás a solo unos clics de tener una bandeja de entrada ordenada"
+      ],
+      "Do you want to save this attachment anyway?": [
+        "¿Quieres descargar este archivo adjunto de todos modos?"
       ]
     },
     "info": {
@@ -11843,6 +11850,9 @@
       ],
       "You need to reactivate your keys to see the updated invitation": [
         "Necesitas reactivar tus claves para ver la invitación actualizada."
+      ],
+      "Activate": [
+        "Activar"
       ]
     },
     "Link to calendar event": {
@@ -13227,6 +13237,10 @@
       ],
       "No emails in the last 30 days.": [
         "Sin emails en los últimos 30 días."
+      ],
+      "${ count } email in the last 30 days. Opened often.": [
+        "${ count } correo de los últimos 30 días. Abierto de vez en cuando.",
+        "${ count } correos de los últimos 30 días. Abiertos de vez en cuando."
       ]
     },
     "ngc_access_banner: action": {
@@ -13590,6 +13604,15 @@
       ],
       "Your domain and subscription are ready to use.": [
         "El dominio y la suscripción están listos para usar."
+      ],
+      "I need a new email address": [
+        "Necesito una nueva dirección de correo electrónico"
+      ],
+      "Others (tell us)": [
+        "Otro (indícanoslo)"
+      ],
+      "Outlook or Hotmail": [
+        "Outlook u Hotmail"
       ]
     },
     "Onboarding Proton": {
@@ -16322,6 +16345,9 @@
       ],
       "You have successfully canceled your subscription.": [
         "La suscripción ha sido cancelada."
+      ],
+      "\"${ name }\" saved to ${ DRIVE_APP_NAME }": [
+        "\"Guardar ${ name } en ${ DRIVE_APP_NAME }"
       ]
     },
     "Success notification": {
@@ -18120,6 +18146,9 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "Tu prueba terminará el ${ textDate }. No se te cobrará si cancelas antes del ${ textDate }. ${ action }"
+      ],
+      "The attachment's signature failed verification. You can still save it to ${ DRIVE_APP_NAME }, but it might have been tampered with.": [
+        "No se ha podido verificar la firma del archivo adjunto.\nAun así puedes descargar este archivo adjunto ${ DRIVE_APP_NAME }, pero podría haber sido manipulado."
       ]
     },
     "WeekDay": {

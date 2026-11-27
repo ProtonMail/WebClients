@@ -1583,8 +1583,7 @@
         "Faire confiance"
       ],
       "Trust key": [
-        "Clé de confiance",
-        "Clés de confiance"
+        "Faire confiance à cette clef"
       ],
       "Trust public key": [
         "Approuver la clé publique"
@@ -1790,6 +1789,13 @@
       ],
       "Zoom out": [
         "Zoom arrière"
+      ],
+      "Open Mailing lists": [
+        "Ouvrir les listes de diffusion"
+      ],
+      "Unsubscribe from ${ selectedCount }": [
+        "Se désabonner de ${ selectedCount }",
+        "Se désabonner de ${ selectedCount }"
       ]
     },
     "action": {
@@ -5683,6 +5689,24 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Votre recherche a donné trop de résultats. Nous vous invitons à limiter votre recherche et à réessayer."
+      ],
+      "Cannot move item without a valid name, please rename the item first": [
+        "Impossible de déplacer un élément dont le nom n'est pas valable. Vous devez d'abord le renommer."
+      ],
+      "Couldn't save the attachment to ${ DRIVE_APP_NAME }. Try again.": [
+        "Nous n'avons pas pu enregistrer la pièce jointe dans ${ DRIVE_APP_NAME }. Essayez à nouveau."
+      ],
+      "Move operation aborted": [
+        "L'opération de déplacement a été interrompue"
+      ],
+      "Not enough ${ DRIVE_SHORT_APP_NAME } storage to save this attachment. Free up space in ${ DRIVE_SHORT_APP_NAME } and try again.": [
+        "Vous ne disposez pas d'assez d'espace de stockage ${ DRIVE_SHORT_APP_NAME } pour enregistrer cette pièce jointe. Libérez de l'espace dans ${ DRIVE_SHORT_APP_NAME } puis essayez à nouveau."
+      ],
+      "Not enough ${ DRIVE_SHORT_APP_NAME } storage to save this attachment. Free up space in ${ DRIVE_SHORT_APP_NAME } or contact your administrator to get more storage.": [
+        "Vous ne disposez pas de suffisamment d'espace de stockage ${ DRIVE_SHORT_APP_NAME } pour enregistrer cette pièce jointe. Libérez de l'espace dans ${ DRIVE_SHORT_APP_NAME } ou contactez votre administrateur pour obtenir plus d'espace de stockage."
+      ],
+      "You can only upload a new version to a file": [
+        "Vous ne pouvez mettre à jour un fichier qu'avec une nouvelle version"
       ]
     },
     "error": {
@@ -6999,8 +7023,8 @@
         "${ elementsCount } conversations ne seront plus labellisées de :"
       ],
       "${ elementsCount } message will be labelled as:": [
-        "${ elementsCount } message sera labellisé",
-        "${ elementsCount } messages seront labellisés"
+        "${ elementsCount } message sera labellisé :",
+        "${ elementsCount } messages seront labellisés :"
       ],
       "${ elementsCount } message will be marked as read.": [
         "${ elementsCount } message sera marqué comme lu.",
@@ -8173,7 +8197,8 @@
         "Initialisation…"
       ],
       "Insert image": [
-        "Insérer une image"
+        "Insérer une image",
+        "Insérer des images"
       ],
       "Insert link": [
         "Insérer un lien"
@@ -9161,8 +9186,8 @@
         "L'expéditeur a demandé une confirmation de lecture."
       ],
       "The verification of ${ contactNames } has failed: the contact is not signed correctly.\nThis may be the result of a password reset.\nYou must re-sign the contact in order to send a message to ${ contactAddresses } or edit the contact.": [
-        "${ contactNames } n'a pas pu être vérifié : le contact n'est pas correctement signé.\nCela peut être dû à une réinitialisation du mot de passe.\nVous devez à nouveau signer le contact pour pouvoir envoyer un message à ${ contactAddresses } ou le modifier.",
-        "${ contactNames } n'a pas pu être vérifié : les contacts ne sont pas correctement signés.\nCela peut être dû à une réinitialisation du mot de passe.\nVous devez à nouveau signer les contacts pour pouvoir envoyer un message à ${ contactAddresses } ou les modifier."
+        "La vérification de ${ contactNames } a échoué : le contact n'est pas correctement signé.\nCeci pourrait résulter d'une réinitialisation du mot de passe.\nVous devez modifier ce contact ou le signer à nouveau afin de pouvoir envoyer un message à ${ contactAddresses }.",
+        "La vérification de ${ contactNames } a échoué : les contacts ne sont pas correctement signés.\nCeci pourrait résulter d'une réinitialisation du mot de passe.\nVous devez modifier ces contacts ou les signer à nouveau afin de pouvoir envoyer un message à ${ contactAddresses }."
       ],
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "Le processus de vérification ouvrira un nouvel onglet du navigateur. Désactivez tout bloqueur de fenêtres pop-up actif."
@@ -9268,8 +9293,8 @@
         "Ce message sera automatiquement supprimé le ${ value }."
       ],
       "This message will be marked as spam. Would you also like to unsubscribe from future emails?": [
-        "Ce message sera considéré indésirable. Voulez-vous aussi vous désabonner des prochains messages ?",
-        "Ces messages seront considérés indésirables. Voulez-vous aussi vous désabonner des prochains messages ?"
+        "Ce message sera marqué comme indésirable/spam. Souhaitez-vous également vous désabonner afin de ne plus recevoir de messages ?",
+        "Ces messages seront marqués comme indésirables/spams. Souhaitez-vous également vous désabonner afin de ne plus recevoir de messages ?"
       ],
       "This message will be moved to Drafts so you can edit it. You'll need to reschedule when it will be sent.": [
         "Ce message sera déplacé dans le dossier Brouillons pour que vous puissiez le modifier. Vous devrez reprogrammer la date et l'heure d'envoi."
@@ -10000,6 +10025,42 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Plus que quelques clics pour une boite de réception bien rangée"
+      ],
+      "Activate ${ MAIL_APP_NAME } to start receiving emails at ${ count } of your domains.": [
+        "Activez ${ MAIL_APP_NAME } pour commencer à recevoir des e-mails sur ${ count } de vos domaines.",
+        "Activez ${ MAIL_APP_NAME } pour commencer à recevoir des e-mails sur ${ count } de vos domaines."
+      ],
+      "Activate ${ MAIL_APP_NAME } to start receiving emails at ${ domainName }. ${ activateLink }": [
+        "Activez ${ MAIL_APP_NAME } pour commencer à recevoir des messages dans ${ domainName }. ${ activateLink }"
+      ],
+      "Based only on which emails you've opened.": [
+        "Basé seulement sur les messages que vous avez ouverts"
+      ],
+      "Do you want to save this attachment anyway?": [
+        "Souhaitez-vous tout de même enregistrer cette pièce jointe ?"
+      ],
+      "Move their past emails to Archive. You can still search them.": [
+        "Les anciens messages ont été déplacés dans l'Archive. Vous pouvez toujours y faire des recherches."
+      ],
+      "Press ${ shortcut } to keep ${ MAIL_APP_NAME } one click away.": [
+        "Appuyez sur ${ shortcut } pour ouvrir ${ MAIL_APP_NAME } en un clic"
+      ],
+      "We brought over ${ count } newsletter and grouped them by sender. See how often each one emails you, then keep, move or unsubscribe with a click.": [
+        "Nous avons importé ${ count } newsletter et l'avons groupée par émetteur. Observez à quelle fréquence elle vous contacte, puis décidez de la garder, de la déplacer ou de vous désabonner en un clic.",
+        "Nous avons importé ${ count } newsletters et les avons groupées par émetteur. Observez à quelle fréquence elles vous contactent, puis décidez pour chacune d'elles de la garder, de la déplacer ou de vous désabonner en un clic."
+      ],
+      "We've added the newsletters from your Gmail import to Mailing lists, grouped by sender. Read, keep or stop them in one place.": [
+        "Nous avons ajouté les newsletters de votre importation Gmail dans les listes de diffusion, regroupées par émetteur. Lisez-les, gardez-les ou stoppez-les depuis un seul endroit"
+      ],
+      "You won't receive emails at ${ count } of your domains until you activate ${ MAIL_APP_NAME }. You can do this anytime in Settings > Domain names.": [
+        "Vous ne recevrez plus d'e-mails sur ${ count } de vos domaines jusqu'à ce que vous activiez ${ MAIL_APP_NAME }.\nVous pouvez le faire à tout moment dans Paramètres > Noms de domaine",
+        "Vous ne recevrez plus d'e-mails sur ${ count } de vos domaines jusqu'à ce que vous activiez ${ MAIL_APP_NAME }.\nVous pouvez le faire à tout moment dans Paramètres > Noms de domaine"
+      ],
+      "You won't receive emails at ${ domainName } until you activate ${ MAIL_APP_NAME }. You can do this anytime in Settings > Domain names.": [
+        "Vous ne recevrez pas de messages sur ${ domainName } tant que vous n'activez pas ${ MAIL_APP_NAME }. Vous pouvez le faire à tout moment via Paramètres > Noms de domaine"
+      ],
+      "Your Gmail newsletters are now grouped by sender, away from your personal mail. Read, keep or stop them in one place.": [
+        "Vos newsletters Gmail sont maintenant regroupées par émetteur, à part de vos courriers personnels. Lisez-les, gardez-les ou stoppez-les depuis un seul endroit"
       ]
     },
     "info": {
@@ -13057,6 +13118,18 @@
     "Newsletter sender stats": {
       "No emails in the last 30 days.": [
         "Aucuns messages au cours des 30 derniers jours."
+      ],
+      "${ count } email in the last 30 days. Not opened.": [
+        "${ count } e-mail les 30 derniers jours. Pas ouvert.",
+        "${ count } e-mails les 30 derniers jours. Pas ouverts."
+      ],
+      "${ count } email in the last 30 days. Opened often.": [
+        "${ count } e-mail les 30 derniers jours. Souvent ouvert.",
+        "${ count } e-mails les 30 derniers jours. Souvent ouverts."
+      ],
+      "${ count } email in the last 30 days. Opened sometimes.": [
+        "${ count } e-mail les 30 derniers jours. Parfois ouvert.",
+        "${ count } e-mails les 30 derniers jours. Parfois ouverts."
       ]
     },
     "ngc_access_banner: action": {
@@ -13420,6 +13493,36 @@
       ],
       "Your domain and subscription are ready to use.": [
         "Votre domaine et votre abonnement sont prêts à être utilisés."
+      ],
+      "Another private email service (e.g. Tuta)": [
+        "Un autre fournisseur de boite mail privée (ex : Tuta)"
+      ],
+      "I don't want to use Big Tech anymore": [
+        "Je ne souhaite plus utiliser les géants de la tech."
+      ],
+      "I need a new email address": [
+        "J'ai besoin d'une nouvelle adresse e-mail."
+      ],
+      "I use other Proton apps, or want them all in one place": [
+        "J'utilise d'autres applications Proton ou souhaite les regrouper toutes au même endroit."
+      ],
+      "I want an inbox without ads or spam": [
+        "Je souhaite une boîte de réception sans publicités ni indésirables/spams."
+      ],
+      "I want my emails private and secure": [
+        "Je souhaite que mes e-mails restent privés et sécurisés."
+      ],
+      "None, this is my first email": [
+        "Aucune, il s'agit de ma première adresse e-mail."
+      ],
+      "Others (tell us)": [
+        "Autre (dites-nous)"
+      ],
+      "Outlook or Hotmail": [
+        "Outlook ou Hotmail"
+      ],
+      "Tell us in a few words": [
+        "Expliquez-nous en quelques mots."
       ]
     },
     "Onboarding Proton": {
@@ -16152,6 +16255,9 @@
       ],
       "You have successfully canceled your subscription.": [
         "Vous avez résilié votre abonnement."
+      ],
+      "\"${ name }\" saved to ${ DRIVE_APP_NAME }": [
+        "\"${ name }\" enregistré dans ${ DRIVE_APP_NAME }"
       ]
     },
     "Success notification": {
@@ -17481,6 +17587,15 @@
       ],
       "Your shorter address is now ready": [
         "Votre adresse au format plus court est maintenant prête."
+      ],
+      "Bookmark your shortcut to privacy": [
+        "Ajoutez votre raccourci à vos favoris pour plus de confidentialité"
+      ],
+      "Meet Mailing lists": [
+        "Découvrez les listes de diffusion"
+      ],
+      "Your Gmail newsletters are here": [
+        "Vos newsletters Gmail sont ici"
       ]
     },
     "Title header for keys table": {
@@ -17903,7 +18018,7 @@
         "Certains contacts à fusionner affichent des erreurs. Nous vous invitons à les examiner individuellement."
       ],
       "The attachment's signature failed verification.\nYou can still download this attachment but it might have been tampered with.": [
-        "La signature de la pièce jointe n'a pas pu être vérifiée. \nVous pouvez toujours la télécharger, mais elle a peut-être été falsifiée.",
+        "La signature de la pièce jointe n'a pas pu être vérifiée. \nVous pouvez toujours la télécharger, mais elle pourrait avoir été falsifiée.",
         "Les signatures de certaines pièces jointes n'ont pas pu être vérifiées. \nVous pouvez toujours les télécharger, mais elles pourraient avoir été falsifiées."
       ],
       "The contact data is corrupted and cannot be displayed.": [
@@ -17941,6 +18056,9 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "Votre version d'essai se terminera le ${ textDate }. Vous ne serez pas facturé si vous annulez avant le ${ textDate }. ${ action }"
+      ],
+      "The attachment's signature failed verification. You can still save it to ${ DRIVE_APP_NAME }, but it might have been tampered with.": [
+        "La vérification de la signature de la pièce jointe a échoué. Vous pouvez toujours l'enregistrer dans ${ DRIVE_APP_NAME }, mais elle pourrait avoir été falsifiée."
       ]
     },
     "WeekDay": {
