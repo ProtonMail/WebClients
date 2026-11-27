@@ -13,8 +13,11 @@ import { IcBrandPaypal } from '@proton/icons/icons/IcBrandPaypal';
 import { IcBrandVisa } from '@proton/icons/icons/IcBrandVisa';
 import { IcCreditCard } from '@proton/icons/icons/IcCreditCard';
 import { IcMoneyBills } from '@proton/icons/icons/IcMoneyBills';
-import { PAYMENT_METHOD_TYPES } from '@proton/payments/core/constants';
+import { getOptimisticCheckResult } from '@proton/payments/core/checkout';
+import { CYCLE, PAYMENT_METHOD_TYPES, PLANS } from '@proton/payments/core/constants';
 import type { SavedPaymentMethod } from '@proton/payments/core/interface';
+import { buildSubscription } from '@proton/payments/testing/buildSubscription';
+import { PLANS_MAP } from '@proton/payments/testing/data-plans';
 
 import type { ViewPaymentMethod } from '../../client-extensions/useMethods';
 import { PaymentsNoApi, type Props } from './Payment';
@@ -588,6 +591,38 @@ describe('Payment', () => {
             renderPayments({ method: PAYMENT_METHOD_TYPES.CHARGEBEE_BITCOIN, user: { Billed: 1 } as any });
             expect(screen.getByText(/you will not be able to modify or cancel your subscription/)).toBeInTheDocument();
             expect(screen.queryByTestId('bitcoin')).not.toBeInTheDocument();
+        });
+
+        describe('trial without a saved payment method', () => {
+            const renderTrialCheckout = (plan: PLANS, amount: number) =>
+                renderPayments({
+                    method: PAYMENT_METHOD_TYPES.CHARGEBEE_CARD,
+                    amount,
+                    savedPaymentMethods: [],
+                    subscription: buildSubscription(PLANS.PASS_BUSINESS, { IsTrial: true }),
+                    checkResult: getOptimisticCheckResult({
+                        planIDs: { [plan]: 1 },
+                        plansMap: PLANS_MAP,
+                        cycle: CYCLE.MONTHLY,
+                        currency: 'EUR',
+                    }),
+                });
+
+            it('does not ask for a payment method when switching to Pass Basic for free', () => {
+                renderTrialCheckout(PLANS.PASS_BASIC, 0);
+                expect(screen.queryByTestId('chargebee-credit-card-wrapper')).not.toBeInTheDocument();
+                expect(screen.getByText('No payment is required.')).toBeInTheDocument();
+            });
+
+            it('asks for a payment method when Pass Basic has an amount due', () => {
+                renderTrialCheckout(PLANS.PASS_BASIC, 1000);
+                expect(screen.getByTestId('chargebee-credit-card-wrapper')).toBeInTheDocument();
+            });
+
+            it('asks for a payment method when switching to another plan for free', () => {
+                renderTrialCheckout(PLANS.PASS, 0);
+                expect(screen.getByTestId('chargebee-credit-card-wrapper')).toBeInTheDocument();
+            });
         });
     });
 });
