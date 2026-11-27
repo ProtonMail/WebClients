@@ -42,6 +42,25 @@ describe('useLeaveWarning', () => {
     expect(leave().prevented).toBe(true)
   })
 
+  test('warns while comment changes wait for the connection, the edits synced or not', () => {
+    const fake = createFakeSession({ delivery: 'synced' })
+    renderHook(() => useLeaveWarning(fake.session))
+
+    fake.setComments({ waitingChanges: 2 })
+    expect(leave().prevented).toBe(true)
+
+    fake.setComments({ waitingChanges: 0 })
+    expect(leave().prevented).toBe(false)
+  })
+
+  test('a session without comments warns for its edits only', () => {
+    const fake = createFakeSession({ delivery: 'synced' })
+    Object.assign(fake.mocks, { comments: undefined })
+    renderHook(() => useLeaveWarning(fake.session))
+
+    expect(leave().prevented).toBe(false)
+  })
+
   test('warns nothing without a session', () => {
     renderHook(() => useLeaveWarning(undefined))
 

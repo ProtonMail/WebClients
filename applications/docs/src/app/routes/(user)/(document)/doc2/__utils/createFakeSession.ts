@@ -95,7 +95,7 @@ export function createFakeSession(
 function createFakeComments() {
   const listeners = new Set<(snapshot: CommentsSnapshot) => void>()
   const markListeners = new Set<(change: CommentsEvents['markChange']) => void>()
-  let current: CommentsSnapshot = { threads: [], hasUnread: false, typers: {} }
+  let current: CommentsSnapshot = { threads: [], hasUnread: false, typers: {}, waitingChanges: 0 }
 
   const comments = {
     getSnapshot: () => current,
@@ -118,6 +118,12 @@ function createFakeComments() {
     deleteThread: vi.fn(async (_threadId: string) => {}),
     resolveThread: vi.fn(async (_threadId: string) => {}),
     unresolveThread: vi.fn(async (_threadId: string) => {}),
+    createSuggestionThread: vi.fn(async ({ markId }: { markId: string; summary: string }) =>
+      fakeThread({ id: 'suggestion-thread-1', markId, type: 'suggestion' }),
+    ),
+    acceptSuggestion: vi.fn(async (_threadId: string, _summary: string) => {}),
+    rejectSuggestion: vi.fn(async (_threadId: string, _summary?: string) => {}),
+    reopenSuggestion: vi.fn(async (_threadId: string) => {}),
     markThreadAsRead: vi.fn((_threadId: string) => {}),
     setTyping: vi.fn((_threadId: string, _typing: boolean) => {}),
   }
