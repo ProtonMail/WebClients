@@ -2340,8 +2340,8 @@ importers:
         specifier: catalog:docs
         version: 0.42.0(patch_hash=2491feb92703d0e67158c68b38a1ccaa8a13d8705373751897bc07586a613e7f)(yjs@13.6.27)
       '@proton-docs/docs-editor':
-        specifier: 0.17.0
-        version: 0.17.0(9a87f5771d2fc892e4a5d3b4cfd205cd)
+        specifier: 0.17.1
+        version: 0.17.1(9a87f5771d2fc892e4a5d3b4cfd205cd)
       '@proton-docs/sheets-editor':
         specifier: 0.4.5
         version: 0.4.5(@types/react@18.3.31)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(use-sync-external-store@1.6.0(react@18.3.1))(y-protocols@1.0.6(yjs@13.6.27))(yjs@13.6.27)
@@ -17769,8 +17769,8 @@ packages:
   '@protobufjs/utf8@1.1.1':
     resolution: {integrity: sha512-oOAWABowe8EAbMyWKM0tYDKi8Yaox52D+HWZhAIJqQXbqe0xI/GV7FhLWqlEKreMkfDjshR5FKgi3mnle0h6Eg==}
 
-  '@proton-docs/docs-editor@0.17.0':
-    resolution: {integrity: sha256-CipUqtTp+sx1suH/K/bqwobFaNzpfGcpVlsR0hJAjCw=}
+  '@proton-docs/docs-editor@0.17.1':
+    resolution: {integrity: sha256-5hQdN35S4jdB+/0kJ3qBWUE8RRoPuBh0IyPGCFDzqvs=}
     peerDependencies:
       '@lexical/clipboard': 0.42.0
       '@lexical/code': 0.42.0
@@ -34563,7 +34563,7 @@ snapshots:
 
   '@protobufjs/utf8@1.1.1': {}
 
-  '@proton-docs/docs-editor@0.17.0(9a87f5771d2fc892e4a5d3b4cfd205cd)':
+  '@proton-docs/docs-editor@0.17.1(9a87f5771d2fc892e4a5d3b4cfd205cd)':
     dependencies:
       '@ariakit/react': 0.4.29(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@emoji-mart/data': 1.2.1
