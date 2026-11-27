@@ -3,7 +3,6 @@ import { logger } from '@protontech/logger';
 import { ALL_CONSOLE_LEVELS } from '@protontech/logger/constants';
 import { createBrowserHistory } from 'history';
 
-import { registerSessionListener } from '@proton/account/accountSessions/registerSessionListener';
 import { readAccountSessions } from '@proton/account/accountSessions/storage';
 import { addressesThunk } from '@proton/account/addresses';
 import * as bootstrap from '@proton/account/bootstrap';
@@ -521,8 +520,6 @@ export const bootstrapGuestApp = async (
         }
         return false;
     });
-
-    registerSessionListener({ type: 'all' });
 
     await assertNoSessions(api);
 
