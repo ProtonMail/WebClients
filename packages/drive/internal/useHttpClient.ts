@@ -86,6 +86,8 @@ export function useHttpClient(defaultHeaders: [string, string][] = []): ProtonDr
             body: options.body,
             signal: options.signal,
             credentials: 'omit',
+            // All blocks share one URL, so the HTTP cache would download them one at a time.
+            cache: 'no-store',
         });
         return callWithTimeout(fetch(request))
             .then((response) => {
