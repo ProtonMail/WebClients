@@ -38,18 +38,21 @@ export const useDocsBookmarks = ({ token, urlPassword, customPassword, user }: P
     }
 
     const abortController = new AbortController()
-    void withLoading(
+    const loadBookmarks = async () => {
+      let loaded: Set<string>
+      try {
+        loaded = await loadBookmarkTokens(abortController.signal)
+      } catch (error) {
+        if (!abortController.signal.aborted) {
+          traceErrorSDK(error, 'DocsDriveCompatSDK')
+          createNotification({ type: 'error', text: c('Notification').t`Failed to load saved items` })
+        }
+        return
+      }
       // Merged, so a bookmark added while the list loads isn't dropped by it
-      loadBookmarkTokens(abortController.signal).then(
-        (loaded) => setBookmarksTokens((prevState) => new Set([...prevState, ...loaded])),
-        (error) => {
-          if (!abortController.signal.aborted) {
-            traceErrorSDK(error, 'DocsDriveCompatSDK')
-            createNotification({ type: 'error', text: c('Notification').t`Failed to load saved items` })
-          }
-        },
-      ),
-    )
+      setBookmarksTokens((prevState) => new Set([...prevState, ...loaded]))
+    }
+    void withLoading(loadBookmarks())
     return () => {
       abortController.abort()
     }

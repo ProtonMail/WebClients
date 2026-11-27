@@ -3,7 +3,7 @@ import { useCallback, useEffect, useState } from 'react'
 import { traceErrorSDK } from '@proton/docs-core/DriveSDK/traceErrorSDK'
 import type { NodeMeta, PublicNodeMeta } from '@proton/docs-shared/BasicTypes'
 import { isPrivateNodeMeta } from '@proton/docs-shared/NodeMetaHelpers'
-import { generateNodeUid, getDrive } from '@proton/drive/sdk'
+import { generateNodeUid, getDrive, type NodeEntity } from '@proton/drive/sdk'
 
 import { getIsSharedWithMe } from '~/drive-sdk/getIsSharedWithMe'
 
@@ -37,21 +37,22 @@ export function useDriveSharing(nodeMeta: NodeMeta | PublicNodeMeta | undefined)
       return
     }
     let isCurrent = true
-    getDrive()
-      .getNode(nodeUid)
-      .then(
-        (node) => {
-          if (isCurrent) {
-            setSharing({ isSharedDirectly: !!node.membership, isSharedWithMe: getIsSharedWithMe(node) })
-          }
-        },
-        (error) => {
-          traceErrorSDK(error, 'DocsDriveCompatSDK')
-          if (isCurrent) {
-            setFailed(true)
-          }
-        },
-      )
+    const loadSharing = async () => {
+      let node: NodeEntity
+      try {
+        node = await getDrive().getNode(nodeUid)
+      } catch (error) {
+        traceErrorSDK(error, 'DocsDriveCompatSDK')
+        if (isCurrent) {
+          setFailed(true)
+        }
+        return
+      }
+      if (isCurrent) {
+        setSharing({ isSharedDirectly: !!node.membership, isSharedWithMe: getIsSharedWithMe(node) })
+      }
+    }
+    void loadSharing()
     return () => {
       isCurrent = false
     }

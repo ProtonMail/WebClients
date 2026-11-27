@@ -95,9 +95,13 @@ export function usePublicLinkV2(providerType: ProviderType) {
       })
     }
 
-    getDrive()
-      .experimental.getURLAccessInfo(getPublicLinkParams().url)
-      .then(async ({ isCustomPasswordProtected, directAccess, vendorType: handshakeVendorType }) => {
+    const loadPublicLink = async () => {
+      try {
+        const {
+          isCustomPasswordProtected,
+          directAccess,
+          vendorType: handshakeVendorType,
+        } = await getDrive().experimental.getURLAccessInfo(getPublicLinkParams().url)
         setVendorType(handshakeVendorType)
         if (handshakeVendorType === PROTON_SHEET_VENDOR_TYPE) {
           // The public app on /sheet signs in, and takes the password from Drive's window: this page is about to go
@@ -116,9 +120,12 @@ export function usePublicLinkV2(providerType: ProviderType) {
           }
           askForPassword()
         }
-      })
-      // A failed root node load shows the error page, and `error` is the raw SDK error
-      .catch(handleError)
+      } catch (error) {
+        // A failed root node load shows the error page, and `error` is the raw SDK error
+        handleError(error as Error)
+      }
+    }
+    void loadPublicLink()
   }, [isAnonymousContext, submitPublicLinkPassword, handleError])
 
   // In case linkId is missing, an error page will be shown because `isError` and `error` will be truthy.
@@ -226,6 +233,10 @@ function isPermissionDeniedError(error: unknown) {
 /**
  * Errors from Drive SDK are missing stack trace from our app so we wrap it. Copied from
  * `packages/docs-core/lib/DriveSDK/traceErrorSDK.ts`, its `traceErrorSDK` and `reportPublicDriveError`.
+ *
+ * Call only from a `catch` block inside an `async` function that awaited the failing call.
+ * Never from `.then(_, onError)` or `.catch(callback)`: there V8 has no async caller,
+ * so the Docs call site is missing from the Sentry stack.
  */
 export function traceErrorSDK(error: any, feature: string) {
   // Wrapping hides error name from Sentry's ignoreErrors (e.g. AbortError), so filter before

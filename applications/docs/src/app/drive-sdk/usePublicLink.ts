@@ -83,9 +83,13 @@ export function usePublicLink(providerType: ProviderType) {
       })
     }
 
-    getDrive()
-      .experimental.getURLAccessInfo(getPublicLinkParams().url)
-      .then(async ({ isCustomPasswordProtected, directAccess, vendorType: handshakeVendorType }) => {
+    const loadPublicLink = async () => {
+      try {
+        const {
+          isCustomPasswordProtected,
+          directAccess,
+          vendorType: handshakeVendorType,
+        } = await getDrive().experimental.getURLAccessInfo(getPublicLinkParams().url)
         setVendorType(handshakeVendorType)
         if (isCustomPasswordProtected) {
           askForPassword()
@@ -100,10 +104,13 @@ export function usePublicLink(providerType: ProviderType) {
           }
           askForPassword()
         }
-      })
-      // Unlike legacy, a failed root node load shows the error page instead of loading forever,
-      // and `error` is the raw SDK error
-      .catch(handleError)
+      } catch (error) {
+        // Unlike legacy, a failed root node load shows the error page instead of loading forever,
+        // and `error` is the raw SDK error
+        handleError(error as Error)
+      }
+    }
+    void loadPublicLink()
   }, [isAnonymousContext, submitPublicLinkPassword, handleError])
 
   // In case linkId is missing, an error page will be shown because `isError` and `error` will be truthy.

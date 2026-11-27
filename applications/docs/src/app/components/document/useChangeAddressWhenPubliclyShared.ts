@@ -38,22 +38,23 @@ export function useChangeAddressWhenPubliclyShared(
 
       const { volumeId, nodeId } = documentState.getProperty('decryptedNode')
 
-      drive
-        .getSharingInfo(generateNodeUid(volumeId, nodeId))
-        .then((result) => {
+      const changeAddress = async () => {
+        try {
+          const result = await drive.getSharingInfo(generateNodeUid(volumeId, nodeId))
           if (result) {
             replaceAddress({ getLocalID, urlAccess: result.urlAccess, volumeId, nodeId, traceEnabled: true })
             changedAddress.current = true
           }
-        })
-        .catch((error) =>
+        } catch (error) {
           reportChangeAddressError(error, {
             volumeId,
             nodeId,
             userRole: documentState.getProperty('userRole').roleType,
             isPublicMode,
-          }),
-        )
+          })
+        }
+      }
+      void changeAddress()
     },
     [documentState, nodeMetaNotPrivate, drive, getLocalID, isPublicMode],
   )

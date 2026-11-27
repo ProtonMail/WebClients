@@ -4,6 +4,11 @@ import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors'
 import { getSentryError, SentryRealtimeInitiatives, traceError } from '@proton/shared/lib/helpers/sentry'
 
 // Errors from Drive SDK are missing stack trace from our app so we wrap it
+/**
+ * Call only from a `catch` block inside an `async` function that awaited the failing call.
+ * Never from `.then(_, onError)` or `.catch(callback)`: there V8 has no async caller,
+ * so the Docs call site is missing from the Sentry stack.
+ */
 export function traceErrorSDK(error: any, feature: string) {
   // Wrapping hides error name from Sentry's ignoreErrors (e.g. AbortError), so filter before
   if (!getSentryError(error) || error instanceof ValidationError) {
