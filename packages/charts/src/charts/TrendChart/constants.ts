@@ -38,3 +38,9 @@ export const SKELETON_SERIES: DataPoint[] = [32, 76, 28, 54, 35, 88, 41].map((va
 }));
 
 export const NO_LABEL = '';
+
+export const LATEST_POINT_RADIUS = 3;
+
+export const NO_LATEST_POINT = -1;
+
+export const READINGS_EITHER_SIDE_OF_A_GAP = 2;

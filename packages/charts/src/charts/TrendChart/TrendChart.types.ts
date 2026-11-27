@@ -4,7 +4,8 @@ export type { FillColor };
 
 export interface DataPoint {
     label: string;
-    value: number;
+    /** A missed reading is `null`: the line carries across it rather than dropping to zero. */
+    value: number | null;
 }
 
 export interface AxisTick {
@@ -18,6 +19,17 @@ interface TrendChartBaseProps {
     mode?: 'load' | 'view';
     /** The series to view. */
     data?: DataPoint[];
+    /**
+     * Whether the line is carried across a missed reading, or the most consecutive missed readings
+     * it is carried across before it breaks instead. Defaults to true, carrying across any gap.
+     *
+     * A number draws the distinction the two booleans cannot: a reading or two lost to a blip is
+     * carried across, while an outage long enough to be its own event breaks the line rather than
+     * inventing a trend over it.
+     * @example bridgeMissedReadings={false}
+     * @example bridgeMissedReadings={2}
+     */
+    bridgeMissedReadings?: boolean | number;
     /**
      * Handy callback if you want to transform how the Y Axis value is rendered. Given everything chart.js
      * hands its tick callback, so a tick can be written against its neighbours.
@@ -41,6 +53,8 @@ interface TrendChartBaseProps {
      * Whether the tooltip names the sample it is hovering.
      */
     showTooltipLabel?: boolean;
+    /** Whether a dot marks the latest reading, saying where the readings stop. Off by default. */
+    showLatestPoint?: boolean;
     /**
      * The two ends are handed to chart.js as they are given. `max` must be above `min`: chart.js
      * maps a reading by dividing by the span between them, so ends that meet paint nothing and
@@ -53,6 +67,18 @@ interface TrendChartBaseProps {
         /** The reading the ceiling of the plot stands for. */
         max: number;
     };
+    /**
+     * The readings the value axis writes, in place of chart.js's own. Outside `valueRange` are dropped.
+     * @example valueTicks={[0, 50, 100]}
+     */
+    valueTicks?: number[];
+    /** Whether the readings are whole numbers, so the axis must not step in fractions of one. */
+    wholeValues?: boolean;
+    /**
+     * Whether each `valueTicks` reading is carried across the plot as a faint dashed rule.
+     * Needs `valueTicks`: chart.js's own marks are not known when these options are built.
+     */
+    showValueGuides?: boolean;
     /**
      * How thick the line is drawn, in pixels. Defaults to 1.
      */
