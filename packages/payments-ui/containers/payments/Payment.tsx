@@ -210,12 +210,10 @@ export const PaymentsNoApi = ({
         </>
     );
 
-    const paymentMethodRequired = getPaymentMethodRequired({
-        amount,
-        startTrial,
-        subscription,
-        savedPaymentMethods,
-    });
+    const isPassBasic = !!checkResult?.requestData.Plans[PLANS.PASS_BASIC];
+    const paymentMethodRequired = isPassBasic
+        ? amount > 0
+        : getPaymentMethodRequired({ amount, startTrial, subscription, savedPaymentMethods });
 
     const taxFields = (
         <TaxFields user={user} taxCountry={taxCountry} vatNumber={vatNumber} subscription={subscription} />
@@ -333,7 +331,7 @@ export const PaymentsNoApi = ({
                     hasPaymentMethod={!!savedPaymentMethods?.length}
                     subscription={subscription}
                     taxFields={taxFields}
-                    isPassBasic={!!checkResult?.requestData.Plans[PLANS.PASS_BASIC]}
+                    isPassBasic={isPassBasic}
                 />
             )}
         </>
