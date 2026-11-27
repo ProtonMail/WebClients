@@ -1,0 +1,19 @@
+.pass-basic-trial-modal-tile {
+	inline-size: 5rem;
+	block-size: 5rem;
+
+	&--info {
+		background-color: var(--signal-info-minor-2);
+		color: var(--signal-info);
+	}
+
+	&--success {
+		background-color: var(--signal-success-minor-2);
+		color: var(--signal-success);
+	}
+
+	&--danger {
+		background-color: var(--signal-danger-minor-2);
+		color: var(--signal-danger);
+	}
+}
