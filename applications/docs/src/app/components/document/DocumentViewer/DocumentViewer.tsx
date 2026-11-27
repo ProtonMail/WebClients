@@ -178,14 +178,14 @@ export function DocumentViewer({
       return
     }
 
-    drive
-      .getNode(nodeUid)
-      .then((node) => {
-        setCurrentDocumentNode(node)
-      })
-      .catch((error) => {
+    const loadNode = async () => {
+      try {
+        setCurrentDocumentNode(await drive.getNode(nodeUid))
+      } catch (error) {
         traceErrorSDK(error, 'DocsDocumentViewerEventsSDK')
-      })
+      }
+    }
+    void loadNode()
   }, [drive, nodeUid])
 
   const handleEvent = useCallback(
@@ -219,9 +219,14 @@ export function DocumentViewer({
     if (!currentDocumentNode || !documentState) {
       return
     }
-    void eventSubscriber.initialize(currentDocumentNode.treeEventScopeId, [handleEvent]).catch((error) => {
-      traceErrorSDK(error, 'DocsDocumentViewerEventsSDK')
-    })
+    const initializeEvents = async () => {
+      try {
+        await eventSubscriber.initialize(currentDocumentNode.treeEventScopeId, [handleEvent])
+      } catch (error) {
+        traceErrorSDK(error, 'DocsDocumentViewerEventsSDK')
+      }
+    }
+    void initializeEvents()
     return () => eventSubscriber.reset()
   }, [application.logger, currentDocumentNode, documentState, eventSubscriber, handleEvent])
 

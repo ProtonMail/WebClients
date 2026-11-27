@@ -30,14 +30,20 @@ export const useDocsBookmarks = ({ token, urlPassword, customPassword, user }: P
     }
 
     const abortController = new AbortController()
-    void withLoading(
-      loadBookmarkTokens(abortController.signal).then(setBookmarksTokens, (error) => {
+    const loadBookmarks = async () => {
+      let tokens: Set<string>
+      try {
+        tokens = await loadBookmarkTokens(abortController.signal)
+      } catch (error) {
         if (!abortController.signal.aborted) {
           traceErrorSDK(error, 'DocsDriveCompatSDK')
           createNotification({ type: 'error', text: c('Notification').t`Failed to load saved items` })
         }
-      }),
-    )
+        return
+      }
+      setBookmarksTokens(tokens)
+    }
+    void withLoading(loadBookmarks())
     return () => {
       abortController.abort()
     }

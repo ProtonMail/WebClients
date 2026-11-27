@@ -87,10 +87,16 @@ function usePublicUser(providerType: ProviderType) {
 
   useEffect(() => {
     if (isAuthenticated) {
-      getUser()
-        .then(setUser)
-        .catch((error) => traceErrorSDK(error, 'DocsDriveCompatSDK'))
-        .finally(() => setIsUserReady(true))
+      const loadUser = async () => {
+        try {
+          setUser(await getUser())
+        } catch (error) {
+          traceErrorSDK(error, 'DocsDriveCompatSDK')
+        } finally {
+          setIsUserReady(true)
+        }
+      }
+      void loadUser()
     }
   }, [getUser, isAuthenticated])
 
