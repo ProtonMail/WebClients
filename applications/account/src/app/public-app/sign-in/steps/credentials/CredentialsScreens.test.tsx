@@ -6,7 +6,6 @@ import { fromCallback, fromPromise } from 'xstate';
 import { renderWithProviders } from '@proton/components/testing/renderWithProviders';
 import type { InfoResponse, SSOInfoResponse } from '@proton/shared/lib/authentication/interface';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
-import { useFlag } from '@proton/unleash/useFlag';
 
 import type { Paths } from '../../../helper';
 import { SignInWizard } from '../../SignInWizard';
@@ -31,8 +30,6 @@ vi.mock('./useLoginChallenge', () => ({
 
 vi.mock('../../../../locales', () => vi.importActual('../../../../locales'));
 vi.mock('../../../localePrefix', () => vi.importActual('../../../localePrefix'));
-
-vi.mock('@proton/unleash/useFlag');
 
 const paths = {
     signup: '/signup',
@@ -147,10 +144,6 @@ const continueToPassword = async (user: ReturnType<typeof userEvent.setup>, user
 };
 
 describe('the credentials screens', () => {
-    afterEach(() => {
-        vi.mocked(useFlag).mockReset();
-    });
-
     it('asks for the username, then the password, and submits them defaulting remember to true', async () => {
         const { authenticateWithPassword } = renderForm();
         const user = userEvent.setup();
@@ -373,7 +366,6 @@ describe('the credentials screens', () => {
     });
 
     it('keeps the Lumo help open, with its conversation, across a mode switch', async () => {
-        vi.mocked(useFlag).mockImplementation((flag) => flag === 'LumoSignInHelp');
         renderForm({ authTypeData: { type: AuthType.ExternalSSO } });
         const user = userEvent.setup();
         const launcher = () => screen.getByRole('button', { name: 'Get help from Lumo' });
