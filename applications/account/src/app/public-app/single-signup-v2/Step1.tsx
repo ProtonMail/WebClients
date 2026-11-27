@@ -479,6 +479,7 @@ const Step1 = ({
                 ...old,
                 optimistic: {
                     ...mergedCheckOptions,
+                    planIDs: completeCheckOptions.planIDs,
                     checkResult: optimisticCheckResult,
                 },
             };

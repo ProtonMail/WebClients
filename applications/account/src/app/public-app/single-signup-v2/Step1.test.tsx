@@ -42,6 +42,12 @@ vi.mock('./PlanCardSelector', () => ({
             <button data-testid="select-lumo" onClick={() => onSelect({ [PLANS.LUMO]: 1 }, PLANS.LUMO)}>
                 select lumo
             </button>
+            <button
+                data-testid="select-pass-business"
+                onClick={() => onSelect({ [PLANS.PASS_BUSINESS]: 1 }, PLANS.PASS_BUSINESS)}
+            >
+                select pass business
+            </button>
         </div>
     ),
 }));
@@ -74,34 +80,33 @@ vi.mock('./AccountStepPayment', async () => {
     };
 });
 
-const renderStep1 = (overrides?: Partial<React.ComponentProps<typeof Step1>>) => {
-    const defaultProps = {
-        initialSessionsLength: false,
-        signInPath: '/switch',
-        signupConfiguration: createMockSignupConfiguration(),
-        signupParameters: createMockSignupParameters(),
-        isLargeViewport: true,
-        measure: vi.fn(),
-        onComplete: vi.fn(),
-        model: createMockModel(),
-        setModel: vi.fn(),
-        mode: SignupMode.Default,
-        api: vi.fn(<T = any,>() => Promise.resolve({} as T)) as any,
-        onTriggerModals: vi.fn(),
-        onOpenLogin: vi.fn(),
-        onOpenSwitch: vi.fn(),
-        onSignOut: async () => {},
-        step1Ref: { current: null } as any,
-        onChangeCurrency: async () => ({}) as any,
-        signupTrial: false,
-        telemetryContext: {} as any,
-        ...overrides,
-    };
+const getStep1Props = (overrides?: Partial<React.ComponentProps<typeof Step1>>) => ({
+    initialSessionsLength: false,
+    signInPath: '/switch',
+    signupConfiguration: createMockSignupConfiguration(),
+    signupParameters: createMockSignupParameters(),
+    isLargeViewport: true,
+    measure: vi.fn(),
+    onComplete: vi.fn(),
+    model: createMockModel(),
+    setModel: vi.fn(),
+    mode: SignupMode.Default,
+    api: vi.fn(<T = any,>() => Promise.resolve({} as T)) as any,
+    onTriggerModals: vi.fn(),
+    onOpenLogin: vi.fn(),
+    onOpenSwitch: vi.fn(),
+    onSignOut: async () => {},
+    step1Ref: { current: null } as any,
+    onChangeCurrency: async () => ({}) as any,
+    signupTrial: false,
+    telemetryContext: {} as any,
+    ...overrides,
+});
 
-    return renderWithProviders(<Step1 {...defaultProps} />, {
+const renderStep1 = (overrides?: Partial<React.ComponentProps<typeof Step1>>) =>
+    renderWithProviders(<Step1 {...getStep1Props(overrides)} />, {
         preloadedState: {},
     });
-};
 
 describe('Step1 - Offer Banner Tests', () => {
     it('should show DRIVE plan limited time offer with TRYDRIVEPLUS2024 coupon', async () => {
@@ -198,6 +203,33 @@ describe('Step1 - Offer Banner Tests', () => {
         expect(screen.queryByText(/your.*discount.*has been applied/i)).not.toBeInTheDocument();
         expect(screen.queryByText(/end of year discount/i)).not.toBeInTheDocument();
     });
+
+    it.each([
+        { cycle: CYCLE.MONTHLY, banner: null },
+        { cycle: CYCLE.YEARLY, banner: '36% discount' },
+    ])(
+        'should price the minimum of users while checking a plan that has one (cycle $cycle)',
+        async ({ cycle, banner }) => {
+            const pendingCheckApi = vi.fn((query: any) =>
+                query.url === 'payments/v5/subscription/check' ? new Promise(() => {}) : Promise.resolve({})
+            );
+            const StatefulStep1 = () => {
+                const [model, setModel] = useState(() => {
+                    const initialModel = createMockModel();
+                    initialModel.subscriptionData.cycle = cycle;
+                    initialModel.subscriptionData.checkResult.Cycle = cycle;
+                    return initialModel;
+                });
+                return <Step1 {...getStep1Props({ model, setModel: setModel as any, api: pendingCheckApi as any })} />;
+            };
+            renderWithProviders(<StatefulStep1 />, { preloadedState: {} });
+
+            await userEvent.click(await screen.findByTestId('select-pass-business'));
+
+            expect(await screen.findByText(`Selected: ${PLANS.PASS_BUSINESS}`)).toBeInTheDocument();
+            expect(screen.queryByText(/% discount/)?.textContent?.trim() ?? null).toBe(banner);
+        }
+    );
 });
 
 describe('Step1 - Basic Mounting', () => {
