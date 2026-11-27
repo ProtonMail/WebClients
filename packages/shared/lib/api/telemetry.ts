@@ -522,6 +522,8 @@ export enum TelemetryDocsEditorEvents {
     table_of_contents_available = 'table_of_contents.available',
     table_of_contents_opened = 'table_of_contents.opened',
     table_of_contents_heading_clicked = 'table_of_contents.heading_clicked',
+    subscript_applied = 'subscript.applied',
+    superscript_applied = 'superscript.applied',
 }
 
 export enum TelemetryDocsHomepageEvents {
