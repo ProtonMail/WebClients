@@ -490,6 +490,30 @@ describe('resolveUpsellsToDisplay', () => {
         });
     });
 
+    describe('Pass Basic', () => {
+        it('should return only the recommended Pass Professional upsell', () => {
+            const subscription = buildSubscription(PLANS.PASS_BASIC);
+            const upsells = resolveUpsellsToDisplay({
+                ...base,
+                app: APPS.PROTONPASS,
+                isFree: false,
+                subscription,
+                multiSubscriptionContext: buildMultiSubscriptionContextFromSubscription(subscription),
+            });
+
+            expect(upsells).toHaveLength(1);
+            expect(upsells[0]).toMatchObject({ plan: PLANS.PASS_BUSINESS, isRecommended: true });
+
+            upsells[0].onUpgrade();
+            expect(mockedOpenSubscriptionModal).toHaveBeenCalledWith({
+                cycle: CYCLE.YEARLY,
+                disablePlanSelection: true,
+                plan: PLANS.PASS_BUSINESS,
+                step: SUBSCRIPTION_STEPS.CHECKOUT,
+            });
+        });
+    });
+
     describe('VPN Essentials', () => {
         it('should return VPN Business and VPN and Pass Professional upsells', () => {
             const upsells = resolveUpsellsToDisplay({

@@ -116,6 +116,20 @@ describe('SubscriptionSubmitButton', () => {
         expect(screen.getByText('Switch to Pass Basic')).toBeInTheDocument();
     });
 
+    it('should show "Confirm" when changing seats on Pass Basic', () => {
+        renderButton({
+            subscription: buildSubscription(PLANS.PASS_BASIC),
+            checkResult: {
+                ...baseCheckResult,
+                AmountDue: 0,
+                requestData: { ...baseCheckResult.requestData, Plans: { [PLANS.PASS_BASIC]: 1 } },
+            },
+        });
+
+        expect(screen.getByText('Confirm')).toBeInTheDocument();
+        expect(screen.queryByText('Switch to Pass Basic')).not.toBeInTheDocument();
+    });
+
     it.each([
         [PAYMENT_METHOD_TYPES.CHARGEBEE_BITCOIN, /^Awaiting transaction$/, true, 0],
         [PAYMENT_METHOD_TYPES.CASH, /^Done$/, false, 1],

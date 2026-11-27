@@ -4,8 +4,10 @@ import type { Mock, MockedFunction } from 'vitest';
 import { renderWithProviders } from '@proton/components/testing/renderWithProviders';
 import { CYCLE, PLANS } from '@proton/payments/core/constants';
 import { createEntitlementResolverForOrgAndUser } from '@proton/payments/core/entitlements/resolver';
+import type { FullPlansMap } from '@proton/payments/core/subscription/interface';
 import { buildEntitlementCatalog } from '@proton/payments/testing/buildEntitlementCatalog';
 import { buildSubscription } from '@proton/payments/testing/buildSubscription';
+import { PLANS_MAP } from '@proton/payments/testing/data-plans';
 import { regularAdmin } from '@proton/payments/testing/regularAdmin';
 import { APPS } from '@proton/shared/lib/constants';
 import type { Organization } from '@proton/shared/lib/interfaces/Organization';
@@ -334,6 +336,56 @@ describe('SubscriptionPanel', () => {
             expect(screen.getByText('1700+ servers across 63+ countries')).toBeInTheDocument();
             expect(screen.getByText(/Built-in ad blocker/)).toBeInTheDocument();
             expect(screen.getByText(/Access to streaming services/)).toBeInTheDocument();
+        });
+    });
+
+    describe('Pass Basic', () => {
+        const plansMap = PLANS_MAP as FullPlansMap;
+        const passBasic = buildSubscription(
+            { planName: PLANS.PASS_BASIC, cycle: CYCLE.MONTHLY, currency: 'CHF' },
+            { Amount: 0, BaseRenewAmount: 0 }
+        );
+
+        it('shows the free price and "Free forever" with the explore button as the primary action', () => {
+            renderWithProviders(
+                <SubscriptionPanel
+                    {...defaultProps}
+                    app={APPS.PROTONPASS}
+                    subscription={passBasic}
+                    plansMap={plansMap}
+                />
+            );
+
+            expect(screen.getByTestId('plan-name')).toHaveTextContent('Pass Basic');
+            expect(screen.getByText('Free forever')).toBeInTheDocument();
+            expect(screen.getByText('/user/month')).toBeInTheDocument();
+            expect(screen.getByTestId('explore-other-plan')).toHaveClass('button-solid-norm');
+        });
+
+        it('shows "Free forever" before the plans are loaded', () => {
+            renderWithProviders(<SubscriptionPanel {...defaultProps} app={APPS.PROTONPASS} subscription={passBasic} />);
+
+            expect(screen.getByText('Free forever')).toBeInTheDocument();
+            expect(screen.queryByText('/user/month')).not.toBeInTheDocument();
+        });
+
+        it('keeps the other B2B plans unchanged', () => {
+            renderWithProviders(
+                <SubscriptionPanel
+                    {...defaultProps}
+                    app={APPS.PROTONPASS}
+                    subscription={buildSubscription({
+                        planName: PLANS.PASS_BUSINESS,
+                        cycle: CYCLE.MONTHLY,
+                        currency: 'CHF',
+                    })}
+                    plansMap={plansMap}
+                />
+            );
+
+            expect(screen.queryByText('Free forever')).not.toBeInTheDocument();
+            expect(screen.queryByText('/user/month')).not.toBeInTheDocument();
+            expect(screen.getByTestId('explore-other-plan')).toHaveClass('button-ghost-norm');
         });
     });
 

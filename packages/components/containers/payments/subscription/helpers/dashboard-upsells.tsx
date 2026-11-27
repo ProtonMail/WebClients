@@ -9,7 +9,7 @@ import {
     isPaymentsPreloaded,
     usePayments,
 } from '@proton/payments-hooks/ui/context/paymentsContext';
-import { ADDON_PREFIXES, CYCLE, PLANS } from '@proton/payments/core/constants';
+import { ADDON_PREFIXES, CYCLE, PLANS, PLAN_NAMES } from '@proton/payments/core/constants';
 import type { Currency, Cycle, PlanIDs } from '@proton/payments/core/interface';
 import { getPrice } from '@proton/payments/core/price-helpers';
 import type { MaybeFreeSubscription } from '@proton/payments/core/subscription/helpers';
@@ -29,6 +29,7 @@ import {
     hasMailPro,
     hasMeetBusiness,
     hasPass,
+    hasPassBasic,
     hasPassFamily,
     hasVPN2024,
     hasVPNPassBundle,
@@ -453,6 +454,46 @@ const getPassFamilyUpsell = ({ plansMap, openSubscriptionModal, app, ...rest }: 
     });
 };
 
+const getPassBusinessUpsell = ({ plansMap, openSubscriptionModal, app, ...rest }: GetPlanUpsellArgs): MaybeUpsell => {
+    const features: MaybeUpsellFeature[] = [
+        getDevices(),
+        {
+            id: 'sso-scim',
+            text: c('pass_signup_2024: Info').t`SSO and SCIM`,
+            included: true,
+        },
+        {
+            id: 'detailed-activity-log',
+            text: c('pass_signup_2024: Info').t`Detailed activity logs`,
+            included: true,
+        },
+        {
+            id: 'enterprise-policies',
+            text: c('pass_signup_2024: Info').t`Enterprise policies`,
+            included: true,
+        },
+        getDarkWebMonitoring(),
+    ];
+
+    return getUpsell({
+        plan: PLANS.PASS_BUSINESS,
+        plansMap,
+        app,
+        title: c('pass_signup_2024: Info').t`Upgrade to ${PLAN_NAMES[PLANS.PASS_BUSINESS]}`,
+        description: c('new_plans: info').t`Advanced protection for teams that goes beyond industry standards.`,
+        upsellPath: DASHBOARD_UPSELL_PATHS.PASS,
+        features: features.filter((item): item is UpsellFeature => isTruthy(item)),
+        onUpgrade: (cycle) =>
+            openSubscriptionModal({
+                cycle: cycle ?? defaultUpsellCycleB2B,
+                plan: PLANS.PASS_BUSINESS,
+                step: SUBSCRIPTION_STEPS.CHECKOUT,
+                disablePlanSelection: true,
+            }),
+        ...rest,
+    });
+};
+
 /**
  * Upsell for Bundle (a.k.a Unlimited)
  */
@@ -818,6 +859,8 @@ export const resolveUpsellsToDisplay = ({
                 return [getDriveUpsell(upsellsPayload), getBundleUpsell({ ...upsellsPayload, isRecommended: true })];
             case Boolean(hasPassFree):
                 return [getPassUpsell(upsellsPayload), getPassFamilyUpsell(upsellsPayload)];
+            case Boolean(hasPassBasic(subscription)):
+                return [getPassBusinessUpsell({ ...upsellsPayload, isRecommended: true })];
             case Boolean(hasVPNFree):
                 return [getVPNUpsell(upsellsPayload)];
             case Boolean(hasLumoFree):

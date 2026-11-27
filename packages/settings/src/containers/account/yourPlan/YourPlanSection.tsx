@@ -24,6 +24,7 @@ import {
     getCanSubscriptionAccessDuoPlan,
     getHasVpnOnlyB2BPlan,
     hasLumo,
+    hasPassBasic,
     isAutoRenewTrial,
     isTrial,
 } from '@proton/payments/core/subscription/helpers';
@@ -88,7 +89,7 @@ const YourPlanSectionInner = ({ app }: Props) => {
     if (!subscription || !plans || loading) {
         return <Loader />;
     }
-    const planCanShowUsage = !getHasVpnOnlyB2BPlan(subscription);
+    const planCanShowUsage = !getHasVpnOnlyB2BPlan(subscription) && !hasPassBasic(subscription);
     const isWalletEA = app === APPS.PROTONWALLET;
     // Subscription panel is displayed for user with a free or paid plan and not in a trial
     const shouldRenderSubscription = user.canPay || (subscription && !isTrial(subscription));
@@ -133,9 +134,10 @@ const YourPlanSectionInner = ({ app }: Props) => {
                         user={user}
                         addresses={addresses}
                         upsells={shouldRenderUpsells ? upsells : []}
+                        plansMap={plansMap}
                     />
                 )}
-                {/* Usage for plans with >1 Members except VPN B2B */}
+                {/* Usage for plans with >1 Members except VPN B2B and Pass Basic */}
                 {shouldRenderUsagePanel && (
                     <UsagePanel addresses={addresses} calendars={calendars} organization={organization} user={user} />
                 )}

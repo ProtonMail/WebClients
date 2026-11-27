@@ -447,4 +447,26 @@ describe('getAccountAppRoutes', () => {
             expect(getPassB2BOnboardingAvailability([PLANS.PASS_BUSINESS], { app: APPS.PROTONMAIL })).toBe(false);
         });
     });
+
+    describe('your-storage dashboard section', () => {
+        function getYourStorageAvailability(plan: PLANS) {
+            const subscription = buildSubscription(plan);
+            return getAccountAppRoutes(
+                buildDefaultParams({
+                    app: APPS.PROTONPASS,
+                    showDashboard: false,
+                    subscription,
+                    allSubscriptions: [subscription],
+                })
+            ).routes.dashboard.subsections.find((subsection) => subsection.id === 'your-storage')?.available;
+        }
+
+        it('is shown for Pass Professional', () => {
+            expect(getYourStorageAvailability(PLANS.PASS_BUSINESS)).toBe(true);
+        });
+
+        it('is hidden for Pass Basic', () => {
+            expect(getYourStorageAvailability(PLANS.PASS_BASIC)).toBe(false);
+        });
+    });
 });

@@ -14,6 +14,7 @@ const googleDrive = { ...withId(buildSubscription(PLANS.DRIVE), 'sub-drive'), Ex
 const lifetimeMail = { ...withId(buildSubscription(PLANS.MAIL), 'sub-lifetime'), CouponCode: COUPON_CODES.LIFETIME };
 const vpnEssentials = withId(buildSubscription(PLANS.VPN_PRO), 'sub-vpn-pro');
 const businessTrial = { ...withId(buildSubscription(PLANS.VPN_PRO), 'sub-vpn-pro-trial'), IsTrial: true };
+const passBasic = withId(buildSubscription(PLANS.PASS_BASIC), 'sub-pass-basic');
 
 const ids = (subscriptions: Subscription[]) => subscriptions.map(({ ID }) => ID);
 
@@ -37,6 +38,10 @@ describe('getCancellableSubscriptions', () => {
     it('leaves out a subscription cancellable only via support, but not its trial', () => {
         expect(ids(getCancellableSubscriptions([vpnEssentials, businessTrial]))).toEqual(['sub-vpn-pro-trial']);
     });
+
+    it('leaves out Pass Basic, which is cancelled via support', () => {
+        expect(ids(getCancellableSubscriptions([passBasic, lumo]))).toEqual(['sub-lumo']);
+    });
 });
 
 describe('isCancelSubscriptionSectionAvailable', () => {
@@ -46,6 +51,7 @@ describe('isCancelSubscriptionSectionAvailable', () => {
 
     it('is not available when none can be cancelled', () => {
         expect(isCancelSubscriptionSectionAvailable([cancelledLumo, lifetimeMail, vpnEssentials])).toBe(false);
+        expect(isCancelSubscriptionSectionAvailable([passBasic])).toBe(false);
         expect(isCancelSubscriptionSectionAvailable([])).toBe(false);
     });
 });

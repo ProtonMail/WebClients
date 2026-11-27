@@ -199,7 +199,7 @@ export const getIsSentinelPlan = (planName: PLANS | ADDON_NAMES | undefined) => 
 type SubscriptionWithPlanNames = { Plans?: { Name: PLANS | ADDON_NAMES }[] };
 
 const ssoForPbsPlans = [PLANS.BUNDLE_BIZ_2025, PLANS.BUNDLE_PRO_2024, PLANS.BUNDLE_PRO];
-const ssoUpsellPlans = [PLANS.VPN_PRO, PLANS.PASS_PRO];
+const ssoUpsellPlans = [PLANS.VPN_PRO, PLANS.PASS_PRO, PLANS.PASS_BASIC];
 
 export const hasSubscriptionWithPlan = (subscriptions: SubscriptionWithPlanNames[], plans: PLANS[]) =>
     subscriptions.some((subscription) => subscription.Plans?.some((plan) => plans.includes(plan.Name as PLANS)));

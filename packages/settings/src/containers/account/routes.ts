@@ -27,6 +27,7 @@ import { IcUser } from '@proton/icons/icons/IcUser';
 import { isCancelSubscriptionSectionAvailable } from '@proton/payments/core/subscription/cancellable-subscriptions';
 import {
     getHasVpnB2BPlan,
+    hasPassBasic,
     isCancellableOnlyViaSupport,
     isManagedExternally,
 } from '@proton/payments/core/subscription/helpers';
@@ -450,6 +451,7 @@ export const getAccountAppRoutes = ({
 
     const showStorageSection = !(
         isPassConsumerOrPassFamilyOrg ||
+        hasPassBasic(subscription) ||
         (isFree && app === APPS.PROTONPASS) ||
         (isFree && app === APPS.PROTONLUMO) ||
         (isFree && app === APPS.PROTONMEET)

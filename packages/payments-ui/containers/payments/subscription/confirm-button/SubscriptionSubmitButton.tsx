@@ -9,7 +9,7 @@ import type { CouponConfigRendered } from '@proton/payments-hooks/ui/coupon-conf
 import { PAYMENT_METHOD_TYPES, PLANS, PLAN_NAMES } from '@proton/payments/core/constants';
 import type { Currency, FreeSubscription } from '@proton/payments/core/interface';
 import { getSimplePriceString } from '@proton/payments/core/price-format';
-import { hasMigrationDiscount, isTrial } from '@proton/payments/core/subscription/helpers';
+import { hasMigrationDiscount, hasPassBasic, isTrial } from '@proton/payments/core/subscription/helpers';
 import type {
     Subscription,
     SubscriptionCheckForbiddenReason,
@@ -111,7 +111,8 @@ export const SubscriptionSubmitButton = ({
             };
         }
 
-        if (checkResult?.requestData.Plans[PLANS.PASS_BASIC]) {
+        // Seat changes on Pass Basic aren't a plan switch
+        if (checkResult?.requestData.Plans[PLANS.PASS_BASIC] && !hasPassBasic(subscription)) {
             const planName = PLAN_NAMES[PLANS.PASS_BASIC];
             return {
                 children: c('Action').t`Switch to ${planName}`,
