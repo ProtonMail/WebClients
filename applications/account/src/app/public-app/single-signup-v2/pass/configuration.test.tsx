@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import { createLocation } from 'history';
 
-import { CYCLE, PLANS } from '@proton/payments/core/constants';
+import { ADDON_NAMES, CYCLE, PLANS, TRIAL_MAX_USERS } from '@proton/payments/core/constants';
 import { getTestPlans } from '@proton/payments/testing/data-plans';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS } from '@proton/shared/lib/constants';
@@ -49,18 +49,26 @@ describe('Pass Plus signup benefits', () => {
     });
 });
 
-const autoTrial = { preSelectedPlan: PLANS.PASS_BUSINESS, trial: true, cardless: true, isPassB2BAutoTrial: true };
+const autoTrial = {
+    preSelectedPlan: PLANS.PASS_BUSINESS,
+    trial: true,
+    cardless: true,
+    users: TRIAL_MAX_USERS,
+    isPassB2BAutoTrial: true,
+};
 
 const getConfiguration = ({
     audience = Audience.B2B,
     preSelectedPlan,
     isPassB2BAutoTrialFlagEnabled = true,
     showPassBasic,
+    users,
 }: {
     audience?: Audience.B2B | Audience.B2C;
     preSelectedPlan?: string;
     isPassB2BAutoTrialFlagEnabled?: boolean;
     showPassBasic?: boolean;
+    users?: number;
 }) =>
     getPassConfiguration({
         showPassFamily: true,
@@ -71,7 +79,7 @@ const getConfiguration = ({
         isPaidPass: false,
         isPaidPassVPNBundle: false,
         plan: undefined,
-        signupParameters: { preSelectedPlan, isPassB2BAutoTrialFlagEnabled, showPassBasic },
+        signupParameters: { preSelectedPlan, isPassB2BAutoTrialFlagEnabled, showPassBasic, users },
     });
 
 describe('getPassConfiguration', () => {
@@ -107,6 +115,24 @@ describe('getPassConfiguration', () => {
                 );
             expect(b2bTab(true)).toMatchObject({ defaultPlan: PLANS.PASS_BUSINESS, trial: true });
             expect(b2bTab(false)).not.toHaveProperty('trial');
+        });
+
+        it('starts the trial with its maximum of users', () => {
+            expect(getConfiguration({}).signupParametersOverrides?.users).toBe(TRIAL_MAX_USERS);
+        });
+
+        it('keeps the users set by the link', () => {
+            expect(getConfiguration({ users: 5 }).signupParametersOverrides?.users).toBe(5);
+        });
+
+        it('starts the B2B audience tab with the trial maximum of users while the flag is on', () => {
+            const b2bTab = (isPassB2BAutoTrialFlagEnabled: boolean) =>
+                getConfiguration({ audience: Audience.B2C, isPassB2BAutoTrialFlagEnabled }).audiences?.find(
+                    ({ value }) => value === Audience.B2B
+                );
+            // Pass Professional includes 1 user, the addons add the other 9
+            expect(b2bTab(true)?.defaultAddons).toEqual({ [ADDON_NAMES.MEMBER_PASS_BUSINESS]: TRIAL_MAX_USERS - 1 });
+            expect(b2bTab(false)).not.toHaveProperty('defaultAddons');
         });
     });
 

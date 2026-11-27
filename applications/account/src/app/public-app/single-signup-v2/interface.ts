@@ -201,6 +201,7 @@ export interface SignupConfiguration {
         locationDescriptor: LocationDescriptor;
         title: string;
         defaultPlan: PLANS;
+        defaultAddons?: PlanIDs;
         trial?: boolean;
     }[];
     generateMnemonic: boolean;
@@ -218,7 +219,7 @@ export interface SignupConfiguration {
      */
     signupParametersOverrides?: Pick<
         SignupParameters2,
-        'preSelectedPlan' | 'trial' | 'cardless' | 'isPassB2BAutoTrial'
+        'preSelectedPlan' | 'trial' | 'cardless' | 'users' | 'isPassB2BAutoTrial'
     >;
 }
 

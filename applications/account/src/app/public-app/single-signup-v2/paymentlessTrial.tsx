@@ -41,17 +41,19 @@ export const getPaymentlessTrialRenewalNotice = ({ planTitle }: { planTitle: str
         .jt`Your trial ends on ${trialEndDate}. Add a payment method whenever you’re ready to keep using all ${planTitle} features. You’ll only be charged once it’s added.`;
 };
 
-export const PaymentlessTrialOrganizationSize = ({
+export const SignupOrganizationSize = ({
     model,
     options,
     onChangePlanIDs,
     telemetryContext,
+    isTrialMode,
     hideTrialUsersCaption,
 }: {
     model: SignupModelV2;
     options: OptimisticOptions;
     onChangePlanIDs: (planIDs: PlanIDs) => void;
     telemetryContext: PaymentTelemetryContext;
+    isTrialMode: boolean;
     hideTrialUsersCaption?: boolean;
 }) => (
     <div className="mb-6">
@@ -65,11 +67,11 @@ export const PaymentlessTrialOrganizationSize = ({
             onChangePlanIDs={onChangePlanIDs}
             allowedAddonTypes={[ADDON_PREFIXES.MEMBER]}
             addonFlags={{}}
-            isTrialMode
+            isTrialMode={isTrialMode}
             telemetryContext={telemetryContext}
             multiSubscriptionContext={model.session?.multiSubscriptionContext ?? noSubscriptionContext}
         />
-        {!hideTrialUsersCaption && (
+        {isTrialMode && !hideTrialUsersCaption && (
             <div className="mt-1 text-sm color-primary">
                 {c('b2b_trials_2025_Info').t`Up to ${TRIAL_MAX_USERS} users, during the trial period`}
             </div>
