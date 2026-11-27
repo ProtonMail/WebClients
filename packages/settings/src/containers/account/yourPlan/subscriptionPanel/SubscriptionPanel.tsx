@@ -12,7 +12,7 @@ import StripedItem from '@proton/components/components/stripedList/StripedItem';
 import { StripedList } from '@proton/components/components/stripedList/StripedList';
 import Time from '@proton/components/components/time/Time';
 import { getBasicFeatures, getVersionHistory } from '@proton/components/containers/payments/features/drive';
-import { getSentinel, getSupport } from '@proton/components/containers/payments/features/highlights';
+import { getPassKeys, getSentinel, getSupport } from '@proton/components/containers/payments/features/highlights';
 import {
     getLumoFree2026Features,
     getLumoFreeFeatures,
@@ -27,6 +27,9 @@ import {
     FREE_PASS_ALIASES,
     FREE_VAULTS,
     FREE_VAULT_SHARING,
+    PASS_BASIC_ALIASES,
+    PASS_BASIC_DEVICES,
+    PASS_BASIC_VAULTS,
     PASS_PLUS_VAULTS,
     PASS_PLUS_VAULT_SHARING,
     get2FAAuthenticator,
@@ -63,9 +66,10 @@ import { IcShield } from '@proton/icons/icons/IcShield';
 import { IcSpeechBubble } from '@proton/icons/icons/IcSpeechBubble';
 import { IcStorage } from '@proton/icons/icons/IcStorage';
 import { IcUsers } from '@proton/icons/icons/IcUsers';
-import { ADDON_PREFIXES } from '@proton/payments/core/constants';
+import { ADDON_PREFIXES, CYCLE, PLANS } from '@proton/payments/core/constants';
 import type { EntitlementChecksForOrgAndUser } from '@proton/payments/core/entitlements/interface';
 import { hasAddonFromPlanIDs } from '@proton/payments/core/plan/addons';
+import { getSimplePriceString } from '@proton/payments/core/price-format';
 import type { MaybeFreeSubscription } from '@proton/payments/core/subscription/helpers';
 import {
     getHasVpnB2BPlan,
@@ -77,13 +81,14 @@ import {
     hasLumoBusiness,
     hasMeetBusiness,
     hasPass,
+    hasPassBasic,
     hasPassFamily,
     hasVPN2024,
     hasVPNPassBundle,
     hasVPNPassProfessional,
     isTrial,
 } from '@proton/payments/core/subscription/helpers';
-import type { Subscription } from '@proton/payments/core/subscription/interface';
+import type { FullPlansMap, Subscription } from '@proton/payments/core/subscription/interface';
 import { getTrialInfoForSingleSubscription } from '@proton/payments/core/trials';
 import { isPaidSubscription } from '@proton/payments/core/type-guards';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
@@ -151,11 +156,22 @@ interface Props {
     organization?: Organization;
     addresses?: Address[];
     upsells: Upsell[];
+    plansMap?: FullPlansMap;
 }
 
-const SubscriptionPanel = ({ app, subscription, organization, entitlements, user, addresses, upsells }: Props) => {
+const SubscriptionPanel = ({
+    app,
+    subscription,
+    organization,
+    entitlements,
+    user,
+    addresses,
+    upsells,
+    plansMap,
+}: Props) => {
     const { planTitle, planName } = getSubscriptionPlanTitle(user, subscription);
     const isPassB2bPlan = getIsPassB2BPlan(planName);
+    const isPassBasic = hasPassBasic(subscription);
     const [entitlementCatalog] = useEntitlementCatalog();
     const trialInfo = useMemo(
         () => getTrialInfoForSingleSubscription(entitlementCatalog, subscription),
@@ -389,6 +405,24 @@ const SubscriptionPanel = ({ app, subscription, organization, entitlements, user
         };
     })();
 
+    const getPassAppBasic = () => {
+        const items: Item[] = [
+            getLoginsAndNotes(),
+            getDevices(PASS_BASIC_DEVICES),
+            getVaults(PASS_BASIC_VAULTS),
+            getSecureVaultSharing(true),
+            get2FAAuthenticator(true),
+            getPassKeys(true),
+            getHideMyEmailAliases(PASS_BASIC_ALIASES),
+        ];
+
+        return (
+            <StripedList>
+                <SubscriptionItems user={user} items={items} />
+            </StripedList>
+        );
+    };
+
     const getPassAppPassFamily = () => {
         const items: (Item | false)[] = [
             b2bUsersItem,
@@ -583,10 +617,34 @@ const SubscriptionPanel = ({ app, subscription, organization, entitlements, user
         </h2>
     );
 
+    const passBasicPlan = isPassBasic ? plansMap?.[PLANS.PASS_BASIC] : undefined;
+    const passBasicPriceElement = passBasicPlan && (
+        <div className="flex flex-column items-end text-no-wrap">
+            <span className="h3 pb-1 color-weak">
+                {getSimplePriceString(passBasicPlan.Currency, passBasicPlan.Pricing[CYCLE.MONTHLY] ?? 0)}
+            </span>
+            <span className="color-hint">{c('Suffix').t`/user/month`}</span>
+        </div>
+    );
+
     return (
         <>
             {renderLearnMoreModal && <LearnMoreModal {...learnMoreModalProps} />}
-            <Panel data-testid="current-plan" titleDataTestId="plan-name" titleElement={planTitleElement}>
+            <Panel
+                data-testid="current-plan"
+                titleDataTestId="plan-name"
+                titleElement={
+                    isPassBasic ? (
+                        <div>
+                            {planTitleElement}
+                            <span className="color-weak">{c('Info').t`Free forever`}</span>
+                        </div>
+                    ) : (
+                        planTitleElement
+                    )
+                }
+                secondaryTitleElement={passBasicPriceElement}
+            >
                 {isPaidSubscription(subscription) && trialInfo.isTrial && (
                     <TrialCopy subscription={subscription} onLearnMore={() => setLearnMoreModal(true)} />
                 )}
@@ -605,6 +663,9 @@ const SubscriptionPanel = ({ app, subscription, organization, entitlements, user
                     }
                     if (user.isFree && (app === APPS.PROTONPASS || app === APPS.PROTONAUTHENTICATOR)) {
                         return getPassAppFree();
+                    }
+                    if (isPassBasic) {
+                        return getPassAppBasic();
                     }
                     if (hasPassFamily(subscription)) {
                         return getPassAppPassFamily();

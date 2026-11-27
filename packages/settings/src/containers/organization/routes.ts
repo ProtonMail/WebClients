@@ -417,6 +417,7 @@ export const getOrganizationAppRoutes = ({
                 app !== APPS.PROTONVPN_SETTINGS &&
                 !hasExternalMemberCapableB2BPlan &&
                 !isPassFamilyPlan &&
+                !entitlements.isPassB2BWithoutMail &&
                 (hasActiveOrganizationKey || hasActiveOrganization),
             subsections: [
                 {

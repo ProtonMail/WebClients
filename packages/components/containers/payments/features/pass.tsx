@@ -124,18 +124,20 @@ export const getItems = (): PlanCardFeatureDefinition => {
     };
 };
 
-const getDevicesText = () => {
-    return c('new_plans: feature').t`Unlimited devices`;
+const getDevicesText = (n: number | 'unlimited' = 'unlimited') => {
+    return n === 'unlimited'
+        ? c('new_plans: feature').t`Unlimited devices`
+        : c('new_plans: feature').ngettext(msgid`${n} device`, `${n} devices`, n);
 };
 
 const getDevicesAndAliasesText = () => {
     return c('new_plans: feature').t`Unlimited devices and aliases`;
 };
 
-export const getDevices = (): PlanCardFeatureDefinition => {
+export const getDevices = (n: number | 'unlimited' = 'unlimited'): PlanCardFeatureDefinition => {
     return {
         id: 'devices',
-        text: getDevicesText(),
+        text: getDevicesText(n),
         icon: IcMobile,
         included: true,
         hideInDowngrade: true,
@@ -392,6 +394,10 @@ export const getPassCli = (): PlanCardFeatureDefinition => {
 export const FREE_PASS_ALIASES = 10;
 export const FREE_VAULTS = 2;
 export const FREE_VAULT_SHARING = 2;
+
+export const PASS_BASIC_VAULTS = 1;
+export const PASS_BASIC_DEVICES = 1;
+export const PASS_BASIC_ALIASES = 10;
 
 export const PASS_PLUS_VAULTS = 50;
 export const PASS_PLUS_VAULT_SHARING = 10;

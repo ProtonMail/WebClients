@@ -297,8 +297,8 @@ describe('isCancellableOnlyViaSupport', () => {
         });
     });
 
-    it('sends VPN business plans to support', () => {
-        const testCases = [PLANS.VPN_BUSINESS, PLANS.VPN_PRO, PLANS.VPN_PASS_BUNDLE_BUSINESS];
+    it('sends VPN business plans and Pass Basic to support', () => {
+        const testCases = [PLANS.VPN_BUSINESS, PLANS.VPN_PRO, PLANS.VPN_PASS_BUNDLE_BUSINESS, PLANS.PASS_BASIC];
 
         const subscription = buildSubscription();
 

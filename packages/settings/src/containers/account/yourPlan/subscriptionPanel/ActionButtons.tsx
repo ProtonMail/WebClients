@@ -7,6 +7,7 @@ import {
     getHasPassB2BPlan,
     getIsB2BAudienceFromSubscription,
     hasCustomCycle,
+    hasPassBasic,
     hasVPNPassBundle,
     isAutoRenewTrial,
     isManagedExternally,
@@ -20,13 +21,13 @@ export const ActionButtons = ({ user, subscription }: { user: UserModel; subscri
     const openSubscriptionModal = useSubscriptionModalRaw();
 
     const handleCustomizeSubscription = () => {
-        openSubscriptionModal({
+        void openSubscriptionModal({
             step: SUBSCRIPTION_STEPS.CHECKOUT,
             disablePlanSelection: true,
         });
     };
     const handleExplorePlans = () => {
-        openSubscriptionModal({
+        void openSubscriptionModal({
             step: SUBSCRIPTION_STEPS.PLAN_SELECTION,
         });
     };
@@ -53,6 +54,16 @@ export const ActionButtons = ({ user, subscription }: { user: UserModel; subscri
         !isManagedExternally(subscription);
 
     const showExploreOtherPlans = user.canPay;
+
+    const explorePlansButtonVariant = (() => {
+        if (hasPassBasic(subscription)) {
+            return { shape: 'solid', color: 'norm' } as const;
+        }
+        if (user.isPaid) {
+            return { shape: 'ghost', color: 'norm' } as const;
+        }
+        return { shape: 'outline', color: 'weak' } as const;
+    })();
 
     return (
         <>
@@ -95,8 +106,8 @@ export const ActionButtons = ({ user, subscription }: { user: UserModel; subscri
                 <Button
                     onClick={handleExplorePlans}
                     size="large"
-                    shape={user.isPaid ? 'ghost' : 'outline'}
-                    color={user.isPaid ? 'norm' : 'weak'}
+                    shape={explorePlansButtonVariant.shape}
+                    color={explorePlansButtonVariant.color}
                     fullWidth
                     data-testid="explore-other-plan"
                 >{c('Action').t`Explore other ${BRAND_NAME} plans`}</Button>

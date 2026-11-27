@@ -323,5 +323,31 @@ describe('YourPlanSection', () => {
             expect(upsellPanel).toBeTruthy();
             within(upsellPanel as HTMLElement).getByText('Workspace Standard');
         });
+
+        it('should render usage for Pass Professional', async () => {
+            mockUseOrganization.mockReturnValue([organization, false]);
+
+            renderWithProviders(<YourPlanSection app={APPS.PROTONPASS} />, {
+                preloadedState: buildPreloadedState({
+                    subscription: buildSubscription(PLANS.PASS_BUSINESS),
+                }),
+            });
+
+            await screen.findByTestId('dashboard-panels-container');
+            expect(screen.getByTestId('your-account-usage')).toBeInTheDocument();
+        });
+
+        it('should not render usage for Pass Basic', async () => {
+            mockUseOrganization.mockReturnValue([organization, false]);
+
+            renderWithProviders(<YourPlanSection app={APPS.PROTONPASS} />, {
+                preloadedState: buildPreloadedState({
+                    subscription: buildSubscription(PLANS.PASS_BASIC),
+                }),
+            });
+
+            await screen.findByTestId('dashboard-panels-container');
+            expect(screen.queryByTestId('your-account-usage')).not.toBeInTheDocument();
+        });
     });
 });

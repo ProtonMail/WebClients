@@ -3,6 +3,7 @@ import { addWeeks, fromUnixTime, isAfter, isBefore, subWeeks } from 'date-fns';
 import { Renew } from '@proton/shared/lib/payments/subscription/constants';
 import { getHasVpnB2BPlan } from '@proton/shared/lib/payments/subscription/helpers/plan-b2b';
 import { getPlanName } from '@proton/shared/lib/payments/subscription/helpers/plan-info';
+import { hasPassBasic } from '@proton/shared/lib/payments/subscription/helpers/plan-matching';
 
 import { type ADDON_NAMES, ADDON_PREFIXES, PLANS } from '../../constants';
 import { isAddonType } from '../../plan/addons';
@@ -68,7 +69,7 @@ export function isCancellableOnlyViaSupport(subscription: MaybeFreeSubscription)
         return false;
     }
 
-    if (getHasVpnB2BPlan(subscription)) {
+    if (getHasVpnB2BPlan(subscription) || hasPassBasic(subscription)) {
         return true;
     }
 
