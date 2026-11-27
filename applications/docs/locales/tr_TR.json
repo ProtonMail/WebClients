@@ -3197,7 +3197,7 @@
         "Yeni bir doğrulama kodunun ${ strong } numarasına gönderilmesi için \"Yeni kod iste\" üzerine tıklayın. Bu telefon numarası yanlışsa düzeltmek için \"Düzenle\" üzerine tıklayın."
       ],
       "Comments are not available yet": [
-        "Yorumlar henüz kullanıma açık değil"
+        "Yorumlar henüz kullanılamıyor"
       ],
       "Connect to ${ VPN_APP_NAME } to browse privately": [
         "Gizliliğinizi koruyarak gezinmek için ${ VPN_APP_NAME } bağlantısı kurun"
@@ -3215,7 +3215,7 @@
         "Öneri bağlantınızı kopyalayın"
       ],
       "Copy “${ version }” to clipboard": [
-        "“${ version }” ifadesini panoya kopyala"
+        "“${ version }” sürümünü panoya kopyala"
       ],
       "Country code": [
         "Ülke kodu"
@@ -5232,7 +5232,7 @@
         "${ MAIL_APP_NAME }: E-postalarınızı uçtan uca şifrelemeyle koruyun. Özel e-posta etki alanları, 15 e-posta adresi, sınırsız hide-my-email takma adları ve diğer özellikler."
       ],
       "${ SHEETS_APP_NAME }: Create, edit, and collaborate on end-to-end encrypted sheets.": [
-        "${ SHEETS_APP_NAME }: Uçtan uca şifrelenmiş tablolar oluşturun, düzenleyin ve üzerinde birlikte çalışın."
+        "${ SHEETS_APP_NAME }: Uçtan uca şifrelenmiş elektronik tablolar oluşturun, düzenleyin ve üzerinde birlikte çalışın."
       ],
       "${ VPN_APP_NAME }: Access blocked content and browse privately. Includes ${ serversAndCountries }, highest VPN speeds, access to worldwide streaming services, malware and ad-blocker, fast BitTorrent downloads, and more.": [
         "${ VPN_APP_NAME }: Engellenen içeriğe erişin ve gizliliğinizi koruyarak gezinin. ${ serversAndCountries }, en yüksek VPN hızları, tüm Dünya'daki yayın akışı hizmetlerine erişim, kötü amaçlı yazılım ve reklam engelleyici, hızlı BitTorrent indirmeleri ve diğer özellikler."
@@ -7330,10 +7330,10 @@
     },
     "Tooltip": {
       "Add a data recovery method to unlock your data if you forget your password.": [
-        "Parolanızı unutursanız verilerinize erişebilmek için veri kurtarma yöntemi ekleyin."
+        "Parolanızı unutursanız verilerinize erişebilmek için bir veri kurtarma yöntemi ekleyin."
       ],
       "Add a recovery email or phone so you can reset your password if you forget it.": [
-        "Parolanızı unuttuğunuzda sıfırlayabilmeniz için yedek e-posta adresi veya telefon numarası ekleyin."
+        "Parolanızı unuttuğunuzda sıfırlayabilmeniz için bir kurtarma e-posta adresi veya telefon numarası ekleyin."
       ],
       "Add this shared file to your ${ DRIVE_APP_NAME } for easy access later.": [
         "Bu paylaşılan dosyayı daha sonra kolayca erişebilmek için ${ DRIVE_APP_NAME } depolama alanınıza ekleyin"
@@ -7345,10 +7345,10 @@
         "Paylaşılan öge ayarlarını değiştir"
       ],
       "Create a recovery phrase so you can recover your data if you forget your password.": [
-        "Parolanızı unutursanız verilerinizi geri alabilmek için kurtarma ifadesi oluşturun."
+        "Parolanızı unutursanız verilerinizi geri alabilmek için bir kurtarma ifadesi oluşturun."
       ],
       "Generate a recovery phrase to protect your account against data loss.": [
-        "Hesabınızı veri kaybına karşı korumak için kurtarma ifadesi oluşturun."
+        "Hesabınızdaki verilerin kaybolmasını engellemek için bir kurtarma ifadesi oluşturun."
       ],
       "Instant AI assistance, human expert on hand!": [
         "Anında yapay zeka desteği ve uzmanlar her zaman yanınızda!"
@@ -7363,7 +7363,7 @@
         "Uçtan uca şifreleme ile paylaşıldı"
       ],
       "Some of your data is locked. Use a recovery method to unlock it.": [
-        "Verilerinizin bir kısmı kilitli. Kilidi açmak için kurtarma yöntemi kullanın."
+        "Verilerinizin bir kısmı kilitli. Kilidi açmak için bir kurtarma yöntemi kullanın."
       ],
       "This link has expired. Please extend expiration date": [
         "Bu bağlantının geçerlilik süresi dolmuş. Lütfen geçerlilik sonu tarihini uzatın"
@@ -7378,7 +7378,7 @@
         "Kurtarma dosyanız güncel değil. Verilerinizi kurtarabilmek için yeni bir dosya indirin."
       ],
       "Your recovery phrase is out of date. Get a new one so you can still recover your data.": [
-        "Geri alma ifadenizin geçerlilik süresi doldu. Verilerinizi geri alabilmek için yeni bir tane alın."
+        "Kurtarma ifadenizin geçerlilik süresi doldu. Verilerinizi kurtarabilmek için yeni bir tane alın."
       ]
     },
     "tooltip": {

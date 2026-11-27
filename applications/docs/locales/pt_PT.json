@@ -3959,6 +3959,9 @@
       ],
       "Your password (trusted contact)": [
         "A sua palavra-passe (contacto de confiança)"
+      ],
+      "${ BRAND_NAME } Account password": [
+        "Palavra-passe da conta ${ BRAND_NAME }"
       ]
     },
     "Link": {
@@ -4550,7 +4553,7 @@
         "Suporte para router"
       ],
       "Save time emailing": [
-        "Economize tempo ao enviar e-mails"
+        "Poupe tempo ao enviar mensagens"
       ],
       "Schedule and snooze emails for any time": [
         "Agende e adie e-mails para quando quiser"
@@ -7084,6 +7087,41 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "O seu período experimental termina em ${ textDate }. Não lhe será cobrado qualquer valor se cancelar antes de ${ textDate }. ${ action }"
+      ]
+    },
+    "lumo_2026: feature": {
+      "5x Plus usage": [
+        "5x mais utilização Plus"
+      ],
+      "API access, with ${ credit } a month credit": [
+        "Acesso à API, com um crédito de ${ credit } por mês"
+      ],
+      "API access, with ${ credit } a month credit per user": [
+        "Acesso à API, com um crédito de ${ credit } por mês por utilizador"
+      ],
+      "Everything in Basic, and:": [
+        "Tudo o que está incluído no plano Básico, e:"
+      ],
+      "Everything in Free, and:": [
+        "Tudo o que está incluído no plano Gratuito, e:"
+      ],
+      "Includes:": [
+        "Incluí:"
+      ],
+      "Limited messages and chat history": [
+        "Mensagens e histórico de conversas limitados"
+      ],
+      "Maximum image generation": [
+        "Geração de imagem máxima"
+      ],
+      "Maximum Skills and Projects": [
+        "Competências e Projetos Máximos"
+      ],
+      "More image generation": [
+        "Mais geração de imagem"
+      ],
+      "More usage": [
+        "Mais utilização"
       ]
     }
   }
