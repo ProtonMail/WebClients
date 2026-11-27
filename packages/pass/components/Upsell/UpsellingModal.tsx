@@ -1,12 +1,17 @@
 import type { FC, ReactNode } from 'react';
+import { useSelector } from 'react-redux';
 
 import { c } from 'ttag';
 
-import { DARK_WEB_MONITORING_NAME } from '@proton/shared/lib/constants';
+import { PLANS, PLAN_NAMES } from '@proton/payments/core/constants';
+import { BRAND_NAME, DARK_WEB_MONITORING_NAME } from '@proton/shared/lib/constants';
 
 import monitorSVG from '../../assets/monitor/upgrade.svg';
 import onboardingSVG from '../../assets/onboarding.svg';
 import type { UpsellRef } from '../../constants';
+import { shouldUpsellUnlimited } from '../../lib/user/user.plan';
+import { selectUserPlan } from '../../store/selectors/user';
+import type { Maybe } from '../../types/utils';
 import { type AdapativeModalProps, AdaptiveModal } from '../Layout/Modal/AdaptiveModal';
 import { FreeTrialActions } from './FreeTrialActions';
 import { UpgradeButton } from './UpgradeButton';
@@ -29,8 +34,36 @@ export type Props = Omit<AdapativeModalProps, 'actions'> & {
     upsellType: UpsellType;
 };
 
-const getContent = (type: UpsellType): UpsellModalContent =>
-    ({
+// translator: planName is a plan name, e.g. "Proton Unlimited" or "Pass Professional"
+const getPlanUpgradeLabel = (planName: string) => c('pass_upsell_2026: Action').t`Get ${planName}`;
+
+const getUnlimitedContent = (type: UpsellType): Maybe<UpsellModalContent> => {
+    const unlimited = PLAN_NAMES[PLANS.BUNDLE];
+
+    switch (type) {
+        case 'pass-plus':
+            return {
+                title: unlimited,
+                description: c('Info')
+                    .t`Get unlimited aliases, enjoy exclusive features, and unlock all premium ${BRAND_NAME} services by upgrading to ${unlimited}.`,
+                upgradeLabel: c('Action').t`Upgrade`,
+                image: onboardingSVG,
+            };
+        case 'pass-monitor':
+            return {
+                title: c('Title').t`Stay safer online`,
+                description: c('Description')
+                    .t`${DARK_WEB_MONITORING_NAME} is available with ${unlimited}. Upgrade for immediate access.`,
+                upgradeLabel: getPlanUpgradeLabel(unlimited),
+                image: monitorSVG,
+            };
+    }
+};
+
+const getContent = (type: UpsellType): UpsellModalContent => {
+    const passProfessional = PLAN_NAMES[PLANS.PASS_BUSINESS];
+
+    return {
         'free-trial': {
             title: c('Title').t`Your welcome gift`,
             description: undefined,
@@ -61,10 +94,11 @@ const getContent = (type: UpsellType): UpsellModalContent =>
             title: c('Title').t`Stay safer online`,
             description: c('Description')
                 .t`Unlock advanced security features and detailed logs to safeguard your online presence.`,
-            upgradeLabel: c('Action').t`Get Pass Business`,
+            upgradeLabel: getPlanUpgradeLabel(passProfessional),
             image: monitorSVG,
         },
-    })[type];
+    }[type];
+};
 
 export const UpsellingModal: FC<Props> = ({
     extraActions,
@@ -76,7 +110,9 @@ export const UpsellingModal: FC<Props> = ({
     upsellType,
     ...props
 }) => {
-    const { title, description, upgradeLabel, image } = getContent(upsellType);
+    const upsellUnlimited = shouldUpsellUnlimited(useSelector(selectUserPlan));
+    const unlimitedContent = upsellUnlimited ? getUnlimitedContent(upsellType) : undefined;
+    const { title, description, upgradeLabel, image } = unlimitedContent ?? getContent(upsellType);
 
     return (
         <AdaptiveModal
@@ -89,13 +125,19 @@ export const UpsellingModal: FC<Props> = ({
                     label={upgradeLabel}
                     onClick={props.onClose}
                     path={upgradePath}
+                    plan={unlimitedContent ? PLANS.BUNDLE : undefined}
                     upsellRef={upsellRef}
                 />,
                 ...(extraActions?.(props) ?? []),
             ]}
         >
             <div className="flex flex-column items-center w-full gap-4 m-auto">
-                <img src={image} className="w-3/5 " alt="user onboarding graphic" />
+                <img
+                    src={image}
+                    className="w-3/5 max-w-custom"
+                    style={{ '--max-w-custom': '18rem' }}
+                    alt="user onboarding graphic"
+                />
                 <h4 className="text-bold">{title}</h4>
                 {description && <p className="m-2 text-md">{description}</p>}
                 {features ?? <UpsellFeatures upsellType={upsellType} />}

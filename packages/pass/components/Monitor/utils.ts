@@ -1,10 +1,19 @@
 import { c } from 'ttag';
 
 import { IcAlias } from '@proton/icons/icons/IcAlias';
-import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
+import { IcClockRotateLeft } from '@proton/icons/icons/IcClockRotateLeft';
+import { IcCode } from '@proton/icons/icons/IcCode';
+import { IcFolders } from '@proton/icons/icons/IcFolders';
+import { IcKey } from '@proton/icons/icons/IcKey';
+import { IcKeySkeleton } from '@proton/icons/icons/IcKeySkeleton';
 import { IcLock } from '@proton/icons/icons/IcLock';
+import { IcPaperClip } from '@proton/icons/icons/IcPaperClip';
 import { IcPassShieldOk } from '@proton/icons/icons/IcPassShieldOk';
+import { IcServers } from '@proton/icons/icons/IcServers';
+import { IcShield } from '@proton/icons/icons/IcShield';
+import { IcSliders } from '@proton/icons/icons/IcSliders';
 import { IcUser } from '@proton/icons/icons/IcUser';
+import { IcUsers } from '@proton/icons/icons/IcUsers';
 import { IcUsersPlus } from '@proton/icons/icons/IcUsersPlus';
 import { DARK_WEB_MONITORING_NAME, PROTON_SENTINEL_NAME } from '@proton/shared/lib/constants';
 
@@ -20,8 +29,15 @@ export const getPlanFeatures = (): PlanFeaturesType => ({
         { icon: IcUsersPlus, label: c('Feature').t`Vault sharing (up to ${MAX_VAULT_MEMBERS} people)` },
     ],
     business: [
-        { icon: IcUser, label: PROTON_SENTINEL_NAME },
-        { icon: IcLock, label: c('new_plans: feature').t`Require 2FA for organization` },
-        { icon: IcCheckmark, label: c('new_plans: feature').t`SSO integration` },
+        { icon: IcKey, label: c('new_plans: feature').t`SSO and SCIM` },
+        { icon: IcClockRotateLeft, label: c('new_plans: feature').t`Detailed activity logs` },
+        { icon: IcSliders, label: c('new_plans: feature').t`Enterprise policies` },
+        { icon: IcShield, label: c('new_plans: feature').t`Advanced account protection` },
+        { icon: IcPaperClip, label: c('new_plans: feature').t`File attachment` },
+        { icon: IcFolders, label: c('new_plans: feature').t`Folders and subfolders` },
+        { icon: IcServers, label: c('new_plans: feature').t`SIEM integration` },
+        { icon: IcCode, label: c('new_plans: feature').t`Command line interface (CLI)` },
+        { icon: IcUsers, label: c('new_plans: feature').t`Group sharing` },
+        { icon: IcKeySkeleton, label: c('new_plans: feature').t`SSH agent` },
     ],
 });
