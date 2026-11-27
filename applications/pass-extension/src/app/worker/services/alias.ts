@@ -5,6 +5,7 @@ import { requestAliasOptions } from '@proton/pass/store/actions/creators/alias';
 import { itemCreate } from '@proton/pass/store/actions/creators/item';
 import { selectAliasLimits } from '@proton/pass/store/selectors/limits';
 import { selectOrgAliasCreationDisabled } from '@proton/pass/store/selectors/organization';
+import { selectIsPassBasicAdmin } from '@proton/pass/store/selectors/user';
 import { selectMostRecentVaultShareID } from '@proton/pass/store/selectors/vaults';
 import type { ItemCreateIntent } from '@proton/pass/types/data/items.dto';
 import { obfuscate } from '@proton/pass/utils/obfuscate/xor';
@@ -35,11 +36,12 @@ export const createAliasService = () => {
 
             const { needsUpgrade } = selectAliasLimits(state);
             const aliasCreationDisabled = selectOrgAliasCreationDisabled(state);
+            const passBasicAdmin = selectIsPassBasicAdmin(state);
 
             return ctx.service.store.dispatchAsyncRequest(requestAliasOptions, shareId).then((res) => {
                 switch (res.type) {
                     case 'success':
-                        return { ok: true, needsUpgrade, aliasCreationDisabled, options: res.data };
+                        return { ok: true, needsUpgrade, aliasCreationDisabled, passBasicAdmin, options: res.data };
                     case 'failure':
                         return { ok: false, error: res.error.message ?? null };
                 }

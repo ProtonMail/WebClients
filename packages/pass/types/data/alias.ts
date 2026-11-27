@@ -30,6 +30,8 @@ export type AliasOptionsResult = {
     options: AliasOptions;
     needsUpgrade: boolean;
     aliasCreationDisabled: boolean;
+    /** Content-scripts have no store: Pass Basic admins upgrade from the account dashboard */
+    passBasicAdmin: boolean;
 };
 
 export type AliasPending = { pendingAliasID: string; aliasEmail: string; aliasNote: string };

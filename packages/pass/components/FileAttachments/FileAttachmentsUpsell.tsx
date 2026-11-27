@@ -8,8 +8,8 @@ import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButto
 import { isAdmin } from '@proton/shared/lib/user/helpers';
 
 import { UpsellRef } from '../../constants';
-import { useNavigateToUpgrade } from '../../hooks/useNavigateToUpgrade';
-import { selectUser, selectUserPlan } from '../../store/selectors/user';
+import { PASS_BASIC_ADMIN_UPGRADE, useNavigateToUpgrade } from '../../hooks/useNavigateToUpgrade';
+import { selectIsPassBasicAdmin, selectUser, selectUserPlan } from '../../store/selectors/user';
 import { Card } from '../Layout/Card/Card';
 
 type Props = {
@@ -27,10 +27,12 @@ type Props = {
 export const FileAttachmentsUpsell: FC<Props> = ({ isPassB2BPlan, onUpsell }) => {
     const user = useSelector(selectUser);
     const userPlan = useSelector(selectUserPlan);
+    const passBasicAdmin = useSelector(selectIsPassBasicAdmin);
     const navigateToUpgrade = useNavigateToUpgrade({
         upsellRef: UpsellRef.FILE_ATTACHMENTS,
         targetPage: 'compare',
         plan: userPlan?.InternalName,
+        ...(passBasicAdmin && PASS_BASIC_ADMIN_UPGRADE),
     });
 
     if (isPassB2BPlan) {

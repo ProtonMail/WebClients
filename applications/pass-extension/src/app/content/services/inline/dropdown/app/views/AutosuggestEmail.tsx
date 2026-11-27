@@ -11,7 +11,7 @@ import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { SubTheme } from '@proton/pass/components/Layout/Theme/types';
 import { UpsellRef } from '@proton/pass/constants';
 import { useMountedState } from '@proton/pass/hooks/useEnsureMounted';
-import { useNavigateToUpgrade } from '@proton/pass/hooks/useNavigateToUpgrade';
+import { PASS_BASIC_ADMIN_UPGRADE, useNavigateToUpgrade } from '@proton/pass/hooks/useNavigateToUpgrade';
 import type { AliasState } from '@proton/pass/store/reducers';
 import type { AliasOptions } from '@proton/pass/types/data/alias';
 import { TelemetryEventName } from '@proton/pass/types/data/telemetry';
@@ -46,6 +46,7 @@ export const AutosuggestEmail: FC<Props> = ({ action, aliasCreationDisabled, pre
     const [userEmail, setUserEmail] = useState<MaybeNull<string>>(null);
     const [aliasOptions, setAliasOptions] = useMountedState<MaybeNull<AliasState['aliasOptions']>>(null);
     const [needsUpgrade, setNeedsUpgrade] = useMountedState<boolean>(false);
+    const [passBasicAdmin, setPassBasicAdmin] = useMountedState<boolean>(false);
     const [loadingText, setLoadingText] = useMountedState<MaybeNull<string>>(getInitialLoadingText());
     const [error, setError] = useMountedState<MaybeNull<string>>(null);
 
@@ -59,6 +60,7 @@ export const AutosuggestEmail: FC<Props> = ({ action, aliasCreationDisabled, pre
                 if (response.type === 'success' && response.ok) {
                     setAliasOptions(response.options);
                     setNeedsUpgrade(response.needsUpgrade);
+                    setPassBasicAdmin(response.passBasicAdmin);
                 } else setError(response.error ?? c('Error').t`Alias options could not be resolved`);
             });
         } catch {
@@ -207,7 +209,8 @@ export const AutosuggestEmail: FC<Props> = ({ action, aliasCreationDisabled, pre
                     subTheme={SubTheme.TEAL}
                     disabled={loadingText !== null}
                     onClick={(() => {
-                        if (needsUpgrade) return navigateToUpgrade;
+                        if (needsUpgrade)
+                            return () => navigateToUpgrade(passBasicAdmin ? PASS_BASIC_ADMIN_UPGRADE : {});
                         if (error) return requestAliasOptions;
                         if (validAliasOptions) return () => createAlias(aliasOptions);
                     })()}

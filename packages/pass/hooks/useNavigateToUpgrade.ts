@@ -1,8 +1,10 @@
 import { useSelector } from 'react-redux';
 
+import { PLANS } from '@proton/payments/core/constants';
+
 import { useAuthStore } from '../components/Core/AuthStoreProvider';
 import { usePassCore } from '../components/Core/PassCoreProvider';
-import { SAFARI_URL_SCHEME, type UpsellRef, UpsellRefPrefix } from '../constants';
+import { AccountPath, SAFARI_URL_SCHEME, type UpsellRef, UpsellRefPrefix } from '../constants';
 import type { AuthStore } from '../lib/auth/store';
 import { selectUserPlan } from '../store/selectors/user';
 import type { PassPlanResponse } from '../types/api/pass';
@@ -32,6 +34,15 @@ type UpgradeOptions = {
     upgradeToAccount?: boolean;
     upsellRef?: UpsellRef;
 };
+
+/** Pass Basic admins upgrade from the plan comparison on the account dashboard. The explicit path keeps
+ * desktop and the extension off `pass/signup`, for upsells that don't go through `UpgradeButton`.
+ * TODO: apply to every Pass B2B admin, like `UpgradeButton` does through `selectB2BUpsell` */
+export const PASS_BASIC_ADMIN_UPGRADE = {
+    path: AccountPath.DASHBOARD,
+    plan: PLANS.PASS_BASIC,
+    targetPage: 'compare',
+} as const satisfies UpgradeOptions;
 
 type UpgradeConfig = {
     authStore: MaybeNull<AuthStore>;
