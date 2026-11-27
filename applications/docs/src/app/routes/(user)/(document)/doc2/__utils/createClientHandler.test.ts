@@ -19,6 +19,52 @@ describe('createClientHandler', () => {
   })
 })
 
+describe('openLink', () => {
+  /** The URLs `openLink` follows, by clicking a link in a new tab. */
+  async function openedUrls(url: string) {
+    const opened: string[] = []
+    const click = vi.spyOn(HTMLAnchorElement.prototype, 'click').mockImplementation(function (this: HTMLAnchorElement) {
+      expect(this.target).toBe('_blank')
+      expect(this.rel).toBe('noopener noreferrer')
+      opened.push(this.href)
+    })
+    try {
+      await createClientHandler(dependencies({})).openLink(url)
+    } finally {
+      click.mockRestore()
+    }
+    return opened
+  }
+
+  test.each([
+    'https://example.com/a?b=c',
+    'http://example.com/',
+    'mailto:someone@example.com',
+    'tel:+41000000000',
+    'sms:+41000000000',
+  ])('opens %s', async (url) => {
+    expect(await openedUrls(url)).toEqual([url])
+  })
+
+  test.each([
+    'javascript:alert(document.domain)',
+    ' JavaScript:alert(1)',
+    'java\tscript:alert(1)',
+    'vbscript:msgbox(1)',
+    'data:text/html,<h1>Sign in</h1>',
+    'blob:https://example.com/id',
+    'file:///etc/passwd',
+    'smb://example.com/share',
+    'ms-msdt:/id PCWDiagnostic',
+    'search-ms:query=x',
+    'about:blank',
+    'example.com',
+    '',
+  ])("doesn't open %j", async (url) => {
+    expect(await openedUrls(url)).toEqual([])
+  })
+})
+
 function dependencies(overrides: Partial<ClientHandlerDependencies>): ClientHandlerDependencies {
   return {
     editorFrame: {} as HTMLIFrameElement,

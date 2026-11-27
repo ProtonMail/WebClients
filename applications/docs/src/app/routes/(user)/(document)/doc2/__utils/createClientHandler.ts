@@ -15,6 +15,20 @@ import { isRunningInNativeMobileWeb } from './isRunningInNativeMobileWeb'
 
 export type ClientHandler = EditorRequiresClientMethods
 
+/**
+ * Schemes a link from the editor may open: the web, and those of the links Lexical keeps in a document.
+ * Mirrors `packages/docs-core/lib/Bridge/EditorToClientRequestHandler.ts`, `OPENABLE_LINK_PROTOCOLS`.
+ */
+const OPENABLE_LINK_PROTOCOLS = new Set(['http:', 'https:', 'mailto:', 'tel:', 'sms:'])
+
+function canOpenLink(url: string): boolean {
+  try {
+    return OPENABLE_LINK_PROTOCOLS.has(new URL(url).protocol)
+  } catch {
+    return false
+  }
+}
+
 export type ClientHandlerDependencies = {
   editorFrame: HTMLIFrameElement
   /** Where the user's edits go */
@@ -150,6 +164,10 @@ export function createClientHandler({
     reopenSuggestion: async () => false,
 
     openLink: async (url) => {
+      // The editor runs in a sandboxed iframe: open only the schemes above, whatever URL it sends
+      if (!canOpenLink(url)) {
+        return
+      }
       const link = document.createElement('a')
       link.href = url
       link.target = '_blank'
