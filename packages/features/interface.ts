@@ -58,8 +58,9 @@ export enum FeatureCode {
     NumberOfPreloadedConversations = 'NumberOfPreloadedConversations',
     PassNudgeDontShowAgain = 'PassNudgeDontShowAgain',
 
-    // Pass B2B dashboard onboarding: org setup checklist
+    // Pass B2B dashboard onboarding: org setup checklist + trial welcome modal
     PassB2BOrgSetupChecklist = 'PassB2BOrgSetupChecklist',
+    PassB2BTrialWelcomeModalAcknowledged = 'PassB2BTrialWelcomeModalAcknowledged',
 
     ShowReferralTrialEndedBanner = 'ShowReferralTrialEndedBanner',
     ShowReferralTrialWillEndBanner = 'ShowReferralTrialWillEndBanner',
