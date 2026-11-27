@@ -50,10 +50,27 @@ describe('DocumentHeaderV2', () => {
     expect(screen.getByTestId('status-container')).toHaveTextContent(/^Saving…View only$/)
   })
 
-  test('a Viewer sees the view-only pill and no comments button', () => {
-    renderHeader('Viewer')
+  test('a Viewer sees the view-only pill and no comments button, even with a session that has comments', () => {
+    render(headerElement('Viewer', undefined, { hasComments: true }))
 
     expect(screen.getByTestId('status-container')).toHaveTextContent('View only')
+    expect(screen.queryByTestId('comments-button')).not.toBeInTheDocument()
+  })
+
+  // doc2's role has no Commenter, so its case stands in here: a session without comments, as the Loader turns them on
+  // for admins and editors only
+  test.each<DocumentRole>(['Editor', 'Admin'])('a %s whose session has no comments sees no comments button', (role) => {
+    render(headerElement(role, undefined, { hasComments: false }))
+
+    expect(screen.queryByTestId('comments-button')).not.toBeInTheDocument()
+  })
+
+  test('the comments button goes when an Editor is made a Viewer, though the session keeps its comments', () => {
+    const { rerender } = render(headerElement('Editor', undefined, { onShowComments: vi.fn() }))
+    expect(screen.getByRole('button', { name: 'Comments' })).toBeEnabled()
+
+    rerender(headerElement('Viewer', undefined, { onShowComments: vi.fn() }))
+
     expect(screen.queryByTestId('comments-button')).not.toBeInTheDocument()
   })
 
@@ -153,7 +170,10 @@ function renderHeader(role: DocumentRole, status?: ReactNode) {
 function headerElement(
   role: DocumentRole,
   status?: ReactNode,
-  props: Pick<DocumentHeaderV2Props, 'hasUnreadComments' | 'onShowComments' | 'isPublic' | 'publicOptions'> = {},
+  props: Pick<
+    DocumentHeaderV2Props,
+    'hasComments' | 'hasUnreadComments' | 'onShowComments' | 'isPublic' | 'publicOptions'
+  > = {},
 ) {
   return (
     <ConfigContext.Provider value={{ APP_VERSION: '1.2.3', APP_NAME: 'proton-docs' } as ProtonConfig}>
@@ -174,6 +194,7 @@ function headerElement(
         isMakingACopy={false}
         onFileMenuAction={vi.fn()}
         status={status}
+        hasComments
         {...props}
       />
     </ConfigContext.Provider>

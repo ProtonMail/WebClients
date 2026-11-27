@@ -25,6 +25,8 @@ import { DocumentTitleMenu, type DocumentTitleMenuProps } from './DocumentTitleM
 export type DocumentHeaderV2Props = DocumentTitleMenuProps & {
   /** The session's status pills, next to the title where /doc shows its `ConnectionStatus` */
   status?: ReactNode
+  /** The session has `session.comments`, which the Loader turns on for admins and editors only */
+  hasComments?: boolean
   hasUnreadComments?: boolean
   /** Opens the editor's comments panel, once the editor shows the document */
   onShowComments?: () => void
@@ -41,7 +43,15 @@ export type DocumentHeaderV2Props = DocumentTitleMenuProps & {
  */
 export function DocumentHeaderV2(props: DocumentHeaderV2Props & ActiveUsersProps) {
   const { APP_VERSION, CLIENT_TYPE } = useConfig()
-  const { role, status, hasUnreadComments = false, onShowComments, publicOptions, ...titleMenuProps } = props
+  const {
+    role,
+    status,
+    hasComments,
+    hasUnreadComments = false,
+    onShowComments,
+    publicOptions,
+    ...titleMenuProps
+  } = props
   const { sharingModal, showSharingModal } = useSharingModal()
 
   return (
@@ -76,7 +86,11 @@ export function DocumentHeaderV2(props: DocumentHeaderV2Props & ActiveUsersProps
               {role === 'Admin' && (
                 <HeaderShareButton onClick={() => showSharingModal({ drive: getDrive(), nodeUid: props.node.uid })} />
               )}
-              {role !== 'Viewer' && <CommentsButton hasUnread={hasUnreadComments} onShowComments={onShowComments} />}
+              {/* As /doc, a viewer gets no comments. The role is read again after a rebootstrap but the session keeps its
+                  comments, so an editor made a viewer loses the button too. */}
+              {hasComments && role !== 'Viewer' && (
+                <CommentsButton hasUnread={hasUnreadComments} onShowComments={onShowComments} />
+              )}
               <div className="w-2" />
               <UserDropdown
                 app={APPS.PROTONDOCS}

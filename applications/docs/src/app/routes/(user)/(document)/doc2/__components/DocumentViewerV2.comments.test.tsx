@@ -114,17 +114,7 @@ function renderViewer(role: DocumentRole, { withComments = true } = {}) {
   if (!withComments) {
     Object.assign(fake.mocks, { comments: undefined })
   }
-  vi.mocked(getDrive).mockReturnValue({
-    getNodeHierarchy: async () => [
-      { uid: 'ROOT', directRole: MemberRole.Inherited },
-      {
-        uid: 'VOLUME~LINK',
-        name: { ok: true, value: 'Plans' },
-        mediaType: PROTON_DOCS_DOCUMENT_MIMETYPE,
-        directRole: ROLES[role],
-      },
-    ],
-  } as unknown as ReturnType<typeof getDrive>)
+  mockDriveRole(role)
   mockRealtimeClient.createSession.mockReturnValue(fake.session)
   const application = { logger } as unknown as ApplicationProviderProps['application']
   render(
@@ -147,6 +137,21 @@ function renderViewer(role: DocumentRole, { withComments = true } = {}) {
     </MemoryRouter>,
   )
   return fake
+}
+
+/** The user's role on the document, as the node's hierarchy gives it */
+function mockDriveRole(role: DocumentRole) {
+  vi.mocked(getDrive).mockReturnValue({
+    getNodeHierarchy: async () => [
+      { uid: 'ROOT', directRole: MemberRole.Inherited },
+      {
+        uid: 'VOLUME~LINK',
+        name: { ok: true, value: 'Plans' },
+        mediaType: PROTON_DOCS_DOCUMENT_MIMETYPE,
+        directRole: ROLES[role],
+      },
+    ],
+  } as unknown as ReturnType<typeof getDrive>)
 }
 
 /** Renders the viewer and takes it to the Reveal Point */
@@ -202,7 +207,7 @@ describe('DocumentViewerV2 comments', () => {
     )
   })
 
-  test('a session without comments, as for a viewer made an editor after it opened, leaves the button disabled', async () => {
+  test('a session without comments, as for a viewer made an editor after it opened, has no comments button', async () => {
     const fake = renderViewer('Editor', { withComments: false })
     await waitFor(() => expect(fake.mocks.connect).toHaveBeenCalled())
     act(() => fake.setSnapshot({ status: { name: 'connected' }, caughtUp: true }))
@@ -210,9 +215,21 @@ describe('DocumentViewerV2 comments', () => {
     await act(async () => mockClientHandler.updateFrameSize(480))
     await waitFor(() => expect(mockEditor.changeLockedState).toHaveBeenCalled())
 
-    expect(screen.getByRole('button', { name: 'Comments' })).toBeDisabled()
+    expect(screen.queryByRole('button', { name: 'Comments' })).not.toBeInTheDocument()
     expect(await mockClientHandler.getAllThreads()).toEqual([])
     expect(await mockClientHandler.editComment('thread-1', 'comment-1', 'Edited')).toBe(false)
+  })
+
+  test('an editor made a viewer after a rebootstrap loses the comments button, though the session keeps its comments', async () => {
+    const fake = await renderRevealed('Editor')
+    expect(screen.getByRole('button', { name: 'Comments' })).toBeEnabled()
+
+    mockDriveRole('Viewer')
+    act(() => fake.setSnapshot({ status: { name: 'opening' } }))
+    act(() => fake.setSnapshot({ status: { name: 'connected' } }))
+
+    await waitFor(() => expect(screen.queryByRole('button', { name: 'Comments' })).not.toBeInTheDocument())
+    expect(fake.session.comments).toBeDefined()
   })
 
   test('the comments button shows a dot while a thread is unread', async () => {
