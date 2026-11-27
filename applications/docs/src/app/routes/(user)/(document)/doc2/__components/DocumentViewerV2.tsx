@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState, useSyncExternalStore } from 'react'
 
 import { useConfig } from '@proton/app-context/useConfig'
+import { useNotifications } from '@proton/app-context/useNotifications'
 import { useGetUserSettings } from '@proton/account/userSettings/hooks'
 import useAuthentication from '@proton/components/hooks/useAuthentication'
 import { EditorSystemMode } from '@proton/docs-shared/EditorSystemMode'
@@ -18,8 +19,10 @@ import { useDebugMode } from '~/utils/debug-mode-context'
 import { useEvent } from '~/utils/misc'
 import { usePrintShortcut } from '~/utils/printShortcut'
 
+import { type CommentChangeFailure, notifyCommentChangeFailure } from '../__utils/comments/commentChangeFailures'
 import { exportAndDownload } from '../__utils/downloadExport'
 import { fetchExternalImageAsBase64 } from '../__utils/fetchExternalImageAsBase64'
+import { useSuggestionsAllowed } from '../__utils/flags'
 import { getNodeName } from '../__utils/getNodeName'
 import { handleFileMenuAction, openHelp } from '../__utils/handleFileMenuAction'
 import { type LoaderDeps, commentsOf } from '../__utils/loadDocument'
@@ -87,13 +90,23 @@ export function DocumentViewerV2({
   const { isDebugMode, toggleDebugMode } = useDebugMode()
   const isDarkMode = useIsEditorDarkMode()
   const userName = useUserName()
+  const { createNotification } = useNotifications()
+  const suggestionsAllowed = useSuggestionsAllowed()
   // Stable, as the Loader builds the bridge with them once: each runs the latest render's code
-  const sendBasics = useEvent<LoaderDeps['sendEditorBasics']>((editorInvoker) =>
+  const sendBasics = useEvent<LoaderDeps['sendEditorBasics']>((editorInvoker, { hasComments }) =>
     sendEditorBasics(
       editorInvoker,
-      { isDarkMode, userName, getUserSettings: isPublicMode ? undefined : getUserSettings },
+      {
+        isDarkMode,
+        userName,
+        suggestionsEnabled: suggestionsAllowed && hasComments,
+        getUserSettings: isPublicMode ? undefined : getUserSettings,
+      },
       logger,
     ),
+  )
+  const onCommentChangeFailed = useEvent((failure: CommentChangeFailure) =>
+    notifyCommentChangeFailure(createNotification, failure),
   )
   const checkFlag = useEvent(isFlagEnabled)
   const onWordCount = useEvent(setWordCountInfo)
@@ -125,6 +138,7 @@ export function DocumentViewerV2({
       onFileMenuAction,
       onPresenceUpdate,
       fetchExternalImageAsBase64: fetchImage,
+      onCommentChangeFailed,
       logger,
     },
   }))
@@ -138,6 +152,7 @@ export function DocumentViewerV2({
   const node = useLiveDocumentNode('node' in status ? status.node : undefined)
   const snapshot = useSyncExternalStore(session?.subscribe ?? subscribeToNothing, session?.getSnapshot ?? getNothing)
   const sessionComments = commentsOf(session)
+  const suggestionsEnabled = suggestionsAllowed && sessionComments !== undefined
   const comments = useSyncExternalStore(
     sessionComments?.subscribe ?? subscribeToNothing,
     sessionComments?.getSnapshot ?? getNothing,
@@ -206,7 +221,7 @@ export function DocumentViewerV2({
   const waitingForActivity = useRetryOnActivity(session)
   useStopFollowUps(session, showModal)
   useLeaveWarning(session)
-  useEditorBasicsInSync(exportInvoker, { isDarkMode, userName })
+  useEditorBasicsInSync(exportInvoker, { isDarkMode, userName, suggestionsEnabled })
   usePrintShortcut(exportInvoker ? print : undefined)
   const receivePresenceFromEditor = usePresenceBridge(session, editorInvoker)
 

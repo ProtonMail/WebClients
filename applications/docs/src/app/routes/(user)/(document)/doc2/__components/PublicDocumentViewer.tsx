@@ -110,7 +110,8 @@ export function PublicDocumentViewer({
   const userName = handoff.user ? getUserName(handoff.user) : AnonymousUserDisplayName
   // Stable, as the Loader builds the bridge with them once: each runs the latest render's code
   const sendBasics = useEvent<LoaderDeps['sendEditorBasics']>((editorInvoker) =>
-    sendEditorBasics(editorInvoker, { isDarkMode, userName }, logger),
+    // No Suggesting until a public session has comments, where a suggestion's thread is kept
+    sendEditorBasics(editorInvoker, { isDarkMode, userName, suggestionsEnabled: false }, logger),
   )
   const checkFlag = useEvent(isFlagEnabled)
   const onWordCount = useEvent(setWordCountInfo)
@@ -170,6 +171,8 @@ export function PublicDocumentViewer({
       onToolbarClicked,
       // As /doc's public view, which has no image proxy: an export leaves external images out
       fetchExternalImageAsBase64: async () => undefined,
+      // A public session has no comments to change
+      onCommentChangeFailed: () => {},
       logger,
     },
   }))
@@ -257,7 +260,7 @@ export function PublicDocumentViewer({
   const waitingForActivity = useRetryOnActivity(liveSession)
   useStopFollowUps(liveSession, showModal)
   useLeaveWarning(liveSession)
-  useEditorBasicsInSync(exportInvoker, { isDarkMode, userName })
+  useEditorBasicsInSync(exportInvoker, { isDarkMode, userName, suggestionsEnabled: false })
   usePrintShortcut(exportInvoker ? print : undefined)
   const receivePresenceFromEditor = usePresenceBridge(liveSession, editorInvoker)
 

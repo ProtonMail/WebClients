@@ -104,8 +104,11 @@ export type LoaderDeps = PrivateLoaderDeps | (LoaderCommonDeps & { publicLink: P
 type LoaderCommonDeps = {
   logger: LoggerInterface
   appVersion: string
-  /** Gives the editor the theme, the user's settings and name, sent before it is initialized; never throws */
-  sendEditorBasics: (editorInvoker: EditorInvoker) => void
+  /**
+   * Gives the editor the theme, the user's settings and name, and whether it offers Suggesting, which needs the
+   * session's comments; sent before it is initialized; never throws
+   */
+  sendEditorBasics: (editorInvoker: EditorInvoker, session: { hasComments: boolean }) => void
   /** Stable, so that the bridge built with them is built once */
   bridgeHandlers: Omit<
     ClientHandlerDependencies,
@@ -444,7 +447,7 @@ class LoaderRun {
    */
   async initializeEditor(): Promise<void> {
     const editorInvoker = this.requireEditorInvoker()
-    this.deps.sendEditorBasics(editorInvoker)
+    this.deps.sendEditorBasics(editorInvoker, { hasComments: commentsOf(this.requireSession()) !== undefined })
     const { userOwnAddress } = this.requireSession().getNodeMeta()
     await editorInvoker.initializeEditor(
       GenerateUUID(),

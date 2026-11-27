@@ -4,6 +4,7 @@ import userEvent from '@testing-library/user-event'
 
 import { ConfigContext } from '@proton/app-context/configContext'
 import { CommentThreadState } from '@proton/docs-shared/CommentThreadState'
+import { DocsApiError } from '@proton-docs/realtime-sdk'
 import type { DriveCompat } from '@proton/drive-store/lib/useDriveCompat'
 import { MemberRole, getDrive } from '@proton/drive/sdk'
 import { PROTON_DOCS_DOCUMENT_MIMETYPE } from '@proton/shared/lib/helpers/mimetype'
@@ -32,8 +33,21 @@ vi.mock('@proton/app-context/useApi', () => ({ useApi: () => vi.fn() }))
 vi.mock('@proton/drive/sdk', async () => ({ ...(await vi.importActual('@proton/drive/sdk')), getDrive: vi.fn() }))
 vi.mock('@proton/components/hooks/useAuthentication', () => ({ default: () => ({ UID: 'session-uid' }) }))
 vi.mock('@proton/unleash/useGetFlag', () => ({ useGetFlag: () => () => false }))
+const mockCreateNotification = vi.fn()
+
+/** What a notification shows, as the user reads it */
+function shownText(options: { text: ReactNode }) {
+  return render(<>{options.text}</>).container.textContent
+}
 vi.mock('@proton/app-context/useNotifications', () => ({
-  useNotifications: () => ({ createNotification: vi.fn() }),
+  useNotifications: () => ({ createNotification: mockCreateNotification }),
+}))
+const mockFlags = new Set<string>()
+vi.mock('@proton/unleash/useFlag', () => ({ useFlag: (flag: string) => mockFlags.has(flag) }))
+let mockIsLocalEnvironment = false
+vi.mock('@proton/shared/lib/env', async () => ({
+  ...(await vi.importActual('@proton/shared/lib/env')),
+  isLocalEnvironment: () => mockIsLocalEnvironment,
 }))
 vi.mock('~/utils/flags', () => ({ useIsDarkThemeEnabled: () => false }))
 vi.mock('~/drive-sdk/event-subscriber', () => ({
@@ -117,7 +131,7 @@ function renderViewer(role: DocumentRole, { withComments = true } = {}) {
   mockDriveRole(role)
   mockRealtimeClient.createSession.mockReturnValue(fake.session)
   const application = { logger } as unknown as ApplicationProviderProps['application']
-  render(
+  const viewer = () => (
     <MemoryRouter>
       <CompatRouter>
         <ConfigContext.Provider
@@ -134,9 +148,10 @@ function renderViewer(role: DocumentRole, { withComments = true } = {}) {
           </ApplicationProvider>
         </ConfigContext.Provider>
       </CompatRouter>
-    </MemoryRouter>,
+    </MemoryRouter>
   )
-  return fake
+  const { rerender } = render(viewer())
+  return { ...fake, rerender: () => rerender(viewer()) }
 }
 
 /** The user's role on the document, as the node's hierarchy gives it */
@@ -166,7 +181,11 @@ async function renderRevealed(role: DocumentRole = 'Editor') {
 }
 
 describe('DocumentViewerV2 comments', () => {
-  beforeEach(() => resetEditor())
+  beforeEach(() => {
+    resetEditor()
+    mockFlags.clear()
+    mockIsLocalEnvironment = false
+  })
 
   afterEach(() => vi.clearAllMocks())
 
@@ -363,14 +382,110 @@ describe('DocumentViewerV2 comments', () => {
     expect(mockEditor.handleCommentsChange).not.toHaveBeenCalled()
   })
 
-  test('Suggesting stays off: the editor is told so, and a suggestion call reaches no comments', async () => {
-    const fake = await renderRevealed()
+  test.each<[string, { disabled: boolean; local: boolean; withComments: boolean }, boolean]>([
+    ['on by default', { disabled: false, local: false, withComments: true }, true],
+    ['off with DocsSuggestionsDisabled', { disabled: true, local: false, withComments: true }, false],
+    [
+      'on with DocsSuggestionsDisabled in a local environment',
+      { disabled: true, local: true, withComments: true },
+      true,
+    ],
+    ['off for a session without comments', { disabled: false, local: false, withComments: false }, false],
+  ])('Suggesting is %s, given to the editor before it initializes', async (_name, setup, enabled) => {
+    if (setup.disabled) {
+      mockFlags.add('DocsSuggestionsDisabled')
+    }
+    mockIsLocalEnvironment = setup.local
+    const fake = renderViewer('Editor', { withComments: setup.withComments })
+    await waitFor(() => expect(fake.mocks.connect).toHaveBeenCalled())
+    act(() => fake.setSnapshot({ status: { name: 'connected' }, caughtUp: true }))
+    await waitFor(() => expect(mockEditor.initializeEditor).toHaveBeenCalled())
 
-    expect(mockEditor.syncProperty).toHaveBeenCalledWith('suggestionsEnabled', false)
-    expect(await mockClientHandler.createSuggestionThread('suggestion-1', 'Text', 'insert')).toBeUndefined()
+    const suggestionsCall = mockEditor.syncProperty.mock.calls.findIndex(([name]) => name === 'suggestionsEnabled')
+    expect(mockEditor.syncProperty.mock.calls[suggestionsCall]).toEqual(['suggestionsEnabled', enabled])
+    expect(mockEditor.syncProperty.mock.invocationCallOrder[suggestionsCall]).toBeLessThan(
+      mockEditor.initializeEditor.mock.invocationCallOrder[0],
+    )
+  })
+
+  test('Suggesting follows DocsSuggestionsDisabled while the page is open', async () => {
+    const view = await renderRevealed()
+    expect(mockEditor.syncProperty).toHaveBeenLastCalledWith('suggestionsEnabled', true)
+
+    mockFlags.add('DocsSuggestionsDisabled')
+    view.rerender()
+
+    await waitFor(() => expect(mockEditor.syncProperty).toHaveBeenLastCalledWith('suggestionsEnabled', false))
+  })
+
+  test("the editor's suggestion calls reach the session's comments, and answer once the server takes them", async () => {
+    const fake = await renderRevealed()
+    const comments = fake.mocks.comments
+
+    const thread = await mockClientHandler.createSuggestionThread('suggestion-1', 'Summary', 'insert')
+    expect(comments.createSuggestionThread).toHaveBeenCalledWith({ markId: 'suggestion-1', summary: 'Summary' })
+    expect(thread).toMatchObject({ id: 'suggestion-thread-1', markID: 'suggestion-1' })
+
+    expect(await mockClientHandler.acceptSuggestion('thread-1', 'Accepted summary')).toBe(true)
+    expect(comments.acceptSuggestion).toHaveBeenCalledWith('thread-1', 'Accepted summary')
+    expect(await mockClientHandler.rejectSuggestion('thread-1')).toBe(true)
+    expect(comments.rejectSuggestion).toHaveBeenCalledWith('thread-1', undefined)
+    expect(await mockClientHandler.reopenSuggestion('thread-1')).toBe(true)
+    expect(comments.reopenSuggestion).toHaveBeenCalledWith('thread-1')
+    expect(mockCreateNotification).not.toHaveBeenCalled()
+  })
+
+  test('a failed suggestion call answers as failed and shows an error notification', async () => {
+    const fake = await renderRevealed()
+    fake.mocks.comments.acceptSuggestion.mockRejectedValueOnce(new DocsApiError('acceptSuggestion', 500))
+
     expect(await mockClientHandler.acceptSuggestion('thread-1', 'Summary')).toBe(false)
-    expect(await mockClientHandler.rejectSuggestion('thread-1')).toBe(false)
-    expect(await mockClientHandler.reopenSuggestion('thread-1')).toBe(false)
-    expect(fake.mocks.comments.createThread).not.toHaveBeenCalled()
+
+    expect(mockCreateNotification).toHaveBeenCalledTimes(1)
+    expect(mockCreateNotification.mock.calls[0][0]).toMatchObject({ type: 'error' })
+    expect(shownText(mockCreateNotification.mock.calls[0][0])).toBe("The suggestion wasn't accepted.")
+  })
+
+  test('a reply that waited and is refused because its thread was deleted says so, with its text', async () => {
+    const fake = await renderRevealed()
+    const comments = fake.mocks.comments
+    act(() => fake.setComments({ threads: [fakeThread()] }))
+    const placeholder = { ...fakeThread().comments[0], id: 'placeholder-1', isPlaceholder: true }
+    let refuse: (error: unknown) => void = () => {}
+    comments.reply.mockImplementationOnce(() => {
+      fake.setComments({
+        threads: [fakeThread({ comments: [...fakeThread().comments, placeholder] })],
+        waitingChanges: 1,
+      })
+      return new Promise((_resolve, reject) => (refuse = reject))
+    })
+    const content = JSON.stringify({ root: { children: [{ type: 'paragraph', children: [{ text: 'On my way' }] }] } })
+
+    expect(await act(() => mockClientHandler.createComment(content, 'thread-1'))).toMatchObject({ id: 'placeholder-1' })
+    act(() => fake.setComments({ waitingChanges: 0 }))
+    refuse(new DocsApiError('addComment', 404))
+
+    await waitFor(() => expect(mockCreateNotification).toHaveBeenCalledTimes(1))
+    const [[notification]] = mockCreateNotification.mock.calls
+    expect(notification).toMatchObject({ type: 'error', expiration: -1, showCloseButton: true })
+    expect(shownText(notification)).toBe(
+      "Your reply wasn't saved: the comment thread was deleted.\n\nWhat you wrote:\nOn my way",
+    )
+  })
+
+  test('leaving warns while comment changes wait for the connection', async () => {
+    const fake = await renderRevealed()
+    const leave = () => {
+      const event = new Event('beforeunload', { cancelable: true })
+      window.dispatchEvent(event)
+      return event.defaultPrevented
+    }
+    expect(leave()).toBe(false)
+
+    act(() => fake.setComments({ waitingChanges: 1 }))
+    expect(leave()).toBe(true)
+
+    act(() => fake.setComments({ waitingChanges: 0 }))
+    expect(leave()).toBe(false)
   })
 })

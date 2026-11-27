@@ -40,25 +40,28 @@ function wrapperFor({ isDarkTheme = true } = {}) {
 describe('sendEditorBasics', () => {
   afterEach(() => vi.clearAllMocks())
 
-  test("gives the editor dark mode, the user's settings and name, and hides Suggesting", async () => {
-    const invoker = createInvoker()
+  test.each([true, false])(
+    "gives the editor dark mode, the user's settings and name, and Suggesting %s",
+    async (suggestionsEnabled) => {
+      const invoker = createInvoker()
 
-    sendEditorBasics(
-      invoker,
-      { isDarkMode: true, userName: 'Alice', getUserSettings: async () => USER_SETTINGS },
-      logger,
-    )
+      sendEditorBasics(
+        invoker,
+        { isDarkMode: true, userName: 'Alice', suggestionsEnabled, getUserSettings: async () => USER_SETTINGS },
+        logger,
+      )
 
-    expect(invoker.setDarkMode).toHaveBeenCalledWith(true)
-    expect(invoker.syncProperty).toHaveBeenCalledWith('suggestionsEnabled', false)
-    expect(invoker.syncProperty).toHaveBeenCalledWith('userName', 'Alice')
-    await waitFor(() => expect(invoker.loadUserSettings).toHaveBeenCalledWith(USER_SETTINGS))
-  })
+      expect(invoker.setDarkMode).toHaveBeenCalledWith(true)
+      expect(invoker.syncProperty).toHaveBeenCalledWith('suggestionsEnabled', suggestionsEnabled)
+      expect(invoker.syncProperty).toHaveBeenCalledWith('userName', 'Alice')
+      await waitFor(() => expect(invoker.loadUserSettings).toHaveBeenCalledWith(USER_SETTINGS))
+    },
+  )
 
   test('gives the editor no user settings in a public-link session, which has none', async () => {
     const invoker = createInvoker()
 
-    sendEditorBasics(invoker, { isDarkMode: false, userName: 'Alice' }, logger)
+    sendEditorBasics(invoker, { isDarkMode: false, userName: 'Alice', suggestionsEnabled: false }, logger)
     await new Promise((resolve) => setTimeout(resolve, 0))
 
     expect(invoker.loadUserSettings).not.toHaveBeenCalled()
@@ -68,7 +71,7 @@ describe('sendEditorBasics', () => {
     const invoker = createInvoker()
     invoker.setDarkMode.mockRejectedValue(new Error('No answer'))
 
-    sendEditorBasics(invoker, { isDarkMode: true, userName: 'Alice' }, logger)
+    sendEditorBasics(invoker, { isDarkMode: true, userName: 'Alice', suggestionsEnabled: false }, logger)
 
     await waitFor(() => expect(logger.warn).toHaveBeenCalledWith('Failed to set the editor theme', expect.any(Error)))
   })
@@ -105,26 +108,32 @@ describe('useIsEditorDarkMode', () => {
 describe('useEditorBasicsInSync', () => {
   test('does nothing before the editor is open', () => {
     expect(() =>
-      renderHook(() => useEditorBasicsInSync(undefined, { isDarkMode: true, userName: 'Alice' }), {
-        wrapper: wrapperFor(),
-      }),
+      renderHook(
+        () => useEditorBasicsInSync(undefined, { isDarkMode: true, userName: 'Alice', suggestionsEnabled: true }),
+        {
+          wrapper: wrapperFor(),
+        },
+      ),
     ).not.toThrow()
   })
 
-  test('gives an open editor the theme and the user name each time they change', () => {
+  test('gives an open editor the theme, the user name and Suggesting each time they change', () => {
     const invoker = createInvoker()
     const { rerender } = renderHook((basics) => useEditorBasicsInSync(invoker, basics), {
       wrapper: wrapperFor(),
-      initialProps: { isDarkMode: false, userName: 'Alice' },
+      initialProps: { isDarkMode: false, userName: 'Alice', suggestionsEnabled: true },
     })
 
-    rerender({ isDarkMode: true, userName: 'Alice' })
-    rerender({ isDarkMode: true, userName: 'Alice B.' })
+    rerender({ isDarkMode: true, userName: 'Alice', suggestionsEnabled: true })
+    rerender({ isDarkMode: true, userName: 'Alice B.', suggestionsEnabled: true })
+    rerender({ isDarkMode: true, userName: 'Alice B.', suggestionsEnabled: false })
 
     expect(invoker.setDarkMode.mock.calls).toEqual([[false], [true]])
     expect(invoker.syncProperty.mock.calls).toEqual([
       ['userName', 'Alice'],
+      ['suggestionsEnabled', true],
       ['userName', 'Alice B.'],
+      ['suggestionsEnabled', false],
     ])
   })
 })

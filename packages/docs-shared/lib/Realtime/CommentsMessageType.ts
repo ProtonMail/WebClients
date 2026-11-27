@@ -11,6 +11,11 @@ export enum CommentsMessageType {
   StoppedTyping = 6,
   ResolveThread = 7,
   UnresolveThread = 8,
+  /**
+   * A suggestion thread's state was saved, `{ threadId }`. The realtime SDK sends and reads it, so a peer shows the
+   * new state; docs-core ignores it. Here so that nothing else takes the value.
+   */
+  SuggestionStateChanged = 9,
 }
 
 export type AddThreadData = CommentThreadPayload

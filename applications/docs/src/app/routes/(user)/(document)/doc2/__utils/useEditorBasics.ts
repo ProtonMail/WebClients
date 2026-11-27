@@ -33,6 +33,8 @@ export function getUserName(user: Pick<UserModel, 'DisplayName' | 'Name' | 'Emai
 export type EditorBasics = {
   isDarkMode: boolean
   userName: string
+  /** Whether the editor offers Suggesting: on with `useSuggestionsAllowed` (`flags.ts`) and the session's comments */
+  suggestionsEnabled: boolean
   /** Undefined in a public-link session, which has no user settings */
   getUserSettings?: () => Promise<UserSettings>
 }
@@ -40,14 +42,14 @@ export type EditorBasics = {
 type BasicsEditor = Pick<EditorInvoker, 'setDarkMode' | 'loadUserSettings' | 'syncProperty'>
 
 /**
- * Gives the editor what /doc gives it before it is initialized: dark mode, the user's settings, Suggesting turned off,
- * and the user's name, which its presence carries. Sent, not awaited: the bridge delivers them before a later
+ * Gives the editor what /doc gives it before it is initialized: dark mode, the user's settings, whether it offers
+ * Suggesting, and the user's name, which its presence carries. Sent, not awaited: the bridge delivers them before a later
  * `initializeEditor`. A failure is only logged. Adapted from
  * `applications/docs/src/app/components/document/DocumentViewer/DocumentViewer.tsx`.
  */
 export function sendEditorBasics(
   editorInvoker: BasicsEditor,
-  { isDarkMode, userName, getUserSettings }: EditorBasics,
+  { isDarkMode, userName, suggestionsEnabled, getUserSettings }: EditorBasics,
   logger: LoggerInterface,
 ): void {
   const warnOnFailure = (call: Promise<void>, failure: string) => {
@@ -60,18 +62,20 @@ export function sendEditorBasics(
       'Failed to give the editor the user settings',
     )
   }
-  // Suggestions create comment threads, which doc2 can't store until comments come to it after SDK Phase 2
-  warnOnFailure(editorInvoker.syncProperty('suggestionsEnabled', false), 'Failed to turn off suggestions in the editor')
+  warnOnFailure(
+    editorInvoker.syncProperty('suggestionsEnabled', suggestionsEnabled),
+    'Failed to give the editor the suggestions setting',
+  )
   warnOnFailure(editorInvoker.syncProperty('userName', userName), 'Failed to give the editor the user name')
 }
 
 /**
- * Keeps an open editor's theme and the user's name in sync with the app's, once the Loader has given it them. Its
- * first run repeats them, which changes nothing.
+ * Keeps an open editor's theme, the user's name and whether it offers Suggesting in sync with the app's, once the
+ * Loader has given it them. Its first run repeats them, which changes nothing.
  */
 export function useEditorBasicsInSync(
   editorInvoker: BasicsEditor | undefined,
-  { isDarkMode, userName }: Pick<EditorBasics, 'isDarkMode' | 'userName'>,
+  { isDarkMode, userName, suggestionsEnabled }: Pick<EditorBasics, 'isDarkMode' | 'userName' | 'suggestionsEnabled'>,
 ) {
   const { logger } = useApplication()
 
@@ -84,4 +88,10 @@ export function useEditorBasicsInSync(
       ?.syncProperty('userName', userName)
       .catch((error) => logger.warn('Failed to give the editor the user name', error))
   }, [editorInvoker, logger, userName])
+
+  useEffect(() => {
+    editorInvoker
+      ?.syncProperty('suggestionsEnabled', suggestionsEnabled)
+      .catch((error) => logger.warn('Failed to give the editor the suggestions setting', error))
+  }, [editorInvoker, logger, suggestionsEnabled])
 }

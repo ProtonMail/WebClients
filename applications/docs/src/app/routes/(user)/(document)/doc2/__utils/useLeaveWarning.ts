@@ -1,9 +1,10 @@
 import { useEffect } from 'react'
-import type { DocumentSession } from './loadDocument'
+import { type DocumentSession, commentsOf } from './loadDocument'
 
 /**
  * Has the browser ask before the page is left while `session` holds edits the server has not acknowledged, which a
- * closed tab loses (ADR-0010). Reads `delivery` when the user leaves, so anything but `synced` warns.
+ * closed tab loses (ADR-0010), or comment changes still waiting for the connection, which live only in the page
+ * (ADR-0021). Reads them when the user leaves, so anything but `synced` with none waiting warns.
  */
 export function useLeaveWarning(session: DocumentSession | undefined): void {
   useEffect(() => {
@@ -12,7 +13,8 @@ export function useLeaveWarning(session: DocumentSession | undefined): void {
     }
 
     const warnUnlessSynced = (event: BeforeUnloadEvent) => {
-      if (session.getSnapshot().delivery !== 'synced') {
+      const waitingComments = commentsOf(session)?.getSnapshot().waitingChanges ?? 0
+      if (session.getSnapshot().delivery !== 'synced' || waitingComments > 0) {
         event.preventDefault()
         // Browsers before Chrome 119 prompt only when returnValue is set
         event.returnValue = ''

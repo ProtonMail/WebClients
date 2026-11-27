@@ -64,6 +64,7 @@ describe('ClientEditorBridge', () => {
         fetchExternalImageAsBase64,
         // A Viewer's session has no comments
         comments: undefined,
+        onCommentChangeFailed: vi.fn(),
         logger,
       }),
       logger,
