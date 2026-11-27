@@ -59,7 +59,7 @@ import { IcPassPasskey } from '@proton/icons/icons/IcPassPasskey';
 import { IcShield } from '@proton/icons/icons/IcShield';
 import { IcUserPlus } from '@proton/icons/icons/IcUserPlus';
 import { IcUsers } from '@proton/icons/icons/IcUsers';
-import { CYCLE, PLANS, PLAN_NAMES } from '@proton/payments/core/constants';
+import { ADDON_NAMES, CYCLE, PLANS, PLAN_NAMES, TRIAL_MAX_USERS } from '@proton/payments/core/constants';
 import {
     APPS,
     BRAND_NAME,
@@ -520,21 +520,35 @@ const PASS_B2B_AUTO_TRIAL_PLAN = PLANS.PASS_BUSINESS;
  * Applies when no plan is selected, or when it is `passbasic2026`: Pass Basic isn't trial-eligible on the backend,
  * so that selection is upgraded to the Pass Professional trial. Any `trial`/`cardless` params also present are
  * overridden. Any other plan choice is deliberate and this backs off.
+ *
+ * The trial starts with its maximum of users, unless the link sets `users`.
  */
 const getPassB2BAutoTrialOverrides = ({
     audience,
     preSelectedPlan,
+    users,
     isFlagEnabled,
 }: {
     audience: Audience;
     preSelectedPlan: string | undefined;
+    users: number | undefined;
     isFlagEnabled: boolean;
 }): SignupConfiguration['signupParametersOverrides'] => {
     if (!isFlagEnabled || audience !== Audience.B2B || (preSelectedPlan && preSelectedPlan !== PLANS.PASS_BASIC)) {
         return undefined;
     }
-    return { preSelectedPlan: PASS_B2B_AUTO_TRIAL_PLAN, trial: true, cardless: true, isPassB2BAutoTrial: true };
+    return {
+        preSelectedPlan: PASS_B2B_AUTO_TRIAL_PLAN,
+        trial: true,
+        cardless: true,
+        users: users ?? TRIAL_MAX_USERS,
+        isPassB2BAutoTrial: true,
+    };
 };
+
+/** Member addons that bring the auto-trial plan to the trial's maximum of users, for the B2B audience tab.
+ * Pass Professional includes 1 user. */
+const PASS_B2B_AUTO_TRIAL_ADDONS = { [ADDON_NAMES.MEMBER_PASS_BUSINESS]: TRIAL_MAX_USERS - 1 };
 
 export const getPassConfiguration = ({
     showPassFamily,
@@ -564,6 +578,7 @@ export const getPassConfiguration = ({
         hideIncludedProducts?: boolean;
         isPassB2BAutoTrialFlagEnabled?: boolean;
         showPassBasic?: boolean;
+        users?: number;
     };
 }): SignupConfiguration => {
     const logo = <PassLogo />;
@@ -571,6 +586,7 @@ export const getPassConfiguration = ({
     const signupParametersOverrides = getPassB2BAutoTrialOverrides({
         audience,
         preSelectedPlan: signupParameters?.preSelectedPlan,
+        users: signupParameters?.users,
         isFlagEnabled: !!signupParameters?.isPassB2BAutoTrialFlagEnabled,
     });
     const isPassB2BAutoTrial = !!signupParametersOverrides?.isPassB2BAutoTrial;
@@ -805,7 +821,11 @@ export const getPassConfiguration = ({
                 title: c('pass_signup_2023: title').t`For businesses`,
                 // Same cardless trial as a bare visit to the B2B signup URL (see getPassB2BAutoTrialOverrides)
                 ...(signupParameters?.isPassB2BAutoTrialFlagEnabled
-                    ? { defaultPlan: PASS_B2B_AUTO_TRIAL_PLAN, trial: true }
+                    ? {
+                          defaultPlan: PASS_B2B_AUTO_TRIAL_PLAN,
+                          defaultAddons: PASS_B2B_AUTO_TRIAL_ADDONS,
+                          trial: true,
+                      }
                     : { defaultPlan: PLANS.PASS_BUSINESS }),
             },
         ],

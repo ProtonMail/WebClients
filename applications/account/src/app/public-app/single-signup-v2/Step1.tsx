@@ -110,11 +110,7 @@ import PassTrial2024UpsellModal from './modals/PassTrial2024UpsellModal';
 import { type CheckTrialPriceParams, type CheckTrialPriceResult, checkTrialPrice } from './modals/Trial2024UpsellModal';
 import PassLifetimeSpecialOffer from './pass/LifetimeOfferMessage';
 import PassLifetimeFeaturedSection from './pass/PassLifetimeFeaturedSection';
-import {
-    PaymentlessTrialOrganizationSize,
-    PaymentlessTrialSummarySkeleton,
-    getIsPaymentlessTrial,
-} from './paymentlessTrial';
+import { PaymentlessTrialSummarySkeleton, SignupOrganizationSize, getIsPaymentlessTrial } from './paymentlessTrial';
 
 export interface Step1Rref {
     scrollIntoPayment: () => void;
@@ -601,9 +597,10 @@ const Step1 = ({
         if (model.planParameters?.defined || planCards[audience].some(({ plan }) => plan === selectedPlanName)) {
             return;
         }
-        const audienceDefaultPlan = audiences?.find(({ value }) => value === audience)?.defaultPlan;
-        if (audienceDefaultPlan) {
-            void handleChangePlan({ [audienceDefaultPlan]: 1 }, audienceDefaultPlan, undefined, audience);
+        const audienceDefaults = audiences?.find(({ value }) => value === audience);
+        if (audienceDefaults) {
+            const { defaultPlan, defaultAddons } = audienceDefaults;
+            void handleChangePlan({ [defaultPlan]: 1, ...defaultAddons }, defaultPlan, undefined, audience);
         }
     }, [audience, model.loadingDependencies]);
 
@@ -664,9 +661,12 @@ const Step1 = ({
 
     const isLoadingPaymentlessTrial = isPaymentlessTrial && model.loadingDependencies;
 
-    const isRecheckingOrganizationSize = isPaymentlessTrial && loadingPaymentDetails;
-
     const isPassBasicSelected = selectedPlan.Name === PLANS.PASS_BASIC;
+
+    // Pass Basic has no payment step, so its seats are picked here like the paymentless trial's
+    const showOrganizationSize = isPaymentlessTrial || isPassBasicSelected;
+
+    const isRecheckingOrganizationSize = showOrganizationSize && loadingPaymentDetails;
 
     const hasSelectedFree = selectedPlan.Name === PLANS.FREE || isPassBasicSelected || mode === SignupMode.MailReferral;
 
@@ -869,7 +869,7 @@ const Step1 = ({
                     onChangeAudience={async (newAudience) => {
                         const newCurrency = await handleCurrencyChangeOnAudienceChange(newAudience);
                         handleChangePlan(
-                            { [newAudience.defaultPlan]: 1 },
+                            { [newAudience.defaultPlan]: 1, ...newAudience.defaultAddons },
                             newAudience.defaultPlan,
                             newCurrency,
                             newAudience.value
@@ -1409,15 +1409,16 @@ const Step1 = ({
                                                         footer={(details) => {
                                                             return (
                                                                 <>
-                                                                    {isPaymentlessTrial &&
-                                                                        !isLoadingPaymentlessTrial && (
-                                                                            <PaymentlessTrialOrganizationSize
+                                                                    {showOrganizationSize &&
+                                                                        !model.loadingDependencies && (
+                                                                            <SignupOrganizationSize
                                                                                 model={model}
                                                                                 options={options}
                                                                                 onChangePlanIDs={(planIDs) =>
                                                                                     handleOptimistic({ planIDs })
                                                                                 }
                                                                                 telemetryContext={telemetryContext}
+                                                                                isTrialMode={isPaymentlessTrial}
                                                                                 hideTrialUsersCaption={
                                                                                     signupParameters.isPassB2BAutoTrial
                                                                                 }

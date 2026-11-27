@@ -540,6 +540,98 @@ describe('Step1 - paymentless B2B trial', () => {
     });
 });
 
+describe('Step1 - Pass Basic organization size', () => {
+    const createPassBasicModel = (members = 0) => {
+        const model = createMockModel();
+        const planIDs = { [PLANS.PASS_BASIC]: 1, ...(members && { [ADDON_NAMES.MEMBER_PASS_BASIC]: members }) };
+        model.subscriptionData.planIDs = planIDs;
+        model.subscriptionData.cycle = CYCLE.YEARLY;
+        model.subscriptionData.checkResult = {
+            ...model.subscriptionData.checkResult,
+            Amount: 0,
+            AmountDue: 0,
+            Cycle: CYCLE.YEARLY,
+            requestData: { Plans: planIDs, Currency: 'CHF', Cycle: CYCLE.YEARLY },
+        };
+        model.planParameters = { planIDs, defined: true };
+        return model;
+    };
+
+    const createB2BConfiguration = () => {
+        const configuration = createMockSignupConfiguration();
+        configuration.audience = Audience.B2B;
+        configuration.audiences = [Audience.B2B];
+        configuration.planCards = {
+            [Audience.B2B]: [{ plan: PLANS.PASS_BASIC, subsection: null, type: 'standard', guarantee: false }],
+        };
+        configuration.defaults.plan = PLANS.PASS_BUSINESS;
+        configuration.defaults.cycle = CYCLE.YEARLY;
+        return configuration;
+    };
+
+    const renderPassBasic = (overrides?: Partial<React.ComponentProps<typeof Step1>>) =>
+        renderStep1({
+            model: createPassBasicModel(),
+            signupConfiguration: createB2BConfiguration(),
+            ...overrides,
+        });
+
+    it('should show the organization size selector without the trial limit', async () => {
+        renderPassBasic();
+
+        await waitFor(() => {
+            expect(screen.getByTestId('1member-passbasic2026-customizer')).toBeInTheDocument();
+        });
+
+        expect(screen.getByText('Organization size')).toBeInTheDocument();
+        expect(screen.queryByText(/during the trial period/)).not.toBeInTheDocument();
+        expect(screen.getByTestId('1member-passbasic2026-customizer')).toHaveValue(1);
+        expect(screen.getByTestId('increase-addon-1member-passbasic2026')).toBeEnabled();
+        expect(screen.queryByTestId('account-step-payment-mock')).not.toBeInTheDocument();
+    });
+
+    it('should cap the organization size at the Pass Basic limit of 30 users', async () => {
+        renderPassBasic({ model: createPassBasicModel(29) });
+
+        await waitFor(() => {
+            expect(screen.getByTestId('1member-passbasic2026-customizer')).toHaveValue(30);
+        });
+
+        expect(screen.getByTestId('increase-addon-1member-passbasic2026')).toBeDisabled();
+    });
+
+    it('should add member addons to the plan when the organization size changes', async () => {
+        const setModel = vi.fn();
+        renderPassBasic({ setModel });
+
+        await waitFor(() => {
+            expect(screen.getByTestId('increase-addon-1member-passbasic2026')).toBeInTheDocument();
+        });
+
+        await userEvent.click(screen.getByTestId('increase-addon-1member-passbasic2026'));
+
+        const updater = setModel.mock.calls.at(-1)![0];
+        expect(updater(createPassBasicModel()).optimistic.planIDs).toEqual({
+            [PLANS.PASS_BASIC]: 1,
+            [ADDON_NAMES.MEMBER_PASS_BASIC]: 1,
+        });
+    });
+
+    it('should not show the organization size selector for the free plan', async () => {
+        const model = createMockModel();
+        model.subscriptionData.planIDs = {};
+        model.planParameters = { planIDs: {}, defined: true };
+
+        renderStep1({ model });
+
+        await waitFor(() => {
+            expect(screen.getByText(/Create your Proton Account|Create your Proton account/i)).toBeInTheDocument();
+        });
+
+        expect(screen.queryByText('Organization size')).not.toBeInTheDocument();
+    });
+});
+
 describe('Step1 - subscription guards', () => {
     const CHECK_URL = 'payments/v5/subscription/check';
     const STORAGE_COPY = /doesn’t include enough storage/i;
