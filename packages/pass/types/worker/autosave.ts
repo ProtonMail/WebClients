@@ -33,6 +33,8 @@ type AutosavePayloadData = FormCredentials & {
     isCurrentProtonAccount: boolean;
     submittedAt: MaybeNull<number>;
     iframeUrl?: MaybeNull<string>;
+    /** Service name resolved in the content script for the autosave title field. */
+    defaultItemName?: string;
     telemetry: AutofillPageTelemetryDimensions;
 };
 export type AutosavePayload = (AutosaveCreatePayload | AutosaveUpdatePayload) & AutosavePayloadData;

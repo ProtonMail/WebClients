@@ -30,6 +30,8 @@ export interface PopupController {
 export type ExtensionClientState = {
     /** Parsed URL of the underlying active tab */
     url: MaybeNull<ParsedUrl>;
+    /** Extension-only default login title from the active tab (meta or domain rules) */
+    defaultItemName?: MaybeNull<string>;
     /** tabID of the current context window */
     tabId?: TabId;
     /** Port name of the current client */

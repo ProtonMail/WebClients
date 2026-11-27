@@ -211,7 +211,7 @@ const PasskeyCreateView: FC<PasskeyCreateViewProps> = ({ form, loading, username
 
 type Props = Extract<InlineToastRequest, { action: InlineToastAction.PASSKEY_CREATE }>;
 
-export const PasskeyCreate: FC<Props> = ({ request, token, domain: passkeyDomain }) => {
+export const PasskeyCreate: FC<Props> = ({ request, token, domain: passkeyDomain, defaultItemName }) => {
     const [loading, setLoading] = useMountedState(false);
     const { onTelemetry, config } = usePassCore();
     const { domain } = useIFrameAppState();
@@ -224,7 +224,7 @@ export const PasskeyCreate: FC<Props> = ({ request, token, domain: passkeyDomain
     const username = publicKey.user?.name ?? publicKey.user?.displayName ?? '';
 
     const form = useFormik<FormValues>({
-        initialValues: { name: domain, step: 'select', folderId: null },
+        initialValues: { name: defaultItemName ?? domain, step: 'select', folderId: null },
         validate: (values) => {
             const errors: FormikErrors<FormValues> = { name: validateItemName(values.name) };
             if (!errors.name) delete errors.name;

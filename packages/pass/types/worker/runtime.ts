@@ -37,6 +37,8 @@ export type EndpointContext = {
     senderTabId: TabId;
     /** FrameID of the current endpoint */
     frameId: FrameId;
+    /** Extension-only: human-friendly title for new items on the active tab */
+    defaultItemName?: MaybeNull<string>;
 };
 
 export type ClientInitResult = {

@@ -44,7 +44,14 @@ import { LoginEditTOTP } from './Login.edit.totp';
 
 const FORM_ID = 'new-login';
 
-export const LoginNew: FC<ItemNewViewProps<'login'>> = ({ shareId, folderId, url: currentUrl, onCancel, onSubmit }) => {
+export const LoginNew: FC<ItemNewViewProps<'login'>> = ({
+    shareId,
+    folderId,
+    url: currentUrl,
+    defaultItemName,
+    onCancel,
+    onSubmit,
+}) => {
     const history = useHistory();
     const { ParentPortal, openPortal } = usePortal();
 
@@ -66,7 +73,7 @@ export const LoginNew: FC<ItemNewViewProps<'login'>> = ({ shareId, folderId, url
             itemEmail: clone?.content.itemEmail ?? searchParams.get('email') ?? '',
             itemUsername: clone?.content.itemUsername ?? '',
             mailboxes: [],
-            name: clone?.metadata.name ?? domain ?? '',
+            name: clone?.metadata.name ?? defaultItemName ?? domain ?? '',
             note: clone?.metadata.note ?? '',
             passkeys: [],
             password: clone?.content.password ?? '',

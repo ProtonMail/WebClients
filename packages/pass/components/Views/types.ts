@@ -32,6 +32,8 @@ export type ItemNewViewProps<T extends ItemType = ItemType> = {
     shareId: string;
     folderId: MaybeNull<string>;
     url: MaybeNull<ParsedUrl>;
+    /** Set by the browser extension from the active tab; ignored on web */
+    defaultItemName?: MaybeNull<string>;
     onCancel: () => void;
     onSubmit: (item: ItemCreateIntent<T>) => void;
 };

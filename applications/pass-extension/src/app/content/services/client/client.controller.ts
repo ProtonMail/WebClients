@@ -29,6 +29,7 @@ import {
     isSandboxedFrame,
 } from '../../utils/frame';
 import { registerCustomElements } from '../inline/custom-elements/register';
+import { onResolveDefaultItemName } from '../resolve-default-item-name';
 import type { ContentScriptClient, ContentScriptClientFactoryOptions } from './client';
 import type { FrameMessageBroker, FrameMessageHandler } from './client.channel';
 import { createFrameMessageBroker } from './client.channel';
@@ -180,6 +181,7 @@ export const createClientController = ({
             controller.channel.register(WorkerMessageType.UNLOAD_CONTENT_SCRIPT, onContentScriptUnload);
             controller.channel.register(WorkerMessageType.FRAME_QUERY, onFrameQuery);
             controller.channel.register(WorkerMessageType.FRAME_DEFERRED_INIT, onFrameDeferredInit);
+            controller.channel.register(WorkerMessageType.RESOLVE_DEFAULT_ITEM_NAME, onResolveDefaultItemName);
 
             registerLoggerEffect((...logs) =>
                 sendMessage(

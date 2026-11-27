@@ -12,6 +12,7 @@ import { WorkerMessageType } from '../../../../types/messages';
 import { InlineToastAction } from '../../constants.runtime';
 import { withContext } from '../../context/context';
 import { getAutofillPageTelemetryDimensions } from '../../utils/autofill-telemetry';
+import { resolveDefaultAutosaveSiteNameForPage } from '../../utils/resolve-default-autosave-site-name';
 import type { AutosaveService } from './autosave.abstract';
 
 export const createAutosaveService = (): AutosaveService => {
@@ -20,12 +21,15 @@ export const createAutosaveService = (): AutosaveService => {
     const prompt: (submission: AutosaveFormEntry) => boolean = withContext((ctx, { autosave, data, submittedAt }) => {
         if (!autosave.shouldPrompt || !ctx?.getFeatures().Autosave) return false;
 
+        const defaultItemName = resolveDefaultAutosaveSiteNameForPage(ctx, document);
+
         ctx.service.inline.toast.open({
             action: InlineToastAction.AUTOSAVE,
             data: {
                 ...autosave.data,
                 ...data,
                 submittedAt,
+                ...(defaultItemName ? { defaultItemName } : {}),
                 telemetry: getAutofillPageTelemetryDimensions(document.documentElement),
             },
         });
