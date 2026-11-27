@@ -51,7 +51,7 @@ import { getPrivacyPolicyURL } from '@proton/shared/lib/helpers/url';
 import type { Api } from '@proton/shared/lib/interfaces/Api';
 import { Audience } from '@proton/shared/lib/interfaces/Subscription';
 import { getPlanFromPlanIDs, getPlanNameFromIDs } from '@proton/shared/lib/payments/plan/helpers';
-import { SubscriptionMode } from '@proton/shared/lib/payments/subscription/constants';
+import { Renew, SubscriptionMode } from '@proton/shared/lib/payments/subscription/constants';
 import { isFree } from '@proton/shared/lib/user/helpers';
 import simpleLoginLogo from '@proton/styles/assets/img/illustrations/simplelogin-logo.svg';
 import { MailFeatureFlag } from '@proton/unleash/Flags';
@@ -576,12 +576,36 @@ const Step1 = ({
         // TODO(plavarin): hack until we have a proper way to optimistically determine whether
         // a plan supports trials. Currently, only B2B plans support trials.
         // When we switch from B2C to B2B, the argument trial will be false, so we use signupParameters.trial instead
-        if (signupParameters.trial && audience === Audience.B2B) {
+        // (or the audience's own trial default, e.g. the Pass B2B auto-trial)
+        const audienceTrial = audiences?.find(({ value }) => value === audience)?.trial;
+        if ((signupParameters.trial || audienceTrial) && audience === Audience.B2B) {
             checkOptions.trial = true;
+        } else if (audience === Audience.B2C) {
+            // Only B2B plans support trials, so don't carry a B2B trial over to the B2C plan
+            checkOptions.trial = false;
         }
 
         return handleOptimistic(checkOptions);
     };
+
+    // The audience tabs select the new audience's plan before navigating, but browser back/forward only changes the
+    // URL and would keep the previous audience's plan (e.g. a B2B trial on the B2C page)
+    const handledAudienceRef = useRef(audience);
+    useEffect(() => {
+        if (handledAudienceRef.current === audience || model.loadingDependencies) {
+            return;
+        }
+        handledAudienceRef.current = audience;
+
+        const selectedPlanName = getPlanNameFromIDs(model.subscriptionData.planIDs);
+        if (model.planParameters?.defined || planCards[audience].some(({ plan }) => plan === selectedPlanName)) {
+            return;
+        }
+        const audienceDefaultPlan = audiences?.find(({ value }) => value === audience)?.defaultPlan;
+        if (audienceDefaultPlan) {
+            void handleChangePlan({ [audienceDefaultPlan]: 1 }, audienceDefaultPlan, undefined, audience);
+        }
+    }, [audience, model.loadingDependencies]);
 
     useImperativeHandle(step1Ref, () => ({
         scrollIntoPayment: () => accountStepPaymentRef.current?.scrollIntoView(),
@@ -622,6 +646,9 @@ const Step1 = ({
         }
 
         if (checkTrial) {
+            if (signupParameters.isPassB2BAutoTrial) {
+                return c('Action').t`Get started`;
+            }
             return c('Action').t`Try for free`;
         }
 
@@ -639,7 +666,9 @@ const Step1 = ({
 
     const isRecheckingOrganizationSize = isPaymentlessTrial && loadingPaymentDetails;
 
-    const hasSelectedFree = selectedPlan.Name === PLANS.FREE || mode === SignupMode.MailReferral;
+    const isPassBasicSelected = selectedPlan.Name === PLANS.PASS_BASIC;
+
+    const hasSelectedFree = selectedPlan.Name === PLANS.FREE || isPassBasicSelected || mode === SignupMode.MailReferral;
 
     const provisioning = model.provisionedDeal?.details;
     // Bank transfer deals are invoiced on the agreed terms, so there is no card to capture. The plan is still
@@ -654,8 +683,13 @@ const Step1 = ({
     // Keeps the plan for a paymentless trial and a provisioned bank transfer deal. The free fallback empties
     // `planIDs`, which skips the subscription call.
     const getNoPaymentSubscriptionData = () =>
-        isPaymentlessTrial || isProvisionedBankTransfer
-            ? { ...model.subscriptionData, payment: undefined }
+        isPaymentlessTrial || isProvisionedBankTransfer || isPassBasicSelected
+            ? {
+                  ...model.subscriptionData,
+                  payment: undefined,
+                  // Only the Pass B2B auto-trial override (bare visit or plan=passbasic2026) forces autoRenew off.
+                  ...(signupParameters.isPassB2BAutoTrial ? { autoRenew: Renew.Disabled } : {}),
+              }
             : getFreeSubscriptionData(model.subscriptionData);
 
     const termsAndConditionsLink = (
@@ -693,6 +727,7 @@ const Step1 = ({
     const hidePlanSelectorCoupons = new Set([COUPON_CODES.MAILPLUSINTRO]);
     let hasPlanSelector =
         !model.planParameters?.defined &&
+        !signupParameters.isPassB2BAutoTrial &&
         ([SignupMode.Default, SignupMode.MailReferral].includes(mode) ||
             (mode === SignupMode.Invite && app === APPS.PROTONWALLET)) &&
         !hidePlanSelectorCoupons.has(model.subscriptionData.checkResult.Coupon?.Code as any) &&
@@ -1073,7 +1108,9 @@ const Step1 = ({
                                     return <PaymentlessTrialSummarySkeleton />;
                                 }
 
-                                if (isPaymentlessTrial) {
+                                // The Pass B2B auto-trial (welcome gift) flow still signs up for the Pass
+                                // Professional trial, but should keep reading like a Pass Basic signup.
+                                if (isPaymentlessTrial && !signupParameters.isPassB2BAutoTrial) {
                                     return (
                                         <AccountStepPaymentSummary
                                             model={model}
@@ -1381,6 +1418,9 @@ const Step1 = ({
                                                                                     handleOptimistic({ planIDs })
                                                                                 }
                                                                                 telemetryContext={telemetryContext}
+                                                                                hideTrialUsersCaption={
+                                                                                    signupParameters.isPassB2BAutoTrial
+                                                                                }
                                                                             />
                                                                         )}
                                                                     {!showPaymentStep && (

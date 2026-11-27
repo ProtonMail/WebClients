@@ -25,7 +25,7 @@ export const getBenefits = (appName: string) => {
 
 const getJoinB2BString = () => {
     return c('drive_signup_2024: Info')
-        .t`Join the 50,000+ organizations already benefiting from ${BRAND_NAME}'s security`;
+        .t`Join the 100,000+ organizations already benefiting from ${BRAND_NAME}'s security`;
 };
 export const getJoinString = (audience?: Audience) => {
     if (audience === Audience.B2B) {

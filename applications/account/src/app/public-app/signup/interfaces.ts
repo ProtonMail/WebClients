@@ -22,6 +22,7 @@ import type { HumanVerificationMethodType, VerificationModel } from '@proton/sha
 import type { KeyTransparencyActivation } from '@proton/shared/lib/interfaces/KeyTransparency';
 import type { Organization } from '@proton/shared/lib/interfaces/Organization';
 import type { User } from '@proton/shared/lib/interfaces/User';
+import type { Renew } from '@proton/shared/lib/payments/subscription/constants';
 
 import type { AddressGeneration } from '../../private-app/setup-address/addressGeneration';
 import type { AppIntent, AuthFlows, AuthSession } from '../authSession';
@@ -79,6 +80,7 @@ export interface SubscriptionData {
     vatNumber?: string;
     vatReverseChargeNotSupported?: boolean;
     checkRefused?: boolean;
+    autoRenew?: Renew;
 }
 
 export interface ReferralData {

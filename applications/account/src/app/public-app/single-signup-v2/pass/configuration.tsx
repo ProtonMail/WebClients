@@ -29,6 +29,7 @@ import {
     getVaultSharing,
 } from '@proton/components/containers/payments/features/pass';
 import {
+    getPassB2BBasicSignupPlan,
     getPassBusinessSignupPlan,
     getPassEssentialsSignupPlan,
 } from '@proton/components/containers/payments/features/plan';
@@ -107,13 +108,17 @@ import setupAccount from '../mail/account-setup.svg';
 import CustomStep from './CustomStep';
 import { getInfo } from './InstallExtensionStep';
 
-const getPassBenefitsTitle = (plan: PLANS | undefined) => {
+const getPassBenefitsTitle = (plan: PLANS | undefined, audience?: Audience) => {
     if (plan === PLANS.PASS_FAMILY) {
         return getBenefits(`${PASS_SHORT_APP_NAME} Family`);
     }
 
     if (plan === PLANS.BUNDLE) {
         return getBenefits(BRAND_NAME);
+    }
+
+    if (audience === Audience.B2B) {
+        return c('pass_signup_2023: Info').t`Password security your whole team will actually use`;
     }
 
     return c('Signup: Info').t`The only password manager with:`;
@@ -229,6 +234,56 @@ const getOpenSourceAndAuditedBenefit = (): BenefitItem => {
     };
 };
 
+const getB2BSecureAccountSharingBenefit = (): BenefitItem => {
+    return {
+        id: 'secure-account-sharing',
+        text: c('pass_signup_2023: Info').t`Secure account sharing for teams`,
+        icon: {
+            component: IcArrowUpFromSquare,
+        },
+    };
+};
+
+const getB2BStrongUniquePasswordsBenefit = (): BenefitItem => {
+    return {
+        id: 'strong-unique-passwords',
+        text: c('pass_signup_2023: Info').t`Strong unique passwords in one click`,
+        icon: {
+            component: IcKey,
+        },
+    };
+};
+
+const getB2BEndToEndEncryptedBenefit = (): BenefitItem => {
+    return {
+        id: 'end-to-end-encrypted',
+        text: c('pass_signup_2023: Info').t`End-to-end encrypted`,
+        icon: {
+            component: IcLock,
+        },
+    };
+};
+
+const getB2BOpenSourceAndIndependentlyAuditedBenefit = (): BenefitItem => {
+    return {
+        id: 'open-source-and-independently-audited',
+        text: c('pass_signup_2023: Info').t`Open source and independently audited`,
+        icon: {
+            component: IcMagnifier,
+        },
+    };
+};
+
+const getB2BSwissPrivacyLawBenefit = (): BenefitItem => {
+    return {
+        id: 'swiss-privacy-law',
+        text: c('pass_signup_2023: Info').t`Protected by Swiss privacy law`,
+        icon: {
+            component: IcShield,
+        },
+    };
+};
+
 const getLoginsAndNotesBenefit = (): BenefitItem => {
     return {
         id: 'notes',
@@ -311,10 +366,12 @@ const getAdvancedSecurityFeaturesBenefit = (): BenefitItem => {
 
 const getPassBenefits = ({
     plan,
+    audience,
     isPaidPass,
     hideIncludedProducts,
 }: {
     plan: PLANS | undefined;
+    audience?: Audience;
     isPaidPass: boolean;
     hideIncludedProducts: boolean;
 }): BenefitItem[] => {
@@ -372,6 +429,16 @@ const getPassBenefits = ({
             !hideIncludedProducts && getAppsPassIncludedBenefit(),
             getAdvancedSecurityFeaturesBenefit(),
         ].filter(isTruthy);
+    }
+
+    if (audience === Audience.B2B) {
+        return [
+            getB2BSecureAccountSharingBenefit(),
+            getB2BStrongUniquePasswordsBenefit(),
+            getB2BEndToEndEncryptedBenefit(),
+            getB2BOpenSourceAndIndependentlyAuditedBenefit(),
+            getB2BSwissPrivacyLawBenefit(),
+        ];
     }
 
     return [
@@ -443,6 +510,32 @@ const getCustomPassFamilyKeyFeatures = () => {
     ];
 };
 
+/** Plan the B2B audience starts as a cardless trial, while the `PassB2BSignupAutoTrial` flag is on */
+const PASS_B2B_AUTO_TRIAL_PLAN = PLANS.PASS_BUSINESS;
+
+/**
+ * Hides the plan selector and defaults B2B Pass signups to a cardless Pass Professional trial, while the
+ * `PassB2BSignupAutoTrial` flag is on.
+ *
+ * Applies when no plan is selected, or when it is `passbasic2026`: Pass Basic isn't trial-eligible on the backend,
+ * so that selection is upgraded to the Pass Professional trial. Any `trial`/`cardless` params also present are
+ * overridden. Any other plan choice is deliberate and this backs off.
+ */
+const getPassB2BAutoTrialOverrides = ({
+    audience,
+    preSelectedPlan,
+    isFlagEnabled,
+}: {
+    audience: Audience;
+    preSelectedPlan: string | undefined;
+    isFlagEnabled: boolean;
+}): SignupConfiguration['signupParametersOverrides'] => {
+    if (!isFlagEnabled || audience !== Audience.B2B || (preSelectedPlan && preSelectedPlan !== PLANS.PASS_BASIC)) {
+        return undefined;
+    }
+    return { preSelectedPlan: PASS_B2B_AUTO_TRIAL_PLAN, trial: true, cardless: true, isPassB2BAutoTrial: true };
+};
+
 export const getPassConfiguration = ({
     showPassFamily,
     mode,
@@ -464,9 +557,23 @@ export const getPassConfiguration = ({
     isPaidPassVPNBundle: boolean;
     plansMap?: PlansMap;
     plan: Plan | undefined;
-    signupParameters?: { trial?: boolean; invite?: SignupInviteParameters; hideIncludedProducts?: boolean };
+    signupParameters?: {
+        preSelectedPlan?: string;
+        trial?: boolean;
+        invite?: SignupInviteParameters;
+        hideIncludedProducts?: boolean;
+        isPassB2BAutoTrialFlagEnabled?: boolean;
+        showPassBasic?: boolean;
+    };
 }): SignupConfiguration => {
     const logo = <PassLogo />;
+
+    const signupParametersOverrides = getPassB2BAutoTrialOverrides({
+        audience,
+        preSelectedPlan: signupParameters?.preSelectedPlan,
+        isFlagEnabled: !!signupParameters?.isPassB2BAutoTrialFlagEnabled,
+    });
+    const isPassB2BAutoTrial = !!signupParametersOverrides?.isPassB2BAutoTrial;
 
     const title = c('pass_signup_2023: Info').t`Encrypted password manager that also protects your identity`;
     const b2bTitle = c('pass_signup_2023: Info').t`Get the security and features your business needs`;
@@ -478,6 +585,22 @@ export const getPassConfiguration = ({
 
     const planCards: SignupConfiguration['planCards'] = {
         [Audience.B2B]: [
+            signupParameters?.showPassBasic && {
+                plan: PLANS.PASS_BASIC,
+                subsection: (
+                    <FeatureListPlanCardSubSection
+                        description={c('pass_signup_2023: Info').t`Free forever`}
+                        features={
+                            <PlanCardFeatureList
+                                {...planCardFeatureProps}
+                                features={getPassB2BBasicSignupPlan(plansMap?.[PLANS.PASS_BASIC]).features}
+                            />
+                        }
+                    />
+                ),
+                type: 'standard' as const,
+                guarantee: false,
+            },
             {
                 plan: PLANS.PASS_PRO,
                 subsection: (
@@ -525,12 +648,18 @@ export const getPassConfiguration = ({
                 guarantee: true,
             },
             {
-                subsection: <LetsTalkSubSection app="pass" signupParameters={signupParameters} mode="text" />,
+                subsection: (
+                    <LetsTalkSubSection
+                        app="pass"
+                        signupParameters={{ ...signupParameters, ...signupParametersOverrides }}
+                        mode="text"
+                    />
+                ),
                 type: 'standard' as const,
                 guarantee: true,
-                interactive: false,
+                interactive: false as const,
             },
-        ],
+        ].filter(isTruthy),
         [Audience.B2C]: [
             !hideFreePlan && {
                 plan: PLANS.FREE,
@@ -624,12 +753,16 @@ export const getPassConfiguration = ({
             );
         }
 
+        // The Pass B2B auto-trial (welcome gift) flow subscribes to Pass Professional on trial, but
+        // the signup summary should still read like a Pass Basic signup for that flow.
+        const benefitsPlanName = isPassB2BAutoTrial ? PLANS.PASS_BASIC : (plan?.Name as PLANS);
         const benefitItems = getPassBenefits({
-            plan: plan?.Name as PLANS,
-            isPaidPass,
+            plan: benefitsPlanName,
+            audience,
+            isPaidPass: isPassB2BAutoTrial ? false : isPaidPass,
             hideIncludedProducts: Boolean(signupParameters?.hideIncludedProducts),
         });
-        const benefitTitle = getPassBenefitsTitle(plan?.Name as PLANS);
+        const benefitTitle = getPassBenefitsTitle(benefitsPlanName, audience);
 
         return (
             benefitItems && (
@@ -670,7 +803,10 @@ export const getPassConfiguration = ({
                 value: Audience.B2B,
                 locationDescriptor: { pathname: SSO_PATHS.PASS_SIGNUP_B2B },
                 title: c('pass_signup_2023: title').t`For businesses`,
-                defaultPlan: PLANS.PASS_BUSINESS,
+                // Same cardless trial as a bare visit to the B2B signup URL (see getPassB2BAutoTrialOverrides)
+                ...(signupParameters?.isPassB2BAutoTrialFlagEnabled
+                    ? { defaultPlan: PASS_B2B_AUTO_TRIAL_PLAN, trial: true }
+                    : { defaultPlan: PLANS.PASS_BUSINESS }),
             },
         ],
         signupTypes: [SignupType.External, SignupType.Proton],
@@ -704,5 +840,6 @@ export const getPassConfiguration = ({
         ),
         CustomStep,
         cycles: [CYCLE.MONTHLY, CYCLE.YEARLY],
+        signupParametersOverrides,
     };
 };

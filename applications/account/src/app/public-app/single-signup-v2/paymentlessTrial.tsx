@@ -46,11 +46,13 @@ export const PaymentlessTrialOrganizationSize = ({
     options,
     onChangePlanIDs,
     telemetryContext,
+    hideTrialUsersCaption,
 }: {
     model: SignupModelV2;
     options: OptimisticOptions;
     onChangePlanIDs: (planIDs: PlanIDs) => void;
     telemetryContext: PaymentTelemetryContext;
+    hideTrialUsersCaption?: boolean;
 }) => (
     <div className="mb-6">
         <ProtonPlanCustomizer
@@ -67,9 +69,11 @@ export const PaymentlessTrialOrganizationSize = ({
             telemetryContext={telemetryContext}
             multiSubscriptionContext={model.session?.multiSubscriptionContext ?? noSubscriptionContext}
         />
-        <div className="mt-1 text-sm color-primary">
-            {c('b2b_trials_2025_Info').t`Up to ${TRIAL_MAX_USERS} users, during the trial period`}
-        </div>
+        {!hideTrialUsersCaption && (
+            <div className="mt-1 text-sm color-primary">
+                {c('b2b_trials_2025_Info').t`Up to ${TRIAL_MAX_USERS} users, during the trial period`}
+            </div>
+        )}
         <hr className="mt-6" />
     </div>
 );

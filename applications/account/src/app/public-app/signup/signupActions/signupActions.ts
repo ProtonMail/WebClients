@@ -323,6 +323,7 @@ export const handleSubscribeUser = async ({
                 ...(isTrial ? { StartTrial: true } : {}),
                 // Redeems a sales-provisioned link in the same request.
                 ...(provisioningToken ? { ProvisioningToken: provisioningToken } : {}),
+                ...(typeof subscriptionData.autoRenew === 'number' ? { AutoRenew: subscriptionData.autoRenew } : {}),
             },
         },
         {

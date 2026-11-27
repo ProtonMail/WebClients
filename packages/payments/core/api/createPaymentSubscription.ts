@@ -2,6 +2,7 @@ import { type ProductParam, getProductHeaders } from '@proton/shared/lib/apps/pr
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import type { Api } from '@proton/shared/lib/interfaces/Api';
 import { getPlanNameFromIDs, isLifetimePlanSelected } from '@proton/shared/lib/payments/plan/helpers';
+import type { Renew } from '@proton/shared/lib/payments/subscription/constants';
 import type { Tax } from '@proton/shared/lib/payments/subscription/interface';
 
 import { capturePaymentMessage } from '../../sentry/capture';
@@ -49,6 +50,7 @@ type CommonSubscribeData = {
     Codes?: string[];
     Offer?: string;
     StartTrial?: boolean;
+    AutoRenew?: Renew;
     VatId?: string;
     /**
      * Sales-provisioned signup link token. When present, the backend redeems the provisioning
@@ -75,6 +77,7 @@ function prepareSubscribeDataPayload(data: SubscribeData): SubscribeData {
         'Currency',
         'BillingAddress',
         'StartTrial',
+        'AutoRenew',
         'VatId',
         'ProvisioningToken',
     ];

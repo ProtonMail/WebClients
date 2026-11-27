@@ -122,6 +122,7 @@ import UnlockModal from './modals/UnlockModal';
 import UpsellModal from './modals/UpsellModal';
 import VisionaryUpsellModal from './modals/VisionaryUpsellModal';
 import { getOfferedSignupConfiguration } from './offeredSignupConfiguration';
+import { useGetPassB2BAutoTrialEnabled } from './pass/useGetPassB2BAutoTrialEnabled';
 import { getSignupConfiguration } from './signupConfiguration';
 import { getSignupParameters } from './signupParameters';
 import { trackSignupAccountCreated, trackSignupPlanSelectionLoaded } from './telemetry/signupFunnelEvents';
@@ -200,6 +201,7 @@ const SingleSignupContainerV2 = ({
     const visionarySignupEnabled = useFlag('VisionarySignup');
     const isNewB2BPlanEnabled = useFlag('NewProtonBusinessBundlePlans');
     const lumoMultiSubscriptions = useFlag('LumoMultiSubscriptions');
+    const getIsPassB2BAutoTrialEnabled = useGetPassB2BAutoTrialEnabled(toApp);
     const getEntitlementCatalog = useGetEntitlementCatalog();
     const signInPath = PublicAppContext.useSelector(selectSignInPath);
     const isLumoPlans2026Enabled = useFlag('LumoPlans2026');
@@ -260,7 +262,8 @@ const SingleSignupContainerV2 = ({
     const [planUnavailableModalProps, setHasPlanUnavailableModal, renderPlanUnavailableModal] = useModalState();
     const [vatReverseChargeErrorModalProps, setHasVatReverseChargeErrorModal, renderVatReverseChargeErrorModal] =
         useModalState();
-    const [signupParameters, setSignupParameters] = useState((): SignupParameters2 => {
+    // As read from the URL. Use `signupParameters` (with the signup configuration's overrides applied) elsewhere
+    const [urlSignupParameters, setUrlSignupParameters] = useState((): SignupParameters2 => {
         return getSignupParameters({
             toApp,
             location,
@@ -270,21 +273,19 @@ const SingleSignupContainerV2 = ({
         });
     });
 
-    const theme = getSignupV2Theme(toApp, audience, viewportWidth, signupParameters, initialSearchParams);
-    // true iff trial detected through signupParameters (thus the signup prefix)
-    const signupTrial = !!signupParameters.trial;
+    const theme = getSignupV2Theme(toApp, audience, viewportWidth, urlSignupParameters, initialSearchParams);
 
     const [model, setModel] = useState<SignupModelV2>(() => {
         // Add free plan
         const plans = cachedPlans;
         const plansMap = cachedPlansMap;
         const currency = 'CHF';
-        const cycle = signupParameters.cycle || DEFAULT_CYCLE;
+        const cycle = urlSignupParameters.cycle || DEFAULT_CYCLE;
 
         const signupConfiguration = getSignupConfiguration({
             toApp,
             audience,
-            signupParameters,
+            signupParameters: urlSignupParameters,
             viewportWidth,
             theme,
             model: defaultSignupModel,
@@ -295,7 +296,7 @@ const SingleSignupContainerV2 = ({
         const planParameters = getPlanIDsFromParamsWithForcedAddons({
             plans,
             currency,
-            signupParameters,
+            signupParameters: { ...urlSignupParameters, ...signupConfiguration.signupParametersOverrides },
             defaults: signupConfiguration.defaults,
             plansMap,
         });
@@ -338,7 +339,7 @@ const SingleSignupContainerV2 = ({
         getSignupConfiguration({
             toApp,
             audience,
-            signupParameters,
+            signupParameters: urlSignupParameters,
             viewportWidth,
             theme,
             model,
@@ -347,6 +348,10 @@ const SingleSignupContainerV2 = ({
         }),
         model.session?.multiSubscriptionContext
     );
+    const signupParameters = { ...urlSignupParameters, ...signupConfiguration.signupParametersOverrides };
+
+    // true iff trial detected through signupParameters (thus the signup prefix)
+    const signupTrial = !!signupParameters.trial;
     const {
         planCards,
         product,
@@ -592,23 +597,44 @@ const SingleSignupContainerV2 = ({
                     ? resolveProvisioning(silentApi, signupParameters.invite.data.token)
                     : undefined,
             ]);
+
+            // The flag is resolved once here and kept in urlSignupParameters, so the initial plan and the rest of the
+            // signup agree on it
+            // Read after the requests above, so the flags (requested when the route opened) usually arrived already
+            const isPassB2BAutoTrialFlagEnabled = await getIsPassB2BAutoTrialEnabled();
+            const flagSignupParameters = { ...urlSignupParameters, isPassB2BAutoTrialFlagEnabled };
+            const dependencySignupParameters = {
+                ...flagSignupParameters,
+                ...getSignupConfiguration({
+                    toApp,
+                    audience,
+                    signupParameters: flagSignupParameters,
+                    viewportWidth,
+                    theme,
+                    model,
+                    isNewB2BPlanEnabled,
+                    isLumoPlans2026Enabled,
+                }).signupParametersOverrides,
+            };
+            const dependencyTrial = !!dependencySignupParameters.trial;
+
             const currency = getPreferredCurrency({
                 paymentStatus,
                 plans: getAccessiblePlans({
                     planCards,
                     audience,
                     plans,
-                    paramPlanName: signupParameters.preSelectedPlan,
+                    paramPlanName: dependencySignupParameters.preSelectedPlan,
                 }),
-                paramCurrency: signupParameters.currency,
-                paramPlanName: signupParameters.preSelectedPlan,
+                paramCurrency: dependencySignupParameters.currency,
+                paramPlanName: dependencySignupParameters.preSelectedPlan,
                 user: resumedSession?.User ? formatUser(resumedSession?.User) : undefined,
                 multiSubscriptionContext: noSubscriptionContext,
             });
 
             const modifiedSignupParameters = await getTemporarySignupParameters({
                 session: resumedSession,
-                signupParameters,
+                signupParameters: dependencySignupParameters,
                 api: silentApi,
             });
 
@@ -697,7 +723,7 @@ const SingleSignupContainerV2 = ({
                         cycle,
                         coupon,
                         billingAddress: initialBillingAddress,
-                        trial: signupTrial,
+                        trial: dependencyTrial,
                         ValidateBillingAddress: true,
                         VatId: vatNumber,
                         provisioningToken: provisionedDeal?.token,
@@ -746,7 +772,7 @@ const SingleSignupContainerV2 = ({
                 build: APP_NAME,
                 product: toApp,
                 context: getTelemetryContext(session),
-                isTrial: signupTrial,
+                isTrial: dependencyTrial,
                 initialBillingAddress,
             });
 
@@ -764,6 +790,9 @@ const SingleSignupContainerV2 = ({
             }
 
             const signupParametersDiff: Partial<SignupParameters2> = {};
+            if (isPassB2BAutoTrialFlagEnabled) {
+                signupParametersDiff.isPassB2BAutoTrialFlagEnabled = true;
+            }
             if (signupParameters.mode === SignupMode.Invite && signupParameters.hideFreePlan) {
                 signupParametersDiff.hideFreePlan = false;
             }
@@ -782,7 +811,7 @@ const SingleSignupContainerV2 = ({
                 signupParametersDiff.orgName = provisionedDeal.details.OrganizationName;
             }
             if (Object.keys(signupParametersDiff).length > 0) {
-                setSignupParameters((old) => ({ ...old, ...signupParametersDiff }));
+                setUrlSignupParameters((old) => ({ ...old, ...signupParametersDiff }));
             }
 
             setModelDiff({
@@ -864,7 +893,7 @@ const SingleSignupContainerV2 = ({
             return;
         }
 
-        setSignupParameters((previous) => {
+        setUrlSignupParameters((previous) => {
             // Clear the email on signout, signout implies the email exists so don't need to autofill it again
             if (previous.email) {
                 return {

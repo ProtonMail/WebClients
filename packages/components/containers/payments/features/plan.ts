@@ -354,6 +354,18 @@ const getPassBusinessPlan = (plan?: Plan): ShortPlan => {
     };
 };
 
+export const getPassB2BBasicSignupPlan = (plan?: Plan): ShortPlan => {
+    const title = plan?.Title || '';
+    return {
+        plan: PLANS.PASS_BASIC,
+        title,
+        label: '',
+        description: c('new_plans: info').t`Free forever for small teams to securely share accounts and manage users.`,
+        cta: getCTA(title),
+        features: [getLoginsAndNotes(), getHideMyEmailAliases(10), get2FAAuthenticator(true)],
+    };
+};
+
 export const getPassEssentialsSignupPlan = (plan?: Plan): ShortPlan => {
     const title = plan?.Title || '';
     return {

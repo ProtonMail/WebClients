@@ -47,6 +47,8 @@ export const getSignupParameters = ({
     const slEmail = searchParams.get('slEmail');
     const emailUnspecified = slEmail === 'unspecified';
 
+    const showPassBasic = getIsPassApp(toApp) && searchParams.get('showPassBasic') === 'true';
+
     const visitorId = searchParams.get('visitorId') || undefined;
 
     if (getIsPassApp(toApp)) {
@@ -195,5 +197,6 @@ export const getSignupParameters = ({
         mode,
         invite,
         visitorId,
+        showPassBasic,
     };
 };
