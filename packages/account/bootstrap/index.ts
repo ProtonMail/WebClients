@@ -81,7 +81,7 @@ import { handleEarlyAccessDesynchronization } from '../earlyAccess/earlyAccessDe
 import { updateVersionCookie, versionCookieAtLoad } from '../earlyAccess/versionCookie';
 import { getCryptoWorkerOptions } from './cryptoWorkerOptions';
 import { wrapUnloadError } from './errorRefresh';
-import { getLastUsedLocalID, setLastUsedLocalID } from './lastUsedLocalID';
+import { getFallbackLocalID, getLastUsedLocalID, setLastUsedLocalID } from './lastUsedLocalID';
 
 export class InvalidSessionError extends Error {
     public extra: ExtraSessionForkData = {};
@@ -108,6 +108,24 @@ const maybeConsumeFork = async ({ api, mode }: Pick<Parameters<typeof consumeFor
     } catch (e: any) {
         removeHashParameters();
         throw e;
+    }
+};
+
+const resumeSessionWithFallback = async <IncludeUser extends boolean>({
+    allowFallback,
+    ...args
+}: Parameters<typeof resumeSession<IncludeUser>>[0] & { allowFallback: boolean }) => {
+    try {
+        return await resumeSession(args);
+    } catch (e: any) {
+        const fallbackLocalID =
+            allowFallback && (e instanceof InvalidPersistentSessionError || getIs401Error(e))
+                ? getFallbackLocalID(args.localID)
+                : undefined;
+        if (fallbackLocalID === undefined) {
+            throw e;
+        }
+        return resumeSession({ ...args, localID: fallbackLocalID });
     }
 };
 
@@ -249,7 +267,14 @@ export const loadSession = async <IncludeUser extends boolean = false>({
         }
 
         performanceMeasure?.resumeSession.start();
-        const result = await resumeSession({ api, localID, options: resumeOptions });
+        const result = await resumeSessionWithFallback({
+            api,
+            localID,
+            options: resumeOptions,
+            // A local id the app passes in asks for that account, so only one from the URL falls back. Like when no
+            // local id is requested, the last used local id is ignored when specifying an email address.
+            allowFallback: localIDParam === undefined && !extra.email,
+        });
         performanceMeasure?.resumeSession.end();
 
         authentication.login(result);
