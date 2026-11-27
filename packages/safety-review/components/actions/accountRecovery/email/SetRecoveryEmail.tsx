@@ -8,9 +8,9 @@ import type { ExtractRecoveryActionItem } from '@proton/account/safetyReview/rec
 import { useDispatch } from '@proton/account/store/hooks';
 import { InputField as InputFieldTwo } from '@proton/components/components/v2/field/InputField';
 import useFormErrors from '@proton/components/components/v2/useFormErrors';
-import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
 import useLoading from '@proton/hooks/useLoading';
 import { emailValidator, requiredValidator } from '@proton/shared/lib/helpers/formValidators';
+import { useTheme } from '@proton/theme/ThemeProvider';
 import noop from '@proton/utils/noop';
 
 import { SafetyReviewCta } from '../../../SafetyReviewCta';

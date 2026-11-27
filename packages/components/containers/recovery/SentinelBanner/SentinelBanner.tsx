@@ -4,10 +4,10 @@ import { selectSentinelRecoveryBannerDisplay } from '@proton/account/safetyRevie
 import { useLoadRecoveryState } from '@proton/account/safetyReview/recoveryState/useRecoveryState';
 import { useSelector } from '@proton/redux-shared-store/sharedProvider';
 import { BRAND_NAME, PROTON_SENTINEL_NAME } from '@proton/shared/lib/constants';
+import { useTheme } from '@proton/theme/ThemeProvider';
 import clsx from '@proton/utils/clsx';
 
 import { SettingsLayoutVariant } from '../../layout/interface';
-import { useTheme } from '../../themes/ThemeProvider';
 import SentinelShieldDark from './SentinelShield-dark.svg';
 import SentinelShield from './SentinelShield.svg';
 

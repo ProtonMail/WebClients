@@ -5,12 +5,12 @@ import type { ExtractRecoveryActionItem } from '@proton/account/safetyReview/rec
 import { Href } from '@proton/atoms/Href/Href';
 import PromotionButton from '@proton/components/components/button/PromotionButton/PromotionButton';
 import { useSubscriptionModal } from '@proton/components/containers/payments/subscription/subscriptionModalContext';
-import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
 import { IcUpgrade } from '@proton/icons/icons/IcUpgrade';
 import { SUBSCRIPTION_STEPS } from '@proton/payments/core/subscription/subscription-modal-constants';
 import { APP_UPSELL_REF_PATH, SHARED_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
 import { getUpsellRef } from '@proton/shared/lib/helpers/ref';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
+import { useTheme } from '@proton/theme/ThemeProvider';
 import noop from '@proton/utils/noop';
 
 import { SafetyReviewCta } from '../../SafetyReviewCta';

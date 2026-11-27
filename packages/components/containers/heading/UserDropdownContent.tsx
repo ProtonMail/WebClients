@@ -14,6 +14,7 @@ import { IcPlus } from '@proton/icons/icons/IcPlus';
 import { ForkType } from '@proton/shared/lib/authentication/fork/constants';
 import { APPS, APPS_CONFIGURATION } from '@proton/shared/lib/constants';
 import { textToClipboard } from '@proton/shared/lib/helpers/browser';
+import { useTheme } from '@proton/theme/ThemeProvider';
 import clsx from '@proton/utils/clsx';
 import generateUID from '@proton/utils/generateUID';
 
@@ -22,7 +23,6 @@ import { DropdownSizeUnit } from '../../components/dropdown/utils';
 import AppLink from '../../components/link/AppLink';
 import SettingsLink from '../../components/link/SettingsLink';
 import useActiveBreakpoint from '../../hooks/useActiveBreakpoint';
-import { useTheme } from '../themes/ThemeProvider';
 import AccountSessionsSwitcher from './AccountSessionsSwitcher';
 import { AppSwitcher } from './AppSwitcher';
 import { SecurityCheckup } from './SecurityCheckup';

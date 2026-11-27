@@ -1,6 +1,6 @@
 import { getLastUsedLocalID } from '@proton/account/bootstrap/lastUsedLocalID';
 import { getLocalIDFromPathname } from '@proton/shared/lib/authentication/pathnameHelper';
-import { ThemeModeSetting, ThemeTypes } from '@proton/shared/lib/themes/constants';
+import { ThemeModeSetting, ThemeTypes } from '@proton/theme/constants';
 
 import { isPublicPathname } from '../entrypoint/lumoRoutes';
 import { matchDarkTheme } from './lumoThemeMedia';

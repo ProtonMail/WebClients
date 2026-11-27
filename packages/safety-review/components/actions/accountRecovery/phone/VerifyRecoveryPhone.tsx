@@ -6,8 +6,8 @@ import type { SafetyReviewAllProps } from '@proton/account/safetyReview/componen
 import type { ExtractRecoveryActionItem } from '@proton/account/safetyReview/recoveryState/recoveryState';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
 import FormattedPhoneValue from '@proton/components/components/v2/phone/LazyFormattedPhoneValue';
-import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
 import useLoading from '@proton/hooks/useLoading';
+import { useTheme } from '@proton/theme/ThemeProvider';
 
 import { SafetyReviewCta } from '../../../SafetyReviewCta';
 import darkPaperplaneIllustration from '../../../assets/paperplane-dark.svg';

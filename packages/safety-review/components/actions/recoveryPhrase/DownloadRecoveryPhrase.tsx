@@ -11,10 +11,10 @@ import type { ExtractRecoveryActionItem } from '@proton/account/safetyReview/rec
 import { useDispatch } from '@proton/account/store/hooks';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { Loader } from '@proton/atoms/Loader/Loader';
-import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import useLoading from '@proton/hooks/useLoading';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
+import { useTheme } from '@proton/theme/ThemeProvider';
 import noop from '@proton/utils/noop';
 
 import { SafetyReviewCta } from '../../SafetyReviewCta';

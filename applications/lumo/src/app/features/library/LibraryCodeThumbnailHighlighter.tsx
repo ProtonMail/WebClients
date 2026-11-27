@@ -1,7 +1,7 @@
 // Same sync Prism build as LumoMarkdownCodeBlockHighlighter, so both share one lazy chunk.
 import PrismHighlighter from 'react-syntax-highlighter/dist/esm/prism';
 
-import type { ThemeTypes } from '@proton/shared/lib/themes/constants';
+import type { ThemeTypes } from '@proton/theme/constants';
 
 import '../../components/LumoMarkdown/LumoMarkdownCodeBlockHighlighter.scss';
 

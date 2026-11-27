@@ -4,9 +4,9 @@ import { toggleQrCodeSignIn } from '@proton/account/recovery/userSettingsActions
 import type { SafetyReviewAllProps } from '@proton/account/safetyReview/components/interface';
 import type { ExtractRecoveryActionItem } from '@proton/account/safetyReview/recoveryState/recoveryState';
 import { useDispatch } from '@proton/account/store/hooks';
-import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
 import useLoading from '@proton/hooks/useLoading';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
+import { useTheme } from '@proton/theme/ThemeProvider';
 import noop from '@proton/utils/noop';
 
 import { SafetyReviewCta } from '../../SafetyReviewCta';

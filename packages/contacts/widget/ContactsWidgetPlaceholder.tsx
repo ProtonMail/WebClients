@@ -4,7 +4,6 @@ import { c } from 'ttag';
 
 import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
 import IllustrationPlaceholder from '@proton/components/containers/illustration/IllustrationPlaceholder';
-import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
 import { getPlaceholderSrc } from '@proton/mail/helpers/getPlaceholderSrc';
 import noContactsImgDark from '@proton/styles/assets/img/placeholders/contacts-empty-cool-dark.svg';
 import noContactsImgLight from '@proton/styles/assets/img/placeholders/contacts-empty-cool-light.svg';
@@ -12,6 +11,7 @@ import noContactsImgWarm from '@proton/styles/assets/img/placeholders/contacts-e
 import noResultsImgDark from '@proton/styles/assets/img/placeholders/search-empty-cool-dark.svg';
 import noResultsImgLight from '@proton/styles/assets/img/placeholders/search-empty-cool-light.svg';
 import noResultsImgWarm from '@proton/styles/assets/img/placeholders/search-empty-warm-light.svg';
+import { useTheme } from '@proton/theme/ThemeProvider';
 
 export enum EmptyType {
     All = 0,

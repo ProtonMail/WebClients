@@ -11,7 +11,8 @@ import type { ProtonDispatch, ProtonThunkArguments } from '@proton/redux-shared-
 import { TelemetryHeartbeatEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
 import { getVisualCalendars, groupCalendarsByTaxonomy } from '@proton/shared/lib/calendar/calendar';
 import { sendTelemetryReportWithBaseDimensions } from '@proton/shared/lib/helpers/metrics';
-import { PROTON_DEFAULT_THEME_SETTINGS, PROTON_THEMES_MAP } from '@proton/shared/lib/themes/themes';
+import type { ThemeSetting } from '@proton/theme/themes';
+import { PROTON_DEFAULT_THEME_SETTINGS, PROTON_THEMES_MAP } from '@proton/theme/themes';
 
 import { getCalendarArrayLength, getCalendarViewPreference, getWeekStart } from './calendarHeartbeatHelper';
 import {
@@ -49,7 +50,8 @@ export const calendarSettingsHeartbeatListener = (startListening: AppStartListen
                 return;
             }
 
-            const { DarkTheme, LightTheme, Mode } = userSettings.Theme || PROTON_DEFAULT_THEME_SETTINGS;
+            const themeSetting: ThemeSetting = userSettings.Theme || PROTON_DEFAULT_THEME_SETTINGS;
+            const { DarkTheme, LightTheme, Mode } = themeSetting;
 
             void sendTelemetryReportWithBaseDimensions({
                 user,

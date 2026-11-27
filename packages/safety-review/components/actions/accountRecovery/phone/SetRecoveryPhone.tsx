@@ -9,10 +9,10 @@ import { useDispatch } from '@proton/account/store/hooks';
 import { InputField as InputFieldTwo } from '@proton/components/components/v2/field/InputField';
 import PhoneInput from '@proton/components/components/v2/phone/LazyPhoneInput';
 import useFormErrors from '@proton/components/components/v2/useFormErrors';
-import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
 import useMyCountry from '@proton/components/hooks/useMyCountry';
 import useLoading from '@proton/hooks/useLoading';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
+import { useTheme } from '@proton/theme/ThemeProvider';
 import noop from '@proton/utils/noop';
 
 import { SafetyReviewCta } from '../../../SafetyReviewCta';

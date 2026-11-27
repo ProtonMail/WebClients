@@ -2,10 +2,10 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
 import { IcCross } from '@proton/icons/icons/IcCross';
 import LumoWordmark from '@proton/lumo-ui/shared-components/LumoWordmark/LumoWordmark';
 import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
+import { useTheme } from '@proton/theme/ThemeProvider';
 
 import LumoAgentPanel from './LumoAgentPanel';
 import { LumoConversationHeaderActions } from './LumoConversationHeaderActions';

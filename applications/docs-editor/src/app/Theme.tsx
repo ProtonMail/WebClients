@@ -1,5 +1,5 @@
-import { getThemeStyle } from '@proton/components/containers/themes/ThemeProvider'
-import { ThemeTypes } from '@proton/shared/lib/themes/constants'
+import { getThemeStyle } from '@proton/theme/ThemeProvider'
+import { ThemeTypes } from '@proton/theme/constants'
 import { useEditorTheme } from './Theme/EditorThemeProvider'
 
 const THEME_ID = 'theme-root'

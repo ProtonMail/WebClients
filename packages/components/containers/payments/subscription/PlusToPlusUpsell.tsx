@@ -6,12 +6,12 @@ import { PLANS } from '@proton/payments/core/constants';
 import { getPlan } from '@proton/payments/core/subscription/helpers';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import type { Plan, PlansMap } from '@proton/shared/lib/payments/plan/interface';
+import { useTheme } from '@proton/theme/ThemeProvider';
 
 import ModalTwo, { type ModalProps } from '../../../components/modalTwo/Modal';
 import ModalTwoContent from '../../../components/modalTwo/ModalContent';
 import ModalTwoHeader from '../../../components/modalTwo/ModalHeader';
 import getBoldFormattedText from '../../../helpers/getBoldFormattedText';
-import { useTheme } from '../../themes/ThemeProvider';
 import PlusUnlimitedComparison from './PlusUnlimitedComparison';
 import { getNormalizedPlanTitles } from './plusToPlusHelper';
 

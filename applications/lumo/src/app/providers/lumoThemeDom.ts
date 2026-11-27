@@ -1,4 +1,4 @@
-import { ThemeTypes } from '@proton/shared/lib/themes/constants';
+import { ThemeTypes } from '@proton/theme/constants';
 
 import { getDefaultSettings, getInitialLumoSettings } from './lumoThemeStorage';
 import { getLumoThemeFromSettings, getThemeConfig, matchDarkTheme } from './lumoThemeUtils';

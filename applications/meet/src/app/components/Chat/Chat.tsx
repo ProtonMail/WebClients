@@ -3,7 +3,6 @@ import { useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import { IcMagnifier } from '@proton/icons/icons/IcMagnifier';
 import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
@@ -18,9 +17,10 @@ import {
 } from '@proton/meet/store/slices/uiStateSlice';
 import type { MeetChatMessage } from '@proton/meet/types/types';
 import { isParticipantMentioned } from '@proton/meet/utils/mentions/mentionToken';
-import { MotionModeSetting } from '@proton/shared/lib/themes/constants';
 import placeholder from '@proton/styles/assets/img/meet/chat-empty-state.png';
 import placeholderSearch from '@proton/styles/assets/img/meet/search-empty-state.png';
+import { useTheme } from '@proton/theme/ThemeProvider';
+import { MotionModeSetting } from '@proton/theme/constants';
 import { useFlag } from '@proton/unleash/useFlag';
 
 import { SecurityShield } from '../../atoms/SecurityShield/SecurityShield';

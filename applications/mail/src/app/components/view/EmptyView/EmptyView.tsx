@@ -2,7 +2,6 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
-import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
 import { useOnCompose } from '@proton/mail-composer/containers/ComposeProvider';
 import { ComposeTypes } from '@proton/mail-composer/hooks/composer/useCompose';
 import { MESSAGE_ACTIONS } from '@proton/mail-message/constants';
@@ -29,6 +28,7 @@ import noSearchResultWarm from '@proton/styles/assets/img/placeholders/search-em
 import noTrashSvgDark from '@proton/styles/assets/img/placeholders/trash-empty-cool-dark.svg';
 import noTrashSvgCool from '@proton/styles/assets/img/placeholders/trash-empty-cool-light.svg';
 import noTrashSvgWarm from '@proton/styles/assets/img/placeholders/trash-empty-warm-light.svg';
+import { useTheme } from '@proton/theme/ThemeProvider';
 
 import { useEncryptedSearchContext } from '../../../containers/EncryptedSearchProvider';
 import EnableEncryptedSearchModal from '../../header/search/AdvancedSearchFields/EnableEncryptedSearchModal';

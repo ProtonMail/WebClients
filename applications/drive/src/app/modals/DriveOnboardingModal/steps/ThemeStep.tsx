@@ -2,10 +2,10 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { ONBOARDING_THEMES } from '@proton/components/containers/onboarding/constants';
-import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
 import { getWelcomeToText } from '@proton/shared/lib/apps/text';
 import { DRIVE_APP_NAME } from '@proton/shared/lib/constants';
-import type { ThemeTypes } from '@proton/shared/lib/themes/constants';
+import { useTheme } from '@proton/theme/ThemeProvider';
+import type { ThemeTypes } from '@proton/theme/constants';
 
 import { Container } from '../Container';
 import { ThemePicker } from '../ThemePicker';

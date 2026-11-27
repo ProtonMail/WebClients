@@ -5,7 +5,6 @@ import { OutgoingDelegatedAccessProvider } from '@proton/account/delegatedAccess
 import { DashboardGrid } from '@proton/atoms/DashboardGrid/DashboardGrid';
 import { Href } from '@proton/atoms/Href/Href';
 import SettingsDescription from '@proton/components/containers/account/SettingsDescription';
-import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
 import { IncomingEmergencyContactSettings } from '@proton/delegated-access/emergencyContact/incoming/IncomingEmergencyContactSettings';
 import { OutgoingEmergencyContactSearchParams } from '@proton/delegated-access/emergencyContact/outgoing/OutgoingEmergencyAccessParams';
 import { OutgoingEmergencyContactSettings } from '@proton/delegated-access/emergencyContact/outgoing/OutgoingEmergencyContactSettings';
@@ -15,6 +14,7 @@ import { OutgoingDelegatedAccessActions } from '@proton/delegated-access/shared/
 import { PaymentsContextProvider } from '@proton/payments-ui/ui/context/PaymentContext';
 import { type APP_NAMES, BRAND_NAME } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
+import { useTheme } from '@proton/theme/ThemeProvider';
 
 import darkIllustration from './assets/recovery-emergency-contacts-dark.svg';
 import illustration from './assets/recovery-emergency-contacts.svg';

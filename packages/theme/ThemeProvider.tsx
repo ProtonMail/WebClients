@@ -13,8 +13,9 @@ import {
 } from '@proton/shared/lib/desktop/ipcHelpers';
 import { clearBit, hasBit, setBit } from '@proton/shared/lib/helpers/bitset';
 import { isElectronMail, isElectronOnSupportedApps } from '@proton/shared/lib/helpers/desktop';
-import { updateElectronThemeModeClassnames } from '@proton/shared/lib/helpers/initElectronClassnames';
 import createListeners from '@proton/shared/lib/helpers/listeners';
+import noop from '@proton/utils/noop';
+
 import {
     ColorScheme,
     MotionModeSetting,
@@ -23,8 +24,11 @@ import {
     ThemeFontSizeSetting,
     ThemeModeSetting,
     ThemeTypes,
-} from '@proton/shared/lib/themes/constants';
-import type { ThemeInformation, ThemeSetting } from '@proton/shared/lib/themes/themes';
+} from './constants';
+import { updateElectronThemeModeClassnames } from './initElectronClassnames';
+import { classNames, styles } from './properties';
+import { getStoredThemeString, setStoredThemeString } from './themeCookieStorage';
+import type { ThemeInformation, ThemeSetting } from './themes';
 import {
     PROTON_DEFAULT_THEME,
     PROTON_DEFAULT_THEME_INFORMATION,
@@ -38,11 +42,7 @@ import {
     getProminentHeaderThemes,
     getThemeType,
     serializeThemeSetting,
-} from '@proton/shared/lib/themes/themes';
-import noop from '@proton/utils/noop';
-
-import { classNames, styles } from './properties';
-import { getStoredThemeString, setStoredThemeString } from './themeCookieStorage';
+} from './themes';
 
 export interface ThemeContextInterface {
     setTheme: (theme: ThemeTypes, mode?: ThemeModeSetting) => void;

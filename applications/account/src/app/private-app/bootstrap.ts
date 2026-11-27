@@ -34,12 +34,12 @@ import {
 } from '@proton/shared/lib/authentication/persistedSessionStorage';
 import { listenFreeTrialSessionExpiration } from '@proton/shared/lib/desktop/endOfTrialHelpers';
 import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
-import { initElectronClassnames } from '@proton/shared/lib/helpers/initElectronClassnames';
 import { initSafariFontFixClassnames } from '@proton/shared/lib/helpers/initSafariFontFixClassnames';
 import { isProduction } from '@proton/shared/lib/helpers/sentry';
 import type { ProtonConfig } from '@proton/shared/lib/interfaces/config';
 import { telemetry } from '@proton/shared/lib/telemetry';
 import { initTracker } from '@proton/telemetry-tracker/lib/tracker';
+import { initElectronClassnames } from '@proton/theme/initElectronClassnames';
 import noop from '@proton/utils/noop';
 
 import locales from '../locales';

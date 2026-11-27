@@ -1,8 +1,13 @@
-import { canGetInboxDesktopInfo, getInboxDesktopInfo, hasInboxDesktopFeature } from '../desktop/ipcHelpers';
-import { ColorScheme, ThemeModeSetting } from '../themes/constants';
-import type { ThemeSetting } from '../themes/themes';
-import { electronAppTheme, getDarkThemes } from '../themes/themes';
-import { isElectronApp, isElectronOnMac, isElectronOnWindows } from './desktop';
+import {
+    canGetInboxDesktopInfo,
+    getInboxDesktopInfo,
+    hasInboxDesktopFeature,
+} from '@proton/shared/lib/desktop/ipcHelpers';
+import { isElectronApp, isElectronOnMac, isElectronOnWindows } from '@proton/shared/lib/helpers/desktop';
+
+import { ColorScheme, ThemeModeSetting } from './constants';
+import type { ThemeSetting } from './themes';
+import { electronAppTheme, getDarkThemes } from './themes';
 
 export const updateElectronThemeModeClassnames = (theme: ThemeSetting) => {
     let prefersDark = false;

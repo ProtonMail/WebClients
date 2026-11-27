@@ -6,7 +6,6 @@ import { selectAvailableRecoveryMethods } from '@proton/account/recovery/session
 import { DashboardGrid } from '@proton/atoms/DashboardGrid/DashboardGrid';
 import { Href } from '@proton/atoms/Href/Href';
 import SettingsDescription from '@proton/components/containers/account/SettingsDescription';
-import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
 import { IncomingRecoveryContactParams } from '@proton/delegated-access/recoveryContact/incoming/IncomingRecoveryContactParams';
 import { IncomingRecoveryContactSettings } from '@proton/delegated-access/recoveryContact/incoming/IncomingRecoveryContactSettings';
 import { OutgoingRecoveryContactParams } from '@proton/delegated-access/recoveryContact/outgoing/OutgoingRecoveryContactParams';
@@ -16,6 +15,7 @@ import { OutgoingDelegatedAccessActions } from '@proton/delegated-access/shared/
 import { useSelector } from '@proton/redux-shared-store/sharedProvider';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
+import { useTheme } from '@proton/theme/ThemeProvider';
 
 import darkIllustration from './assets/recovery-contacts-dark.svg';
 import illustration from './assets/recovery-contacts.svg';

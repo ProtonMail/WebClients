@@ -1,7 +1,7 @@
 import { createRoot } from 'react-dom/client';
 
 import { fileStorageReady } from '@proton/pass/lib/file-storage/fs';
-import { initElectronClassnames } from '@proton/shared/lib/helpers/initElectronClassnames';
+import { initElectronClassnames } from '@proton/theme/initElectronClassnames';
 
 import { App } from './App';
 import reportClientLaunch from './reportClientLaunch';

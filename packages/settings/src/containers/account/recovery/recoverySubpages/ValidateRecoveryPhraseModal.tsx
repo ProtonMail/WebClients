@@ -16,11 +16,11 @@ import useFormErrors from '@proton/components/components/v2/useFormErrors';
 import MnemonicInputField, {
     useMnemonicInputValidation,
 } from '@proton/components/containers/mnemonic/MnemonicInputField';
-import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import useLoading from '@proton/hooks/useLoading';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
+import { useTheme } from '@proton/theme/ThemeProvider';
 
 import darkIllustration from './assets/recovery-phrase-dark.svg';
 import illustration from './assets/recovery-phrase.svg';

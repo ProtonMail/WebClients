@@ -5,7 +5,7 @@ import { c } from 'ttag';
 import type { SafetyReviewAllProps } from '@proton/account/safetyReview/components/interface';
 import type { ExtractRecoveryActionItem } from '@proton/account/safetyReview/recoveryState/recoveryState';
 import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
-import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
+import { useTheme } from '@proton/theme/ThemeProvider';
 
 import { SafetyReviewCta } from '../../../SafetyReviewCta';
 import darkRecoveryEmailIllustration from '../../../assets/recovery-email-dark.svg';

@@ -6,7 +6,6 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { freeTrialUpgradeClick, openLinkInBrowser } from '@proton/components/containers/desktop/openExternalLink';
-import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import {
     APPS,
@@ -22,6 +21,7 @@ import { getUpsellRef } from '@proton/shared/lib/helpers/ref';
 import protonDesktopTrialEnd from '@proton/styles/assets/img/illustrations/proton-desktop-trial-end.svg';
 import inboxPlaceholder from '@proton/styles/assets/img/inbox-desktop/inbox_placeholder.png';
 import inboxPlaceholderDark from '@proton/styles/assets/img/inbox-desktop/inbox_placeholder_dark.png';
+import { useTheme } from '@proton/theme/ThemeProvider';
 
 import Layout from '../layout/Layout';
 import Main from '../layout/Main';

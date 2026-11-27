@@ -1,4 +1,4 @@
-import type { ThemeTypes } from '@proton/shared/lib/themes/constants';
+import type { ThemeTypes } from '@proton/theme/constants';
 import clsx from '@proton/utils/clsx';
 
 import ThemeCard from './ThemeCard';

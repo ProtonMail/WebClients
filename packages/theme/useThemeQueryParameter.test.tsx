@@ -1,9 +1,8 @@
 import { renderHook } from '@testing-library/react';
 
-import { ThemeTypes } from '@proton/shared/lib/themes/constants';
-import { PROTON_DEFAULT_THEME } from '@proton/shared/lib/themes/themes';
-
 import { useTheme } from './ThemeProvider';
+import { ThemeTypes } from './constants';
+import { PROTON_DEFAULT_THEME } from './themes';
 import useThemeQueryParameter from './useThemeQueryParameter';
 
 vi.mock('./ThemeProvider');

@@ -1,7 +1,6 @@
 import type { RefObject } from 'react';
 import { useEffect, useMemo, useRef, useState } from 'react';
 
-import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
 import { useLinkHandler } from '@proton/components/hooks/useLinkHandler';
 import { useOnMailTo } from '@proton/mail-composer/containers/ComposeProvider';
 import { locateBlockquote } from '@proton/mail-message/helpers/message/messageBlockquote';
@@ -12,6 +11,7 @@ import { getPlainTextToRender } from '@proton/mail-renderer/helpers/transforms/t
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { scrollIntoView } from '@proton/shared/lib/helpers/dom';
 import { isAutoFlaggedPhishing, isDraft, isPlainText, isSuspicious } from '@proton/shared/lib/mail/messages';
+import { useTheme } from '@proton/theme/ThemeProvider';
 import clsx from '@proton/utils/clsx';
 
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';

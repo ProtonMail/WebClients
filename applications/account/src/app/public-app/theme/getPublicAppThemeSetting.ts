@@ -1,12 +1,12 @@
-import { getStoredThemeString } from '@proton/components/containers/themes/themeCookieStorage';
 import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
-import { ThemeModeSetting } from '@proton/shared/lib/themes/constants';
+import { ThemeModeSetting } from '@proton/theme/constants';
+import { getStoredThemeString } from '@proton/theme/themeCookieStorage';
 import {
     PROTON_DEFAULT_THEME,
     type ThemeSetting,
     getDefaultThemeSetting,
     getParsedThemeSetting,
-} from '@proton/shared/lib/themes/themes';
+} from '@proton/theme/themes';
 
 import { getThemeFromLocation } from './getThemeFromLocation';
 import { PUBLIC_THEME_DARK, PUBLIC_THEME_LIGHT, getThemeSettingFromMode } from './getThemeSettingFromMode';

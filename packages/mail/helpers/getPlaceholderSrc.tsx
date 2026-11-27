@@ -1,4 +1,3 @@
-import { ThemeTypes } from '@proton/shared/lib/themes/constants';
 import conversationFullSvgDark from '@proton/styles/assets/img/placeholders/inbox-cool-dark.svg';
 import conversationFullSvgLight from '@proton/styles/assets/img/placeholders/inbox-cool-light.svg';
 import conversationEmptySvgDark from '@proton/styles/assets/img/placeholders/inbox-empty-cool-dark.svg';
@@ -8,6 +7,7 @@ import conversationSemiSvgDark from '@proton/styles/assets/img/placeholders/inbo
 import conversationSemiSvgLight from '@proton/styles/assets/img/placeholders/inbox-semi-cool-light.svg';
 import conversationSemiSvgWarm from '@proton/styles/assets/img/placeholders/inbox-semi-warm-light.svg';
 import conversationFullSvgWarm from '@proton/styles/assets/img/placeholders/inbox-warm-light.svg';
+import { ThemeTypes } from '@proton/theme/constants';
 
 interface Params {
     theme: ThemeTypes;

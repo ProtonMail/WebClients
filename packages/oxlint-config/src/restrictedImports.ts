@@ -138,6 +138,7 @@ const BASE_RESTRICTIONS: BaseRestriction[] = [
             '@proton/telemetry-tracker',
             '@proton/test-api',
             '@proton/test-tags-mr',
+            '@proton/theme',
             '@proton/unleash',
             '@proton/utils',
             '@proton/vitest-config',

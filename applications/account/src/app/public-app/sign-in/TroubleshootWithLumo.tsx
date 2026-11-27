@@ -3,11 +3,11 @@ import { useEffect, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
 import { IcCross } from '@proton/icons/icons/IcCross';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { APPS, LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import lumoCatIcon from '@proton/styles/assets/img/lumo/lumo-cat-icon.svg';
+import { useTheme } from '@proton/theme/ThemeProvider';
 import clsx from '@proton/utils/clsx';
 
 import './TroubleshootWithLumo.scss';

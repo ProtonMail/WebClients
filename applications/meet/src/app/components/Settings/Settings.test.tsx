@@ -5,7 +5,6 @@ import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import NotificationsProvider from '@proton/components/containers/notifications/Provider';
-import { ThemeContext, useTheme } from '@proton/components/containers/themes/ThemeProvider';
 import { backgroundReducer } from '@proton/meet/store/slices/backgroundSlice';
 import { connectionReducer, initialState as initialConnectionState } from '@proton/meet/store/slices/connectionSlice';
 import {
@@ -28,8 +27,9 @@ import { MeetingSideBars, uiStateReducer } from '@proton/meet/store/slices/uiSta
 import { meetUserReducer } from '@proton/meet/store/slices/userSlice';
 import { ParticipantCapabilityPermission } from '@proton/meet/types/types';
 import { ProtonStoreContext } from '@proton/react-redux-store/ProtonStoreContext';
-import { MotionModeSetting } from '@proton/shared/lib/themes/constants';
-import type { ThemeInformation } from '@proton/shared/lib/themes/themes';
+import { ThemeContext, useTheme } from '@proton/theme/ThemeProvider';
+import { MotionModeSetting } from '@proton/theme/constants';
+import type { ThemeInformation } from '@proton/theme/themes';
 
 import { BackgroundEffectsContext } from '../../contexts/BackgroundEffects/BackgroundEffectsContext';
 import type { MediaManagementContextType } from '../../contexts/MediaManagementProvider/MediaManagementContext';

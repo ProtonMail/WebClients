@@ -44,7 +44,6 @@ import {
     registerSessionRemovalListener,
 } from '@proton/shared/lib/authentication/persistedSessionStorage';
 import { getAppVersionStr } from '@proton/shared/lib/fetch/headers';
-import { initElectronClassnames } from '@proton/shared/lib/helpers/initElectronClassnames';
 import { captureMessage, isProduction, traceError } from '@proton/shared/lib/helpers/sentry';
 import { getBrowserLocale } from '@proton/shared/lib/i18n/helper';
 import { loadLocales } from '@proton/shared/lib/i18n/loadLocale';
@@ -52,6 +51,7 @@ import type { ProtonConfig } from '@proton/shared/lib/interfaces/config';
 import type { Unwrap } from '@proton/shared/lib/interfaces/utils';
 import { telemetry } from '@proton/shared/lib/telemetry';
 import { appMode } from '@proton/shared/lib/webpack.constants';
+import { initElectronClassnames } from '@proton/theme/initElectronClassnames';
 import noop from '@proton/utils/noop';
 
 import { purgeUserRecordings } from './hooks/useMeetingRecorder/recordingStorage/purge';

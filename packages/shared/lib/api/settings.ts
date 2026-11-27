@@ -10,8 +10,8 @@ import type {
     SETTINGS_LOG_AUTH_STATE,
     SETTINGS_TIME_FORMAT,
     SETTINGS_WEEK_START,
+    ThemeSettingPayload,
 } from '../interfaces/UserSettings';
-import type { ThemeSetting } from '../themes/themes';
 import type { RegistrationOptions } from '../webauthn/interface';
 
 export const TOTP_WRONG_ERROR = 12060;
@@ -187,7 +187,7 @@ export const updateHideDrawer = (HideSidePanel: DRAWER_VISIBILITY) => ({
     data: { HideSidePanel },
 });
 
-export const updateTheme = (data: ThemeSetting) => ({
+export const updateTheme = (data: ThemeSettingPayload) => ({
     url: 'core/v4/settings/theme',
     method: 'put',
     data,

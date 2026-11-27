@@ -3,11 +3,11 @@ import { useCallback, useEffect, useRef } from 'react';
 
 import type { IEditor } from 'roosterjs-editor-types';
 
-import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
-import useSyncIframeStyles from '@proton/components/containers/themes/useSyncIframeStyles';
 import useIsMounted from '@proton/hooks/useIsMounted';
 import { setSentryTags } from '@proton/shared/lib/helpers/sentry';
 import type { MailSettings } from '@proton/shared/lib/interfaces/MailSettings';
+import { useTheme } from '@proton/theme/ThemeProvider';
+import useSyncIframeStyles from '@proton/theme/useSyncIframeStyles';
 
 import { useEditorVersion } from '../../../../hooks/useEditorVersion';
 import {

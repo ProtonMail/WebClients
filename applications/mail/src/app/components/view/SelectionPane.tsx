@@ -4,7 +4,6 @@ import { useLocation } from 'react-router-dom';
 import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 import { getInboxEmptyPlaceholder } from '@proton/mail/helpers/getPlaceholderSrc';
 import { isCustomLabel as testIsCustomLabel } from '@proton/mail/helpers/location';
@@ -12,6 +11,7 @@ import { useFolders, useLabels } from '@proton/mail/store/labels/hooks';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import type { SearchParameters } from '@proton/shared/lib/mail/search';
+import { useTheme } from '@proton/theme/ThemeProvider';
 
 import { isSearch as testIsSearch } from '../../helpers/elements';
 import { getLabelName } from '../../helpers/labels';

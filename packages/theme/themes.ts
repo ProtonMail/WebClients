@@ -1,8 +1,13 @@
 import { c } from 'ttag';
 
-import { canGetInboxDesktopInfo, getInboxDesktopInfo, hasInboxDesktopFeature } from '../desktop/ipcHelpers';
-import { isElectronApp } from '../helpers/desktop';
-import { binaryStringToUint8Array, uint8ArrayToBinaryString } from '../helpers/encoding';
+import {
+    canGetInboxDesktopInfo,
+    getInboxDesktopInfo,
+    hasInboxDesktopFeature,
+} from '@proton/shared/lib/desktop/ipcHelpers';
+import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
+import { binaryStringToUint8Array, uint8ArrayToBinaryString } from '@proton/shared/lib/helpers/encoding';
+
 import {
     ColorScheme,
     MotionModeSetting,

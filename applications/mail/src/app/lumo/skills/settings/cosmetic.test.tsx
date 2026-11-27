@@ -7,8 +7,8 @@ import { DENSITY } from '@proton/shared/lib/constants';
 import type { MailSettings } from '@proton/shared/lib/interfaces/MailSettings';
 import type { UserSettings } from '@proton/shared/lib/interfaces/UserSettings';
 import { VIEW_LAYOUT, VIEW_MODE } from '@proton/shared/lib/mail/mailSettings';
-import { ThemeTypes } from '@proton/shared/lib/themes/constants';
-import type { ThemeInformation } from '@proton/shared/lib/themes/themes';
+import { ThemeTypes } from '@proton/theme/constants';
+import type { ThemeInformation } from '@proton/theme/themes';
 
 import type { MailToolDeps } from '../../toolModule';
 import {

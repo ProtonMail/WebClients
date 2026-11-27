@@ -8,8 +8,8 @@ import Option from '@proton/components/components/option/Option';
 import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
 import { InputField as InputFieldTwo } from '@proton/components/components/v2/field/InputField';
 import ChallengeV4 from '@proton/components/containers/challenge/ChallengeV4';
-import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
 import { IcCheckmarkCircle } from '@proton/icons/icons/IcCheckmarkCircle';
+import { useTheme } from '@proton/theme/ThemeProvider';
 import clsx from '@proton/utils/clsx';
 
 import { getThemeData } from '../../../signup/challenge-theme';

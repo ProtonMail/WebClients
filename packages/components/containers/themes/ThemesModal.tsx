@@ -2,8 +2,9 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
-import { ColorScheme, ThemeModeSetting } from '@proton/shared/lib/themes/constants';
-import { getThemes } from '@proton/shared/lib/themes/themes';
+import { useTheme } from '@proton/theme/ThemeProvider';
+import { ColorScheme, ThemeModeSetting } from '@proton/theme/constants';
+import { getThemes } from '@proton/theme/themes';
 
 import Info from '../../components/link/Info';
 import type { ModalProps } from '../../components/modalTwo/Modal';
@@ -13,7 +14,6 @@ import ModalTwoFooter from '../../components/modalTwo/ModalFooter';
 import ModalTwoHeader from '../../components/modalTwo/ModalHeader';
 import Toggle from '../../components/toggle/Toggle';
 import ThemeCards from './ThemeCards';
-import { useTheme } from './ThemeProvider';
 import ThemeSyncModeCard from './ThemeSyncModeCard';
 
 const ThemesModal = (props: ModalProps) => {

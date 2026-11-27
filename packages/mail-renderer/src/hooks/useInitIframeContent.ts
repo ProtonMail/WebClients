@@ -1,10 +1,10 @@
 import type { RefObject } from 'react';
 import { useEffect, useRef, useState } from 'react';
 
-import type { ThemeContextInterface } from '@proton/components/containers/themes/ThemeProvider';
 import useIsMounted from '@proton/hooks/useIsMounted';
 import type { MessageState } from '@proton/mail-message/store/messages/messagesTypes';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
+import type { ThemeContextInterface } from '@proton/theme/ThemeProvider';
 
 import { getIframeDocument } from '../helpers/getIframeDocument';
 import writeIframeContent from '../helpers/writeIframeContent';

@@ -3,7 +3,6 @@ import { useEffect, useRef, useState } from 'react';
 import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
 import { IcChevronDown } from '@proton/icons/icons/IcChevronDown';
 import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
 import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
@@ -14,7 +13,8 @@ import {
 } from '@proton/meet/store/slices/chatAndReactionsSlice';
 import type { MeetChatMessage } from '@proton/meet/types/types';
 import { isChatThreadExpanded } from '@proton/meet/utils/isChatThreadExpanded';
-import { MotionModeSetting } from '@proton/shared/lib/themes/constants';
+import { useTheme } from '@proton/theme/ThemeProvider';
+import { MotionModeSetting } from '@proton/theme/constants';
 import clsx from '@proton/utils/clsx';
 
 import { useChatMessage } from '../../hooks/bridges/useChatMessage';

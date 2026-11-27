@@ -8,13 +8,13 @@ import { DashboardGrid } from '@proton/atoms/DashboardGrid/DashboardGrid';
 import { Href } from '@proton/atoms/Href/Href';
 import SettingsDescription from '@proton/components/containers/account/SettingsDescription';
 import ExportRecoveryFileButton from '@proton/components/containers/recovery/ExportRecoveryFileButton';
-import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
 import { IcArrowDownLine } from '@proton/icons/icons/IcArrowDownLine';
 import { IcExclamationCircleFilled } from '@proton/icons/icons/IcExclamationCircleFilled';
 import { IcTrashCross } from '@proton/icons/icons/IcTrashCross';
 import { useSelector } from '@proton/redux-shared-store/sharedProvider';
 import { RECOVERY_FILE_FILE_NAME } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
+import { useTheme } from '@proton/theme/ThemeProvider';
 
 import darkIllustration from './assets/recovery-file-dark.svg';
 import illustration from './assets/recovery-file.svg';

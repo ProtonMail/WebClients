@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState } from 'react';
 
-import { THEME_ID, ThemeContext } from '@proton/components/containers/themes/ThemeProvider';
+import { THEME_ID, ThemeContext } from '@proton/theme/ThemeProvider';
 
 export interface ChartColors {
     text: string;

@@ -1,5 +1,5 @@
-import { type ThemeModeSetting, ThemeTypes } from '@proton/shared/lib/themes/constants';
-import type { ThemeSetting } from '@proton/shared/lib/themes/themes';
+import { type ThemeModeSetting, ThemeTypes } from '@proton/theme/constants';
+import type { ThemeSetting } from '@proton/theme/themes';
 
 export const PUBLIC_THEME_LIGHT = ThemeTypes.Duotone;
 export const PUBLIC_THEME_DARK = ThemeTypes.Carbon;

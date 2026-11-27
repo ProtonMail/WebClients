@@ -1,7 +1,7 @@
 import { APPS, APPS_CONFIGURATION } from "@proton/shared/lib/constants";
 import { isElectronOnMac } from "@proton/shared/lib/helpers/desktop";
-import { ThemeTypes } from "@proton/shared/lib/themes/constants";
-import { PROTON_THEMES_MAP } from "@proton/shared/lib/themes/themes";
+import { ThemeTypes } from "@proton/theme/constants";
+import { PROTON_THEMES_MAP } from "@proton/theme/themes";
 import { app, BrowserWindow, Event, nativeTheme, Rectangle, WebContentsView } from "electron";
 import { debounce } from "lodash";
 import { join } from "node:path";
