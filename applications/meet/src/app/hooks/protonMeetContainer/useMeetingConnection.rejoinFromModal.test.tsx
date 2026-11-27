@@ -33,6 +33,7 @@ const mockDispatch = vi.fn();
 const mockGetAccessDetails = vi.fn();
 const mockHandleMlsSetup = vi.fn();
 const mockMeetCoreClient = {
+    whenReady: vi.fn().mockResolvedValue(undefined),
     leaveMeeting: vi.fn().mockResolvedValue(undefined),
     logUserRejoin: vi.fn().mockResolvedValue(undefined),
 };

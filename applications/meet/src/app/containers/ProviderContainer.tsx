@@ -17,6 +17,7 @@ import type { ProtonThunkArguments } from '@proton/redux-shared-store-types/inte
 import { ProtonStoreProvider } from '@proton/redux-shared-store/sharedProvider';
 import { getNonEmptyErrorMessage } from '@proton/shared/lib/helpers/error';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
+import noop from '@proton/utils/noop';
 
 import { bootstrapApp } from '../bootstrap';
 import config from '../config';
@@ -24,6 +25,7 @@ import { MeetCoreClientContext } from '../contexts/MeetCoreClientContext';
 import { TrackedLoaderPage } from '../telemetry/TrackedLoaderPage';
 import { markBootstrapLoaderUnmount } from '../telemetry/loadPerformance';
 import type { MeetCoreClient } from '../wasm/MeetCoreClient';
+import { loadEntryRouteContainer, preloadRouteContainersWhenIdle } from './lazyRouteContainers';
 
 type ExtraThunkArguments = Omit<MeetExtraThunkArguments, 'config' | 'notificationsManager'>;
 
@@ -42,20 +44,25 @@ export const ProviderContainer = ({ children }: { children: ReactNode }) => {
     useEffect(() => {
         const initialiseServicesAndStore = async (signal: AbortSignal) => {
             try {
-                const {
-                    store,
-                    authentication,
-                    unleashClient,
-                    eventManager,
-                    api,
-                    history,
-                    meetCoreClient,
-                    meetEventManager,
-                } = await bootstrapApp({
-                    notificationsManager,
-                    config,
-                    signal,
-                });
+                const [
+                    {
+                        store,
+                        authentication,
+                        unleashClient,
+                        eventManager,
+                        api,
+                        history,
+                        meetCoreClient,
+                        meetEventManager,
+                    },
+                ] = await Promise.all([
+                    bootstrapApp({
+                        notificationsManager,
+                        config,
+                        signal,
+                    }),
+                    loadEntryRouteContainer().catch(noop),
+                ]);
 
                 if (signal.aborted) {
                     return;
@@ -75,6 +82,7 @@ export const ProviderContainer = ({ children }: { children: ReactNode }) => {
                 meetCoreClientRef.current = meetCoreClient;
 
                 setInitialised(true);
+                preloadRouteContainersWhenIdle(false);
             } catch (error) {
                 if (signal.aborted) {
                     return;

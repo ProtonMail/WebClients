@@ -3,13 +3,8 @@ import { NodeType, getDrive } from '@proton/drive/sdk';
 import { getItem, removeItem, setItem } from '@proton/shared/lib/helpers/storage';
 
 import { BACKGROUNDS_FOLDER_PATH } from '../constants';
+import { getFolderUidStorageKey } from './backgroundsFolderUidStorage';
 import { isTransientDriveError } from './driveErrors';
-
-const getFolderUidStorageKey = (namespace: string) => `${namespace}.meetBackgroundsFolderUid`;
-
-export const forgetBackgroundsFolderUid = (namespace: string) => {
-    removeItem(getFolderUidStorageKey(namespace));
-};
 
 const findChildFolderUid = async (
     drive: ProtonDriveClient,

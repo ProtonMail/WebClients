@@ -77,6 +77,7 @@ const createDeferred = <T,>() => {
 };
 
 const mockMeetCoreClient = {
+    whenReady: vi.fn().mockResolvedValue(undefined),
     leaveMeeting: vi.fn().mockResolvedValue(undefined),
     logUserRejoin: vi.fn().mockResolvedValue(undefined),
     restart: vi.fn().mockResolvedValue(true),
@@ -128,9 +129,41 @@ describe('useMeetingConnection', () => {
         mockRoom.prepareConnection.mockResolvedValue(undefined);
         mockRoom.disconnect.mockResolvedValue(undefined);
         mockMeetCoreClient.restart.mockResolvedValue(true);
+        mockMeetCoreClient.whenReady.mockResolvedValue(undefined);
     });
 
     describe('connectWithMls', () => {
+        it('sets up MLS only once meet-core is ready', async () => {
+            const meetCoreReady = createDeferred<void>();
+            mockMeetCoreClient.whenReady.mockReturnValue(meetCoreReady.promise);
+            const params = createParams();
+            const { result } = renderHook(() => useMeetingConnection(params));
+
+            let connectPromise: ReturnType<UseMeetingConnectionResult['connectWithMls']> | undefined;
+            await act(async () => {
+                connectPromise = result.current.connectWithMls(baseConnectParams);
+            });
+            expect(params.handleMlsSetup).not.toHaveBeenCalled();
+
+            await act(async () => {
+                meetCoreReady.resolve();
+                await connectPromise;
+            });
+            expect(params.handleMlsSetup).toHaveBeenCalledTimes(1);
+        });
+
+        it('rejects with the init error without setting up MLS when meet-core failed to initialize', async () => {
+            const error = new Error('init failed');
+            mockMeetCoreClient.whenReady.mockRejectedValue(error);
+            const params = createParams();
+            const { result } = renderHook(() => useMeetingConnection(params));
+
+            await act(async () => {
+                await expect(result.current.connectWithMls(baseConnectParams)).rejects.toBe(error);
+            });
+            expect(params.handleMlsSetup).not.toHaveBeenCalled();
+        });
+
         it('runs the connect sequence and returns the connection info + participant count', async () => {
             const params = createParams();
             const { result } = renderHook(() => useMeetingConnection(params));

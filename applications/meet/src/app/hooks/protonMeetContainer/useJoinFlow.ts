@@ -1,4 +1,4 @@
-import { type MutableRefObject, useCallback, useRef } from 'react';
+import { type MutableRefObject, useCallback, useEffect, useRef } from 'react';
 import { useHistory } from 'react-router-dom';
 
 import { useRoomContext } from '@livekit/components-react';
@@ -32,6 +32,7 @@ import { isMobile } from '@proton/shared/lib/helpers/browser';
 import { isWebRtcSupported } from '@proton/shared/lib/helpers/isWebRtcSupported';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { useFlag } from '@proton/unleash/useFlag';
+import noop from '@proton/utils/noop';
 
 import { MEETING_LOCKED_ERROR_CODE } from '../../constants';
 import { useMeetCoreClient } from '../../contexts/MeetCoreClientContext';
@@ -208,6 +209,24 @@ export const useJoinFlow = ({
     const joinTimerRef = useRef<JoinTimer>(createJoinTimer());
     const waitingRoomAccessDetailsRef = useRef<MeetingAccessDetails | null>(null);
 
+    const leftJoinPageRef = useRef(false);
+    useEffect(() => {
+        leftJoinPageRef.current = false;
+        return () => {
+            leftJoinPageRef.current = true;
+        };
+    }, []);
+
+    /** Leaves a meeting the person connected to after they left the join page. */
+    const leaveIfLeftJoinPage = () => {
+        if (!leftJoinPageRef.current) {
+            return false;
+        }
+        void room.disconnect();
+        void meetCoreClient.leaveMeeting().catch(noop);
+        return true;
+    };
+
     const { getSessionKey, getSessionKeyBase64 } = useSessionKey({ urlMeetingPassword });
 
     const updateAccessToken = (accessToken: string) => {
@@ -312,6 +331,9 @@ export const useJoinFlow = ({
                 notifyMlsErrors: failureFeedback === 'notification' ? 'all' : 'none',
                 silencedAccessTokenErrors: [MEETING_LOCKED_ERROR_CODE, API_CUSTOM_ERROR_CODES.NOT_ALLOWED],
             });
+            if (leaveIfLeftJoinPage()) {
+                return false;
+            }
 
             trackJoinSucceeded({
                 room,
@@ -376,6 +398,10 @@ export const useJoinFlow = ({
 
             return true;
         } catch (error: any) {
+            if (leftJoinPageRef.current) {
+                return false;
+            }
+
             if (meetJoinTelemetryEnabled) {
                 void gatherAndLogJoinStats({
                     room,
@@ -428,6 +454,19 @@ export const useJoinFlow = ({
         loadingStartTimeRef.current = Date.now();
         joinTimerRef.current = createJoinTimer();
 
+        // Before the meeting is created, so a meet-core init failure does not leave it behind
+        try {
+            await meetCoreClient.whenReady();
+        } catch {
+            dispatch(setJoiningInProgress(false));
+            joinBlockedRef.current = false;
+            dispatch(setJoinError('startFailed'));
+            return;
+        }
+        if (leftJoinPageRef.current) {
+            return;
+        }
+
         try {
             await meetCoreClient.logStartToJoinRoom();
         } catch (error) {
@@ -441,6 +480,9 @@ export const useJoinFlow = ({
                 isPaidUser,
                 waitingRoom: waitingRoomSetting,
             });
+            if (leftJoinPageRef.current) {
+                return;
+            }
             meetingLinkNameRef.current = meetingLinkName;
 
             const handshakeInfo = await joinTimerRef.current.measure('srpMs', initHandshake(meetingLinkName));
@@ -472,6 +514,9 @@ export const useJoinFlow = ({
 
             if (joined) {
                 await refreshMeetingInfoAfterJoin(meetingLinkName, passwordBase);
+                if (leaveIfLeftJoinPage()) {
+                    return;
+                }
 
                 dispatch(setIsGuestAdmin(isGuest));
 

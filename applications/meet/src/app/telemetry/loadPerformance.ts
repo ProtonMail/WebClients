@@ -1,6 +1,7 @@
 import type { EntryRoute, MeetPerformanceValues } from '@proton/meet/telemetry/events';
 import { TelemetryMeetPerformanceEvents, sendMeetPerformanceEvent } from '@proton/meet/telemetry/meetTelemetry';
 
+import { getEntryRoute } from '../utils/getEntryRoute';
 import type { MeetCoreClient } from '../wasm/MeetCoreClient';
 import { MeetCoreWorkerClient } from '../wasm/MeetCoreWorkerClient';
 
@@ -11,6 +12,7 @@ interface LoadState {
     bootstrapStart: number;
     bootstrapEnd?: number;
     bootstrapLoaderUnmount?: number;
+    prejoinLoaderUnmount?: number;
     wasmMode?: 'worker' | 'direct';
     phases: Partial<Record<LoadPhase, number>>;
     preload?: 'pending' | 'resolved' | 'rejected';
@@ -25,21 +27,6 @@ const handleVisibilityChange = () => {
     if (loadState && document.visibilityState === 'hidden') {
         loadState.wasHidden = true;
     }
-};
-
-const getEntryRoute = (pathname: string): EntryRoute => {
-    const path = pathname.replace(/^\/guest/, '').replace(/^\/u\/\d+/, '');
-
-    if (path.startsWith('/join')) {
-        return 'join';
-    }
-    if (path.startsWith('/manage-recordings')) {
-        return 'manage-recordings';
-    }
-    if (path.startsWith('/start-free-meeting')) {
-        return 'start-free-meeting';
-    }
-    return 'dashboard';
 };
 
 const getIsColdStart = (): boolean => {
@@ -83,12 +70,6 @@ export const markBootstrapEnd = () => {
     }
 };
 
-export const setWasmMode = (client: MeetCoreClient) => {
-    if (loadState) {
-        loadState.wasmMode = client instanceof MeetCoreWorkerClient ? 'worker' : 'direct';
-    }
-};
-
 /** Adds the duration of the promise to the phase, phases made of several steps are summed. */
 export const measureLoadPhase = async <T>(phase: LoadPhase, promise: Promise<T>): Promise<T> => {
     const start = performance.now();
@@ -129,15 +110,15 @@ export const markMeetingInfoNeeded = () => {
     loadState.isPreloadHit = loadState.preload ? loadState.preload === 'resolved' : 'n/a';
 };
 
-const sendAppLoaded = (state: LoadState, prejoinLoaderUnmount?: number) => {
+const sendAppLoaded = (state: LoadState, wasmMode: 'worker' | 'direct', bootstrapLoaderUnmount: number) => {
     state.sent = true;
     document.removeEventListener('visibilitychange', handleVisibilityChange);
 
-    if (state.wasHidden || document.visibilityState === 'hidden' || !state.wasmMode) {
+    if (state.wasHidden || document.visibilityState === 'hidden') {
         return;
     }
 
-    const { bootstrapEnd, bootstrapLoaderUnmount = 0 } = state;
+    const { bootstrapEnd, prejoinLoaderUnmount } = state;
 
     const values: MeetPerformanceValues[TelemetryMeetPerformanceEvents.app_loaded] = {
         ttfbMs: getTtfb(),
@@ -152,12 +133,36 @@ const sendAppLoaded = (state: LoadState, prejoinLoaderUnmount?: number) => {
         TelemetryMeetPerformanceEvents.app_loaded,
         {
             entryRoute: state.entryRoute,
-            wasmMode: state.wasmMode,
+            wasmMode,
             isColdStart: getIsColdStart(),
             isPreloadHit: state.entryRoute === 'join' ? (state.isPreloadHit ?? 'n/a') : 'n/a',
         },
         values
     );
+};
+
+/** Meet-core finishes initializing in the background, so it can be ready before or after the loaders are gone. */
+const trySendAppLoaded = (state: LoadState) => {
+    const { sent, wasmMode, bootstrapLoaderUnmount, prejoinLoaderUnmount } = state;
+    if (sent || !wasmMode || bootstrapLoaderUnmount === undefined) {
+        return;
+    }
+
+    // On /join the load only ends once the meeting info loader is gone
+    if (state.entryRoute === 'join' && prejoinLoaderUnmount === undefined) {
+        return;
+    }
+
+    sendAppLoaded(state, wasmMode, bootstrapLoaderUnmount);
+};
+
+export const setWasmMode = (client: MeetCoreClient) => {
+    if (!loadState) {
+        return;
+    }
+
+    loadState.wasmMode = client instanceof MeetCoreWorkerClient ? 'worker' : 'direct';
+    trySendAppLoaded(loadState);
 };
 
 export const markBootstrapLoaderUnmount = () => {
@@ -166,17 +171,19 @@ export const markBootstrapLoaderUnmount = () => {
     }
 
     loadState.bootstrapLoaderUnmount = performance.now();
-
-    // On /join the load only ends once the meeting info loader is gone
-    if (loadState.entryRoute !== 'join') {
-        sendAppLoaded(loadState);
-    }
+    trySendAppLoaded(loadState);
 };
 
 export const markPrejoinLoaderUnmount = () => {
-    if (!loadState || loadState.sent || loadState.bootstrapLoaderUnmount === undefined) {
+    if (
+        !loadState ||
+        loadState.sent ||
+        loadState.entryRoute !== 'join' ||
+        loadState.bootstrapLoaderUnmount === undefined
+    ) {
         return;
     }
 
-    sendAppLoaded(loadState, performance.now());
+    loadState.prejoinLoaderUnmount = performance.now();
+    trySendAppLoaded(loadState);
 };

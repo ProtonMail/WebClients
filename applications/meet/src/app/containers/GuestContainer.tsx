@@ -16,6 +16,7 @@ import { ProtonStoreProvider } from '@proton/redux-shared-store/sharedProvider';
 import { getNonEmptyErrorMessage } from '@proton/shared/lib/helpers/error';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import type { UnauthenticatedApi } from '@proton/shared/lib/unauthApi/unAuthenticatedApi';
+import noop from '@proton/utils/noop';
 
 import { bootstrapGuestApp } from '../bootstrap';
 import config from '../config';
@@ -23,6 +24,7 @@ import { MeetCoreClientContext } from '../contexts/MeetCoreClientContext';
 import { TrackedLoaderPage } from '../telemetry/TrackedLoaderPage';
 import { markBootstrapLoaderUnmount } from '../telemetry/loadPerformance';
 import type { MeetCoreClient } from '../wasm/MeetCoreClient';
+import { loadEntryRouteContainer, preloadRouteContainersWhenIdle } from './lazyRouteContainers';
 
 type ExtraThunkArguments = Omit<ProtonThunkArguments, 'config' | 'api' | 'eventManager'> & {
     unauthenticatedApi: UnauthenticatedApi;
@@ -46,8 +48,11 @@ export const GuestContainer = ({ children }: GuestContainerProps) => {
     useEffect(() => {
         const initialiseServicesAndStore = async (signal: AbortSignal) => {
             try {
-                const { store, authentication, unleashClient, unauthenticatedApi, history, meetCoreClient } =
-                    await bootstrapGuestApp(config, notificationsManager, signal);
+                const [{ store, authentication, unleashClient, unauthenticatedApi, history, meetCoreClient }] =
+                    await Promise.all([
+                        bootstrapGuestApp(config, notificationsManager, signal),
+                        loadEntryRouteContainer().catch(noop),
+                    ]);
 
                 if (signal.aborted) {
                     return;
@@ -65,6 +70,7 @@ export const GuestContainer = ({ children }: GuestContainerProps) => {
                 meetCoreClientRef.current = meetCoreClient;
 
                 setInitialised(true);
+                preloadRouteContainersWhenIdle(true);
             } catch (error) {
                 if (signal.aborted) {
                     return;

@@ -15,6 +15,10 @@ import { toChatComposeResultData, toChatIncomingEventInfoData } from './MeetCore
 export class DirectMeetCoreClient implements MeetCoreClient {
     public constructor(private readonly app: App) {}
 
+    public whenReady(): Promise<void> {
+        return Promise.resolve();
+    }
+
     public async composeChatMessage(...args: Parameters<App['composeChatMessage']>): Promise<ChatComposeResultData> {
         const result = await this.app.composeChatMessage(...args);
         return toChatComposeResultData(result);

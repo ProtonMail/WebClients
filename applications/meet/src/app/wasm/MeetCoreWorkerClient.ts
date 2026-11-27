@@ -89,6 +89,10 @@ export class MeetCoreWorkerClient implements MeetCoreClient {
         });
     }
 
+    public whenReady(): Promise<void> {
+        return Promise.resolve();
+    }
+
     public ping(): Promise<bigint> {
         return this.request('ping', []);
     }

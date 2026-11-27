@@ -3,7 +3,9 @@ import { createRoot } from 'react-dom/client';
 import '@proton/polyfill';
 
 import { App } from './App';
-import './style';
+import { rewriteSessionlessJoinUrlToGuest } from './utils/rewriteSessionlessJoinUrlToGuest';
+
+rewriteSessionlessJoinUrlToGuest();
 
 const container = document.querySelector('.app-root');
 const root = createRoot(container!);

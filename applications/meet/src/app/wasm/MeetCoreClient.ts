@@ -70,6 +70,8 @@ export interface ParticipantTrackSettingsInfoData {
 }
 
 export interface MeetCoreClient {
+    /** Resolves once meet-core is initialized, rejects if its initialization failed. */
+    whenReady(): Promise<void>;
     ping(): Promise<bigint>;
     joinMeeting(...args: Parameters<App['joinMeeting']>): Promise<void>;
     listPendingAgents(...args: Parameters<App['listPendingAgents']>): Promise<string[]>;

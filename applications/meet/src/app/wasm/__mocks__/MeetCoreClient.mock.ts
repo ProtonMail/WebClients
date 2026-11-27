@@ -12,6 +12,7 @@ export type MeetCoreClientMock = MeetCoreClient & Record<keyof MeetCoreClient, M
  */
 const createDefaultMocks = () =>
     ({
+        whenReady: vi.fn().mockResolvedValue(undefined),
         ping: vi.fn().mockResolvedValue(undefined),
         joinMeeting: vi.fn().mockResolvedValue(undefined),
         // An empty list rather than `undefined`, since callers iterate the result.

@@ -231,6 +231,10 @@ export const useMeetingConnection = ({
                 participantCountPromise = Promise.resolve(undefined);
             }
 
+            // meet-core can still be initializing on a quick join, that time is in wasmInitMs
+            await meetCoreClient.whenReady();
+            signal?.throwIfAborted();
+
             const t1 = performance.now();
             const setupMls = () =>
                 handleMlsSetup(meetingLinkName, accessToken, password, isWaitingRoom, notifyMlsErrors);
