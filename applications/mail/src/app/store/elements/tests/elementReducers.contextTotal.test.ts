@@ -27,6 +27,8 @@ describe('Update context Total', () => {
     beforeEach(() => {
         testState = {
             elements: {},
+            orderedSearchResultIDs: {},
+            optimisticallyDeletedIDs: {},
             total: {},
             params: {
                 categoryIDs: [],

@@ -25,6 +25,8 @@ describe('markMessageAs', () => {
     beforeEach(() => {
         testState = {
             elements: {},
+            orderedSearchResultIDs: {},
+            optimisticallyDeletedIDs: {},
             total: {},
             params: {
                 categoryIDs: [],

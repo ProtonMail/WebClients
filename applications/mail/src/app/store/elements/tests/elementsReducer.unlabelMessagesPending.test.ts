@@ -24,6 +24,8 @@ describe('unlabelMessagesPending', () => {
     beforeEach(() => {
         testState = {
             elements: {},
+            orderedSearchResultIDs: {},
+            optimisticallyDeletedIDs: {},
             total: {},
             params: {
                 categoryIDs: [],

@@ -55,7 +55,8 @@ export default class SearchWorker {
                 (results) => {
                     deliveries.push(resultCallback(results));
                 },
-                this.abortController.signal
+                this.abortController.signal,
+                { oldestFirst: params.sort.sort === 'Time' && !params.sort.desc }
             );
         } catch (err) {
             if (!(err instanceof Error && err.name === 'AbortError')) {

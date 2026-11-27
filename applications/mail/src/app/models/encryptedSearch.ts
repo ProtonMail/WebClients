@@ -89,6 +89,11 @@ export interface EncryptedSearchFunctionsMail extends Pick<
     }) => void;
     startSearchSession: () => void;
     endSearchSession: (endReason: ContentSearchEndReason) => void;
+    /**
+     * Whether the engine in charge hands `encryptedSearch` results over as the exact, ordered result list,
+     * owning both membership and order. When false, the element list re-filters and re-sorts them.
+     */
+    providesOrderedResults: boolean;
 }
 
 export type ESMessage = ESItem<ESBaseMessage, ESMessageContent>;

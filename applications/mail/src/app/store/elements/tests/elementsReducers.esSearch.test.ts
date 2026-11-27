@@ -2,7 +2,15 @@ import type { Draft, PayloadAction } from '@reduxjs/toolkit';
 
 import { MAIL_PAGE_SIZE } from '@proton/shared/lib/mail/mailSettings';
 
-import { addESResults, esSearchSettled, esSearchStarted, loadFulfilled } from '../elementsReducers';
+import { getElementContextIdentifier } from '../../../helpers/elements';
+import type { Element } from '../../../models/element';
+import {
+    addESResults,
+    esSearchSettled,
+    esSearchStarted,
+    loadFulfilled,
+    showSerializedElements,
+} from '../elementsReducers';
 import { newElementsState } from '../elementsSlice';
 import type {
     ESResults,
@@ -118,5 +126,85 @@ describe('elementsReducers — usedEncryptedSearch', () => {
         loadFulfilled(state, buildLoadFulfilledAction(inboxParams));
 
         expect(state.usedEncryptedSearch).toBe(true);
+    });
+});
+
+describe('elementsReducers — orderedSearchResultIDs', () => {
+    let state: Draft<ElementsState>;
+
+    const keywordParams = (): ElementsStateParams => ({
+        ...newElementsState().params,
+        conversationMode: false,
+        search: { keyword: 'invoice' },
+    });
+
+    const contextOf = (params: ElementsStateParams) =>
+        getElementContextIdentifier({
+            labelID: params.labelID,
+            categoryIDs: params.categoryIDs,
+            conversationMode: params.conversationMode,
+            filter: params.filter,
+            sort: params.sort,
+            keyword: params.search.keyword,
+        });
+
+    const results = (...ids: string[]) => ids.map((ID) => ({ ID }) as Element);
+
+    beforeEach(() => {
+        state = newElementsState() as Draft<ElementsState>;
+    });
+
+    it('keeps the order of ordered results', () => {
+        const params = keywordParams();
+        addESResults(state, {
+            ...buildAddESResultsAction(params),
+            payload: { ...buildAddESResultsAction(params).payload, elements: results('c', 'a', 'b'), ordered: true },
+        });
+
+        expect(state.orderedSearchResultIDs[contextOf(params)]).toEqual(['c', 'a', 'b']);
+    });
+
+    it('replaces the list with each new snapshot', () => {
+        const params = keywordParams();
+        const action = (ids: string[]) => ({
+            ...buildAddESResultsAction(params),
+            payload: { ...buildAddESResultsAction(params).payload, elements: results(...ids), ordered: true },
+        });
+        addESResults(state, action(['a']));
+        addESResults(state, action(['b', 'a']));
+
+        expect(state.orderedSearchResultIDs[contextOf(params)]).toEqual(['b', 'a']);
+    });
+
+    it('drops the list when results for the context are not ordered', () => {
+        const params = keywordParams();
+        addESResults(state, {
+            ...buildAddESResultsAction(params),
+            payload: { ...buildAddESResultsAction(params).payload, elements: results('a'), ordered: true },
+        });
+        addESResults(state, {
+            ...buildAddESResultsAction(params),
+            payload: { ...buildAddESResultsAction(params).payload, elements: results('a') },
+        });
+
+        expect(state.orderedSearchResultIDs[contextOf(params)]).toBeUndefined();
+    });
+
+    it('drops the list when the server answers for the same context', () => {
+        const params = keywordParams();
+        addESResults(state, {
+            ...buildAddESResultsAction(params),
+            payload: { ...buildAddESResultsAction(params).payload, elements: results('a'), ordered: true },
+        });
+        showSerializedElements(state, {
+            type: 'elements/showSerializedElements',
+            payload: {
+                result: { abortController: new AbortController(), Total: 1, Elements: results('a'), Stale: 0 },
+                page: 0,
+                params,
+            },
+        });
+
+        expect(state.orderedSearchResultIDs[contextOf(params)]).toBeUndefined();
     });
 });

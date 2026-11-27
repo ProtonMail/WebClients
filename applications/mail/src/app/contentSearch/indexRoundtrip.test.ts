@@ -268,12 +268,14 @@ describe('EngineWrapper + IndexReader roundtrip', () => {
             expect(await search(reader, { from: 'smith' })).toEqual(['msg-alice']);
             expect(await search(reader, { from: 'bob@example.com' })).toEqual([]);
             expect(await search(reader, { from: 'alice smith' })).toEqual(['msg-alice']);
-            // whole tokens in the order typed: the element list would drop such a hit but still count it (see `createAddressQuery`)
-            expect(await search(reader, { from: 'smtih' })).toEqual([]);
-            expect(await search(reader, { from: 'smith alice' })).toEqual([]);
+            // fuzzy and order-free, see `createAddressQuery`
+            expect(await search(reader, { from: 'smith alice' })).toEqual(['msg-alice']);
+            expect(await search(reader, { from: 'alice.smith@prot' })).toEqual(['msg-alice']);
+            expect(await search(reader, { from: 'ali' })).toEqual(['msg-alice']);
+            expect(await search(reader, { from: 'smiht' })).toEqual(['msg-alice']);
         });
 
-        it('matches a phrase across separators, which the element list still drops (see `createAddressQuery`)', async () => {
+        it('matches words of an address across separators', async () => {
             await writeMessages([
                 makeAddressedMessage('msg-john', {
                     Sender: { Address: 'john.doe@example.com', Name: 'JD' },

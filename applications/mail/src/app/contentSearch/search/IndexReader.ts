@@ -75,10 +75,15 @@ export class IndexReader {
         }
     }
 
+    /**
+     * @param oldestFirst walk the time buckets of a large result set from the oldest to the most recent,
+     * so that the results streamed first are the ones listed first in an ascending time sort
+     */
     async search(
         exp: Expression,
         resultCallback: (results: string[]) => void,
-        abortSignal: AbortSignal
+        abortSignal: AbortSignal,
+        { oldestFirst = false }: { oldestFirst?: boolean } = {}
     ): Promise<void> {
         performance.mark('search-foundation-start');
         const blobCache = new BlobCache();
@@ -97,7 +102,7 @@ export class IndexReader {
                     const r = cardinality.range();
                     const range = { high: r.high, low: r.low };
                     searchLoop.dispose();
-                    await this.runBucketedSearch(range, txn, exp, resultCallback, abortSignal);
+                    await this.runBucketedSearch(range, txn, exp, resultCallback, abortSignal, oldestFirst);
                 }
             }
         } finally {
@@ -114,9 +119,11 @@ export class IndexReader {
         txn: OpenBlobTransaction,
         exp: Expression,
         resultCallback: (results: string[]) => void,
-        abortSignal: AbortSignal
+        abortSignal: AbortSignal,
+        oldestFirst: boolean
     ) {
-        const buckets = generateTimeBuckets(range.low, range.high, BUCKET_SIZE_SECONDS);
+        const newestFirstBuckets = generateTimeBuckets(range.low, range.high, BUCKET_SIZE_SECONDS);
+        const buckets = oldestFirst ? [...newestFirstBuckets].reverse() : newestFirstBuckets;
         let anyBucketHadHits = false;
         for (const bucket of buckets) {
             const searchLoop = new SearchLoop(this.engine, txn, exp.clone(), createLocalSearchQueryOptions());

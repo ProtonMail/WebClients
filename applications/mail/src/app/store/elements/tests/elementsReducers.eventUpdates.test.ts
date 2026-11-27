@@ -19,6 +19,8 @@ const messageThree = 'msg-3';
 const makeState = (overrides: Partial<Draft<ElementsState>> = {}): Draft<ElementsState> => {
     return {
         elements: {},
+        orderedSearchResultIDs: {},
+        optimisticallyDeletedIDs: {},
         total: {},
         bypassFilter: [],
         params: {
@@ -267,6 +269,8 @@ describe('eventUpdatesPending', () => {
             const inboxContext = generateElementContextIdentifier({ labelID: MAILBOX_LABEL_IDS.INBOX });
             state = makeState({
                 elements: {},
+                orderedSearchResultIDs: {},
+                optimisticallyDeletedIDs: {},
                 total: { [inboxContext]: 10 },
             });
 
@@ -530,6 +534,8 @@ describe('eventUpdatesFulfilled', () => {
         const inboxContext = generateElementContextIdentifier({ labelID: MAILBOX_LABEL_IDS.INBOX });
         state = makeState({
             elements: {},
+            orderedSearchResultIDs: {},
+            optimisticallyDeletedIDs: {},
             total: { [inboxContext]: 10 },
         });
 

@@ -102,7 +102,7 @@ export class SearchAdapter implements Pick<FunctionsV2, 'encryptedSearch' | 'isS
         if (!isSearch || !esSearchParams) {
             return false;
         }
-        if (this.lastSearch?.update(esSearchParams)) {
+        if (this.lastSearch?.canServe(esSearchParams)) {
             // `useApplyEncryptedSearch` invokes this more than once for the same query (each run first
             // re-dispatches a pending state), so — like the legacy `useEncryptedSearch` — every call must
             // end by handing the current results to `setResultsList`. Otherwise the second call leaves the
@@ -110,6 +110,11 @@ export class SearchAdapter implements Pick<FunctionsV2, 'encryptedSearch' | 'isS
             if (this.lastSearch.results) {
                 setResultsList(this.lastSearch.results);
             }
+            // The same search can now serve a different list (e.g. toggling the Unread filter, which the
+            // element list applies itself), so results streamed or re-emitted from now on go to this call's
+            // `setResultsList`, not to the one the search started with.
+            this.coalescedResults?.cancel();
+            this.coalescedResults = new FrameCoalescer(setResultsList);
         } else {
             this.lastSearch?.dispose();
             this.coalescedResults?.cancel();
@@ -135,7 +140,7 @@ export class SearchAdapter implements Pick<FunctionsV2, 'encryptedSearch' | 'isS
             if (outcome === 'no-index') {
                 // There was no index to query, so nothing was searched and nothing was reported.
                 // Hand the query to the server, and keep no search around — otherwise the next
-                // identical query would take the `update` path above and return its empty state.
+                // identical query would take the `canServe` path above and return its empty state.
                 this.lastSearch = undefined;
                 this.coalescedResults?.cancel();
                 return false;

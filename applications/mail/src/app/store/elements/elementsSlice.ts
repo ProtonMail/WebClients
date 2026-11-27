@@ -35,6 +35,7 @@ import {
     optimisticEmptyLabel,
     optimisticMarkAs,
     optimisticRestoreDelete,
+    optimisticRestoreDeletedIDs,
     optimisticRestoreEmptyLabel,
     removeExpired,
     reset,
@@ -78,6 +79,7 @@ import {
     markNewsletterElementsAsReadPending,
     optimisticDelete as optimisticDeleteReducer,
     optimisticEmptyLabel as optimisticEmptyLabelReducer,
+    optimisticRestoreDeletedIDs as optimisticRestoreDeletedIDsReducer,
     optimisticUpdates,
     pollTaskRunningFulfilled,
     removeExpired as removeExpiredReducer,
@@ -131,6 +133,7 @@ const elementsSlice = createSlice({
         builder.addCase(optimisticApplyLabels, optimisticUpdates);
         builder.addCase(optimisticDelete, optimisticDeleteReducer);
         builder.addCase(optimisticRestoreDelete, optimisticUpdates);
+        builder.addCase(optimisticRestoreDeletedIDs, optimisticRestoreDeletedIDsReducer);
         builder.addCase(optimisticEmptyLabel, optimisticEmptyLabelReducer);
         builder.addCase(optimisticRestoreEmptyLabel, optimisticUpdates);
         builder.addCase(optimisticMarkAs, optimisticUpdates);

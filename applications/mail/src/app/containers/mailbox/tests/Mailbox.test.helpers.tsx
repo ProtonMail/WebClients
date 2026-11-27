@@ -223,6 +223,8 @@ export const setup = async ({
                 taskRunning: { labelIDs: [], timeoutID: undefined },
                 awaitingStaleRetry: {},
                 deletedSinceLastLoad: 0,
+                orderedSearchResultIDs: {},
+                optimisticallyDeletedIDs: {},
             },
             paymentStatus: getModelState({
                 VendorStates: DEFAULT_PAYMENT_VENDOR_STATES,

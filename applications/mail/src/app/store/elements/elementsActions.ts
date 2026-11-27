@@ -206,6 +206,8 @@ export const optimisticDelete = createAction<OptimisticDelete>('elements/optimis
 
 export const optimisticRestoreDelete = createAction<OptimisticUpdates>('elements/optimistic/restoreDelete');
 
+export const optimisticRestoreDeletedIDs = createAction<string[]>('elements/optimistic/restoreDeletedIDs');
+
 export const optimisticEmptyLabel = createAction<void>('elements/optimistic/emptyLabel');
 
 export const optimisticRestoreEmptyLabel = createAction<OptimisticUpdates>('elements/optimistic/restoreEmptyLabel');

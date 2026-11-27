@@ -22,7 +22,7 @@ import range from '@proton/utils/range';
 import unique from '@proton/utils/unique';
 
 import {
-    getElementContextIdentifier,
+    getContextIdentifierFromParams,
     hasLabel,
     isElementConversation,
     isElementMessage,
@@ -59,21 +59,9 @@ import {
 } from './helpers/elementContextCount';
 import { newRetry } from './helpers/elementQuery';
 
-const getContextIdentifierFromParams = (params: ElementsStateParams) =>
-    getElementContextIdentifier({
-        labelID: params.labelID,
-        categoryIDs: params.categoryIDs,
-        conversationMode: params.conversationMode,
-        filter: params.filter,
-        sort: params.sort,
-        from: params.search.from,
-        to: params.search.to,
-        address: params.search.address,
-        begin: params.search.begin,
-        end: params.search.end,
-        keyword: params.search.keyword,
-        newsletterSubscriptionID: params.newsletterSubscriptionID,
-    });
+/** Whether an element delivered again by an ordered search must stay out, see `optimisticallyDeletedIDs` */
+const isOptimisticallyDeleted = (state: Draft<ElementsState>, elementID: string | undefined) =>
+    !!elementID && !!state.optimisticallyDeletedIDs[elementID];
 
 export const globalReset = (state: Draft<ElementsState>) => {
     Object.assign(state, newElementsState());
@@ -181,20 +169,11 @@ export const showSerializedElements = (
         return;
     }
 
-    const contextFilter = getElementContextIdentifier({
-        labelID: params.labelID,
-        categoryIDs: params.categoryIDs,
-        conversationMode: params.conversationMode,
-        filter: params.filter,
-        sort: params.sort,
-        from: params.search.from,
-        to: params.search.to,
-        address: params.search.address,
-        begin: params.search.begin,
-        end: params.search.end,
-        keyword: params.search.keyword,
-        newsletterSubscriptionID: params.newsletterSubscriptionID,
-    });
+    const contextFilter = getContextIdentifierFromParams(params);
+
+    // A server response for this context replaces whatever list a search handed over before (e.g. when
+    // falling back to the server), so its membership is derived from the elements in state again.
+    delete state.orderedSearchResultIDs[contextFilter];
 
     // We only insert elements that are not already in the state. The event loop updates existing items.
     Elements.forEach((element) => {
@@ -261,6 +240,8 @@ export const eventUpdatesPending = (
 
     toDelete.forEach((elementID) => {
         delete state.elements[elementID];
+        // The deletion is confirmed, nothing can bring the element back anymore
+        delete state.optimisticallyDeletedIDs[elementID];
     });
 
     const countsAfterAction = computeContextTotals(state);
@@ -291,13 +272,29 @@ export const addESResults = (state: Draft<ElementsState>, action: PayloadAction<
     const params = action.payload.params;
     const contextFilter = getContextIdentifierFromParams(params);
 
-    state.bypassFilter = [];
     state.beforeFirstLoad = false;
     state.invalidated = false;
     state.pendingRequest = false;
     state.page = action.payload.page;
     state.usedEncryptedSearch = true;
-    state.elements = { ...state.elements, ...toMap(action.payload.elements, 'ID') };
+    if (action.payload.ordered) {
+        // Events and optimistic updates are applied to elements of an ordered search result, so the copy
+        // in state is at least as fresh as the one in a search snapshot: only insert what is missing.
+        action.payload.elements.forEach((element) => {
+            if (!state.elements[element.ID] && !isOptimisticallyDeleted(state, element.ID)) {
+                state.elements[element.ID] = element;
+            }
+        });
+        state.orderedSearchResultIDs[contextFilter] = action.payload.elements.map(({ ID }) => ID);
+        // `bypassFilter` is kept: an ordered search hands its results over again for the same list, and a message
+        // marked as read must not leave the list under the unread filter when that happens. A new list resets it
+        // already (see `setParams` and `reset`).
+    } else {
+        // Unordered results (legacy encrypted search) keep resetting it on every delivery, as they always did
+        state.bypassFilter = [];
+        state.elements = { ...state.elements, ...toMap(action.payload.elements, 'ID') };
+        delete state.orderedSearchResultIDs[contextFilter];
+    }
     state.retry = { payload: undefined, count: 0, error: undefined };
     state.total[contextFilter] = total;
     state.pages[contextFilter] = state.pages[contextFilter]
@@ -309,25 +306,14 @@ export const optimisticUpdates = (state: Draft<ElementsState>, action: PayloadAc
     action.payload.elements.forEach((element) => {
         if (element.ID) {
             state.elements[element.ID] = element;
+            // Restoring an element optimistically deleted (a rollback) brings it back for good
+            delete state.optimisticallyDeletedIDs[element.ID];
         }
     });
 
     const params = state.params;
 
-    const contextFilter = getElementContextIdentifier({
-        labelID: params.labelID,
-        categoryIDs: params.categoryIDs,
-        conversationMode: params.conversationMode,
-        filter: params.filter,
-        sort: params.sort,
-        from: params.search.from,
-        to: params.search.to,
-        address: params.search.address,
-        begin: params.search.begin,
-        end: params.search.end,
-        keyword: params.search.keyword,
-        newsletterSubscriptionID: params.newsletterSubscriptionID,
-    });
+    const contextFilter = getContextIdentifierFromParams(params);
 
     if (action.payload.isMove) {
         const elementIDs = action.payload.elements.map(({ ID }) => ID || '');
@@ -360,19 +346,7 @@ export const optimisticUpdates = (state: Draft<ElementsState>, action: PayloadAc
         });
 
         // When some element bypass the filter in the current context, we need to update total in the "opposite" context
-        const oppositeFilter = getElementContextIdentifier({
-            labelID: params.labelID,
-            categoryIDs: params.categoryIDs,
-            conversationMode: params.conversationMode,
-            filter: { Unread: unreadFilter ? 0 : 1 },
-            sort: params.sort,
-            from: params.search.from,
-            to: params.search.to,
-            address: params.search.address,
-            begin: params.search.begin,
-            end: params.search.end,
-            keyword: params.search.keyword,
-        });
+        const oppositeFilter = getContextIdentifierFromParams({ ...params, filter: { Unread: unreadFilter ? 0 : 1 } });
 
         if (state.total[oppositeFilter]) {
             state.total[oppositeFilter] = state.total[oppositeFilter] + elementsToBypass.length;
@@ -394,6 +368,7 @@ export const optimisticUpdates = (state: Draft<ElementsState>, action: PayloadAc
 export const optimisticDelete = (state: Draft<ElementsState>, action: PayloadAction<OptimisticDelete>) => {
     action.payload.elementIDs.forEach((elementID) => {
         delete state.elements[elementID];
+        state.optimisticallyDeletedIDs[elementID] = true;
     });
 
     state.deletedSinceLastLoad += action.payload.elementIDs.length;
@@ -401,23 +376,17 @@ export const optimisticDelete = (state: Draft<ElementsState>, action: PayloadAct
     if (state.total) {
         const params = state.params;
 
-        const contextFilter = getElementContextIdentifier({
-            labelID: params.labelID,
-            categoryIDs: params.categoryIDs,
-            conversationMode: params.conversationMode,
-            filter: params.filter,
-            sort: params.sort,
-            from: params.search.from,
-            to: params.search.to,
-            address: params.search.address,
-            begin: params.search.begin,
-            end: params.search.end,
-            keyword: params.search.keyword,
-            newsletterSubscriptionID: params.newsletterSubscriptionID,
-        });
+        const contextFilter = getContextIdentifierFromParams(params);
 
         state.total[contextFilter] = (state.total[contextFilter] || 0) - action.payload.elementIDs.length;
     }
+};
+
+/** A rolled back deletion, including elements that weren't in state to be restored: copies of them may show again */
+export const optimisticRestoreDeletedIDs = (state: Draft<ElementsState>, action: PayloadAction<string[]>) => {
+    action.payload.forEach((elementID) => {
+        delete state.optimisticallyDeletedIDs[elementID];
+    });
 };
 
 export const optimisticEmptyLabel = (state: Draft<ElementsState>) => {
@@ -538,33 +507,9 @@ export const setParams = (
 ) => {
     const { total, ...params } = action.payload;
 
-    const prevContextFilter = getElementContextIdentifier({
-        labelID: state.params.labelID,
-        categoryIDs: state.params.categoryIDs,
-        conversationMode: state.params.conversationMode,
-        filter: state.params.filter,
-        sort: state.params.sort,
-        from: state.params.search.from,
-        to: state.params.search.to,
-        address: state.params.search.address,
-        begin: state.params.search.begin,
-        end: state.params.search.end,
-        keyword: state.params.search.keyword,
-    });
+    const prevContextFilter = getContextIdentifierFromParams(state.params);
 
-    const nextContextFilter = getElementContextIdentifier({
-        labelID: params.labelID ?? state.params.labelID,
-        categoryIDs: params.categoryIDs ?? state.params.categoryIDs,
-        conversationMode: params.conversationMode ?? state.params.conversationMode,
-        filter: params.filter,
-        sort: params.sort,
-        from: params.search?.from,
-        to: params.search?.to,
-        address: params.search?.address,
-        begin: params.search?.begin,
-        end: params.search?.end,
-        keyword: params.search?.keyword,
-    });
+    const nextContextFilter = getContextIdentifierFromParams({ ...state.params, ...params });
 
     const bypassFilterLength = state.bypassFilter.length;
     if (
@@ -574,6 +519,12 @@ export const setParams = (
         state.total[prevContextFilter] >= bypassFilterLength
     ) {
         state.total[prevContextFilter] = state.total[prevContextFilter] - bypassFilterLength;
+    }
+
+    // Stale copies of optimistically deleted elements are only expected in the list they were deleted from. Elsewhere,
+    // e.g. in a search over the Deleted folder when the backend soft-deleted an element instead, they must show again.
+    if (prevContextFilter !== nextContextFilter) {
+        state.optimisticallyDeletedIDs = {};
     }
 
     // Some items can bypass filter when a filter is active (e.g. Unread filter, and opening emails, we want them to stay in the list)
@@ -633,18 +584,9 @@ const handleBypassFilter = (
         });
 
         // When some element bypass the filter in the current context, we need to update total in the "opposite" context
-        const oppositeFilter = getElementContextIdentifier({
-            labelID: state.params.labelID,
-            categoryIDs: state.params.categoryIDs,
-            conversationMode: state.params.conversationMode,
+        const oppositeFilter = getContextIdentifierFromParams({
+            ...state.params,
             filter: { Unread: unreadFilter ? 0 : 1 },
-            sort: state.params.sort,
-            from: state.params.search.from,
-            to: state.params.search.to,
-            address: state.params.search.address,
-            begin: state.params.search.begin,
-            end: state.params.search.end,
-            keyword: state.params.search.keyword,
         });
 
         if (state.total[oppositeFilter]) {

@@ -227,6 +227,112 @@ export const matchAddressID = (element: Element, addressID: string) => {
     return getAddressID(element) === addressID;
 };
 
+export interface LocationFilterParams {
+    labelID: string;
+    categoryIDs: CategoryLabelID[];
+    filter: Filter;
+    conversationMode: boolean;
+    newsletterSubscriptionID?: string;
+}
+
+/**
+ * Checks on state that can change for an element through user actions or events: read status, labels
+ * and folders, soft deletion. Every list has to apply them, including lists whose membership is decided
+ * elsewhere (e.g. by a local search), so that an element moved or marked as read leaves the list.
+ */
+export const matchesLocation = (
+    element: Element,
+    { labelID, categoryIDs, filter, conversationMode, newsletterSubscriptionID }: LocationFilterParams,
+    bypassFilterSet: Set<string>
+) => {
+    // If unread status is correct OR the element can bypass filters, continue
+    // Else, we can filter out the item
+    const elementUnread = isUnread(element, labelID);
+    const elementCorrectUnreadStatus =
+        filter.Unread === undefined || (filter.Unread === 1 ? elementUnread : !elementUnread);
+    const elementCanBypassFilter = bypassFilterSet.has(element.ID || '');
+    if (!(elementCorrectUnreadStatus || elementCanBypassFilter)) {
+        return false;
+    }
+
+    // Creates the map of label IDs only once instead of using `hasLabel` that would create multiple maps
+    const labelIDsSet = getLabelsSetForElement(element);
+
+    // Exclude SOFT_DELETED elements from all folders except the Deleted folder itself
+    if (labelID !== MAILBOX_LABEL_IDS.SOFT_DELETED && labelIDsSet.has(MAILBOX_LABEL_IDS.SOFT_DELETED)) {
+        return false;
+    }
+
+    // Elements must be in the current label/folder (newsletter subscriptions use a separate check below)
+    if (labelID !== CUSTOM_VIEWS_LABELS.NEWSLETTER_SUBSCRIPTIONS && !labelIDsSet.has(labelID)) {
+        return false;
+    }
+
+    // When viewing inbox with specific categories, also require the element to have one of those category labels
+    if (
+        labelID === MAILBOX_LABEL_IDS.INBOX &&
+        categoryIDs.length > 0 &&
+        !categoryIDs.some((id) => labelIDsSet.has(id))
+    ) {
+        return false;
+    }
+
+    if (conversationMode ? !isElementConversation(element) : !isElementMessage(element)) {
+        return false;
+    }
+
+    if (
+        labelID === CUSTOM_VIEWS_LABELS.NEWSLETTER_SUBSCRIPTIONS &&
+        isElementMessage(element) &&
+        // Note: This only filters messages. We don't expect conversations but if there are Conversations in newsletter context (if any exist)
+        // would not be filtered by subscription ID here.
+        (newsletterSubscriptionID !== (element as Message).NewsletterSubscriptionID ||
+            //we need to filter out elements that are in newsletter subscriptions but not in almost all mail
+            !labelIDsSet.has(MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL))
+    ) {
+        return false;
+    }
+
+    return true;
+};
+
+/**
+ * Checks on metadata that never changes for a given element: attachments, sender, recipients, address and
+ * date. Only lists whose membership is derived from the elements in state need them; a search that already
+ * evaluated them (possibly with other semantics, e.g. fuzzy matching) must not be second-guessed here.
+ */
+const matchesSearchCriteria = (
+    element: Element,
+    { labelID, filter, search }: { labelID: string; filter: Filter; search: SearchParameters }
+) => {
+    // Include inline content in the result because messages containing only embedded content
+    // are returned by the api with the attachment filter
+    if (filter.Attachments === 1 && !hasAttachments(element, true)) {
+        return false;
+    }
+
+    // More expensive email address checks
+    if (search.from && !matchFrom(element, search.from)) {
+        return false;
+    }
+    if (search.to && !matchTo(element, search.to)) {
+        return false;
+    }
+    if (search.address && !matchAddressID(element, search.address)) {
+        return false;
+    }
+
+    // Date checks last (usually most expensive due to date operations)
+    if (search.end && !matchEnd(element, labelID, search.end)) {
+        return false;
+    }
+    if (search.begin && !matchBegin(element, labelID, search.begin)) {
+        return false;
+    }
+
+    return true;
+};
+
 export const filterElementsInState = ({
     elements,
     bypassFilter,
@@ -236,98 +342,20 @@ export const filterElementsInState = ({
     conversationMode,
     search,
     newsletterSubscriptionID,
-}: {
+}: LocationFilterParams & {
     elements: Element[];
     addresses?: Address[];
     bypassFilter: string[];
-    labelID: string;
-    categoryIDs: CategoryLabelID[];
-    filter: Filter;
-    conversationMode: boolean;
     search: SearchParameters;
-    newsletterSubscriptionID?: string;
 }) => {
     const bypassFilterSet = new Set(bypassFilter);
+    const locationParams = { labelID, categoryIDs, filter, conversationMode, newsletterSubscriptionID };
 
-    return elements.filter((element) => {
-        // Check ID and label first (cheapest operations)
-
-        // If unread status is correct OR the element can bypass filters, continue
-        // Else, we can filter out the item
-        const elementUnread = isUnread(element, labelID);
-        const elementCorrectUnreadStatus =
-            filter.Unread === undefined || (filter.Unread === 1 ? elementUnread : !elementUnread);
-        const elementCanBypassFilter = bypassFilterSet.has(element.ID || '');
-        if (!(elementCorrectUnreadStatus || elementCanBypassFilter)) {
-            return false;
-        }
-
-        // Creates the map of label IDs only once instead of using `hasLabel` that would create multiple maps
-        const labelIDsSet = getLabelsSetForElement(element);
-
-        // Exclude SOFT_DELETED elements from all folders except the Deleted folder itself
-        if (labelID !== MAILBOX_LABEL_IDS.SOFT_DELETED && labelIDsSet.has(MAILBOX_LABEL_IDS.SOFT_DELETED)) {
-            return false;
-        }
-
-        // Elements must be in the current label/folder (newsletter subscriptions use a separate check below)
-        if (labelID !== CUSTOM_VIEWS_LABELS.NEWSLETTER_SUBSCRIPTIONS && !labelIDsSet.has(labelID)) {
-            return false;
-        }
-
-        // When viewing inbox with specific categories, also require the element to have one of those category labels
-        if (
-            labelID === MAILBOX_LABEL_IDS.INBOX &&
-            categoryIDs.length > 0 &&
-            !categoryIDs.some((id) => labelIDsSet.has(id))
-        ) {
-            return false;
-        }
-
-        if (conversationMode ? !isElementConversation(element) : !isElementMessage(element)) {
-            return false;
-        }
-
-        if (
-            labelID === CUSTOM_VIEWS_LABELS.NEWSLETTER_SUBSCRIPTIONS &&
-            isElementMessage(element) &&
-            // Note: This only filters messages. We don't expect conversations but if there are Conversations in newsletter context (if any exist)
-            // would not be filtered by subscription ID here.
-            (newsletterSubscriptionID !== (element as Message).NewsletterSubscriptionID ||
-                //we need to filter out elements that are in newsletter subscriptions but not in almost all mail
-                !labelIDsSet.has(MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL))
-        ) {
-            return false;
-        }
-
-        // Check simple filters
-        // Include inline content in the result because messages containing only embedded content
-        // are returned by the api with the attachment filter
-        if (filter.Attachments === 1 && !hasAttachments(element, true)) {
-            return false;
-        }
-
-        // More expensive email address checks
-        if (search.from && !matchFrom(element, search.from)) {
-            return false;
-        }
-        if (search.to && !matchTo(element, search.to)) {
-            return false;
-        }
-        if (search.address && !matchAddressID(element, search.address)) {
-            return false;
-        }
-
-        // Date checks last (usually most expensive due to date operations)
-        if (search.end && !matchEnd(element, labelID, search.end)) {
-            return false;
-        }
-        if (search.begin && !matchBegin(element, labelID, search.begin)) {
-            return false;
-        }
-
-        return true;
-    });
+    return elements.filter(
+        (element) =>
+            matchesLocation(element, locationParams, bypassFilterSet) &&
+            matchesSearchCriteria(element, { labelID, filter, search })
+    );
 };
 
 export const getElementContextIdentifier = (contextFilter: ContextIdentifier) => {
@@ -356,6 +384,34 @@ export const getElementContextIdentifier = (contextFilter: ContextIdentifier) =>
         newsletterSubscriptionID: isSearchQuery ? undefined : contextFilter.newsletterSubscriptionID,
     });
 };
+
+/**
+ * Context identifier of a list described by its params. Use this rather than building the identifier
+ * by hand, so that every part of the state keys a given list the same way.
+ */
+export const getContextIdentifierFromParams = (params: {
+    labelID: string;
+    categoryIDs: CategoryLabelID[];
+    conversationMode: boolean;
+    filter: Filter;
+    sort: Sort;
+    search: SearchParameters;
+    newsletterSubscriptionID?: string;
+}) =>
+    getElementContextIdentifier({
+        labelID: params.labelID,
+        categoryIDs: params.categoryIDs,
+        conversationMode: params.conversationMode,
+        filter: params.filter,
+        sort: params.sort,
+        from: params.search?.from,
+        to: params.search?.to,
+        address: params.search?.address,
+        begin: params.search?.begin,
+        end: params.search?.end,
+        keyword: params.search?.keyword,
+        newsletterSubscriptionID: params.newsletterSubscriptionID,
+    });
 
 export const parseElementContextIdentifier = (contextIdentifier: string): ContextIdentifier | null => {
     try {

@@ -31,6 +31,8 @@ export const newElementsState = ({
         page,
         total: {},
         elements: {},
+        orderedSearchResultIDs: {},
+        optimisticallyDeletedIDs: {},
         pages: {},
         bypassFilter: [],
         retry,

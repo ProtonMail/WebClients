@@ -2,30 +2,23 @@ import type { Draft } from 'immer';
 
 import {
     filterElementsInState,
-    getElementContextIdentifier,
+    getContextIdentifierFromParams,
     getSearchParameters,
     parseElementContextIdentifier,
 } from '../../../helpers/elements';
 import type { ElementsState } from '../elementsTypes';
 
 export const computeContextTotals = (state: Draft<ElementsState>): Record<string, number> => {
-    const currentContextIdentifier = getElementContextIdentifier({
-        labelID: state.params.labelID,
-        categoryIDs: state.params.categoryIDs,
-        conversationMode: state.params.conversationMode,
-        filter: state.params.filter,
-        sort: state.params.sort,
-        from: state.params.search?.from,
-        to: state.params.search?.to,
-        address: state.params.search?.address,
-        begin: state.params.search?.begin,
-        end: state.params.search?.end,
-        keyword: state.params.search?.keyword,
-    });
+    const currentContextIdentifier = getContextIdentifierFromParams(state.params);
     const elements = Object.values(state.elements);
     const counts: Record<string, number> = {};
 
     Object.keys(state.total).forEach((contextIdentifier) => {
+        // The total of an ordered search result is derived from the list itself (see `contextTotal`)
+        if (state.orderedSearchResultIDs[contextIdentifier]) {
+            return;
+        }
+
         const context = parseElementContextIdentifier(contextIdentifier);
         if (!context) {
             return;
@@ -72,20 +65,7 @@ export const updateDeletedSinceLastLoadFromContextTotals = ({
     countsBeforeAction: Record<string, number>;
     countsAfterAction: Record<string, number>;
 }) => {
-    const currentContextIdentifier = getElementContextIdentifier({
-        labelID: state.params.labelID,
-        categoryIDs: state.params.categoryIDs,
-        conversationMode: state.params.conversationMode,
-        filter: state.params.filter,
-        sort: state.params.sort,
-        from: state.params.search?.from,
-        to: state.params.search?.to,
-        address: state.params.search?.address,
-        begin: state.params.search?.begin,
-        end: state.params.search?.end,
-        keyword: state.params.search?.keyword,
-        newsletterSubscriptionID: state.params.newsletterSubscriptionID,
-    });
+    const currentContextIdentifier = getContextIdentifierFromParams(state.params);
 
     const removedCount =
         (countsBeforeAction[currentContextIdentifier] ?? 0) - (countsAfterAction[currentContextIdentifier] ?? 0);
