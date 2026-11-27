@@ -1,4 +1,4 @@
-import type { ChartType, Plugin } from 'chart.js';
+import type { Chart, ChartType, Plugin } from 'chart.js';
 
 export const TREND_CHART_THRESHOLD_PLUGIN_ID = 'protonTrendChartThreshold';
 
@@ -7,6 +7,12 @@ export interface TrendChartThresholdOptions {
     color: string;
     dash?: number[];
     width?: number;
+    /**
+     * Draw muted dashed horizontal bars because chart.js v4 offers no way to dash its own grid.
+     *
+     * @see applications/storybook/src/stories/components/Charts.TrendChart.stories.tsx `ValueGuides` story
+     */
+    guides?: { values: number[]; color: string };
 }
 
 declare module 'chart.js' {
@@ -16,30 +22,51 @@ declare module 'chart.js' {
     }
 }
 
-/**
- * A dashed rule across the plot at one value on the value axis.
- */
-export const trendChartThresholdPlugin: Plugin<'line'> = {
-    id: TREND_CHART_THRESHOLD_PLUGIN_ID,
+interface Rule {
+    y: number;
+    stroke: string;
+}
 
-    afterDatasetsDraw: ({ ctx, chartArea, scales }, _args, { value, color, dash = [4, 4], width = 1 }) => {
-        if (value === undefined) {
-            return;
-        }
+const strokeRules = ({ ctx, chartArea }: Chart<'line'>, rules: Rule[], dash: number[], width: number) => {
+    if (!rules.length) {
+        return;
+    }
 
-        const y = scales.y?.getPixelForValue(value);
-        if (y === undefined || y < chartArea.top || y > chartArea.bottom) {
-            return;
-        }
+    ctx.save();
+    ctx.setLineDash(dash);
+    ctx.lineWidth = width;
 
-        ctx.save();
+    rules.forEach(({ y, stroke }) => {
         ctx.beginPath();
-        ctx.setLineDash(dash);
-        ctx.lineWidth = width;
-        ctx.strokeStyle = color;
+        ctx.strokeStyle = stroke;
         ctx.moveTo(chartArea.left, y);
         ctx.lineTo(chartArea.right, y);
         ctx.stroke();
-        ctx.restore();
+    });
+
+    ctx.restore();
+};
+
+const ruleAt = ({ chartArea, scales }: Chart<'line'>, reading: number | undefined, stroke: string): Rule[] => {
+    if (reading === undefined) {
+        return [];
+    }
+
+    const y = scales.y?.getPixelForValue(reading);
+
+    return y === undefined || y < chartArea.top || y > chartArea.bottom ? [] : [{ y, stroke }];
+};
+
+export const trendChartThresholdPlugin: Plugin<'line'> = {
+    id: TREND_CHART_THRESHOLD_PLUGIN_ID,
+
+    beforeDatasetsDraw: (chart, _args, { dash = [4, 4], width = 1, guides }) => {
+        const rules = guides ? guides.values.flatMap((reading: number) => ruleAt(chart, reading, guides.color)) : [];
+
+        strokeRules(chart, rules, dash, width);
+    },
+
+    afterDatasetsDraw: (chart, _args, { value, color, dash = [4, 4], width = 1 }) => {
+        strokeRules(chart, ruleAt(chart, value, color), dash, width);
     },
 };

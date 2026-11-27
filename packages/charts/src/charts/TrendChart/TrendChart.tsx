@@ -13,7 +13,18 @@ import { LineChart } from '../../primitives/LineChart';
 import { useChartColors } from '../../theme';
 import { FILL_OR_FALL_BACK } from '../fillOrFallBack';
 import type { FillColor, TrendChartProps } from './TrendChart.types';
-import { ARRIVAL, AXIS, BORDER_WIDTH, FILL_ALPHA, NO_LABEL, SKELETON_SERIES, TENSION } from './constants';
+import {
+    ARRIVAL,
+    AXIS,
+    BORDER_WIDTH,
+    FILL_ALPHA,
+    LATEST_POINT_RADIUS,
+    NO_LABEL,
+    NO_LATEST_POINT,
+    READINGS_EITHER_SIDE_OF_A_GAP,
+    SKELETON_SERIES,
+    TENSION,
+} from './constants';
 import { splitAtThreshold } from './splitAtThreshold';
 
 import './TrendChart.scss';
@@ -23,18 +34,28 @@ import './TrendChart.scss';
  */
 const asFill = (value: string) => parseColor(value)?.alpha(FILL_ALPHA)?.rgbString() ?? value;
 
+const widestGapCarriedAcross = (bridgeMissedReadings: boolean | number) =>
+    typeof bridgeMissedReadings === 'number'
+        ? bridgeMissedReadings + READINGS_EITHER_SIDE_OF_A_GAP - 1
+        : bridgeMissedReadings;
+
 export const TrendChart = ({
     mode = 'view',
     data,
+    bridgeMissedReadings = true,
     threshold,
     fill,
     thresholdColor,
     showThresholdLabel = true,
     valueRange,
+    valueTicks,
+    wholeValues = false,
+    showValueGuides = false,
     transformYAxisValue,
     transformXAxisValue,
     transformTooltipValue,
     showTooltipLabel = true,
+    showLatestPoint = false,
     borderWidth = BORDER_WIDTH,
     tension = TENSION,
     ariaLabel,
@@ -45,23 +66,26 @@ export const TrendChart = ({
     const isLoading = mode === 'load';
     const series = isLoading ? SKELETON_SERIES : (data ?? []);
 
+    const latestIndex =
+        showLatestPoint && !isLoading ? series.findLastIndex(({ value }) => value !== null) : NO_LATEST_POINT;
+
     const [belowColor, aboveColor]: [FillColor, FillColor] =
         threshold === undefined
             ? [fill ?? 'primary', fill ?? 'primary']
             : [fill?.below ?? 'primary', fill?.above ?? 'danger'];
 
     const dashedThresholdColor: FillColor = thresholdColor ?? aboveColor;
-
-    /**
-     * Whether the axis reads the threshold at all. A chart with no rule has nothing to read, and
-     * a caller can quieten the axis without giving up the rule.
-     */
     const labelsThreshold = threshold !== undefined && showThresholdLabel;
     const pinnedMin = valueRange?.min;
     const pinnedMax = valueRange?.max;
 
-    const accessibility: Pick<AriaAttributes, 'aria-hidden' | 'aria-label'> & { role?: 'img' } =
-        ariaLabel === undefined ? { 'aria-hidden': true } : { role: 'img', 'aria-label': ariaLabel };
+    const valueTicksKey = valueTicks?.join();
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- keyed on the contents of valueTicks, deliberately
+    const tickValues = useMemo(() => valueTicks, [valueTicksKey]);
+
+    const accessibility: Pick<AriaAttributes, 'aria-hidden' | 'aria-label'> & {
+        role?: 'img';
+    } = ariaLabel === undefined ? { 'aria-hidden': true } : { role: 'img', 'aria-label': ariaLabel };
 
     const options: LineChartOptions = useMemo(
         () => ({
@@ -73,8 +97,22 @@ export const TrendChart = ({
             maintainAspectRatio: false,
             animation: isLoading || reducedMotion ? false : ARRIVAL,
             plugins: {
-                [TREND_CHART_THRESHOLD_PLUGIN_ID]: { value: threshold, color: colors[dashedThresholdColor] },
-                [TREND_CHART_PLACEHOLDER_TICKS_PLUGIN_ID]: { enabled: isLoading, color: colors.primary },
+                [TREND_CHART_THRESHOLD_PLUGIN_ID]: {
+                    value: threshold,
+                    color: colors[dashedThresholdColor],
+                    ...(showValueGuides && tickValues !== undefined
+                        ? {
+                              guides: {
+                                  values: tickValues,
+                                  color: colors.borderWeak,
+                              },
+                          }
+                        : {}),
+                },
+                [TREND_CHART_PLACEHOLDER_TICKS_PLUGIN_ID]: {
+                    enabled: isLoading,
+                    color: colors.primary,
+                },
                 tooltip: {
                     displayColors: false,
                     callbacks: {
@@ -120,32 +158,35 @@ export const TrendChart = ({
                     grid: { display: false },
                     border: { display: false },
                     ...(pinnedMin === undefined || pinnedMax === undefined ? {} : { min: pinnedMin, max: pinnedMax }),
-                    /**
-                     * A floor and not a ceiling, as on the label axis: a caller whose `transformYAxisValue`
-                     * writes '1.2 TB' or '100 Mbps' gets the width those need, instead of the labels being
-                     * cut off at a number chosen here.
-                     */
                     afterFit: (axis) => {
                         axis.width = Math.max(AXIS.yWidth, axis.width);
                         axis.paddingTop = AXIS.topOverhang;
                         axis.paddingBottom = 0;
                     },
-                    afterBuildTicks: labelsThreshold
-                        ? (axis) => {
-                              if (threshold < axis.min || threshold > axis.max) {
-                                  return;
-                              }
+                    afterBuildTicks:
+                        tickValues === undefined && !labelsThreshold
+                            ? undefined
+                            : (axis) => {
+                                  if (tickValues !== undefined) {
+                                      axis.ticks = tickValues
+                                          .filter((value) => value >= axis.min && value <= axis.max)
+                                          .map((value) => ({ value }));
+                                  }
 
-                              if (axis.ticks.some(({ value }) => value === threshold)) {
-                                  return;
-                              }
-                              axis.ticks = [...axis.ticks, { value: threshold, major: true }].sort(
-                                  (one, other) => one.value - other.value
-                              );
-                          }
-                        : undefined,
+                                  if (!labelsThreshold || threshold < axis.min || threshold > axis.max) {
+                                      return;
+                                  }
+
+                                  if (axis.ticks.some(({ value }) => value === threshold)) {
+                                      return;
+                                  }
+                                  axis.ticks = [...axis.ticks, { value: threshold, major: true }].sort(
+                                      (one, other) => one.value - other.value
+                                  );
+                              },
                     ticks: {
                         ...(isLoading ? { maxTicksLimit: 4 } : {}),
+                        ...(wholeValues ? { precision: 0 } : {}),
                         major: { enabled: true },
                         color: ({ tick }) =>
                             labelsThreshold && tick?.value === threshold
@@ -170,6 +211,9 @@ export const TrendChart = ({
             labelsThreshold,
             pinnedMin,
             pinnedMax,
+            tickValues,
+            wholeValues,
+            showValueGuides,
             aboveColor,
             dashedThresholdColor,
             transformYAxisValue,
@@ -194,6 +238,7 @@ export const TrendChart = ({
                     datasets: [
                         {
                             data: series.map(({ value }) => value),
+                            spanGaps: widestGapCarriedAcross(bridgeMissedReadings),
                             borderColor: splitAtThreshold(threshold, colors[belowColor], colors[aboveColor]),
                             backgroundColor: splitAtThreshold(
                                 threshold,
@@ -203,7 +248,10 @@ export const TrendChart = ({
                             borderWidth,
                             fill: true,
                             tension,
-                            pointRadius: 0,
+                            ...(showLatestPoint ? { clip: LATEST_POINT_RADIUS } : {}),
+                            pointRadius: ({ dataIndex }) => (dataIndex === latestIndex ? LATEST_POINT_RADIUS : 0),
+                            pointBackgroundColor: splitAtThreshold(threshold, colors[belowColor], colors[aboveColor]),
+                            pointBorderWidth: 0,
                         },
                     ],
                 }}

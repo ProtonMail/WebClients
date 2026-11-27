@@ -5,7 +5,7 @@ import { TREND_CHART_THRESHOLD_PLUGIN_ID } from '../../plugins/trendChartThresho
 import type { TrendChartThresholdOptions } from '../../plugins/trendChartThreshold/trendChartThreshold';
 import { TrendChart } from './TrendChart';
 import type { AxisTick } from './TrendChart.types';
-import { ARRIVAL, AXIS, BORDER_WIDTH, TENSION } from './constants';
+import { ARRIVAL, AXIS, BORDER_WIDTH, LATEST_POINT_RADIUS, TENSION } from './constants';
 
 const captured = vi.hoisted(() => ({ calls: [] as { data: unknown; options: unknown }[] }));
 
@@ -22,11 +22,15 @@ vi.mock('react-chartjs-2', () => ({
 const lastData = () => captured.calls[captured.calls.length - 1].data as { labels: string[] };
 
 type CapturedDataset = {
+    spanGaps?: boolean | number;
     data: number[];
+    clip?: number;
     borderWidth?: number;
     tension?: number;
     borderColor?: (context: unknown) => unknown;
     backgroundColor?: (context: unknown) => unknown;
+    pointRadius?: (context: { dataIndex: number }) => number;
+    pointBackgroundColor?: (context: unknown) => unknown;
 };
 
 const lastDataset = () =>
@@ -68,6 +72,8 @@ interface FakeAxis {
 }
 
 interface FakeTicks {
+    precision?: number;
+    maxTicksLimit?: number;
     color?: (context: { tick?: { value: number } }) => string;
     maxRotation?: number;
     autoSkip?: boolean;
@@ -910,5 +916,202 @@ describe('TrendChart axis room', () => {
 
         expect(fitYAxis(72)).toBe(72);
         expect(fitXAxis(40)).toBe(40);
+    });
+});
+
+describe('TrendChart latest point', () => {
+    const radii = (series: { label: string; value: number | null }[], props = {}) => {
+        render(<TrendChart data={series} {...props} />);
+
+        const pointRadius = lastDataset().pointRadius!;
+
+        return series.map((_, dataIndex) => pointRadius({ dataIndex }));
+    };
+
+    it('marks no reading at all unless it is asked to', () => {
+        expect(radii(data)).toEqual([0, 0, 0]);
+    });
+
+    it('marks the last reading and leaves the bends in the line unmarked', () => {
+        expect(radii(data, { showLatestPoint: true })).toEqual([0, 0, LATEST_POINT_RADIUS]);
+    });
+
+    it('marks the last reading there is rather than the last place in the series, which a missed reading leaves empty', () => {
+        const trailing = [
+            { label: 'Mon', value: 10 },
+            { label: 'Tue', value: 40 },
+            { label: 'Wed', value: null },
+        ];
+
+        expect(radii(trailing, { showLatestPoint: true })).toEqual([0, LATEST_POINT_RADIUS, 0]);
+    });
+
+    it('marks nothing on a series that was never read', () => {
+        const missed = [
+            { label: 'Mon', value: null },
+            { label: 'Tue', value: null },
+        ];
+
+        expect(radii(missed, { showLatestPoint: true })).toEqual([0, 0]);
+    });
+
+    it('marks nothing while the chart is loading, since the skeleton is not a reading', () => {
+        render(<TrendChart mode="load" data={data} showLatestPoint />);
+
+        const pointRadius = lastDataset().pointRadius!;
+
+        expect([0, 1, 2, 3, 4, 5, 6].map((dataIndex) => pointRadius({ dataIndex }))).toEqual([0, 0, 0, 0, 0, 0, 0]);
+    });
+
+    it('keeps the dot whole where the plot ends, since a pinned value range leaves chart.js none of the room a dot at either end needs', () => {
+        render(<TrendChart data={data} valueRange={{ min: 0, max: 100 }} showLatestPoint />);
+
+        expect(lastDataset().clip).toBe(LATEST_POINT_RADIUS);
+    });
+
+    it('leaves the plot to clip the line at its edges where no dot is drawn, so a line cannot spill past a pinned value range', () => {
+        render(<TrendChart data={data} valueRange={{ min: 0, max: 100 }} />);
+
+        expect(lastDataset().clip).toBeUndefined();
+    });
+
+    it("paints the dot with the line's own colours, so it cannot disagree with the line it ends", () => {
+        render(<TrendChart data={data} threshold={50} showLatestPoint />);
+
+        const { ctx, stops } = gradientSpy();
+        lastDataset().pointBackgroundColor!(scriptableContext({ ctx }));
+
+        expect(stops).toEqual([
+            [0, '#dc3251'],
+            [0.5, '#dc3251'],
+            [0.5, '#6d4aff'],
+            [1, '#6d4aff'],
+        ]);
+    });
+});
+
+describe('TrendChart chosen value ticks', () => {
+    const PERCENTAGE_TICKS = [0, 50, 100];
+
+    it('leaves the axis to choose its own marks when it is told none', () => {
+        render(<TrendChart data={data} />);
+
+        expect(yAxis().afterBuildTicks).toBeUndefined();
+    });
+
+    it('writes the readings it is given whatever the axis had arrived at, including nothing at all', () => {
+        render(<TrendChart data={data} valueTicks={PERCENTAGE_TICKS} />);
+
+        expect(tickValues([0, 20, 40, 60, 80, 100])).toEqual(PERCENTAGE_TICKS);
+        expect(tickValues([])).toEqual(PERCENTAGE_TICKS);
+    });
+
+    it('drops a reading the plot does not reach and keeps one sitting exactly on an end', () => {
+        render(<TrendChart data={data} valueTicks={[-10, 0, 50, 100, 150]} />);
+
+        expect(tickValues([], { min: 0, max: 100 })).toEqual(PERCENTAGE_TICKS);
+        expect(tickValues([], { min: 0, max: 50 })).toEqual([0, 50]);
+    });
+
+    it('still adds the threshold to the marks, so the rule keeps its label', () => {
+        render(<TrendChart data={data} valueTicks={PERCENTAGE_TICKS} threshold={75} />);
+
+        expect(tickValues([])).toEqual([0, 50, 75, 100]);
+    });
+
+    it('marks the threshold as major where it was added beside chosen readings', () => {
+        render(<TrendChart data={data} valueTicks={[0, 100]} threshold={75} />);
+
+        expect(buildTicks([])).toEqual([{ value: 0 }, { value: 75, major: true }, { value: 100 }]);
+    });
+
+    it('writes the threshold once where it is one of the readings asked for', () => {
+        render(<TrendChart data={data} valueTicks={PERCENTAGE_TICKS} threshold={50} />);
+
+        expect(tickValues([])).toEqual(PERCENTAGE_TICKS);
+    });
+
+    it('leaves the threshold off when it is not being labelled', () => {
+        render(<TrendChart data={data} valueTicks={[0, 100]} threshold={75} showThresholdLabel={false} />);
+
+        expect(tickValues([])).toEqual([0, 100]);
+    });
+});
+
+describe('TrendChart whole values', () => {
+    it('lets the axis step however it likes by default', () => {
+        render(<TrendChart data={data} />);
+
+        expect(yAxis().ticks.precision).toBeUndefined();
+    });
+
+    it('holds the axis to whole numbers for a series that counts things', () => {
+        render(<TrendChart data={data} wholeValues />);
+
+        expect(yAxis().ticks.precision).toBe(0);
+    });
+});
+
+describe('TrendChart value guides', () => {
+    it('asks for no guides without both the marks to draw and the word to draw them', () => {
+        render(<TrendChart data={data} threshold={50} valueTicks={[0, 50, 100]} />);
+        expect(thresholdOptions()?.guides).toBeUndefined();
+
+        render(<TrendChart data={data} threshold={50} showValueGuides />);
+        expect(thresholdOptions()?.guides).toBeUndefined();
+    });
+
+    it('carries the readings the axis names across the plot when asked', () => {
+        render(<TrendChart data={data} threshold={50} valueTicks={[0, 50, 100]} showValueGuides />);
+
+        expect(thresholdOptions()?.guides).toEqual({ values: [0, 50, 100], color: '#eae7e4' });
+    });
+
+    it('draws the guides on a plot with no threshold to sit under', () => {
+        render(<TrendChart data={data} valueTicks={[0, 100]} showValueGuides />);
+
+        expect(thresholdOptions()).toMatchObject({ value: undefined, guides: { values: [0, 100] } });
+    });
+});
+
+describe('TrendChart missed readings', () => {
+    it('carries the line across a reading that was never taken, rather than breaking at it', () => {
+        render(<TrendChart data={data} />);
+
+        expect(lastDataset().spanGaps).toBe(true);
+    });
+
+    it('breaks the line at a missed reading when it is told not to carry across', () => {
+        render(<TrendChart data={data} bridgeMissedReadings={false} />);
+
+        expect(lastDataset().spanGaps).toBe(false);
+    });
+
+    it('carries the line across no more missed readings in a row than it is told to, counting the readings either side of the gap', () => {
+        render(<TrendChart data={data} bridgeMissedReadings={2} />);
+
+        expect(lastDataset().spanGaps).toBe(3);
+    });
+
+    it('hands the gap over as it was given, rather than standing a zero in for it', () => {
+        const withGap = [
+            { label: 'Mon', value: 10 },
+            { label: 'Tue', value: null },
+            { label: 'Wed', value: 72 },
+        ];
+
+        render(<TrendChart data={withGap} />);
+
+        expect(lastDataset().data).toEqual([10, null, 72]);
+    });
+
+    it('draws a series of nothing but missed readings without failing', () => {
+        const missed = [
+            { label: 'Mon', value: null },
+            { label: 'Tue', value: null },
+        ];
+
+        expect(() => render(<TrendChart data={missed} />)).not.toThrow();
+        expect(lastDataset().data).toEqual([null, null]);
     });
 });
