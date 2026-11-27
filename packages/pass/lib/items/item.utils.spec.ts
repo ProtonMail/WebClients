@@ -144,7 +144,7 @@ describe('Item utils', () => {
 
             const expectedClusters = [
                 { label: 'Today', boundary: now - UNIX_DAY },
-                { label: 'Last week', boundary: now - UNIX_WEEK },
+                { label: 'In the past week', boundary: now - UNIX_WEEK },
                 { label: 'Last 2 weeks', boundary: now - UNIX_WEEK * 2 },
                 { label: 'Last month', boundary: now - UNIX_MONTH },
             ];
