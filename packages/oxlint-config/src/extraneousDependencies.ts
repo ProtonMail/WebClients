@@ -17,6 +17,7 @@ export const extraneousDependenciesDevDependencies = [
     '**/e2e/**',
     '**/tests/**',
     '**/test-helpers/**',
+    '**/testing/**',
     '**/*.test.{js,ts,tsx,jsx}',
     '**/*.spec.{js,ts,tsx,jsx}',
     // Others
@@ -36,7 +37,7 @@ export interface ExtraneousDependenciesOptions {
  * dev-dependency globs, since a config setting the rule replaces its options.
  *
  * @example
- * createExtraneousDependenciesRule({ devDependencies: [...extraneousDependenciesDevDependencies, '**\/testing/**'] })
+ * createExtraneousDependenciesRule({ devDependencies: [...extraneousDependenciesDevDependencies, '**\/bin/**'] })
  */
 export function createExtraneousDependenciesRule({
     peerDependencies = true,

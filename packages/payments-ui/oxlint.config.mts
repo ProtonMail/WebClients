@@ -16,13 +16,5 @@ export default createOxlintConfig({
                 }),
             },
         },
-        {
-            files: ['testing/**'],
-            rules: {
-                'proton/no-extraneous-dependencies': createExtraneousDependenciesRule({
-                    devDependencies: [...extraneousDependenciesDevDependencies, '**/testing/**'],
-                }),
-            },
-        },
     ],
 });
